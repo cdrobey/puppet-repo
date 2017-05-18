@@ -6,8 +6,8 @@ forge "http://forge.puppetlabs.com"
 #mod "puppetlabs/stdlib",      '4.11.0'
 #mod "puppetlabs/concat",      '2.1.0'
 
-mod "puppetlabs/stdlib"
-mod "puppetlabs/ntp"
+mod "puppetlabs/stdlib", :latest
+mod "puppetlabs/ntp", :latest
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
