@@ -1,2 +1,19 @@
 ---
-message: "This node is using common data"
+profile::base::motd::message: |
+  ===========================================================
+          Welcome to %{::hostname}
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+  ===========================================================
+  The operating system is: %{::operatingsystem}
+            The domain is: %{::domain}
+
+sudo::configs:
+  'ubuntu':
+    'content'   : "ubuntu ALL=(ALL) NOPASSWD: ALL"
+    'priority'  : 20
+
+ntp::servers:
+  - fw.fr.lan
+  - us.pool.ntp.org

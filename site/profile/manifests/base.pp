@@ -1,12 +1,10 @@
+# == Class: profile::base
 class profile::base {
-
-  #the base profile should include component modules that will be on all nodes
-
-  class profile::base::time {
-    include ::ntp
-    file { '/etc/localtime':
-      ensure => link,
-      target => '/usr/share/zoneinfo/US/Central',
-    }
-  }
+  include 'profile::base::accounts'
+  include 'profile::base::apt'
+  include 'profile::base::motd'
+  include 'profile::base::ssh'
+  include 'profile::base::sudoers'
+  include 'profile::base::time'
+  include 'profile::base::fw'
 }

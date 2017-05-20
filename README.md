@@ -1,94 +1,27 @@
-Table of Contents
-=================
+# puppet-control-repo
 
-  * [Where Did All The Previous Code Go?](#where-did-all-the-previous-code-go)
-  * [What You Get From This control\-repo](#what-you-get-from-this-control-repo)
-    * [Copy This Repo Into Your Own Git Server](#copy-this-repo-into-your-own-git-server)
-      * [GitLab](#gitlab)
-      * [Stash](#stash)
-      * [GitHub](#github)
+## Table of Contents
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+1. [Building a Learning Puppet Environment](#building-a-learning-environent)
+2. [Install Code Manager](#install-code-manager)
 
-# Where Did All The Previous Code Go?
+## Building a Learning Puppet Environment
+This project began as a plan to build a small environment for learning different facets of Puppet Enterprise.  The Repository allows you to spin up a monolithic Puppet Enterprise Console, and a series of agents quickly.  The environment is best supported by using templates of Redhat/Ubuntu Linux.  In the future, I plan to add Windows system as I find time.
 
-Initially, the control-repo project began as a 'starter' template for anyone who wanted to get started with r10k. As time passed, and Code Manager was integrated into Puppet Enterprise, the scope of this project grew to include opinionated Puppet profiles to set up many Puppet Enterprise components. As the code increased, so did the complexity of the control-repo project. To reduce that complexity, as well as continuing to meet the needs of individuals who would like a more minimal template, this repository was stripped of anything other than the bare minimum files necessary to get started with a functioning
-control-repo.
+## Install Code Manager
+Code Manager requires you to configure both the PE consolde to define the Code Manager repository, and setup the client tools on your MAC.  Puppet documentation takes care of walking you through the steps:
 
-All of the code that was previously in this repository still exists in separate repositories under the [Puppet Ramp Up Program namespace within Github](https://github.com/Puppet-RampUpProgram) and can be re-connected to an existing control-repo if that is required by adding the modules to the Puppetfile. Alternatively, if that previously opinionated control-repo is desired, [it still exists on Github under the Puppet Ramp Up Program namespace.](https://github.com/Puppet-RampUpProgram/control-repo) This control-repo project will remain a template for anyone who would like a minimal 'starter' template.
+1. Create a control repository for maintaining your environments and code.  Code management in PE uses your existing Git repository (repo) branches to create environments. Environments allow you to designate a node or node group to use a specific environment. For example, you could designate one node group to use the development environment and another to use the production environment. As you update the code in your control repo, code management tracks the state of that repo to keep each environment updated.
 
-# What You Get From This control-repo
+2. Set up Puppetfiles to manage content in your environments.  Puppetfiles specify which modules and data to install in your environments, including what version of that content should be installed, and where Puppet should get it.
 
-This repository is a template control-repo that can be used with r10k or Puppet Enterprise Code Manager.
+3. Configure Code Manager (recommended) or r10k.  Configure Code Manager or r10k in the console’s master profile. If you need to customize your configuration further, you can do so by adding keys to Hiera. See the Code Manager or r10k pages for configuration instructions.
 
-The major points are:
- - An environment.conf that correctly implements:
-   - A site directory for roles, profiles, and any custom modules for your organization.
-   - A config_version script.
- - Provided config_version scripts to output the commit of code that your agent just applied.
- - Basic example of roles/profiles code.
- - Example hieradata directory with pre-created common.yaml and nodes directory.
-   - These match the default hierarchy that ships with PE.
+4. Set up a deployment trigger to run Code Manager automatically. You can also trigger Code Manager manually from the command line. If you are using r10k alone, you’ll continue to run it manually from the command line whenever you want to deploy. See the Code Manager or r10k pages for information about triggering Code Manager or running r10k.
 
-## Copy This Repo Into Your Own Git Server
+5. When you are ready to run Puppet and enforce code changes on your nodes, whether on just a few nodes for testing or on a larger set, use the Puppet orchestrator command line tool.
 
-### GitLab
+Code Manager Setup:  https://docs.puppet.com/pe/latest/cmgmt_managing_code.html
 
-1. Install GitLab.
- - https://about.gitlab.com/downloads/
+Github (Example Repository): https://github.com/puppetlabs/control-repo
 
-2. After GitLab is installed you may sign if with the `root` user and password `5iveL!fe`.
-
-3. Make a user for yourself.
-
-4. Make an SSH key to link with your user. You’ll want to do this on the machine you intend to edit code from (most likely not your Puppet master, but your local workstation or laptop).
- - http://doc.gitlab.com/ce/ssh/README.html
- - https://help.github.com/articles/generating-ssh-keys/
-
-5. Create a group called `puppet` (this is case sensitive).
- - http://doc.gitlab.com/ce/workflow/groups.html
-
-6. Add your user to the `puppet` group as well.
-
-7. Create a project called `control-repo`, and set the Namespace to be the `puppet` group.
-
-8. Clone this control repository to your laptop/workstation:
- - `git clone <repository url>`
- - `cd control-repo`
-
-9. Remove this repository as the origin remote:
- - `git remote remove origin`
-
-10. Add your internal repository as the origin remote:
- - `git remote add origin <url of your gitlab repository>`
-
-11. Push the production branch of the repository from your machine up to your git server
- - `git push origin production`
-
-### Stash
-
-Coming soon!
-
-### GitHub
-
-1. Prepare your local git client to authenticate with GitHub.com or a local GitHub Enterprise instance.
-  - https://help.github.com/articles/generating-ssh-keys/
-  - https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-
-2. Create a repository called `control-repo` in your user account or organization.  Ensure that "Initialize this repository with a README" is not selected.
-  - https://help.github.com/articles/creating-a-new-repository/
-
-3. Make a note of your repository URL (HTTPS or SSH, depending on your security configuration).
-
-4. Clone this control repository to your laptop/workstation:
-  - `git clone <repository url>`
-  - `cd control-repo`
-
-5. Remove this repository as the origin remote:
-  - `git remote remove origin`
-
-6. Add your internal repository as the origin remote:
-  - `git remote add origin <url of your github repository>`
-
-7. Push the production branch of the repository from your machine up to your git server
-  - `git push origin production`
