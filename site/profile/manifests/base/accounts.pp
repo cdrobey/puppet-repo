@@ -12,4 +12,6 @@ class profile::base::accounts {
     usergroups     => hiera_hash('accounts::usergroups'),
     purge_ssh_keys => true,
   }
+  accounts::account { 'foo': }
+
 }
