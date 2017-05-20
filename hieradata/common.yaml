@@ -21,7 +21,7 @@ ntp::servers:
 ssh::permit_root_login: yes
 
 accounts::users:
-  james:
+  'james':
     uid: 5000
     comment: "James E. Jones"
     password: '$6$VrSBTO9a$1l3l7dkLYizqpqZy84lrS7S1rl.FNUxc.QB4zjXMwvTFxekTiOFXsNByTtPtbzM0zxEiwhr0/3bXHUeuN0TEG.'
@@ -29,9 +29,9 @@ accounts::users:
       - james
 
 accounts::ssh_keys:
-  james:
+  'james':
     type: ssh-rsa
     public: AAAAB3NzaC1yc2EAAAADAQABAAACAQDL/vB0U8w+mNDmSQ5bAXwk3ufqnU0D/uNRkY2usmh9mi2Z+Hvk7Aqmfqikfz2dihV77nNg/uk5oD2K8uXbEGiXitFmbnyfOyyNkwFKMdFIZfiAPPl5Z2wZcB9OTw5VCXDBpVfyP2pj3K22zgjEsX7SCTyuqb/8iNuEelIqrQUfvtHfxVCidUuRI/F4CI13hT684BAPT25BmJIpHT6tCgl5M1LtpVMGHvVHTPcl9If9jHQ0TWBiOD9Vn077eRFnVNupI0ekyUOqmthW1Ac8p3JCNd6yUbVoRk8yux2Gt92YVhso5KaRTF5gK5BZVSZk3d06NSOyxa8OmX/rxH4peBoVk8jT8QADiKJXWV3QwcbqvJyL07WOCFa/p8u3PUwb8yan9k3CkvXaNsk6ckHAze7TcndFshY32lCUzhKGIuk3tZa115GlJN8Xx14zcvZOn281afnMF1lCn/F2WQ76w/Hsljku/FpcKbzV1U3okXLTwz2zyhQgDe+aY0858jpNqMZnwHjJP1W919THMFrPCwov65sosLZwVZuvGRL5UYCDdikWrv3r/xQsgnpHcE8An7ber6Scs3eed2naWk6w3G8C5gUZ0gAPLYRATq0dTJhvLp42dzJ82nS9ImCR5HHL9RngAnbTFb6fV+VwhDEIgwoDyt+Y7wQX+FuZKPxpRNeiXw==
 accounts::usergroups:
-  base:
+  'base':
     - james
