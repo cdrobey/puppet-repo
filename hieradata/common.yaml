@@ -18,7 +18,6 @@ ntp::servers:
   - fw.fr.lan
   - us.pool.ntp.org
 
-ssh::storeconfigs_enabled: true
 ssh::server_options:
     PasswordAuthentication: 'yes'
     PermitRootLogin: 'no'
