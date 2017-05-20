@@ -18,7 +18,9 @@ ntp::servers:
   - fw.fr.lan
   - us.pool.ntp.org
 
-ssh::permit_root_login: yes
+ssh::server_options:
+    PasswordAuthentication: 'yes'
+    PermitRootLogin: 'no'
 
 accounts::user_defaults:
   shell: '/bin/bash'
