@@ -7,7 +7,7 @@ mod "puppetlabs/ntp", :latest
 mod "puppetlabs/motd", :latest
 mod "puppetlabs/apt", :latest
 mod "ghoneycutt-ssh", :latest
-mod 'puppetlabs-accounts', :latest
+mod 'camptocamp-accounts', :latest
 mod 'puppetlabs-firewall', :latest
 mod "saz-sudo", :latest
 
