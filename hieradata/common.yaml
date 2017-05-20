@@ -32,4 +32,3 @@ accounts::users:
     uid: 1001
     git: 1001
     comment: Test
-accounts::usergroups:
