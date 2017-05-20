@@ -1,4 +1,4 @@
 # == Class: profile::base::ssh
 class profile::base::ssh {
-  include ssh
+  include ssh::server
 }
