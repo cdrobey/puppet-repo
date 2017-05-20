@@ -29,6 +29,7 @@ accounts::users:
     comment: "Default Account"
     groups:
       - 'ubuntu'
+    pwhash: "$1$2vVFwwLg$J.rFaFV3VySbocrSu6SDu1"
     ssh_keys:
       'cdroberson@gmail.com':
         type: 'ssh-rsa'
