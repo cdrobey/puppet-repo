@@ -20,7 +20,7 @@ ntp::servers:
 
 ssh::server_options:
     PasswordAuthentication: 'yes'
-    PermitRootLogin: 'no'
+    PermitRootLogin: 'yes'
 
 accounts::user_defaults:
   shell: '/bin/bash'
