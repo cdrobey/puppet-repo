@@ -6,6 +6,9 @@ class profile::base::accounts {
     comment => 'root',
     home    => '/home/ubuntu',
   }
+  users => hiera_hash('accounts::users'),
+
+
 
   class { 'accounts':
     # ssh_keys       => hiera_hash('accounts::ssh_keys'),
