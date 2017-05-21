@@ -22,9 +22,4 @@ firewall { '001 accept all to lo interface':
       proto  => tcp,
       action => accept,
   }
-  firewall { '101 allow PE access':
-    dport  => '8140',
-    proto  => tcp,
-    action => accept,
-  }
 }
