@@ -22,17 +22,7 @@ firewall { '001 accept all to lo interface':
       proto  => tcp,
       action => accept,
   }
-    firewall { '101 allow http access':
-    dport  => '80',
-    proto  => tcp,
-    action => accept,
-  }
-  firewall { '102 allow https access':
-    dport  => '443',
-    proto  => tcp,
-    action => accept,
-  }
-  firewall { '103 allow PE access':
+  firewall { '101 allow PE access':
     dport  => '8140',
     proto  => tcp,
     action => accept,
