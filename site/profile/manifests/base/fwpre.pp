@@ -16,14 +16,13 @@ firewall { '001 accept all to lo interface':
     proto  => 'all',
     state  => ['RELATED', 'ESTABLISHED'],
     action => 'accept',
-
+  }
   firewall { '100 allow ssh access':
       dport  => '22',
       proto  => tcp,
       action => accept,
-    }
   }
-  firewall { '101 allow http access':
+    firewall { '101 allow http access':
     dport  => '80',
     proto  => tcp,
     action => accept,
