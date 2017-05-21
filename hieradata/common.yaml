@@ -33,7 +33,6 @@ accounts::users:
     comment: "Default Account"
     groups:
       - 'ubuntu'
-    # openssl passwd -1
     pwhash: "$1$2vVFwwLg$J.rFaFV3VySbocrSu6SDu1"
       ssh_keys:
       'cdroberson@gmail.com':
