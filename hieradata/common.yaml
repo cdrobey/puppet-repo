@@ -1,4 +1,7 @@
 ---
+base_packages:
+  - mlocate
+
 profile::base::motd::message: |
   ===========================================================
           Welcome to %{::hostname}
