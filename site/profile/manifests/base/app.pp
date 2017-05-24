@@ -1,8 +1,11 @@
 # == Class: profile::base::apt
-class profile::base::apt {
-  class { '::apt':
-    update => {
+class profile::base::app {
+
+  if $::os['family'] == 'Ubuntu'{
+    class { '::apt':
+      update => {
       frequency           => 'daily',
-    },
+      },
+    }
   }
 }
