@@ -13,7 +13,7 @@ profile::base::motd::message: |
             The domain is: %{::domain}
 
 sudo::configs:
-  'ubuntu':
+  'deploy':
     'content'   : "ubuntu ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
 
@@ -31,11 +31,12 @@ accounts::user_defaults:
   hushlogin: true
 
 accounts::users:
-  'ubuntu':
-    uid: 1000
+  'deploy':
+    uid: 10000
+    gid: 10000
     comment: "Default Account"
     groups:
-      - 'ubuntu'
+      - 'deploy'
     pwhash: "$1$2vVFwwLg$J.rFaFV3VySbocrSu6SDu1"
     ssh_keys:
       'cdroberson@gmail.com':
