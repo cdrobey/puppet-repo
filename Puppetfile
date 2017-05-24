@@ -6,7 +6,7 @@ mod "puppetlabs/stdlib", :latest
 mod "puppetlabs/concat", :latest
 mod "puppetlabs/ntp", :latest
 mod "puppetlabs/motd", :latest
-mod "puppetlabs/apt", :latest
+# mod "puppetlabs/apt", :latest
 mod 'saz-ssh', :latest
 mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
