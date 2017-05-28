@@ -14,7 +14,7 @@ profile::base::motd::message: |
 
 sudo::configs:
   'deploy':
-    'content'   : "ubuntu ALL=(ALL) NOPASSWD: ALL"
+    'content'   : "mgmt ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
 
 ntp::servers:
@@ -31,12 +31,12 @@ accounts::user_defaults:
   hushlogin: true
 
 accounts::users:
-  'deploy':
+  'mgmt':
     uid: 10000
     gid: 10000
     comment: "Default Account"
     groups:
-      - 'deploy'
+      - 'mgmt'
     pwhash: "$1$2vVFwwLg$J.rFaFV3VySbocrSu6SDu1"
     ssh_keys:
       'cdroberson@gmail.com':
