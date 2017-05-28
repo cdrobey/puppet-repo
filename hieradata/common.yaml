@@ -23,7 +23,7 @@ ntp::servers:
 
 ssh::server_options:
     PasswordAuthentication: 'yes'
-    PermitRootLogin: 'yes'
+    PermitRootLogin: 'no'
 
 accounts::user_defaults:
   shell: '/bin/bash'
@@ -32,6 +32,8 @@ accounts::user_defaults:
 
 accounts::users:
   'centos':
+    ensure: 'absent'
+  'ubuntu':
     ensure: 'absent'
   'deploy':
     uid: 10000
