@@ -31,6 +31,8 @@ accounts::user_defaults:
   hushlogin: true
 
 accounts::users:
+  'centos':
+    ensure: 'absent'
   'deploy':
     uid: 10000
     gid: 10000
