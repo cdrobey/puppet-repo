@@ -1,7 +1,6 @@
 ---
 base_apps:
   - mlocate
-  - httpd
 
 profile::base::motd::message: |
   ===========================================================
