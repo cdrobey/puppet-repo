@@ -22,7 +22,7 @@ ntp::servers:
   - us.pool.ntp.org
 
 ssh::server_options:
-    PasswordAuthentication: 'yes'
+    PasswordAuthentication: 'no'
     PermitRootLogin: 'no'
 
 accounts::user_defaults:
@@ -32,6 +32,7 @@ accounts::user_defaults:
 
 accounts::users:
   'deploy':
+    ensure: present
     comment: "Default Account"
     groups:
       - 'deploy'
