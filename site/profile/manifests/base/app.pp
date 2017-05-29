@@ -8,4 +8,5 @@ class profile::base::app {
       },
     }
   }
+  ensure_packages(hiera_array('base_apps'), {'ensure' => 'present'})
 }
