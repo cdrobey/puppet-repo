@@ -10,15 +10,5 @@ mod "puppetlabs/apt", :latest
 mod 'saz-ssh', :latest
 mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
-mod "saz-sudo", :latest
-
-
-# Modules from Git
-# Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
-#mod 'apache',
-#  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
-#  :commit => '83401079053dca11d61945bd9beef9ecf7576cbf'
-
-#mod 'apache',
-#  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
-#  :branch => 'docs_experiment'
+mod "saz-sudo", :latestt
+mod 'vshn-gitlab', :latest
