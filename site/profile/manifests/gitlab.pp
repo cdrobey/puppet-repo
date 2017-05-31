@@ -1,5 +1,10 @@
 # == Class: profile::base
 class profile::coderepo {
-  include 'profile::coderepo::fw'
-  include 'profile::coderepo::gitlab'
+  
+  firewall { '80 allow apache access':
+    dport          => [80],
+    proto      => tcp,
+    action => accept,
+  }
+  class {'::gitlab':}
 }
