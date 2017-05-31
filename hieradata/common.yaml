@@ -44,7 +44,7 @@ accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
-gitlab::external_url: 'http://lab-dC01.fr.lan'
+gitlab::external_url: 'http://lab-dC00.fr.lan'
 gitlab::gitlab_rails:
   time_zone: 'MST7MDT'
   gitlab_email_enabled: false
