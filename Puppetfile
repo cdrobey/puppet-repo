@@ -10,5 +10,5 @@ mod "puppetlabs/apt", :latest
 mod 'saz-ssh', :latest
 mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
-mod "saz-sudo", :latestt
+mod "saz-sudo", :latest
 mod 'vshn-gitlab', :latest
