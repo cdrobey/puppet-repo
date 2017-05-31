@@ -1,5 +1,5 @@
-# == Class: profile::base::fw
-class profile::base::fw {
+# == Class: profile::coderepo::fw
+class profile::coderepo::fw {
   include firewall
   include 'profile::base::fwpre'
   include 'profile::base::fwpost'
