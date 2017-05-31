@@ -1,9 +1,8 @@
-# == Class: profile::base
-class profile::coderepo {
-  
+# == Class: profile::gitlab
+class profile::gitlab {
   firewall { '80 allow apache access':
-    dport          => [80],
-    proto      => tcp,
+    dport  => [80],
+    proto  => tcp,
     action => accept,
   }
   class {'::gitlab':}
