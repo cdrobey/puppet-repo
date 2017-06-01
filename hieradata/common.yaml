@@ -1,5 +1,7 @@
 ---
-base_apps:
+
+profile::base::app::update_frequency: 'daily'
+profile::base::app::pakages:
   - mlocate
 
 profile::base::motd::message: |
