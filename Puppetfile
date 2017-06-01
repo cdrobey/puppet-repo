@@ -13,7 +13,7 @@ mod 'puppetlabs-firewall', :latest
 mod "saz-sudo", :latest
 mod 'vshn-gitlab', :latest
 mod 'puppetlabs-java', :latest
-mod 'puppet-archive', :latest
+mod 'puppet-archive', '0.4.8'
 mod 'darin-zypprepo', :latest
 
 # Modules from Github
