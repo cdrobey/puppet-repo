@@ -15,6 +15,10 @@ profile::base::motd::message: |
   The operating system is: %{::operatingsystem}
             The domain is: %{::domain}
 
+profile::base::sudoers:purge : 'false'
+profile::base::sudoers:config_file_replace : 'false'
+profile::base::sudoers:includedirsudoers : 'true'
+
 sudo::configs:
   'deploy':
     'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
