@@ -2,11 +2,11 @@
 class profile::gitlab {
 
   $external_url = hiera('profile::gitlab::external_url')
-  $time_zone = hiera('profile::gitlab::gitlab_rails::timezone')
-  $gitlab_email_enabled = hiera('profile::gitlab::gitlab_rails::gitlab_email_enabled')
-  $gitlab_default_theme = hiera('profile::gitlab::gitlab_rails::gitlab_default_theme')
-  $gitlab_email_display_name = hiera('profile::gitlab::gitlab_rails::gitlab_email_display_name')
-  $shutdown_timeout = hiera('profile::gitlab::sidekiq::shutdown_timeout')
+  $time_zone = hiera('profile::gitlab::time_zone')
+  $gitlab_email_enabled = hiera('profile::gitlab::email_enabled')
+  $gitlab_default_theme = hiera('profile::gitlab::default_theme')
+  $gitlab_email_display_name = hiera('profile::gitlab::email_display_name')
+  $shutdown_timeout = hiera('profile::gitlab::shutdown_timeout')
 
   firewall { '80 allow apache access':
     dport  => [80],
