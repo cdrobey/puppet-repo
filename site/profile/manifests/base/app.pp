@@ -2,15 +2,15 @@
 class profile::base::app {
 
   # Hiera lookups
-  $app_update_frequency = hiera('profile::base::app::update_frequency')
-  $app_packages = hiera_array('profile::base::app::packages')
+  $update_frequency = hiera('profile::base::app::update_frequency')
+  $packages = hiera_array('profile::base::app::packages')
 
-  if $facts['os']['family']['family'] == 'Debian'{
+  if $facts['os']['family'] == 'Debian'{
     class { 'apt':
       update => {
-      frequency => app_update_frequency,
+      frequency => update_frequency,
       },
     }
   }
-  ensure_packages($app_packages, {'ensure' => 'present'})
+  ensure_packages($packages, {'ensure' => 'present'})
 }
