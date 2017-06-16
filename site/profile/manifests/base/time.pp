@@ -1,10 +1,14 @@
 # == Class: profile::base::time
 class profile::base::time {
-  class { '::ntp':
+
+  $time_tz = hiera('profile::base::time')
+
+  class { 'ntp':
     package_ensure => 'present',
   }
+
   file { '/etc/localtime':
     ensure => link,
-    target => '/usr/share/zoneinfo/US/Central',
+    target => $time_tz,
   }
 }
