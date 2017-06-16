@@ -1,7 +1,8 @@
 # == Class: profile::base::ssh
 class profile::base::ssh {
 
-  $ssh_server_options = hiera_array($profile::base::ssh::server_options)
+  $server_options_passwordauth = hiera('profile::base::ssh::server_options::passwordauth')
+  $server_options_permitrootlogin = hiera('profile::base::ssh::server_options::permitrootlogin')
 
   firewall { '100 allow ssh access':
       dport  => '22',
@@ -9,7 +10,8 @@ class profile::base::ssh {
       action => accept,
   }
 
-  class { 'ssh':
-    server_options => $ssh_server_options,
+  class { 'ssh::server_options':
+    PasswordAuthentication => $server_options_passwordauth,
+    PermitRootLogin        => $server_options_permitrootlogin,
   }
 }

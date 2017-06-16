@@ -15,22 +15,23 @@ profile::base::motd::message: |
   The operating system is: %{::operatingsystem}
             The domain is: %{::domain}
 
-profile::base::sudoers:purge : 'false'
-profile::base::sudoers:config_file_replace : 'false'
-profile::base::sudoers:includedirsudoers : 'true'
+profile::base::sudoers::purge : 'false'
+profile::base::sudoers::config_file_replace : 'false'
+profile::base::sudoers::includedirsudoers : 'true'
 
-sudo::configs:
+profile::base::sudoers::sudo::configs:
   'deploy':
     'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
 
-ntp::servers:
+profile::base::time::ntpservers:
   - fw.fr.lan
   - us.pool.ntp.org
 
-ssh::server_options:
-    PasswordAuthentication: 'no'
-    PermitRootLogin: 'no'
+profile::base::time::time_tz: "/usr/share/timezone/xxx"
+
+profie::base::ssh::server_options::passwordauth: 'no'
+profie::base::ssh::server_options::permitrootlogin: 'no'
 
 accounts::user_defaults:
   shell: '/bin/bash'
@@ -51,11 +52,11 @@ accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
-gitlab::external_url: 'http://lab-dC00.fr.lan'
-gitlab::gitlab_rails:
-  time_zone: 'MST7MDT'
+profile::gitlab::external_url: 'http://lab-dC00.fr.lan'
+profile::gitlab::gitlab_rails:
+  timezone: 'MST7MDT'
   gitlab_email_enabled: false
   gitlab_default_theme: 4
   gitlab_email_display_name: 'Gitlab'
-gitlab::sidekiq:
+profile::gitlab::sidekiq:
   shutdown_timeout: 5
