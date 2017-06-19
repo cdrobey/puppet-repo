@@ -52,11 +52,11 @@ accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
-profile::gitlab::external_url: 'http://lab-dC00.fr.lan'
+profile::gitlab::external_url: 'http://git.fr.lan'
 profile::gitlab::gitlab_rails:
   timezone: 'MST7MDT'
   gitlab_email_enabled: false
   gitlab_default_theme: 4
-  gitlab_email_display_name: 'Gitlab'
+  gitlab_email_display_name: 'FamilyRoberson Gitlab'
 profile::gitlab::sidekiq:
   shutdown_timeout: 5
