@@ -15,7 +15,4 @@ mod 'vshn-gitlab', :latest
 mod 'puppetlabs-java', :latest
 mod 'puppet-archive', '0.4.8'
 mod 'darin-zypprepo', :latest
-
-# Modules from Github
-# Versions should be updated to the latest at the time you start
-mod 'jenkins', :git => 'https://github.com/jenkinsci/puppet-jenkins.git'
+mod 'rtyler-jenkins', :latest
