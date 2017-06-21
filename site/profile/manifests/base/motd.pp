@@ -6,4 +6,7 @@ class profile::base::motd (
   class { 'motd':
     content => $message,
   }
+  notify { 'test':
+    message => $message,
+  }
 }
