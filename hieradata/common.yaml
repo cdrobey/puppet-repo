@@ -34,9 +34,9 @@ profile::base::motd::content: |
   activities expressly permitted by the system administration
   staff. If you're not sure if it's allowed, then DON'T DO IT.
   ===========================================================
-      The kernel is: %{facts.kernel} %{facts.kernelversion}
-  The system update: %{facts.uptime_days}
-  
+                 Kernel: %{facts.kernel} %{facts.kernelversion}
+          System uptime: %{facts.uptime_days}
+
 profile::base::ssh::manage_firewall: true
 profile::base::ssh::password_authentication: 'no'
 profile::base::ssh::permit_root_login: 'no'
