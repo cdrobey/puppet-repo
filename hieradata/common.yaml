@@ -28,11 +28,13 @@ profile::base::app::packages:
   - git
 
 profile::base::motd::content: |
+  =======================================================================================================
   Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
-  This node is under the control of Puppet %{facts.puppetversion}
-  Kernel - %{facts.kernel} %{facts.kernelversion}
-  Ram - %{facts.memorysize}
-  Days Up - %{facts.uptime_days}
+                      This node is under the control of Puppet %{facts.puppetversion}
+                              Kernel: %{facts.kernel} %{facts.kernelversion}
+                                        Ram: %{facts.memorysize}
+                                      Days Up: %{facts.uptime_days}
+  =======================================================================================================
 
 profile::base::ssh::manage_firewall: true
 profile::base::ssh::password_authentication: 'no'
