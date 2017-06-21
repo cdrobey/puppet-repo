@@ -11,6 +11,10 @@ class profile::base::sudoers (
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
   }
-  create_resources(sudo::conf, $configs)
-
+#  create_resources(sudo::conf, $configs)
+  each ($configs) | $name, $configs | {
+    sudo::conf { $name:
+      * => $configs
+    }
+  }
 }
