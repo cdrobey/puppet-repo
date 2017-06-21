@@ -1,7 +1,7 @@
 # == Class: profile::base::ssh
 class profile::base::ssh (
-  $passwordauth,
-  $permitrootlogin,
+  #$passwordauth,
+  #$permitrootlogin,
 ) {
 
   firewall { '100 allow ssh access':
