@@ -32,9 +32,9 @@ profile::base::motd::content: 'Here....'
 profile::base::ssh::password_authentication: 'no'
 profile::base::ssh::permit_root_login: 'no'
 profile::base::ssh::permit_empty_passwords: 'no'
-profile::base::ssh::manage_firewall: 'true'
+profile::base::ssh::manage_firewall: true
 
-profile::base::sudoers::purge: false
+profile::base::sudoers::purge: 'false'
 profile::base::sudoers::config_file_replace: 'false'
 profile::base::sudoers::includedirsudoers: 'true'
 
