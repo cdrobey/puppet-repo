@@ -17,9 +17,4 @@ class profile::base::fwpre {
     state  => ['RELATED', 'ESTABLISHED'],
     action => 'accept',
   }
-  firewall { '100 allow ssh access':
-      dport  => '22',
-      proto  => tcp,
-      action => accept,
-  }
 }
