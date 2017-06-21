@@ -36,12 +36,12 @@ profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
 profile::base::ssh::server_options::passwordauth: 'no'
 profile::base::ssh::server_options::permitrootlogin: 'no'
 
-accounts::user_defaults:
+profile::base::accounts::user_defaults:
   shell: '/bin/bash'
   purge_ssh_keys: true
   hushlogin: true
 
-accounts::users:
+profile::base::accounts::users:
   'deploy':
     ensure: present
     comment: "Default Account"
