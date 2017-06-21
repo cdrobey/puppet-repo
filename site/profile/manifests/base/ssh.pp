@@ -6,7 +6,6 @@ class profile::base::ssh (
   $manage_firewall,
 ) {
 
-
   class { 'ssh':
     sshd_password_authentication     => $password_authentication,
     permit_root_login                => $permit_root_login,
