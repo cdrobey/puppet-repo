@@ -5,6 +5,6 @@ class profile::base::accounts (
   ) {
   class { 'accounts:'
     # user_defaults => $user_defaults,
-    users         => $users,
+    # users         => $users,
   }
 }
