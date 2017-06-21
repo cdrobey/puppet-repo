@@ -4,7 +4,7 @@ class profile::base::accounts (
   $user_defaults,
   ) {
   class { 'accounts':
-    # user_defaults => $user_defaults,
-    # users         => $users,
+    user_defaults => $user_defaults,
+    users         => $users,
   }
 }
