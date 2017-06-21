@@ -1,7 +1,7 @@
 # == Class: profile::base::fw
 class profile::base::fw {
 
-  clas { 'firewall:'}
+  class { 'firewall:'}
   include 'profile::base::fwpre'
   include 'profile::base::fwpost'
   Firewall {
