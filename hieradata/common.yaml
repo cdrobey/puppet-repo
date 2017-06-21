@@ -27,11 +27,11 @@ profile::base::sudoers::sudo::configs:
     'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
 
-profile::base::time::ntpservers:
+profile::base::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
 
-profile::base::time::time_tz: "/usr/share/zoneinfo/America/Denver"
+profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::base::ssh::server_options::passwordauth: 'no'
 profile::base::ssh::server_options::permitrootlogin: 'no'
