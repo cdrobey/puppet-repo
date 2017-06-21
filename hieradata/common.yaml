@@ -35,7 +35,7 @@ profile::base::motd::content: |
   staff. If you're not sure if it's allowed, then DON'T DO IT.
   ===========================================================
                  Kernel: %{facts.kernel} %{facts.kernelversion}
-          System uptime: %{facts.uptime_days}
+                 Uptime: %{facts.uptime_days} Days
 
 profile::base::ssh::manage_firewall: true
 profile::base::ssh::password_authentication: 'no'
