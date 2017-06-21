@@ -10,9 +10,10 @@ class profile::base::ssh (
       action => accept,
   }
 
-class { 'ssh::server':
-  options => {
-    'PasswordAuthentication' => 'no',
-    'PermitRootLogin'        => 'no',
-  },
+  class { 'ssh::server':
+    options => {
+      'PasswordAuthentication' => 'no',
+      'PermitRootLogin'        => 'no',
+    }
+  }
 }
