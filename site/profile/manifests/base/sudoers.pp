@@ -12,6 +12,6 @@ class profile::base::sudoers (
     includedirsudoers   => $includedirsudoers,
   }
   class { 'sudo::conf':
-    'ensure' => present,
+    ensure => present,
   }
 }
