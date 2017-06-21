@@ -1,19 +1,20 @@
 # == Class: profile::base::ssh
 class profile::base::ssh (
-  $passwordauth,
-  $permitrootlogin,
+  $password_authentication,
+  $permit_root_login,
+  $permit_empty_passwords,
+  $manage_firewall,
 ) {
 
-  firewall { '100 allow ssh access':
-      dport  => '22',
-      proto  => tcp,
-      action => accept,
-  }
 
   class { 'ssh::server':
     options => {
-      'PasswordAuthentication' => $passwordauth,
-      'PermitRootLogin'        => $permitrootlogin,
+      sshd_password_authentication     => $password_authentication,
+      permit_root_login                => $permit_root_login,
+      sshd_config_permitemptypasswords => $permit_empty_passwords,
+      manage_firewall                   => $manage_firewall,
+
+
     }
   }
 }

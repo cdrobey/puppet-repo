@@ -7,7 +7,7 @@ mod "puppetlabs/concat", :latest
 mod "puppetlabs/ntp", :latest
 mod "puppetlabs/motd", :latest
 mod "puppetlabs/apt", :latest
-mod 'saz-ssh', :latest
+mod 'ghoneycutt-ssh', :latest
 mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
 mod "saz-sudo", :latest
