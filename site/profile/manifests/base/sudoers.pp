@@ -12,9 +12,9 @@ class profile::base::sudoers (
     includedirsudoers   => $includedirsudoers,
   }
 #  create_resources(sudo::conf, $configs)
-  each ($configs) | $name, $configs | {
+  each ($configs) | $name, $config | {
     sudo::conf { $name:
-      * => $configs
+      * => $config
     }
   }
 }
