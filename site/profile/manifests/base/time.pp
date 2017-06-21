@@ -2,7 +2,7 @@
 class profile::base::time (
   $time_tz,
   $time_ntp_servers,
-( {
+) {
 
   class { 'ntp':
     package_ensure => 'present',
