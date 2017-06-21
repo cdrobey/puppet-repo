@@ -22,7 +22,7 @@ profile::base::app::packages:
   - openssh
   - git
 
-profile::base::motd::message: "Fuck You"
+profile::base::motd::content: 'Here....'
 
 profile::base::sudoers::purge: 'false'
 profile::base::sudoers::config_file_replace: 'false'
