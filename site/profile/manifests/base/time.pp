@@ -9,8 +9,8 @@ class profile::base::time {
     servers        => $time_ntp_servers,
   }
 
-  file { '/etc/localtime':
-    ensure => link,
-    target => $time_tz,
-  }
+  #  file { '/etc/localtime':
+  #  ensure => link,
+  #  target => $time_tz,
+  #}
 }

@@ -8,7 +8,7 @@ class profile::base::app {
   if $facts['os']['family'] == 'Debian'{
     class { 'apt':
       update => {
-      frequency => update_frequency,
+      frequency => $update_frequency,
       },
     }
   }
