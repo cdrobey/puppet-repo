@@ -6,7 +6,7 @@ profile::base::app::packages:
   - python
   - curl
   - vim
-  - ssh
+  - openssh
 
 profile::base::motd::message: |
   ===========================================================
