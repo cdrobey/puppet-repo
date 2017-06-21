@@ -10,8 +10,8 @@ class profile::base::sudoers (
     purge               => $purge,
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
-    conf => {
-      'ensure' => $configs::ensure_packages,
-    }
+  }
+  class { 'ssh::conf':
+    'ensure' => $configs::ensure_packages,
   }
 }
