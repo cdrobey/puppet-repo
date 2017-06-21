@@ -7,6 +7,7 @@ profile::base::app::packages:
   - curl
   - vim
   - openssh
+  - git
 
 profile::base::motd::message: |
   ===========================================================
@@ -18,11 +19,11 @@ profile::base::motd::message: |
   The operating system is: %{::operatingsystem}
             The domain is: %{::domain}
 
-profile::base::sudoers::purge : 'false'
-profile::base::sudoers::config_file_replace : 'false'
-profile::base::sudoers::includedirsudoers : 'true'
+profile::base::sudoers::purge: 'false'
+profile::base::sudoers::config_file_replace: 'false'
+profile::base::sudoers::includedirsudoers: 'true'
 
-profile::base::sudoers::sudo::configs:
+profile::base::sudoers::conf:
   'deploy':
     'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
@@ -33,8 +34,8 @@ profile::base::time::ntp_servers:
 
 profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
-profile::base::ssh::server_options::passwordauth: 'no'
-profile::base::ssh::server_options::permitrootlogin: 'no'
+profile::base::ssh::passwordauth: 'no'
+profile::base::ssh::permitrootlogin: 'no'
 
 profile::base::accounts::user_defaults:
   shell: '/bin/bash'
