@@ -11,7 +11,7 @@ class profile::base::sudoers (
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
   }
-  class { 'ssh::conf':
+  class { 'sudo::conf':
     'ensure' => present,
   }
 }
