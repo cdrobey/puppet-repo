@@ -11,7 +11,5 @@ class profile::base::sudoers (
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
   }
-  class { 'sudo::conf':
-    content => $configs,
-  }
+  sudo::conf { $configs }
 }
