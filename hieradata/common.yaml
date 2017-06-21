@@ -28,14 +28,15 @@ profile::base::app::packages:
   - git
 
 profile::base::motd::content: |
-  =======================================================================================================
-  Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
-                      This node is under the control of Puppet %{facts.puppetversion}
-                              Kernel: %{facts.kernel} %{facts.kernelversion}
-                                        Ram: %{facts.memorysize}
-                                      Days Up: %{facts.uptime_days}
-  =======================================================================================================
-
+  ===========================================================
+          Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+  ===========================================================
+      The kernel is: %{facts.kernel} %{facts.kernelversion}
+  The system update: %{facts.uptime_days}
+  
 profile::base::ssh::manage_firewall: true
 profile::base::ssh::password_authentication: 'no'
 profile::base::ssh::permit_root_login: 'no'
