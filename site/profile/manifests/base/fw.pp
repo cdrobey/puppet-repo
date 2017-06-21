@@ -2,8 +2,8 @@
 class profile::base::fw {
 
   class { 'firewall:'}
-  include 'profile::base::fwpre'
-  include 'profile::base::fwpost'
+  class { 'profile::base::fwpre: '}
+  class { 'profile::base::fwpost: '}
   Firewall {
     before  => Class['profile::base::fwpost'],
     require => Class['profile::base::fwpre'],
