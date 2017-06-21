@@ -4,6 +4,9 @@ profile::base::app::update_frequency: 'daily'
 profile::base::app::packages:
   - mlocate
   - python
+  - curl
+  - vim
+  - ssh
 
 profile::base::motd::message: |
   ===========================================================
