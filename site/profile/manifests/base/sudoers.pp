@@ -11,6 +11,6 @@ class profile::base::sudoers (
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
   }
-  sudo::conf => { $configs::ensure => present,
-  }
+  create_resources(sudo::conf, $configs)
+
 }
