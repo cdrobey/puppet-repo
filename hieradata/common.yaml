@@ -1,4 +1,9 @@
 ---
+profile::base::accounts::user_defaults:
+  shell: '/bin/bash'
+  purge_ssh_keys: true
+  hushlogin: true
+
 profile::base::accounts::users:
   'deploy':
     ensure: present
@@ -24,6 +29,11 @@ profile::base::app::packages:
 
 profile::base::motd::content: 'Here....'
 
+profile::base::ssh::password_authentication: 'no'
+profile::base::ssh::permit_root_login: 'no'
+profile::base::ssh::permit_empty_passwords: 'no'
+profile::base::ssh::manage_firewall: 'true'
+
 profile::base::sudoers::purge: 'false'
 profile::base::sudoers::config_file_replace: 'false'
 profile::base::sudoers::includedirsudoers: 'true'
@@ -37,11 +47,3 @@ profile::base::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
 profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
-
-profile::base::ssh::passwordauth: 'no'
-profile::base::ssh::permitrootlogin: 'no'
-
-profile::base::accounts::user_defaults:
-  shell: '/bin/bash'
-  purge_ssh_keys: true
-  hushlogin: true
