@@ -30,8 +30,8 @@ profile::base::time::ntpservers:
 
 profile::base::time::time_tz: "/usr/share/timezone/xxx"
 
-profie::base::ssh::server_options::passwordauth: 'no'
-profie::base::ssh::server_options::permitrootlogin: 'no'
+profile::base::ssh::server_options::passwordauth: 'no'
+profile::base::ssh::server_options::permitrootlogin: 'no'
 
 accounts::user_defaults:
   shell: '/bin/bash'
