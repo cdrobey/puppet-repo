@@ -12,7 +12,6 @@ mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
 mod "saz-sudo", :latest
 mod 'vshn-gitlab', :latest
-mod 'puppetlabs-java', :latest
 mod 'puppet-archive', '0.4.8'
 mod 'darin-zypprepo', :latest
-mod 'rtyler-jenkins', :latest
+mod 'ULHPC-bash', :latest
