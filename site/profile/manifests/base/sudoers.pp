@@ -3,16 +3,13 @@ class profile::base::sudoers (
   $purge,
   $config_file_replace,
   $includedirsudoers,
-  $configs,
+  $conf,
 ) {
 
   class { 'sudo':
     purge               => $purge,
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
-  }
-
-  class { 'sudo::configs':
-    configs => $configs,
+    conf                => $conf,
   }
 }
