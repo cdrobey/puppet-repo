@@ -1,7 +1,7 @@
 # == Class: profile::base::fw
 class profile::base::fw {
 
-  class { 'firewall:'}
+  class { 'firewall:' }
   class { 'profile::base::fwpre:' }
   class { 'profile::base::fwpost:' }
 
