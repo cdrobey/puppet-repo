@@ -12,6 +12,6 @@ class profile::base::sudoers (
     includedirsudoers   => $includedirsudoers,
   }
   class { 'ssh::conf':
-    'ensure' => $configs::ensure_packages,
+    'ensure' => 'present',
   }
 }
