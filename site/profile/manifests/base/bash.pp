@@ -1,4 +1,6 @@
 #
 class profile::base::bash {
-  include bash
+  class { 'bash':
+    ensure => 'present'
+  }
 }
