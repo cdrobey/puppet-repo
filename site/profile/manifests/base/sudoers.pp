@@ -10,8 +10,6 @@ class profile::base::sudoers (
     purge               => $purge,
     config_file_replace => $config_file_replace,
     includedirsudoers   => $includedirsudoers,
-  }
-  class { 'sudo::configs':
-    configs_hash => $configs,
+    configs_hash        => $configs,
   }
 }
