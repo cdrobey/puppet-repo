@@ -1,47 +1,4 @@
 ---
-
-profile::base::app::update_frequency: 'daily'
-profile::base::app::packages:
-  - mlocate
-  - python
-  - curl
-  - vim
-  - openssh
-  - git
-
-profile::base::motd::message: |
-  ===========================================================
-          Welcome to %{::hostname}
-  Access  to  and  use of this server is  restricted to those
-  activities expressly permitted by the system administration
-  staff. If you're not sure if it's allowed, then DON'T DO IT.
-  ===========================================================
-  The operating system is: %{::operatingsystem}
-            The domain is: %{::domain}
-
-profile::base::sudoers::purge: 'false'
-profile::base::sudoers::config_file_replace: 'false'
-profile::base::sudoers::includedirsudoers: 'true'
-
-profile::base::sudoers::configs:
-  'deploy':
-    'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
-    'priority'  : 10
-
-profile::base::time::ntp_servers:
-  - fw.fr.lan
-  - us.pool.ntp.org
-
-profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
-
-profile::base::ssh::passwordauth: 'no'
-profile::base::ssh::permitrootlogin: 'no'
-
-profile::base::accounts::user_defaults:
-  shell: '/bin/bash'
-  purge_ssh_keys: true
-  hushlogin: true
-
 profile::base::accounts::users:
   'deploy':
     ensure: present
@@ -56,11 +13,40 @@ profile::base::accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
-profile::gitlab::external_url: 'http://git.fr.lan'
-profile::gitlab::gitlab_rails:
-  timezone: 'MST7MDT'
-  gitlab_email_enabled: false
-  gitlab_default_theme: 4
-  gitlab_email_display_name: 'FamilyRoberson Gitlab'
-profile::gitlab::sidekiq:
-  shutdown_timeout: 5
+profile::base::app::update_frequency: 'daily'
+profile::base::app::packages:
+  - mlocate
+  - python
+  - curl
+  - vim
+  - openssh
+  - git
+
+profile::base::motd::message: |
+  ===========================================================
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+  ===========================================================
+
+profile::base::sudoers::purge: 'false'
+profile::base::sudoers::config_file_replace: 'false'
+profile::base::sudoers::includedirsudoers: 'true'
+
+profile::base::sudoers::configs:
+  'deploy':
+    'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
+    'priority'  : 10
+
+profile::base::time::ntp_servers:
+  - fw.fr.lan
+  - us.pool.ntp.org
+profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
+profile::base::ssh::passwordauth: 'no'
+profile::base::ssh::permitrootlogin: 'no'
+
+profile::base::accounts::user_defaults:
+  shell: '/bin/bash'
+  purge_ssh_keys: true
+  hushlogin: true
