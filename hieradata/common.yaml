@@ -18,16 +18,6 @@ profile::base::accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
-<<<<<<< HEAD
-gitlab::external_url: 'http://lab-dC01.fr.lan'
-gitlab::gitlab_rails:
-  time_zone: 'MST7MDT'
-  gitlab_email_enabled: false
-  gitlab_default_theme: 4
-  gitlab_email_display_name: 'Gitlab'
-gitlab::sidekiq:
-  shutdown_timeout: 5
-=======
 profile::base::app::update_frequency: 'daily'
 profile::base::app::packages:
   - mlocate
@@ -67,4 +57,3 @@ profile::base::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
 profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
->>>>>>> development
