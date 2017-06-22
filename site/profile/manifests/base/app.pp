@@ -1,12 +1,15 @@
 # == Class: profile::base::apt
-class profile::base::app {
+class profile::base::app (
+  $update_frequency,
+  $packages,
+) {
 
-  if $::os['family'] == 'Ubuntu'{
-    class { '::apt':
+  if $facts['os']['family'] == 'Debian'{
+    class { 'apt':
       update => {
-      frequency => 'daily',
+        frequency => $update_frequency,
       },
     }
   }
-  ensure_packages(hiera_array('base_apps'), {'ensure' => 'present'})
+  ensure_packages($packages, {'ensure' => 'present'})
 }

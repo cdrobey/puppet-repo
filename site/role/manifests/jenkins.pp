@@ -1,7 +1,8 @@
-# == Class: role::base
+# == Class: role::jenkins
 #
-class role::base {
+class role::jenkins {
   # resources
   #All roles should include the base profile
   include profile::base
+  include profile::jenkins
 }

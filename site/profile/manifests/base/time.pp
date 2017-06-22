@@ -1,10 +1,16 @@
 # == Class: profile::base::time
-class profile::base::time {
-  class { '::ntp':
+class profile::base::time (
+  $timezone,
+  $ntp_servers,
+) {
+
+  class { 'ntp':
     package_ensure => 'present',
+    servers        => $ntp_servers,
   }
+
   file { '/etc/localtime':
     ensure => link,
-    target => '/usr/share/zoneinfo/US/Central',
+    target => $timezone,
   }
 }

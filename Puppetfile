@@ -7,8 +7,9 @@ mod "puppetlabs/concat", :latest
 mod "puppetlabs/ntp", :latest
 mod "puppetlabs/motd", :latest
 mod "puppetlabs/apt", :latest
-mod 'saz-ssh', :latest
-mod 'deric-accounts', :latest
 mod 'puppetlabs-firewall', :latest
+mod 'ghoneycutt-ssh', :latest
+mod 'deric-accounts', :latest
 mod "saz-sudo", :latest
-mod 'vshn-gitlab', :latest
+mod 'puppet-archive', '0.4.8'
+mod 'darin-zypprepo', :latest

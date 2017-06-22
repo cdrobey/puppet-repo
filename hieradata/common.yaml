@@ -1,36 +1,10 @@
 ---
-base_apps:
-  - mlocate
-
-profile::base::motd::message: |
-  ===========================================================
-          Welcome to %{::hostname}
-  Access  to  and  use of this server is  restricted to those
-  activities expressly permitted by the system administration
-  staff. If you're not sure if it's allowed, then DON'T DO IT.
-  ===========================================================
-  The operating system is: %{::operatingsystem}
-            The domain is: %{::domain}
-
-sudo::configs:
-  'deploy':
-    'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
-    'priority'  : 10
-
-ntp::servers:
-  - fw.fr.lan
-  - us.pool.ntp.org
-
-ssh::server_options:
-    PasswordAuthentication: 'no'
-    PermitRootLogin: 'no'
-
-accounts::user_defaults:
+profile::base::accounts::user_defaults:
   shell: '/bin/bash'
   purge_ssh_keys: true
   hushlogin: true
 
-accounts::users:
+profile::base::accounts::users:
   'deploy':
     ensure: present
     comment: "Default Account"
@@ -44,6 +18,7 @@ accounts::users:
   'root':
     pwhash: "$1$..j6I8ns$PJHsafnJtHgnnoQsOCNu7."
 
+<<<<<<< HEAD
 gitlab::external_url: 'http://lab-dC01.fr.lan'
 gitlab::gitlab_rails:
   time_zone: 'MST7MDT'
@@ -52,3 +27,44 @@ gitlab::gitlab_rails:
   gitlab_email_display_name: 'Gitlab'
 gitlab::sidekiq:
   shutdown_timeout: 5
+=======
+profile::base::app::update_frequency: 'daily'
+profile::base::app::packages:
+  - mlocate
+  - python
+  - curl
+  - vim
+  - openssh
+  - git
+
+profile::base::motd::content: |
+  ===========================================================
+          Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+  ===========================================================
+                 Kernel: %{facts.kernel} %{facts.kernelversion}
+                 Uptime: %{facts.uptime_days} Days
+
+profile::base::ssh::manage_firewall: true
+profile::base::ssh::password_authentication: 'no'
+profile::base::ssh::permit_root_login: 'no'
+profile::base::ssh::permit_empty_passwords: 'no'
+profile::base::ssh::banner: '/etc/motd'
+
+
+profile::base::sudoers::purge: 'false'
+profile::base::sudoers::config_file_replace: 'false'
+profile::base::sudoers::includedirsudoers: 'true'
+
+profile::base::sudoers::configs:
+  'deploy':
+    'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
+    'priority'  : 10
+
+profile::base::time::ntp_servers:
+  - fw.fr.lan
+  - us.pool.ntp.org
+profile::base::time::timezone: "/usr/share/zoneinfo/America/Denver"
+>>>>>>> development
