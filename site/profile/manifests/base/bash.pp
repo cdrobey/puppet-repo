@@ -1,6 +1,10 @@
 #
 class profile::base::bash {
-  class { 'bash':
-    ensure => 'present'
+  include bash
+
+  bash::setup{ '/home/deploy':
+      ensure => 'present',
+      user   => 'deploy',
+      group  => 'deploy',
   }
 }
