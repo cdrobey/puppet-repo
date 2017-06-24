@@ -1,5 +1,5 @@
 # == Class: profile::docker
-class profile::base::docker
+class profile::docker
 {
   include 'docker'
 }
