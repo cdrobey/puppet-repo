@@ -17,4 +17,4 @@ mod "saz-sudo", :latest
 mod 'puppet-archive', '0.4.8'
 mod 'darin-zypprepo', :latest
 mod 'puppetlabs-docker_platform', :latest
-mod 'garethr-docker, '5.3.0'
+mod 'garethr-docker, :latest
