@@ -6,6 +6,5 @@ class profile::docker
   docker::image { 'jacobalberty/unifi':
     ensure    => 'present',
     image_tag => '5.5.1u'
-    requires   => Class['docker'],
   }
 }
