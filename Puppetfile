@@ -13,7 +13,7 @@ mod 'ghoneycutt-ssh', :latest
 mod 'ghoneycutt-common', :latest
 mod 'deric-accounts', :latest
 mod "saz-sudo", :latest
-mod 'puppet-archive', '0.4.8'
+mod 'deric-gpasswd', '0.3.2'
 mod 'darin-zypprepo', :latest
 mod 'puppetlabs-docker_platform', :latest
 mod 'garethr-docker', :latest
