@@ -13,13 +13,4 @@ class profile::unifi
     action =>  accept,
   }
 
-  file { '/unifi':
-    ensure => directory,
-  }
-  file { '/unifi/log':
-    ensure  => directory,
-  }
-  file { '/unifi/lib':
-    ensure => directory,
-  }
 }
