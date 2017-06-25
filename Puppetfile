@@ -17,3 +17,8 @@ mod 'puppet-archive', '0.4.8'
 mod 'darin-zypprepo', :latest
 mod 'puppetlabs-docker_platform', :latest
 mod 'garethr-docker', :latest
+mod 'puppetlabs/apt', '3.0.0'
+mod 'stahnma/epel', :latest
+
+
+
