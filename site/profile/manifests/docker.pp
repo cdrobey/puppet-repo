@@ -10,17 +10,14 @@ class profile::docker
       group  => 'root',
   }
 
-  file { 'unifi_main':
+  file { '/unifi':
     ensure => directory,
-    target => '/unifi',
   }
-  file { 'unifi_log':
+  file { '/unifi/log':
     ensure  => directory,
-    target  => '/unifi/log',
   }
-  file { 'unifi_lib':
+  file { '/unifi/lib':
     ensure => directory,
-    target => '/unifi/lib',
   }
 
   docker::image { 'jacobalberty/unifi':
