@@ -18,5 +18,6 @@ mod 'darin-zypprepo', :latest
 mod 'puppetlabs-docker_platform', :latest
 mod 'garethr-docker', :latest
 mod 'puppetlabs/apt', '3.0.0'
+mod 'andschwa-unattended_upgrades', :latest
 mod 'stahnma/epel', :latest
 mod 'jmkeyes-unifi', :latest

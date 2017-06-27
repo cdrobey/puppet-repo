@@ -1,6 +1,7 @@
 # == Class: profile::base::apt
 class profile::base::app (
   $update_frequency,
+  $upgrade_frequency,
   $packages,
 ) {
 
@@ -9,6 +10,9 @@ class profile::base::app (
       update => {
         frequency => $update_frequency,
       },
+    }
+    class {'unattended_upgrades':
+      period => '$upgrade_frequency',
     }
   }
   ensure_packages($packages, {'ensure' => 'present'})
