@@ -25,3 +25,4 @@ Code Manager Setup:  https://docs.puppet.com/pe/latest/cmgmt_managing_code.html
 
 Github (Example Repository): https://github.com/puppetlabs/control-repo
 
+@cdrobey
