@@ -24,7 +24,6 @@ profile::base::app::packages:
   - python
   - curl
   - vim
-  - openssh
   - git
 
 profile::base::motd::content: |
