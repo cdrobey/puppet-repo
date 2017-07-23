@@ -1,5 +1,5 @@
-# == Class: profile::base::time
-class profile::base::time (
+# == Class: profile::linux::time
+class profile::linux::time (
   $timezone,
   $ntp_servers,
 ) {

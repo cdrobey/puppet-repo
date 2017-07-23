@@ -1,5 +1,5 @@
-# == Class: profile::base::sudoers
-class profile::base::sudoers (
+# == Class: profile::linux::sudoers
+class profile::linux::sudoers (
   $purge,
   $config_file_replace,
   $configs,

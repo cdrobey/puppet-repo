@@ -1,5 +1,5 @@
-# == Class: profile::base::ssh
-class profile::base::ssh (
+# == Class: profile::linux::ssh
+class profile::linux::ssh (
   $password_authentication,
   $permit_root_login,
   $permit_empty_passwords,

@@ -1,5 +1,5 @@
-# == Class: profile::base::accounts
-class profile::base::accounts (
+# == Class: profile::linux::accounts
+class profile::linux::accounts (
   $users,
   $user_defaults,
   ) {

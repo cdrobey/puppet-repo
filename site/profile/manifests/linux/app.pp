@@ -1,5 +1,5 @@
-# == Class: profile::base::apt
-class profile::base::app (
+# == Class: profile::linux::apt
+class profile::linux::app (
   $update_frequency,
   $upgrade_frequency,
   $packages,

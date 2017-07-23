@@ -1,5 +1,5 @@
-# == Class: profile::base::motd
-class profile::base::motd (
+# == Class: profile::linux::motd
+class profile::linux::motd (
   $content,
 ) {
   # Set Message of the Day

@@ -1,5 +1,5 @@
-# == Class: profile::base::fwpre
-class profile::base::fwpre {
+# == Class: profile::linux::fwpre
+class profile::linux::fwpre {
   Firewall {
     require => undef,
   }
