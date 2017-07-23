@@ -21,3 +21,6 @@ mod 'puppetlabs/apt', '3.0.0'
 mod 'andschwa-unattended_upgrades', :latest
 mod 'stahnma/epel', :latest
 mod 'jmkeyes-unifi', :latest
+mod 'puppetlabs/registry', :latest
+mod 'puppetlabs-chocolatey', :latest
+mod 'puppetlabs-powershell', '2.1.1'

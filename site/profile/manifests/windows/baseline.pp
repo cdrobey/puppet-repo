@@ -1,3 +1,4 @@
+# == Class: profile::windows::baseline
 class profile::windows::baseline {
 
   # CORP PACKAGES
@@ -5,7 +6,7 @@ class profile::windows::baseline {
     ensure   => installed,
     provider => chocolatey,
   }
-  
+
   package { 'notepadplusplus': }
   package { '7zip': }
   package { 'git': }
@@ -24,8 +25,8 @@ class profile::windows::baseline {
 
   # CUSTOM USERS
   user { 'Puppet Demo':
-    ensure   => present,
-    groups   => ['Administrators'],
+    ensure => present,
+    groups => ['Administrators'],
   }
 
   # CUSTOM APP REG KEYS
@@ -40,8 +41,8 @@ class profile::windows::baseline {
   }
 
   registry_value { 'HKEY_LOCAL_MACHINE\Software\Demonstration\value2':
-    type         => dword,
-    data         => '0xFFFFFFFF',
+    type => dword,
+    data => '0xFFFFFFFF',
   }
 
 }
