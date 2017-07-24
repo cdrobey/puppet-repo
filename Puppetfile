@@ -26,3 +26,6 @@ mod 'puppetlabs-chocolatey', :latest
 mod 'puppetlabs-powershell', '2.1.1'
 mod 'puppet-windows_firewall', '1.1.0'
 mod 'puppet-dotnet', '1.1.0'
+mod 'liamjbennett-win_facts', '0.0.2'
+mod 'puppet-download_file', '2.1.0'
+mod 'puppetlabs-reboot', '1.2.1'
