@@ -9,7 +9,7 @@ class profile::windows::baseline {
 
   package { 'notepadplusplus': }
   package { '7zip': }
-  package { 'git': }
+#  package { 'git': }
 
   # CUSTOM APPLICATION FIREWALL RULE
   windows_firewall::exception { 'TSErule':
