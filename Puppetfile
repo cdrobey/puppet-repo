@@ -25,3 +25,4 @@ mod 'puppetlabs/registry', :latest
 mod 'puppetlabs-chocolatey', :latest
 mod 'puppetlabs-powershell', '2.1.1'
 mod 'puppet-windows_firewall', '1.1.0'
+mod 'puppet-dotnet', '1.1.0'
