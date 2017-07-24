@@ -25,26 +25,6 @@ class profile::windows::dotnet (
   # of .NET is present or absent (as specified by the user).
   [$version].flatten.each |$ver| {
 
-    # For some versions we have a local copy of the package. Use a local copy
-    # for those versions. For any other version, try to download the package
-    # from Microsoft.
-    case $ver {
-      '4.0': {
-        $dotnetexe   = $dotnet::params::version[$ver]['exe']
-        $package_dir = 'C:/Windows/Temp'
-        remote_file { "C:/Windows/Temp/${dotnetexe}":
-          ensure => present,
-          source => "http://${::puppet_server}:81/dotnetcms/${dotnetexe}",
-          before => Dotnet[".NET Framework ${ver}"],
-        }
-      }
-      default: {
-        # If the installer isn't in C:/Windows/Temp the dotnet module will
-        # automatically try to download it from Microsoft.
-        $package_dir = undef
-      }
-    }
-
     dotnet { ".NET Framework ${ver}":
       ensure      => $ensure,
       version     => $ver,
