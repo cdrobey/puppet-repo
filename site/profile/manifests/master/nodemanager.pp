@@ -23,9 +23,9 @@ class profile::master::nodemanager 'name' {
     },
   }
 
-  node_group { 'Dev Linux':
+  node_group { 'Prod Linux':
     ensure               => present,
-    environment          => 'development',
+    environment          => 'production',
     override_environment => false,
     parent               => 'All Nodes',
     rule                 => ['and',
@@ -37,9 +37,9 @@ class profile::master::nodemanager 'name' {
     },
   }
 
-  node_group { 'Dev Windows':
+  node_group { 'Prod Windows':
     ensure               => present,
-    environment          => 'development',
+    environment          => 'production',
     override_environment => false,
     parent               => 'All Nodes',
     rule                 => ['and', ['=', ['fact', 'kernel'], 'windows']],
