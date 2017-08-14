@@ -5,9 +5,8 @@ class profile::master::nodemanager {
     provider => puppet_gem,
   }
 
-  package { 'puppetclassify':
-    ensure   => present,
-    provider => puppet_gem,
+  Node_group {
+    require => Package['puppetclassify'],
   }
 
   node_group { 'PE Master':
