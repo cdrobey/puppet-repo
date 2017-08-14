@@ -5,5 +5,5 @@ class profile::master {
     proto  => tcp,
     action =>  accept,
   }
-  include 'profile::nodemanager'
+  include 'profile::master::nodemanager'
 }
