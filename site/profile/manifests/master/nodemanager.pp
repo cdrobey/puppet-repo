@@ -22,6 +22,12 @@ class profile::master::nodemanager {
       'pe_repo::platform::el_7_x86_64'        => {},
       'pe_repo::platform::ubuntu_1404_amd64'  => {},
       'pe_repo::platform::windows_x86_64'     => {},
+      'puppet_enterprise::profile::master'               => {
+        'code_manager_auto_configure' => true,
+        'r10k_remote'                 => "https://github.com/cdrobey/puppet-repo.git",
+        'r10k_private_key'            => '/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa' },
+      'puppet_enterprise::profile::master::mcollective'  => {},
+      'puppet_enterprise::profile::mcollective::peadmin' => {},
     },
   }
 
