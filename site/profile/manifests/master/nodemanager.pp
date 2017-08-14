@@ -9,7 +9,7 @@ class profile::master::nodemanager {
     ensure               => present,
     environment          => 'production',
     override_environment => false,
-    parent               => 'PE Master',
+    parent               => 'PE Infrastructure',
     rule                 => ['or', ['=', 'name', $::clientcert]],
     classes              => {
       'pe_repo'                                          => {},
