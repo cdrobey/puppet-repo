@@ -1,4 +1,5 @@
-class profile::master::nodemanager 'name' {
+# == Class: profile::master::nodemanager
+class profile::master::nodemanager {
   package { 'puppetclassify':
     ensure   => present,
     provider => puppet_gem,
