@@ -1,4 +1,4 @@
-class profile::master::node_manager {
+class profile::master::nodemanager {
 
   package { 'puppetclassify':
     ensure   => present,
