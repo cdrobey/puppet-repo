@@ -1,15 +1,6 @@
 # Class: profile::master::nodemanager
 class profile::master::nodemanager {
 
-  package { 'puppetclassify':
-    ensure   => present,
-    provider => puppet_gem,
-  }
-
-  Node_group {
-    require => Package['puppetclassify'],
-  }
-
   # GENERAL PURPOSE
   # Node Groups ready to go out of the box. Not tied to any specific demo, but
   # potentially useful for demonstrating the Node Manager in general.
