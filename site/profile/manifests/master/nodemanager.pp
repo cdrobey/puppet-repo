@@ -26,4 +26,15 @@ class profile::master::nodemanager {
       'role::master'                                     => {},
     },
   }
+
+  node_group { 'Linux':
+    ensure               => present,
+    environment          => 'production',
+    override_environment => false,
+    parent               => 'All Servers',
+    rule                 => ['or', ['=', 'name', $::clientcert]],
+    classes              => {
+      'role::linux' => {},
+    },
+  }
 }
