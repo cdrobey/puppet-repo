@@ -1,5 +1,5 @@
+# == Class: profile::master::node_manager
 class profile::master::node_manager {
-
   package { 'puppetclassify':
     ensure   => present,
     provider => puppet_gem,
@@ -20,8 +20,6 @@ class profile::master::node_manager {
     parent               => 'PE Infrastructure',
     rule                 => ['or', ['=', 'name', $::clientcert]],
     classes              => {
-      'ldap'                                             => {},
-      'ntp'                                              => {},
       'pe_repo'                                          => {},
       'pe_repo::platform::el_6_x86_64'                   => {},
       'pe_repo::platform::el_7_x86_64'                   => {},
@@ -29,11 +27,10 @@ class profile::master::node_manager {
       'pe_repo::platform::windows_x86_64'                => {},
       'puppet_enterprise::profile::master'               => {
         'code_manager_auto_configure' => true,
-        'r10k_remote'                 => "git@${gitlab_server}:puppet/control-repo.git",
+        'r10k_remote'                 => 'https://github.com/cdrobey/puppet-repo',
         'r10k_private_key'            => '/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa' },
       'puppet_enterprise::profile::master::mcollective'  => {},
       'puppet_enterprise::profile::mcollective::peadmin' => {},
-      'role::master'                                     => {},
-      'profile::vim'                                     => { 'colorscheme' => 'elflord' },
     },
   }
+}
