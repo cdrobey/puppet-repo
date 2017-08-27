@@ -1,8 +1,8 @@
 ---
 profile::windows::accounts::users:
   'admin':
-    ensure: present
-    comment: "Test Account"
+    ensure: absent
+    comment: "Admin Account"
     managehome: false
     groups:
       - Administrators
