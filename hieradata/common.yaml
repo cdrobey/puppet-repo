@@ -1,5 +1,5 @@
 ---
-profile::windows::accounts:
+profile::windows::accounts::users:
   'local-test':
     ensure: present
     comment: "Test Account"
