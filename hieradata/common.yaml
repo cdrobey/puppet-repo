@@ -1,9 +1,9 @@
 ---
 profile::windows::accounts::users:
-  'local-test':
+  'local-admin':
     ensure: absent
     comment: "Test Account"
-    managehome: true
+    managehome: false
     groups:
       - Administrators
     password: "T3st!Passw0rd"
