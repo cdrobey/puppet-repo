@@ -3,7 +3,7 @@ class profile::windows::accounts (
   $users,
 ) {
   each ($users) | $name, $user | {
-    notify {"array element : \"${user}\"": }
+    #notify {"array element : \"${user}\"": }
 
     user { $name:
       ensure     => present,
