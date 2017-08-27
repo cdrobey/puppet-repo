@@ -1,7 +1,6 @@
-# == Class: role::base
+# == Class: role::windows
 class role::windows {
-  # resources
-  #All roles should include the base profile
+  include profile::windows::accounts
   include profile::windows::dotnet
   include profile::windows::chocolatey
   include profile::windows::baseline

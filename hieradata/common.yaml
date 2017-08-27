@@ -1,4 +1,12 @@
 ---
+profile::windows::accounts:
+  'local-test':
+    ensure: present
+    comment: "Test Account"
+    groups:
+      - 'Administrators'
+    password: "T3st!Passw0rd"
+
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
   purge_ssh_keys: true

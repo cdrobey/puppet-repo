@@ -13,8 +13,4 @@ class profile::windows::baseline {
 
 
   # CUSTOM USERS
-  user { 'local-admin':
-    ensure => present,
-    groups => ['Administrators'],
-  }
 }
