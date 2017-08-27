@@ -5,12 +5,12 @@ class profile::windows::accounts (
   each ($users) | $name, $user | {
     notify {"array element : \"${user}\"": }
 
-  #  user { $user:
-  #    ensure     => present,
-  #    groups     => $user['group'],
-  #    comment    => $user['comment'],
-  #    managehome => $user['managehome'],
-  #    password   => $user['password'],
-  #  }
+    user { $name:
+      ensure     => present,
+      groups     => $user['group'],
+      comment    => $user['comment'],
+      managehome => $user['managehome'],
+      password   => $user['password'],
+    }
   }
 }
