@@ -12,7 +12,7 @@ profile::windows::app::dotnet:
   ensure: present
   version: "4.0"
   reboot: yes
-profile::windows::app::packages
+profile::windows::app::packages:
   - 7zip
   - git
 
