@@ -1,6 +1,6 @@
 ---
 profile::windows::accounts::users:
-  'local-admin':
+  'admin':
     ensure: absent
     comment: "Test Account"
     managehome: false
