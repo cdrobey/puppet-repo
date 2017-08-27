@@ -4,7 +4,7 @@ profile::windows::accounts::users:
     ensure: present
     comment: "Test Account"
     groups:
-      - 'Administrators'
+      - Administrators"
     password: "T3st!Passw0rd"
 
 profile::linux::accounts::user_defaults:
