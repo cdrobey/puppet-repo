@@ -1,7 +1,8 @@
-# == Class: profile::windows::baseline
-class profile::windows::baseline {
+# == Class: profile::windows::app
+class profile::windows::app {
+  include profile::windows::app:dotnet
+  include profile::windows::app:chocolately
 
-  # CORP PACKAGES
   Package {
     ensure   => installed,
     provider => chocolatey,
