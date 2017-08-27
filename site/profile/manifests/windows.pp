@@ -1,4 +1,4 @@
 # == Class: profile::windows
 class profile::windows {
-  include 'profile::windows::baseline'
+  include profile::windows::baseline
 }

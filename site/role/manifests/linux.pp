@@ -3,5 +3,5 @@
 class role::linux {
   # resources
   #All roles should include the base profile
-  include profile::base
+  include profile::linux
 }
