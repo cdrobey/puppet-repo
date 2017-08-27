@@ -1,7 +1,7 @@
 ---
 profile::windows::accounts::users:
   'admin':
-    ensure: absent
+    ensure: present
     comment: "Admin Account"
     managehome: false
     groups:
