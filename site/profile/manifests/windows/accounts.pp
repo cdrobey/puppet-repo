@@ -4,8 +4,8 @@ class profile::windows::accounts (
 ) {
   each ($users) | $name, $user | {
     user { $name:
-      ensure     => present,
-      groups     => $user['group'],
+      ensure     => $user['ensure'],
+      groups     => $user['groups'],
       comment    => $user['comment'],
       managehome => $user['managehome'],
       password   => $user['password'],
