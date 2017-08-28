@@ -11,7 +11,7 @@ class profile::windows::app (
   #}
   each ($packages) | $name | {
     package { $name: }
-      ensure => present,
+      ensure => 'present',
     }
   }
 }
