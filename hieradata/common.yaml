@@ -17,7 +17,6 @@ profile::windows::app::packages:
   - adobereader
   - googlechrome
   - vmwarevsphereclient
-  - rvtools
   - vmware-tools
 
 profile::linux::accounts::user_defaults:
