@@ -4,23 +4,7 @@ class profile::windows::app (
   $reboot,
   $packages,
 ) {
-  include dotnet
   include chocolatey
-
-  if $reboot {
-    reboot { 'Finalize .NET installation': }
-    $notify = Reboot['Finalize .NET installation']
-  }
-  else {
-    $notify = undef
-  }
-
-  [$version].flatten.each |$ver| {
-    dotnet { ".NET Framework ${ver}":
-      ensure  => present,
-      version => $ver,
-    }
-  }
 
   Package { provider => chocolatey, }
 
