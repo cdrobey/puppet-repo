@@ -8,9 +8,8 @@ profile::windows::accounts::users:
       - Administrators
     password: "T3st!Passw0rd"
 
-profile::windows::app::dotnet::ensure: present
-profile::windows::app::dotnet::version: "4.0"
-profile::windows::app::dotnet::reboot: yes
+profile::windows::app::version: "4.0"
+profile::windows::app::reboot: yes
 profile::windows::app::packages:
   '7zip':
     ensure: installed
