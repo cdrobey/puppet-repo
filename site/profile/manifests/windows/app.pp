@@ -5,11 +5,9 @@ class profile::windows::app (
   include profile::windows::app::dotnet
   include profile::windows::app::chocolately
 
-  #Package {
-  #  ensure   => installed,
-  #  provider => chocolatey,
-  #}
-  #each ($packages) | $name, $package | {
-  #  package { $package }
-  #}
+  each ($packages) | $name, $package | {
+    package { $package:
+      ensure          => $name['ensure'],
+      install_options => $name['install_options']}
+  }
 }
