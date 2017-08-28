@@ -2,13 +2,14 @@
 class profile::windows::app (
   $packages,
 ) {
-  include profile::windows::app::dotnet
-  include profile::windows::app::chocolately
+  #include profile::windows::app::dotnet
+  #include profile::windows::app::chocolately
 
+  Package { provider => chocolatey, }
+  include chocolatey
   package { '7zip':
-      ensure => present,
+    ensure => present,
   }
-
   #each ($packages) | $name, $package | {
   #  package { $name:
   #    ensure          => $package['ensure'],
