@@ -5,10 +5,10 @@ class profile::windows::app (
   include profile::windows::app::dotnet
   include profile::windows::app::chocolately
 
-  ($packages) | $name, $package | {
+  each ($packages) | $name, $package | {
     package { $name:
       ensure          => $package['ensure'],
-      install_options => $package['install_options']
+      install_options => $package['install_options'],
     }
   }
 }
