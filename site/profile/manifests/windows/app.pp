@@ -9,8 +9,8 @@ class profile::windows::app (
   #package { '7zip':
   #  ensure => present,
   #}
-  each ($packages) | $name | {
-    package { $name: }
+  each ($packages) | $package | {
+    package { $package:
       ensure => installed,
     }
   }
