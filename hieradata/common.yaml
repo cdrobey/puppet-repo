@@ -12,10 +12,10 @@ profile::windows::app::dotnet::ensure: present
 profile::windows::app::dotnet::version: "4.0"
 profile::windows::app::dotnet::reboot: yes
 profile::windows::app::packages:
-  - '7zip':
+  '7zip':
     ensure: latest
     install_options:
-  - 'git':
+  'git':
     ensure: latest
     install_options:
 
