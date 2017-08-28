@@ -10,23 +10,14 @@ profile::windows::accounts::users:
 
 profile::windows::app::packages:
   '7zip':
-    ensure: installed
   'git':
-    ensure: installed
   'putty':
-    ensure: installed
   'winscp':
-    ensure: installed
   'flashplayerplugin':
-    ensure: installed
   'adobereader':
-    ensure: installed
   'googlechrome':
-    ensure: installed
   'vmwarevsphereclient':
-    ensure: installed
   'rvtools':
-    ensure: installed
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'

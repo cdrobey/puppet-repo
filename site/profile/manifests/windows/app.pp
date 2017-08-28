@@ -6,12 +6,12 @@ class profile::windows::app (
 
   Package { provider => chocolatey, }
 
-  package { '7zip':
-    ensure => present,
-  }
-  #each ($packages) | $name, $package | {
-  #  package { $name:
-  #    ensure => $package['ensure'],
-  #  }
+  #package { '7zip':
+  #  ensure => present,
   #}
+  each ($packages) | $name | {
+    package { $name: }
+      ensure => present,
+    }
+  }
 }
