@@ -1,20 +1,35 @@
 # == Class: profile::windows::app
 class profile::windows::app (
+  $version,
+  $reboot,
   $packages,
 ) {
-  #include profile::windows::app::dotnet
-  #include profile::windows::app::chocolatey
+  include dotnet
+  include chocolatey
+
+  if $reboot {
+    reboot { 'Finalize .NET installation': }
+    $notify = Reboot['Finalize .NET installation']
+  }
+  else {
+    $notify = undef
+  }
+
+  [$version].flatten.each |$ver| {
+    dotnet { ".NET Framework ${ver}":
+      ensure  => present,
+      version => $ver,
+    }
+  }
 
   Package { provider => chocolatey, }
-  include chocolatey
+
   package { '7zip':
     ensure => present,
   }
   #each ($packages) | $name, $package | {
   #  package { $name:
-  #    ensure          => $package['ensure'],
-  #    install_options => $package['install_options'],
-  #    source          => "https://chocolatey.org/packages",
+  #    ensure => $package['ensure'],
   #  }
   #}
 }
