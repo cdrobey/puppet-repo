@@ -6,8 +6,8 @@ class profile::windows::app (
   include profile::windows::app::chocolately
 
   each ($packages) | $name, $package | {
-    package { $package:
-      ensure          => $name['ensure'],
-      install_options => $name['install_options']}
+    package { $name:
+      ensure          => $package['ensure'],
+      install_options => $package['install_options']}
   }
 }
