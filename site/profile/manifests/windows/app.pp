@@ -3,7 +3,7 @@ class profile::windows::app (
   $packages,
 ) {
   #include profile::windows::app::dotnet
-  #include profile::windows::app::chocolately
+  #include profile::windows::app::chocolatey
 
   Package { provider => chocolatey, }
   include chocolatey

@@ -14,10 +14,22 @@ profile::windows::app::dotnet::reboot: yes
 profile::windows::app::packages:
   '7zip':
     ensure: installed
-    install_options: undef
   'git':
     ensure: installed
-    install_options: undef
+  'putty':
+    ensure: installed
+  'winscp':
+    ensure: installed
+  'flashplayerplugin':
+    ensure: installed
+  'adobereader':
+    ensure: installed
+  'googlechrome':
+    ensure: installed
+  'vmwarevsphereclient':
+    ensure: installed
+  'rvtools':
+    ensure: installed
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
