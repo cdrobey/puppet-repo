@@ -1,7 +1,5 @@
 # == Class: profile::windows::app
 class profile::windows::app (
-  $version,
-  $reboot,
   $packages,
 ) {
   include chocolatey
