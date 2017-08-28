@@ -9,6 +9,7 @@ class profile::windows::app (
     package { $name:
       ensure          => $package['ensure'],
       install_options => $package['install_options'],
+      source          => "https://chocolatey.org/packages",
     }
   }
 }

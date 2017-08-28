@@ -4,9 +4,6 @@ class profile::windows::app::dotnet (
   String  $version,
   Boolean $reboot,
 ) {
-
-  #  include dotnet::params
-
     if $reboot {
       reboot { 'Finalize .NET installation': }
       $notify = Reboot['Finalize .NET installation']
