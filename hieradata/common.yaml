@@ -9,15 +9,15 @@ profile::windows::accounts::users:
     password: "T3st!Passw0rd"
 
 profile::windows::app::packages:
-  '7zip':
-  'git':
-  'putty':
-  'winscp':
-  'flashplayerplugin':
-  'adobereader':
-  'googlechrome':
-  'vmwarevsphereclient':
-  'rvtools':
+  - 7zip
+  - git
+  - putty
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - rvtools
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
