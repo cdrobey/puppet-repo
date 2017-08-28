@@ -14,10 +14,10 @@ profile::windows::app::dotnet::reboot: yes
 profile::windows::app::packages:
   '7zip':
     ensure: latest
-    install_options:
+    install_options: undef
   'git':
     ensure: latest
-    install_options:
+    install_options: undef
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
