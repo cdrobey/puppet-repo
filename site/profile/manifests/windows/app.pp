@@ -6,7 +6,9 @@ class profile::windows::app (
   include profile::windows::app::chocolately
 
 
-  notify { $packages }
+  notify { "Answer is: ${packages}" }
+
+
   # ($packages) | $name, $package | {
   #  package { $name:
   #    ensure          => $package['ensure'],
