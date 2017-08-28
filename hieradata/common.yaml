@@ -13,10 +13,10 @@ profile::windows::app::dotnet::version: "4.0"
 profile::windows::app::dotnet::reboot: yes
 profile::windows::app::packages:
   '7zip':
-    ensure: latest
+    ensure: installed
     install_options: undef
   'git':
-    ensure: latest
+    ensure: installed
     install_options: undef
 
 profile::linux::accounts::user_defaults:
