@@ -18,6 +18,7 @@ profile::windows::app::packages:
   - googlechrome
   - vmwarevsphereclient
   - rvtools
+  - vmware-tools
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'

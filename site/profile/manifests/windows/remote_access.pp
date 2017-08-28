@@ -4,6 +4,5 @@ class profile::windows::remote_access {
 
   local_security_policy { 'Allow log on through Remote Desktop Services':
     ensure       => present,
-    policy_value => '1',
   }
 }
