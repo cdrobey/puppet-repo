@@ -15,5 +15,5 @@ class profile::windows::app (
   #    install_options => $package['install_options'],
   #    source          => "https://chocolatey.org/packages",
   #  }
-  }
+  #}
 }
