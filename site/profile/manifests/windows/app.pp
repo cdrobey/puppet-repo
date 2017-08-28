@@ -9,7 +9,7 @@ class profile::windows::app (
     ensure   => installed,
     provider => chocolatey,
   }
-  each ($packages) | $name, $package | {
-    package { $package }
-  }
+  #each ($packages) | $name, $package | {
+  #  package { $package }
+  #}
 }
