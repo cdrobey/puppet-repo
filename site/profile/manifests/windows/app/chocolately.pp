@@ -2,10 +2,5 @@
 class profile::windows::app::chocolately {
   include chocolatey
 
-  case $facts[operatingsystem] {
-    'windows': {
-      Package { provider => chocolatey, }
-    }
-    default: {}
-  }
+  Package { provider => chocolatey, }
 }
