@@ -19,6 +19,13 @@ profile::windows::app::packages:
   - vmwarevsphereclient
   - vmware-tools
 
+profile::windows::time::ntp_servers:
+  - fw.fr.lan
+  - us.pool.ntp.org
+
+profile::windows::time::ntp_servers: "Central Time Zone"
+
+
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
   purge_ssh_keys: true
