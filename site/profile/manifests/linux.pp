@@ -2,7 +2,7 @@
 class profile::linux {
   include 'profile::linux::accounts'
   include 'profile::linux::app'
-  include 'profile::linux::fw'
+  include 'profile::linux::security'
   include 'profile::linux::motd'
   include 'profile::linux::ssh'
   include 'profile::linux::sudoers'

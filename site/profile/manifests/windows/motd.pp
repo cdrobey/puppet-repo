@@ -1,6 +1,6 @@
-# == Class: profile::windows::banner
-class profile::windows::banner (
-  $message,
+# == Class: profile::windows::motd
+class profile::windows::motd (
+  $content,
 ) {
   registry_value { '32:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\policies\system\legalnoticecaption':
     ensure => present,
@@ -11,6 +11,6 @@ class profile::windows::banner (
   registry_value { '32:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\policies\system\legalnoticetext':
     ensure => present,
     type   => string,
-    data   => $message,
+    data   => $content,
   }
 }

@@ -10,20 +10,20 @@ class profile::windows::app (
   }
 
   # Static packages with Reboot
-  reboot { 'dsc_reboot':
+  reboot { 'package_reboot':
     when => 'pending',
   }
   package { 'dotnet4.5':
-    notify => Reboot['dsc_reboot']
+    notify => Reboot['package_reboot']
   }
   package { 'powershell':
-    notify => Reboot['dsc_reboot']
+    notify => Reboot['package_reboot']
   }
   package { 'powershell':
-    notify => Reboot['dsc_reboot']
+    notify => Reboot['package_reboot']
   }
 
-  # Dynamic installed packages
+  # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {
     package { $package: }
   }
