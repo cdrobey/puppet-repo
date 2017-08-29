@@ -1,7 +1,4 @@
-# == Class: role::base
-#
+# == Class: role::linux
 class role::linux {
-  # resources
-  #All roles should include the base profile
   include profile::linux
 }

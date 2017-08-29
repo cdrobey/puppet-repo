@@ -17,8 +17,6 @@ profile::windows::app::packages:
   - adobereader
   - googlechrome
   - vmwarevsphereclient
-  - vmware-tools
-  - powershell
 
 profile::windows::time::ntp_servers:
   - fw.fr.lan
