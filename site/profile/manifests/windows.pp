@@ -2,6 +2,7 @@
 class profile::windows {
   include profile::windows::accounts
   include profile::windows::app
-  include profile::windows::remote_access
+  include profile::windows::motd
+  include profile::windows::rdp
   include profile::windows::time
 }
