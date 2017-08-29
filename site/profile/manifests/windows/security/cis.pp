@@ -1,4 +1,4 @@
-# == Class: profile::windows::security::ci
+# == Class: profile::windows::security::cis
 class profile::windows::security::cis {
 
   # CIS Microsoft Windows Server 2012 R2 v2.2.0 04-28-2016

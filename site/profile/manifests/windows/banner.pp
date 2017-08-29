@@ -1,4 +1,4 @@
-# == Class: profile::windows::accounts
+# == Class: profile::windows::banner
 class profile::windows::banner (
   $message,
 ) {
