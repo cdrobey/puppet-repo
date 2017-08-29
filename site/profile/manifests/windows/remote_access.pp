@@ -2,6 +2,6 @@
 class profile::windows::remote_access {
   class { 'rdp':
     rdp_enable     => true,
-    rdp_nal_enable => false,
+    rdp_nla_enable => false,
   }
 }
