@@ -9,6 +9,5 @@ class profile::windows::time (
   dsc_xtimezone { 'set timezone':
     dsc_timezone         => 'Central Standard Time',
     dsc_issingleinstance => 'yes',
-    require              => Package['powershell'],
   }
 }
