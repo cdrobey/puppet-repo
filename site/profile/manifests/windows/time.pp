@@ -7,7 +7,7 @@ class profile::windows::time (
     servers => $ntp_servers,
   }
   dsc_xtimezone { 'set timezone':
-    dsc_timezone         => 'Central Standard Time',
+    dsc_timezone         => $timezone,
     dsc_issingleinstance => 'yes',
   }
 }

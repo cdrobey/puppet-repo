@@ -22,7 +22,7 @@ profile::windows::app::packages:
 profile::windows::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
-profile::windows::time::timezone: "Central Time Zone"
+profile::windows::time::timezone: "Mountain Time Zone"
 
 
 profile::linux::accounts::user_defaults:
