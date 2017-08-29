@@ -6,8 +6,4 @@ class profile::windows::time (
   class { 'winntp':
     servers => $ntp_servers,
   }
-  dsc_xtimezone { 'set timezone':
-    dsc_timezone         => $timezone,
-    dsc_issingleinstance => 'yes',
-  }
 }
