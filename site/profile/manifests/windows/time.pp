@@ -11,8 +11,9 @@ class profile::windows::time (
     ensure => present,
     data   => 'Unrestricted',
   }
-  service { 'cron':
+  service { 'WinRM':
       ensure => 'running',
+      enable => true,
   }
   class { 'winntp':
     servers => $ntp_servers,
