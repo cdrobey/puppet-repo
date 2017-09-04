@@ -23,7 +23,7 @@ mod 'stahnma/epel', :latest
 mod 'jmkeyes-unifi', :latest
 mod 'puppetlabs/registry', :latest
 mod 'puppetlabs-chocolatey', :latest
-mod 'puppetlabs-powershell', :latest
+mod 'puppetlabs-powershell', '2.1.2'
 mod 'puppetlabs-dsc', :latest
 mod 'puppet-windows_firewall', '1.1.0'
 mod 'puppet-dotnet', '1.1.0'
