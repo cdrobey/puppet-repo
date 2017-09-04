@@ -25,8 +25,8 @@ profile::windows::time::timezone: "Mountain Time Zone"
 
 profile::windows::motd::content: "Test"
 
-profile::windows::rdp::enable: true
-profile::windows::rdp:nla_enable: true
+profile::windows::rdp::enable: 'true'
+profile::windows::rdp:nla_enable: 'true'
 
 
 profile::linux::accounts::user_defaults:
