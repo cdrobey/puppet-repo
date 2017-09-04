@@ -1,4 +1,4 @@
-# == Class: profile::linux::fw
+# == Class: rofile::linux::security::fw
 class profile::linux::security::fw {
 
   class { 'firewall': }
