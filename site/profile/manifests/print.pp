@@ -1,4 +1,4 @@
-# == Class: profile::linux
+# == Class: profile::print
 class profile::print {
 
   firewall { '200 allow unifi access':

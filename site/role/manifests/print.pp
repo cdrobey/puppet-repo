@@ -1,5 +1,5 @@
-# == Class: role::linux
+# == Class: role::print
 class role::print {
-  include 'profile::linux'
-  include 'profile::print'
+  include profile::linux
+  include profile::print
 }
