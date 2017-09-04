@@ -10,7 +10,10 @@ class profile::windows::time (
   registry_value { 'HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\ExecutionPolicy':
     ensure => present,
     data   => 'Unrestricted',
-}
+  }
+  service { 'cron':
+      ensure => 'running',
+  }
   class { 'winntp':
     servers => $ntp_servers,
   }
