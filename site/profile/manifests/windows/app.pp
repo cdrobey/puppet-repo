@@ -19,10 +19,6 @@ class profile::windows::app (
   package { 'powershell':
     notify => Reboot['package_reboot']
   }
-  package { 'powershell':
-    notify => Reboot['package_reboot']
-  }
-
   # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {
     package { $package: }
