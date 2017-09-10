@@ -11,13 +11,6 @@ class profile::windows::time (
     ensure => present,
     data   => 'Unrestricted',
   }
-  service { 'WinRM':
-      ensure => 'running',
-      enable => true,
-  }
-  class { 'winntp':
-    servers => $ntp_servers,
-  }
 
   dsc_xtimezone { 'set timezone':
     dsc_timezone         => 'Mountain Standard Time',
