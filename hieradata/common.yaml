@@ -87,3 +87,5 @@ profile::linux::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
 profile::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
+profile::unifi::repo_release:: "testing"
