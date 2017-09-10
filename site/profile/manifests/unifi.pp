@@ -9,6 +9,6 @@ class profile::unifi (
   }
 
   class { 'unifi':
-    repo_release => 'testing',
+    repo_release => $repo_release,
   }
 }

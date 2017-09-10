@@ -23,13 +23,7 @@ profile::windows::time::ntp_servers:
   - us.pool.ntp.org
 profile::windows::time::timezone: "Mountain Time Zone"
 
-profile::windows::motd::content: |
-          Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
-  Access  to  and  use of this server is  restricted to those
-  activities expressly permitted by the system administration
-  staff. If you're not sure if it's allowed, then DON'T DO IT.
-           Kernel: %{facts.kernel} %{facts.kernelversion}
-                 Uptime: %{facts.uptime_days} Days
+profile::windows::motd::content: "Windows MOTD
 
 profile::windows::rdp::enable: 'true'
 profile::windows::rdp:nla_enable: 'true'
