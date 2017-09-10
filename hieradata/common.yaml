@@ -94,4 +94,4 @@ profile::linux::time::ntp_servers:
   - us.pool.ntp.org
 profile::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
-profile::unifi::repo_release:: "testing"
+profile::unifi::repo_release:: 'testing'
