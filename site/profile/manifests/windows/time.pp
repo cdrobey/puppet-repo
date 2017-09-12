@@ -16,7 +16,7 @@ class profile::windows::time (
     when => 'pending',
   }
 
-  dsc_systemlocale { 'set timezone':
+  dsc_systemlocale { 'set systmelocale':
     dsc_systemlocale     => 'en-us',
     dsc_issingleinstance => 'yes',
     require              => Package['powershell'],
