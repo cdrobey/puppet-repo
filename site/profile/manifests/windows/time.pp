@@ -12,8 +12,9 @@ class profile::windows::time (
     data   => 'Unrestricted',
   }
 
-  reboot { 'time_reboot':
-    when => 'pending',
+  reboot { 'dsc_reboot' :
+    message => 'DSC has requested a reboot',
+    when => 'pending'
   }
 
   dsc_systemlocale { 'set systmelocale':
