@@ -12,15 +12,11 @@ class profile::windows::time (
     data   => 'Unrestricted',
   }
 
-  reboot { 'time_reboot':
-    when => 'pending',
-  }
-
   dsc_systemlocale { 'set timezone':
     dsc_systemlocale     => 'en-us',
     dsc_issingleinstance => 'yes',
     require              => Package['powershell'],
-    notify               => Reboot['time_reboot'],
+    notify               => Reboot['dsc_reboot'],
   }
 
   dsc_xtimezone { 'set timezone':
