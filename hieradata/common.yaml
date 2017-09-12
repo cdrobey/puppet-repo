@@ -21,7 +21,7 @@ profile::windows::app::packages:
 profile::windows::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
-profile::windows::time::timezone: 'Mountain Time Zone'
+profile::windows::time::timezone: 'Mountain Standard Time'
 
 profile::windows::motd::content: "Windows MOTD"
 
