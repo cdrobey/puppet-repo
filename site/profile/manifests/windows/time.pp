@@ -14,14 +14,13 @@ class profile::windows::time (
 
   reboot { 'dsc_reboot' :
     message => 'DSC has requested a reboot',
-    when => 'pending'
+    when    => 'pending'
   }
 
   dsc_systemlocale { 'set systmelocale':
     dsc_systemlocale     => 'en-us',
     dsc_issingleinstance => 'yes',
     require              => Package['powershell'],
-    notify               => Reboot['time_reboot'],
   }
 
   dsc_xtimezone { 'set timezone':
