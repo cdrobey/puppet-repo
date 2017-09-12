@@ -25,7 +25,7 @@ profile::windows::time::timezone: "Mountain Time Zone"
 
 profile::windows::motd::content: "Windows MOTD"
 
-profile::windows::rdp::enable: 'true'
+profile::windows::rdp::enable: true
 
 profile::linux::accounts::user_defaults:
   shell: '/bin/bash'
