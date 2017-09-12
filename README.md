@@ -39,10 +39,4 @@ mod "puppetlabs/concat", :latest
 
 During staging, Code Manager make a copy of all puppet code from your repository and preloads all the modules defined by the PuppetFile.  Once the staging completes, the modules push to the specified environments.  Any node classification using the deployed environment is applied during the next puppet agent run.
 
-
-
-
-
-
-
 @cdrobey
