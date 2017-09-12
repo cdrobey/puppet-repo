@@ -1,9 +1,9 @@
 # == Class: profile::windows::rdp
 class profile::windows::rdp (
-  $enable,
+  $rdp_enable,
   ){
   class { 'rdp':
-    rdp_enable     => $enable,
-    rdp_nla_enable => $enable,
+    rdp_enable     => true,
+    rdp_nla_enable => true,
   }
 }
