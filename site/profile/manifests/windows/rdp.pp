@@ -3,7 +3,7 @@ class profile::windows::rdp (
   $enable,
   ){
   class { 'rdp':
-    rdp_enable     => true,
-    rdp_nla_enable => true,
+    rdp_enable     => $enable,
+    rdp_nla_enable => $enable,
   }
 }
