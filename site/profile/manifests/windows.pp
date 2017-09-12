@@ -5,5 +5,5 @@ class profile::windows {
   include profile::windows::motd
   include profile::windows::rdp
   include profile::windows::time
-  include profile::windows::security::cis
+  include profile::windows::security
 }
