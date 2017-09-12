@@ -1,11 +1,11 @@
 ---
 profile::windows::accounts::users:
-  'admin':
+  'chris':
     ensure: present
-    comment: "Admin Account"
-    managehome: false
+    comment: "Chris Roberson"
+    managehome: true
     groups:
-      - Administrators
+      - Users
     password: "T3st!Passw0rd"
 
 profile::windows::app::packages:
