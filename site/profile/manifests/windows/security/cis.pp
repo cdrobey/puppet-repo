@@ -48,4 +48,5 @@ class profile::windows::security::cis {
     data => '1',
   }
 
+
 }
