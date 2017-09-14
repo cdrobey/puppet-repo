@@ -31,5 +31,4 @@ class profile::iis {
   iis_feature { $iis_features:
     ensure => 'present',
   }
-
 }
