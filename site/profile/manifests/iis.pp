@@ -44,9 +44,6 @@ class profile::iis {
   -> file { 'c:\\logs\\iis':
     ensure => 'directory',
   }
-
-
-
   -> iis_site { 'Default Web Site':
     ensure       => 'present',
     logpath      => 'c:\\logs\\iis',
