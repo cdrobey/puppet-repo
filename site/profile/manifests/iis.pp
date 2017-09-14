@@ -31,21 +31,9 @@ class profile::iis {
   iis_feature { $iis_features:
     ensure => 'present',
   }
-  -> file { 'c:\\iiserver':
+  -> file { [ 'c:\\iiserver', 'c:\\iserver\\defaultWebSite', 'c:\\logs', 'c:\\logs\\iis' ] :
     ensure => 'directory',
   }
-  -> file { 'c:\\iserver\\defaultWebSite':
-    ensure => 'directory',
-  }
-
-  -> file { 'c:\\logs':
-    ensure => 'directory',
-  }
-
-  -> file { 'c:\\logs\\iis':
-    ensure => 'directory',
-  }
-
   -> iis_site { 'Default Web Site':
     ensure       => 'present',
     logpath      => 'c:\\logs\\iis',
