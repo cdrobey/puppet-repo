@@ -30,24 +30,14 @@ class profile::iis {
 
   iis_feature { $iis_features:
     ensure => 'present',
-  } ->
+  }
 
-  iis_site { 'Default Web Site':
+  -> iis_site { 'Default Web Site':
     logpath      => 'c:\\logs\\IIS',
     physicalpath => 'c:\\iserver\\DefaultWebSite',
-    require     => File[
-      'iis_home',
-      'iis_logs',
-    ]
   }
 
-  file {'iis_home':
+  -> file { ['c:\\iserver', 'c:\\iserver\\DefaultWebSite','c:\\Logs','c:\\Logs\\IIS']:
     ensure => 'directory',
-    path   => ['c:\\iserver', 'c:\\iserver\\DefaultWebSite']
   }
-  file {'iis_logs':
-    ensure => 'directory',
-    path   => ['c:\\Logs', 'c:\\Logs\\IIS']
-  }
-
 }
