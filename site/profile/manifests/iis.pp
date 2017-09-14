@@ -31,7 +31,7 @@ class profile::iis {
   iis_feature { $iis_features:
     ensure => 'present',
   }
-  -> file { [ 'c:\\iiserver':
+  -> file { 'c:\\iiserver':
     ensure => 'directory',
   }
   -> file { 'c:\\iiserver\\defaultWebSite':
