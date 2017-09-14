@@ -35,7 +35,7 @@ class profile::iis {
   iis_site { 'Default Web Site':
     logpath      => 'c:\\logs\\IIS',
     physicalpath => 'c:\\iserver\\DefaultWebSite',
-    requires     => File[
+    require     => File[
       'iis_home',
       'iis_logs',
     ]
