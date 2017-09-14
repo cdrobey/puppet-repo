@@ -8,7 +8,8 @@ class profile::linux::app (
   if $facts['os']['family'] == 'Debian'{
     class { 'apt':
       update => {
-        frequency => $update_frequency,
+        frequency => $update_frequency
+        ensure = present,
       },
     }
     class {'unattended_upgrades':
