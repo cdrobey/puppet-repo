@@ -31,15 +31,12 @@ class profile::iis {
   iis_feature { $iis_features:
     ensure => 'present',
   }
-
-  -> file { ['c:\\iserver', 'c:\\iserver\\DefaultWebSite','c:\\Logs','c:\\Logs\\IIS']:
+  -> file { ['c:\\iiserver', 'c:\\iserver\\defaultWebSite','c:\\logs','c:\\logs\\iis']:
     ensure => 'directory',
   }
-
   -> iis_site { 'Default Web Site':
-    logpath      => 'c:\\logs\\IIS',
-    physicalpath => 'c:\\iserver\\DefaultWebSite',
+    ensure       => 'present',
+    logpath      => 'c:\\logs\\iis',
+    physicalpath => 'c:\\iiserver\\DefaultWebSite',
   }
-
-
 }
