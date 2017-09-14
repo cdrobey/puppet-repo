@@ -32,12 +32,14 @@ class profile::iis {
     ensure => 'present',
   }
 
+  -> file { ['c:\\iserver', 'c:\\iserver\\DefaultWebSite','c:\\Logs','c:\\Logs\\IIS']:
+    ensure => 'directory',
+  }
+
   -> iis_site { 'Default Web Site':
     logpath      => 'c:\\logs\\IIS',
     physicalpath => 'c:\\iserver\\DefaultWebSite',
   }
 
-  -> file { ['c:\\iserver', 'c:\\iserver\\DefaultWebSite','c:\\Logs','c:\\Logs\\IIS']:
-    ensure => 'directory',
-  }
+
 }
