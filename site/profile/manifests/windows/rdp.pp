@@ -8,6 +8,18 @@ class profile::windows::rdp (
     rdp_nla_enable => $rdp_nla_enable,
   }
 
+  windows_firewall::exception { 'rdp':
+        ensure       => present,
+        direction    => 'in',
+        action       => 'Allow',
+        enabled      => 'yes',
+        protocol     => 'TCP',
+        local_port   => '3389',
+        remote_port  => 'any',
+        display_name => 'Remote Desktop',
+        description  => 'Inbound rule for RDP. [TCP 3389]',
+    }
+
   # Set time limit for active but idle Remote Desktop Services sessions: 10 minutes
   registry_value { 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Terminal Services\MaxIdleTime':
     type   => dword,
