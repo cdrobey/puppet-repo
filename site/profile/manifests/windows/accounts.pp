@@ -12,13 +12,13 @@ class profile::windows::accounts (
   }
 
   # Purge all local accounts except permanent administrative accounts.
-  purge { 'user':
-    unless      => [
-      [ 'name', '==', 'Administrator' ],
-      [ 'name', '==', 'admin' ],
-      [ 'name', '==', 'guest' ],
-    ]
-  }
+  #purge { 'user':
+  #  unless      => [
+  #    [ 'name', '==', 'Administrator' ],
+  #    [ 'name', '==', 'admin' ],
+  #    [ 'name', '==', 'guest' ],
+  #  ]
+  #}
 
   # Add all dynamic accounts
   each ($users) | $name, $user | {
