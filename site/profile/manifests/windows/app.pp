@@ -12,11 +12,6 @@ class profile::windows::app (
   reboot { 'package_reboot':
     when => 'pending',
   }
-  service { 'WinRM':
-      ensure    => 'running',
-      enable    => true,
-      subscribe => Package['powershell']
-  }
   package { 'dotnet4.5':
     notify => Reboot['package_reboot']
   }
@@ -26,7 +21,11 @@ class profile::windows::app (
       Service['WinRM'],
     ],
   }
-
+  service { 'WinRM':
+    ensure    => 'running',
+    enable    => true,
+    subscribe => Package['powershell']
+  }
   # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {
     package { $package: }
