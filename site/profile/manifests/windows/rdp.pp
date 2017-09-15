@@ -7,7 +7,6 @@ class profile::windows::rdp (
     rdp_enable     => $rdp_enable,
     rdp_nla_enable => $rdp_nla_enable,
   }
-  
   # Set time limit for active but idle Remote Desktop Services sessions: 10 minutes
   registry_value { 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Terminal Services\MaxIdleTime':
     type   => dword,
