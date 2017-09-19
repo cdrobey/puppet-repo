@@ -9,7 +9,7 @@ class profile::linux::app (
     class { 'apt':
       update => {
         frequency => $update_frequency
-        ensure = present,
+        ensure    => present,
       },
     }
     class {'unattended_upgrades':
