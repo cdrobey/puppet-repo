@@ -7,4 +7,5 @@ class profile::linux {
   include 'profile::linux::ssh'
   include 'profile::linux::sudoers'
   include 'profile::linux::time'
+  include 'foo::'
 }
