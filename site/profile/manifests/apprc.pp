@@ -1,4 +1,6 @@
 # == Class: profile::apprc
 class profile::apprc {
-  include 'apprc'
+    class { 'apprc':
+        service_name => 'testing',
+    }
 }
