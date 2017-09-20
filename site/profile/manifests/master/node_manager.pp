@@ -31,6 +31,7 @@ class profile::master::node_manager {
         'r10k_private_key'            => '/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa' },
       'puppet_enterprise::profile::master::mcollective'  => {},
       'puppet_enterprise::profile::mcollective::peadmin' => {},
+      'role::master'                                     => {},
     },
   }
 }
