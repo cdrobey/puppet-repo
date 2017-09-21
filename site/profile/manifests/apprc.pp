@@ -1,9 +1,9 @@
 # == Class: profile::apprc
 class profile::apprc (
-    app_name,
-    app_validate,
-    app_start,
-    app_stop,
+    $app_name,
+    $app_validate,
+    $app_start,
+    $app_stop,
 ){
     class { 'apprc':
         service_name     => $app_name,
