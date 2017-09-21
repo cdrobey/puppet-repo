@@ -1,0 +1,14 @@
+---
+profile::apprc::apps:
+  foo_app: 
+    app_name: 'foo'
+    app_start: 'echo Starttttttttttttttttttttttt!'
+    app_stop: 'echo Stopppppppppppppppppppppppp!'
+    app_validate: 'foo_val'
+    app_proc: 'foo'
+  bar_app: 
+    app_name: 'bar'
+    app_start: 'echo Starttttttttttttttttttttttt!'
+    app_stop: 'echo Stopppppppppppppppppppppppp!'
+    app_validate: 'bar_val'
+    app_proc: 'bar'
