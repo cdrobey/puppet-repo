@@ -10,5 +10,6 @@ class profile::apprc (
         service_validate => $app_validate,
         service_start    => $app_start,
         service_stop     => $app_stop,
+        service_proc     => $app_proc,
     }
 }
