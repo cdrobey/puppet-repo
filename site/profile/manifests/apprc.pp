@@ -2,6 +2,7 @@
 class profile::apprc (
     $apps,
 ){
-    apprc { '$apps':
+    class { 'apprc':
+        apps => $apps,
     }
 }
