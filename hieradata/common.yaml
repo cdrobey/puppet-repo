@@ -93,3 +93,9 @@ profile::linux::time::ntp_servers:
 profile::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::unifi::repo_release:: 'testing'
+
+profile::apprc::app_name: 'foo_app'
+profile::apprc::app_validate: 'foo_val'
+profile::apprc::app_start: 'echo \"Starting foo_app.\"'
+profile::apprc::app_stop: 'echo \"Stopping foo_app.\"'
+
