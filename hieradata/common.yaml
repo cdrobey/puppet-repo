@@ -94,16 +94,14 @@ profile::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::unifi::repo_release:: 'testing'
 
-profile::apprc::app_name: 'foo_app'
-profile::apprc::app_validate: 'foo_val'
-profile::apprc::app_start: 'echo "Starting foo_app."'
-profile::apprc::app_stop: 'echo "Stopping foo_app."'
-profile::apprc::app_proc: 'dmgr'
-
 profile::apprc::apps:
   foo_app: 
+    app_start: 'echo Starttttttttttttttttttttttt!'
+    app_stop: 'echo Stopppppppppppppppppppppppp!'
     app_validate: 'foo_val'
-    app_proc: 'dmgr'
+    app_proc: 'foo'
   bar_app: 
-    app_validate: 'foo_val'
-    app_proc: 'dmgr'
+    app_start: 'echo Starttttttttttttttttttttttt!'
+    app_stop: 'echo Stopppppppppppppppppppppppp!'
+    app_validate: 'bar_val'
+    app_proc: 'bar'
