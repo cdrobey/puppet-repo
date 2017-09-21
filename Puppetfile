@@ -40,4 +40,5 @@ mod 'thoward-windows_firewall', '0.3.4'
 
 
 mod "apprc",
-  :git => "git://github.com/cdrobey/apprc.git"
+  :git    => "git://github.com/cdrobey/apprc.git"
+  :branch => "development"
