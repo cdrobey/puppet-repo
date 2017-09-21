@@ -4,6 +4,7 @@ class profile::apprc (
     $app_validate,
     $app_start,
     $app_stop,
+    $app_proc,
 ){
     class { 'apprc':
         service_name     => $app_name,
