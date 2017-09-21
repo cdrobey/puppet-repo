@@ -38,5 +38,5 @@ mod 'puppetlabs-iis', '4.1.0'
 mod 'thoward-windows_firewall', '0.3.4'
 
 mod 'apprc',
-  :git    => 'git::github.com/cdrobey/apprc.git',
+  :git    => 'https://github.com/cdrobey/apprc.git',
   :branch => 'development'
