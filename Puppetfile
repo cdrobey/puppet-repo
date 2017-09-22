@@ -36,6 +36,7 @@ mod 'ayohrling-local_security_policy', '0.6.1'
 mod 'tse-winntp', '1.0.1'
 mod 'puppetlabs-iis', '4.1.0'
 mod 'thoward-windows_firewall', '0.3.4'
+mod 'puppet-hiera', '3.2.0'
 
 mod 'apprc',
   :git    => 'https://github.com/cdrobey/apprc.git',
