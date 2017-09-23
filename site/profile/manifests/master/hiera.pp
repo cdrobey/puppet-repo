@@ -8,7 +8,8 @@ class profile::master::hiera {
                                 {"name" =>  "Nodes yaml", "paths" =>  ['nodes/%{::trusted.certname}.yaml', 'nodes/%{::osfamily}.yaml']},
                                 {"name" =>  "Default yaml file", "path" =>  "common.yaml"},
                               ],
-          eyaml                => true,
+          eyaml           => true,
+          eyaml_node      => hiera-eyaml,
   }
 
 }
