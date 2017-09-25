@@ -9,10 +9,6 @@ class profile::master::node_manager {
     require => Package['puppetclassify'],
   }
 
-  # GENERAL PURPOSE
-  # Node Groups ready to go out of the box. Not tied to any specific demo, but
-  # potentially useful for demonstrating the Node Manager in general.
-
   node_group { 'PE Master':
     ensure               => present,
     environment          => 'production',
