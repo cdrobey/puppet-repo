@@ -1,7 +1,7 @@
 # == Class: profile::master::hiera
 class profile::master::hiera {
 
-  package { 'eyaml':
+  package { 'hiera-eyaml':
     ensure   => present,
     provider => puppet_gem,
   }
