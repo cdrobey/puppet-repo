@@ -6,5 +6,5 @@ class profile::master
     proto  => tcp,
     action =>  accept,
   }
-  include  profile::master::hiera
+  include profile::master::hiera
 }
