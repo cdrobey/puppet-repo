@@ -9,6 +9,18 @@ class profile::master::node_manager {
     require => Package['puppetclassify'],
   }
 
+  node_group { 'PE Package':
+    ensure               => present,
+    environment          => 'production',
+    override_environment => false,
+    parent               => 'All Nodes',
+    rule                 => ['or', ['=', 'name', $::clientcert]],
+    classes              => {
+      'puppet_enterprise::profile::agent' => {
+        'package_inventory_enabled' => true,
+      },
+    },
+  }
   node_group { 'PE Master':
     ensure               => present,
     environment          => 'production',
