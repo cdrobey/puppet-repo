@@ -1,11 +1,6 @@
 # == Class: profile::master::hiera
 class profile::master::hiera {
 
-  package { 'hiera-eyaml':
-    ensure   => present,
-    provider => puppet_gem,
-  }
-
   Node_group {
     require => Package['puppetclassify'],
   }
@@ -19,8 +14,8 @@ class profile::master::hiera {
       {"name" =>  "Nodes yaml", "paths" =>  ['nodes/%{::trusted.certname}.yaml', 'nodes/%{::osfamily}.yaml']},
       {"name" =>  "Default yaml file", "path" =>  "common.yaml"}, 
     ],
+    manage_package  => true,
     eyaml           => true,
     eyaml_name      => hiera-eyaml,
   }
-  require => Package['eyaml'],
 }
