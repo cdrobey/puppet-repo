@@ -6,8 +6,4 @@ class profile::master
     proto  => tcp,
     action =>  accept,
   }
-  service { 'firewalld':
-    ensure => 'stopped',
-    enable => true,
-  }
 }
