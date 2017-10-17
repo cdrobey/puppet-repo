@@ -10,5 +10,4 @@ class profile::master
     ensure => 'stopped',
     enable => true,
   }
-  include profile::master::hiera
 }
