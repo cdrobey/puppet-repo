@@ -7,7 +7,8 @@ class profile::master
     action =>  accept,
   }
   service { 'firewalld':
-    ensure =>  stopped,
+    ensure => 'stopped',
+    enable => true,
   }
   include profile::master::hiera
 }
