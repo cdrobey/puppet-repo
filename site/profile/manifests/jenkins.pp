@@ -1,5 +1,5 @@
 class profile::jenkins (
-  $plugins,
+  $plugin,
 ) {
   class { 'jenkins':
     version            => 'latest',
@@ -11,6 +11,6 @@ class profile::jenkins (
     version => '2.2',
   }
   class { 'jenkins::plugins':
-    plugin_hash => $plugins,
+    plugin_hash => $plugin,
   }
 }
