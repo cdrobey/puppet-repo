@@ -1,12 +1,12 @@
 ---
 profile::windows::accounts::users:
-  'chris':
+  'deploy':
     ensure: present
-    comment: "Chris Roberson"
+    comment: "Deployment"
     managehome: true
     groups:
-      - Users
-    password: "T3st!Passw0rd"
+      - Administrators
+    password: "FamilyR0bersonL@b"
 
 profile::windows::app::packages:
   - 7zip
