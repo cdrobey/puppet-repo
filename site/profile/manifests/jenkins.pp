@@ -8,7 +8,6 @@ class profile::jenkins (
   }
 
   class { 'jenkins::master':
-    version => '2.2',
   }
 
   $plugs.each | $plugin_name, $plugin_data | {
