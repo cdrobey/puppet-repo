@@ -1,6 +1,4 @@
-class profile::jenkins (
-  $plugins,
-) {
+class profile::jenkins {
   class { 'jenkins':
     version            => 'latest',
     lts                => false,
@@ -9,5 +7,6 @@ class profile::jenkins (
 
   class { 'jenkins::master':
     version => '2.2',
+
   }
 }
