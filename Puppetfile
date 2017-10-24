@@ -38,6 +38,10 @@ mod 'puppetlabs-iis', '4.1.0'
 mod 'thoward-windows_firewall', '0.3.4'
 mod 'puppet-hiera', '3.2.0'
 mod 'puppetlabs-inifile', '2.0.0'
+mod 'rtyler-jenkins', '1.7.0'
+mod 'puppetlabs-java', '2.0.0'
+mod 'darin-zypprepo', '1.0.2'
+mod 'puppet-archive', '2.1.0'
 
 mod 'apprc',
   :git    => 'https://github.com/cdrobey/apprc.git',
