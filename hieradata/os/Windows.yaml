@@ -7,8 +7,6 @@ profile::windows::accounts::users:
     groups:
       - Administrators
     password: "FamilyR0bersonL@b"
-  'chris':
-    ensure: 'absent'
 
 profile::windows::app::packages:
   - 7zip
