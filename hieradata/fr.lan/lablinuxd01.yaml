@@ -39,4 +39,4 @@ profile::jenkins::plugs:
   'git-server':
   'branch-api':
   'pipeline-graph-analysis':
-  'jackson2-api'
+  'jackson2-api':
