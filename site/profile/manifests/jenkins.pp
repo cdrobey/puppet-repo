@@ -10,10 +10,7 @@ class profile::jenkins (
   class { 'jenkins::master':
     version => '2.2',
   }
+
   $plugins.each | $plugin_name, $plugin_data | {
-    jenkins::plugin { $plugin_name:
-      version => $plugin_data['version'],
-      source  => $plugin_data['source'],
-    }
-  }
+    jenkins::plugin { $plugin_name: }
 }
