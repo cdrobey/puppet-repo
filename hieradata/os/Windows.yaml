@@ -8,7 +8,7 @@ profile::windows::accounts::users:
       - Administrators
     password: "FamilyR0bersonL@b"
   'chris':
-    ensure: absent
+    ensure: 'absent'
 
 profile::windows::app::packages:
   - 7zip
