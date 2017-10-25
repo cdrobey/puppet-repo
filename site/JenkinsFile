@@ -1,7 +1,6 @@
 node {
     git 'https://github.com/cdrobey/puppet-repo'
 
-
     puppet.credentials 'pe-access-token'
 
     stage ('Checkout Control Repo') {
