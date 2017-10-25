@@ -1,9 +1,10 @@
 node {
-    stage ('Checkout Control Repo') {
+  stage 'Checkout Control Repo' {
       checkout scm
-    }
-    stage ('Check Style - Lint') {
-      sh 'echo $(find . -type f -name "*.pp" \\( -exec /opt/puppetlabs/puppet/bin/puppet-lint --with-filename {} \\; -o -quit \\) 2>&1 ) | grep -v ERROR'
-    }
-
+  }
+  stage 'Deploy to staging'
+  lock(‘puppet-code-staging’) {
+    puppet.codeDeploy 'staging'
+    puppet.job 'staging'
+  }
 }
