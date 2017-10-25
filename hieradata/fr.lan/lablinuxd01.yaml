@@ -38,7 +38,6 @@ profile::jenkins::plugs:
   'ace-editor':
   'jquery':
   'jquery-detached':
-  'credentials':
   'mailer':
   'parameterized-trigger':
   'promoted-builds':
