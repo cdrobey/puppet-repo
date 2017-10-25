@@ -13,4 +13,5 @@ class profile::jenkins (
   $plugs.each | $plugin_name, $plugin_data | {
       jenkins::plugin { $plugin_name: }
   }
+  ensure_packages(['puppet-lint'], {'ensure' => 'present', 'provider' =>  'puppet_gem'})
 }
