@@ -5,6 +5,7 @@ profile::jenkins::plugs:
   'workflow-basic-steps':
   'workflow-cps':
   'workflow-durable-task-step':
+  'workflow-scm-step':
   'plain-credentials': 
   'script-security': 
   'structs':
