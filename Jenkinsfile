@@ -14,7 +14,7 @@ node {
   stage ('Code Deploy to Master') {
     puppet.codeDeploy 'production'
   }
-  //stage ('Noop production run') {
-    //puppet.job 'production', noop: true
- // }
+  stage ('Production run') {
+      puppet.job 'staging'
+  }
 }
