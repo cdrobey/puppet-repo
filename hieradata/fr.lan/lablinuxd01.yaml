@@ -34,3 +34,4 @@ profile::jenkins::plugs:
   'durable-task':
   'ace-editor':
   'jquery':
+  'jquery-detached':
