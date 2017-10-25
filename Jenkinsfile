@@ -15,6 +15,6 @@ node {
     puppet.codeDeploy 'production'
   }
   stage ('Production run') {
-      puppet.job 'production'
+    puppet.job ‘production’, nodes: [‘linux01.fr.lan’]
   }
 }
