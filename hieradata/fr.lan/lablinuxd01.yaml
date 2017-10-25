@@ -29,3 +29,8 @@ profile::jenkins::plugs:
   'display-url-api':
   'junit':
   'apache-httpcomponents-client-4-api':
+  'javadoc':
+  'jsch':
+  'durable-task':
+  'ace-editor':
+  'jquery':
