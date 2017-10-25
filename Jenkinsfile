@@ -14,6 +14,6 @@ node {
   }
   stage ('Production run') {
     puppet.credentials 'pe-access-token'
-    puppet.job ‘production’, nodes: [‘linux01.fr.lan’]
+    puppet.job ‘production’, nodes: [lablinux.fr.lan’]
   }
 }
