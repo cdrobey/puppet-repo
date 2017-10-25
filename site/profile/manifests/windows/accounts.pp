@@ -11,15 +11,6 @@ class profile::windows::accounts (
     password   => 'T3st!Passw0rd',
   }
 
-  # Purge all local accounts except permanent administrative accounts.
-  #purge { 'user':
-  #  unless      => [
-  #    [ 'name', '==', 'Administrator' ],
-  #    [ 'name', '==', 'admin' ],
-  #    [ 'name', '==', 'guest' ],
-  #  ]
-  #}
-
   # Add all dynamic accounts
   each ($users) | $name, $user | {
     user { $name:
