@@ -9,7 +9,7 @@ profile::jenkins::plugs:
   'plain-credentials': 
   'script-security': 
   'structs':
-  'workflow-scm-step (version:1.14.2)':
+  'workflow-scm-step':
   'git-client':
   'mailer':
   'matrix-project':
