@@ -12,8 +12,4 @@ node {
     puppet.credentials 'pe-access-token'
     puppet.codeDeploy 'production'
   }
-  stage ('Production run') {
-    puppet.credentials 'pe-access-token'
-    puppet.job 'role.linux'
-  }
 }
