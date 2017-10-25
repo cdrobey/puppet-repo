@@ -5,11 +5,9 @@ profile::jenkins::plugs:
   'workflow-basic-steps':
   'workflow-cps':
   'workflow-durable-task-step':
-  'credentials': 
   'plain-credentials': 
   'script-security': 
   'structs':
-
   'workflow-scm-step (version:1.14.2)':
   'git-client':
   'mailer':
