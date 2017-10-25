@@ -15,6 +15,6 @@ node {
     puppet.codeDeploy 'production'
   }
   stage ('Production run') {
-      puppet.job 'staging'
+      puppet.job 'production'
   }
 }
