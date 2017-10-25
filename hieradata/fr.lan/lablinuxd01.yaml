@@ -6,6 +6,13 @@ profile::jenkins::plugs:
   'workflow-cps':
   'workflow-durable-task-step':
   'workflow-scm-step':
+  'workflow-step-api':
+  'workflow-job':
+  'workflow-support':
+  'conditional-buildstep':
+  'maven-plugin':
+  'matrix-project':
+  'run-condition':
   'plain-credentials': 
   'script-security': 
   'structs':
@@ -19,3 +26,6 @@ profile::jenkins::plugs:
   'ssh-credentials':
   'structs':
   'token-macro':
+  'display-url-api':
+  'junit':
+  'apache-httpcomponents-client-4-api':
