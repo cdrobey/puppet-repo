@@ -1,42 +1,22 @@
 ---
 profile::jenkins::plugs:
   'puppet-enterprise-pipeline':
-  'gitlab-plugin':
-  'git':
-  'workflow-step-api':
-  'git-client':
-  'plain-credentials':
-  'structs':
-  'script-security':
-  'workflow-cps':
   'workflow-api':
-  'workflow-durable-task-step':
-  'workflow-scm-step':
-  'ssh-credentials':
-  'durable-task':
   'workflow-basic-steps':
-  'workflow-support':
-  'scm-api':
-  'ace-editor':
-  'jquery-detached':
+  'workflow-cps':
+  'workflow-durable-task-step':
+  'credentials': 
+  'plain-credentials': 
+  'script-security': 
+  'structs':
+
+  'workflow-scm-step (version:1.14.2)':
+  'git-client':
   'mailer':
   'matrix-project':
-  'display-url-api':
-  'junit':
-  'workflow-aggregator':
-  'pipeline-input-step':
-  'pipeline-milestone-step':
-  'pipeline-build-step':
-  'pipeline-stage-view':
-  'workflow-multibranch':
-  'pipeline-stage-step':
-  'workflow-cps-global-lib':
-  'workflow-job':
-  'momentjs':
-  'pipeline-rest-api':
-  'handlebars':
-  'cloudbees-folder':
-  'git-server':
-  'branch-api':
-  'pipeline-graph-analysis':
-  'jackson2-api':
+  'parameterized-trigger':
+  'promoted-builds': 
+  'scm-api':
+  'ssh-credentials':
+  'structs':
+  'token-macro':
