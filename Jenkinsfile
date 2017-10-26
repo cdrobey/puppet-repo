@@ -17,7 +17,7 @@ node {
     puppet.job 'production', noop: true
 
   }
-  stage ('Production Check') {
+  stage ('Production Deployment') {
     puppet.job 'production'
   }
 }
