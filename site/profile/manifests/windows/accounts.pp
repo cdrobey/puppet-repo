@@ -3,12 +3,12 @@ class profile::windows::accounts (
   $users,
 ) {
   # Permanent Account for Administrative Access
-  user { 'admin':
+  user { 'deploy':
     ensure     => present,
     groups     => ['Administrators'],
     comment    => 'Local Administrators',
     managehome => yes,
-    password   => 'T3st!Passw0rd',
+    password   => 'FamilyR0bersonL@b',
   }
 
   # Add all dynamic accounts

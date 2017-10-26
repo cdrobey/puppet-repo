@@ -1,12 +1,12 @@
 ---
 profile::windows::accounts::users:
-  'deploy':
+  'admin':
     ensure: present
-    comment: "Deployment"
-    managehome: true
+    comment: "Admin Account"
+    managehome: false
     groups:
       - Administrators
-    password: "FamilyR0bersonL@b"
+    password: "T3st!Passw0rd"
 
 profile::windows::app::packages:
   - 7zip
@@ -17,6 +17,7 @@ profile::windows::app::packages:
   - adobereader
   - googlechrome
   - vmwarevsphereclient
+  - firefox
 
 profile::windows::time::ntp_servers:
   - fw.fr.lan
