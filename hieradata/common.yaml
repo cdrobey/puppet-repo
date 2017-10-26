@@ -7,3 +7,29 @@ profile::windows::accounts::users:
     groups:
       - Administrators
     password: "T3st!Passw0rd"
+
+profile::windows::app::packages:
+  - 7zip
+  - git
+  - putty
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - firefox
+
+profile::windows::time::ntp_servers:
+  - fw.fr.lan
+  - us.pool.ntp.org
+profile::windows::time::timezone: 'Mountain Standard Time'
+
+profile::windows::motd::content: |
+  Welcome to %{facts.hostname} - %{facts.fqdn}
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+
+profile::windows::rdp::rdp_enable: true
+profile::windows::rdp::rdp_nla_enable: false
+
