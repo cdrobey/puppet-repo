@@ -8,7 +8,7 @@ class profile::linux {
   include 'profile::linux::sudoers'
   include 'profile::linux::time'
 
-  firewall { '200 allow unifi access':
+  firewall { '200 allow puppet agent access':
     dport  => [8140],
     proto  => tcp,
     action =>  accept,
