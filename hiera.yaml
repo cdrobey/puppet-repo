@@ -9,7 +9,7 @@ hierarchy:
     path: "%{facts.domain}/%{facts.hostname}.yaml"
 
   - name: "Per-OS defaults"
-    path: "os/%{facts.os.family}.yaml"
+    path: "os/%{facts.osfamily}.yaml"
 
   - name: "Common data"
     path: "common.yaml"
