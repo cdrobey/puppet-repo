@@ -1,3 +1,14 @@
+# print
+#
+# Install and configure base print cups server profile.
+#
+# @summary  This profiles opens the required firewall ports for the CUPS print server
+#           communicate.
+#
+# @param    none
+#
+# @example
+#   include profile::print or assign in PE classifier
 # == Class: profile::print
 class profile::print {
 
@@ -11,5 +22,4 @@ class profile::print {
     proto  => udp,
     action =>  accept,
   }
-
 }

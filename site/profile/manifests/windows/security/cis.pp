@@ -1,3 +1,13 @@
+# cis
+#
+# Install and configure base cis profile.
+#
+# @summary  This profile configures the a cis hardening example for demonstration on a a windows server.
+#
+# @param    none
+#
+# @example
+#   include profile::windows::security::cis or assign in PE classifier
 # == Class: profile::windows::security::cis
 class profile::windows::security::cis {
 

@@ -1,3 +1,14 @@
+# master
+#
+# Install and configure base puppet master profile.
+#
+# @summary  This profiles opens the required firewall ports for the PE master server
+#           communicate.
+#
+# @param    none
+#
+# @example
+#   include profile::master or assign in PE classifier
 # == Class: profile::master
 class profile::master
 {

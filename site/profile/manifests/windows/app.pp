@@ -1,3 +1,16 @@
+# app
+#
+# Install and configure base app profile.
+#
+# @summary  This profile configures the chocolatey provider and installs a list of appliations.  Using 
+#           parameters from hiera the list of packages is installed an performs a reboot when necessary.
+#           A standard set of fixed packages including dotnet 4.5 and powershell are updated to ensure 
+#           chocolatey support.
+#
+# @param    packages - hashed list of packages install
+#
+# @example
+#   include profile::windows::app or assign in PE classifier
 # == Class: profile::windows::app
 class profile::windows::app (
   $packages,

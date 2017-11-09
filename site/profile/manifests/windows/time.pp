@@ -1,3 +1,15 @@
+# time
+#
+# Install and configure base time profile.
+#
+# @summary  This profile configures the time service on a window client.  Using parameters from hiera
+#           the modules confgurations the ntp server used for time alignment and configures the timezone.
+#
+# @param    timezone - provides the timezone
+#           ntp_servers - hased list of ntp servers used for time settings
+#
+# @example
+#   include profile::windows::time or assign in PE classifier
 # == Class: profile::windows::time
 class profile::windows::time (
   $timezone,

@@ -1,3 +1,14 @@
+# linux
+#
+# Install and configure base linux profile.
+#
+# @summary  This profiles aggregates all profiles needed for a baseline security configuration
+#           of a linux server or desktop.
+#
+# @param    none
+#
+# @example
+#   include profile::linux or assign in PE classifier
 # == Class: profile::linux
 class profile::linux {
   include 'profile::linux::accounts'

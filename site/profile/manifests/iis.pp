@@ -1,3 +1,14 @@
+# iis
+#
+# Install and configure iis web server.
+#
+# @summary  This profile install an iis web server with a specified set of features. After installation
+#           completes the Default Website is relocated to a default iiserver document directory.
+#
+# @param    none
+#
+# @example
+#   include profile::iis or assign in PE classifier
 # == Class: profile::iis
 class profile::iis {
 
@@ -8,7 +19,7 @@ class profile::iis {
     'Web-Static-Content',
     'Web-Mgmt-Tools',
     'Web-Mgmt-Console',
-    'Web-Windows-Auth',
+    'Web-iis-Auth',
     'Web-Stat-Compression',
     'Web-Dyn-Compression',
     'Web-Dir-Browsing',

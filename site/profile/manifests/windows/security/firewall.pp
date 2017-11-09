@@ -1,4 +1,15 @@
-# == Class: profile::windows:;firewall
+# firewall
+#
+# Install and configure base firewall profile.
+#
+# @summary  This profile configures the firewall of a windows server after purging the existing firewall
+#           configuration.
+#
+# @param    none
+#
+# @example
+#   include profile::windows::security::firewall or assign in PE classifier
+# == Class: profile::windows::security::firewall
 class profile::windows::security::firewall {
   Firewall_rule {
     require => undef,

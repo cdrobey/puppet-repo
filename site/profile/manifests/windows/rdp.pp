@@ -1,3 +1,15 @@
+# rdp
+#
+# Install and configure base rdp profile.
+#
+# @summary  This profile configures the rdp service on a window client.  Using parameters from hiera
+#           the modules enables/disables the rdp service for access.
+#
+# @param    rdp_enable - enable/disable the services.
+#           rdp_nla_enable - enable/disable certificate based access.
+#
+# @example
+#   include profile::windows::rdp or assign in PE classifier
 # == Class: profile::windows::rdp
 class profile::windows::rdp (
   $rdp_enable,
