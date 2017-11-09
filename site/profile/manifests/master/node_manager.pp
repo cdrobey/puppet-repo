@@ -1,3 +1,14 @@
+# node_manager
+#
+# Install and configure base node_manager profile.
+#
+# @summary  This profile updates the puppet master classifier with a default set of base node groups.  At
+#           bootstrap of a PE master the node_group template configures code manager and other services.
+#
+# @param    node
+#
+# @example
+#   include profile::master::node_manager or assign in PE classifier
 # == Class: profile::master::node_manager
 class profile::master::node_manager {
   package { 'puppetclassify':

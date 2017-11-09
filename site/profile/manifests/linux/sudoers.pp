@@ -1,3 +1,16 @@
+# sudoers
+#
+# Install and configure base sudoers profile.
+#
+# @summary  This profile configures the sudoer users and access privileges.  Using parameters from hiera
+#           the modules configures the base list of users that are allowed system level access.
+#
+# @param    purge - boolean used to remove all sudoer configuration
+#           config_file_replace - boolean used to wipe the configuration template for users
+#           configs = hashed key-value pair defining the services and group access
+#
+# @example
+#   include profile::linux::sudoers or assign in PE classifier
 # == Class: profile::linux::sudoers
 class profile::linux::sudoers (
   $purge,

@@ -1,3 +1,13 @@
+# fwpre
+#
+# Install and configure base pre firewall profile.
+#
+# @summary  This profile configures the firewall of a linux server before all application setup starts.
+#
+# @param    none
+#
+# @example
+#   include profile::linux::security::fwpre or assign in PE classifier
 # == Class: profile::linux::security::fwpre
 class profile::linux::security::fwpre {
   Firewall {

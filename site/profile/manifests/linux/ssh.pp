@@ -1,3 +1,18 @@
+# ssh
+#
+# Install and configure base ssh profile.
+#
+# @summary  This profile configures the ssh and sshd process.  Using parameters from hiera
+#           the modules hardens access to sshd.
+#
+# @param    password_authentication - boolean used enable/disable ssh password access
+#           permit_root_login - boolean used to enable/disable root access via ssh
+#           permit_empty_password = boolean used to enable/disable access to ssh from account without a password
+#           manage_firewall = boolean used to enable/disable ssh port 22
+#           banner = boolean used to enable/disable the display of the motd after ssh login
+#
+# @example
+#   include profile::linux::ssh or assign in PE classifier
 # == Class: profile::linux::ssh
 class profile::linux::ssh (
   $password_authentication,
