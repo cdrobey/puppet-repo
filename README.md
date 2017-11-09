@@ -5,9 +5,11 @@
 1. [Building a Learning Puppet Code Repository](#building-a-learning-environent)
 2. [Install Code Manager](#install-code-manager)
 3. [Use PuppetFile for module loads](#use-puppetFile-for-module-loads)
+4. [Roles and Profiles](#roles-profiles)
+5. [Repository Roles](#repository-roles)
 
 ## Building a Learning Puppet Environment
-This project began as a plan to build an environment for building different facets of Puppet Enterprise demonstrations.  The Repository allows you to spin up a monolithic Puppet Enterprise Console, and a series of agents quickly.  The environment is best supported by using templates of Redhat/Ubuntu Linux or Windows Server 2012R2 or 2016.
+This project began as a plan to build an environment for demoing different facets of Puppet Enterprise.  The Repository allows you to spin up a monolithic Puppet Enterprise Console, and a series of agents quickly.  The environment is best supported by using templates of Redhat/Ubuntu Linux or Windows Server 2012R2/2016.
 
 ## Install Code Manager
 Code Manager requires you to configure both the PE console to define the Code Manager repository, and setup the client tools on your MAC.  Puppet documentation takes care of walking you through the steps:
@@ -38,5 +40,23 @@ mod "puppetlabs/stdlib", :latest
 mod "puppetlabs/concat", :latest
 
 During staging, Code Manager make a copy of all puppet code from your repository and preloads all the modules defined by the PuppetFile.  Once the staging completes, the modules push to the specified environments.  Any node classification using the deployed environment is applied during the next puppet agent run.
+
+##Roles and Profiles
+
+Roles provides an abstracted view of a set of profile configuration.  Typically a role aligns to a specific client
+or node.  The role integrates a series of profile to build a client.  An example of a application role would include: base os/security profile, web servers, and database server.
+
+Profiles abstract attributes of client configuration.  A profile normally uses module to build a set of resources aligned to the same purpose.  For example, a profile might load a pair of modules to install nginx and migrate its base htdoc location to a different folder.
+
+##Repository Roles
+
+The repository supports a series of demonstration roles allowing quick setup and configuration.  I am updating the repository frequently.
+
+1. iis - base iis installation with relocation of docroot
+2. jenkins - jenkins server with integrated PE plug-in to support building pipelines for puppet deployment
+3. linux - baseline linux configuration which includes account, time, and firewall.
+4. print - CUPS server setup for basic printing over the network
+5. unifi - unifi Server for managing Ubiquiti firewall, wap, and switches
+6. linux - baseline windows configuration which includes account, time, and firewall.
 
 @cdrobey
