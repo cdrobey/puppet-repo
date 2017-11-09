@@ -1,15 +1,15 @@
-# apprc
+# master
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure PE Master server
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a PE Master server to perform management across a set of puppet managed clients.
+#           The role applies the baseline configuration to the puppet master and opens all ports needed for a
+#           monolithic Puppet install.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
+#   include role::master or assign in PE classifier
 # == Class: role::master
 class role::master {
   include 'profile::linux'

@@ -1,16 +1,16 @@
 # apprc
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure base apprc demonstration server.
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a baseline configuration for a minimal secure configuration.
+#           It integrates a series of profiles designed to demo the apprc module.  The configuration applies
+#           a baseline linux configuration and establishes a configuration for applying example rc scripts.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
-# == Class: role::apprcdemo
+#   include role::apprc or assign in PE classifier
+# == Class: role::apprc
 class role::apprcdemo {
   include profile::linux
   include profile::apprc

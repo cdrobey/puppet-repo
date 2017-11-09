@@ -1,15 +1,14 @@
-# apprc
+# unifi
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure unifi application server
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a unifi application server to manage Ubiquiti network devices.
+#           Unifi provides a unified interface for management of firewall, waps, and switches.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
+#   include role::unifi or assign in PE classifier
 # == Class: role::unifi
 class role::unifi {
   include profile::linux

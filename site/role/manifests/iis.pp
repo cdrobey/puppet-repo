@@ -1,18 +1,17 @@
-# apprc
+# iis
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure base iis web server.
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a baseline configuration for a minimal secure configuration iis application.
+#           The profiles secure a windows servers with a standard baseline configuration and provisions the 
+#           iis web server with a series of features, and migrates the html doc home to a consolidated location.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
-
+#   include role::iis or assign in PE classifier
 # == Class: role::iis
 class role::iis {
-  include profile::windows
+  include profile::iis
   include profile::iis
 }

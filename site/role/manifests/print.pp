@@ -1,15 +1,15 @@
-# apprc
+# print
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure CUPS application print server
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a cups print application server to perform network printer management.
+#           CUPS provides a universal method to print across network and local attached print devices.
+#           It includes a detail job management, scheduler, and controlled access.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
+#   include role::print or assign in PE classifier
 # == Class: role::print
 class role::print {
   include profile::linux

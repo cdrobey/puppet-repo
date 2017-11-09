@@ -1,15 +1,15 @@
-# apprc
+# jenkins
 #
-# Install and configure rc script for the defined application with startup validation.
+# Install and configure base jenkins system.
 #
-# @summary  This class creates a mechanism to manage rc scripts for applications on RHEL/Centos7
-#           system.  The script includes the capability to add a post-exec test validationn script
-#           to ensure the health of the application after startup.
+# @summary  This role delivers a jenkins application work server and incorporates the PE Jenkins Plug-in
+#           to integrate Puppet Pipelines.  Additionally a baseline linux profile is applied to the application
+#           role.
 #
-# @param apps [Hash] Hash table that maps an application, validate, and start and stop procedures.
+# @param    none
 #
 # @example
-#   include apprc
+#   include role::jenkins or assign in PE classifier
 # == Class: role::jenkins
 class role::jenkins {
   include profile::linux
