@@ -1,6 +1,6 @@
 ---
 profile::jenkins::plugs:
-  'puppet-enterprise-pipeline':
+  - 'puppet-enterprise-pipeline':
   'workflow-api':
   'workflow-basic-steps':
   'workflow-cps':
