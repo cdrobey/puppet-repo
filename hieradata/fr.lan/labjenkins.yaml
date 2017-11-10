@@ -121,7 +121,7 @@ profile::jenkins::plugs:
   'jsch':
     version: '0.1.54.1'
   'durable-task':
-  version:'1.15'
+    version: '1.15'
   'jquery':
     version: '1.12.4-0'
   'jquery-detached':
