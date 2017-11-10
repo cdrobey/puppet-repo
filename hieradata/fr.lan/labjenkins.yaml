@@ -1,130 +1,130 @@
 ---
 profile::jenkins::plugs:
   'momentjs':
-    	version: '1.1.1'
+      version: '1.1.1'
   'script-security':
-  	version: '1.35'
+    version: '1.35'
   'git-client':
-  	version: '2.6.0'
+    version: '2.6.0'
   'scm-api':
-  	version: '2.2.5'
+    version: '2.2.5'
   'git':
-  	version: '3.6.4'
+    version: '3.6.4'
   'github-api':
-  	version: '1.90'
+    version: '1.90'
   'bouncycastle-api':
-  	version: '2.16.2'
+    version: '2.16.2'
   'swarm':
-  	version: '3.6'
+    version: '3.6'
   'command-launcher':
-  	version: '1.1'
+    version: '1.1'
   'jackson2-api':
-  	version: '2.8.7.0'
+    version: '2.8.7.0'
   'pipeline-milestone-step':
-  	version: '1.3.1'
+    version: '1.3.1'
   'pipeline-input-step':
-  	version: '2.8'
+    version: '2.8'
   'pipeline-graph-analysis':
-  	version: '1.5'
+    version: '1.5'
   'pipeline-rest-api':
-  	version: '2.9'
+    version: '2.9'
   'handlebars':
-  	version: '1.1.1'
+    version: '1.1.1'
   'pipeline-stage-view':
-  	version: '2.9'
+    version: '2.9'
   'pipeline-build-step':
-  	version: '2.5.1'
+    version: '2.5.1'
   'credentials-binding':
-  	version: '1.13'
+    version: '1.13'
   'cloudbees-folder':
-  	version: '6.2.1'
+    version: '6.2.1'
   'git-server':
-  	version: '1.7'
+    version: '1.7'
   'workflow-cps-global-lib':
-  	version: '2.9'
+    version: '2.9'
   'workflow-multibranch':
-  	version: '2.16'
+    version: '2.16'
   'authentication-tokens':
-  	version: '1.3'
+    version: '1.3'
   'docker-commons':
-  	version: '1.9'
+    version: '1.9'
   'pipeline-model-declarative-agent':
-  	version: '1.1.1'
+    version: '1.1.1'
   'workflow-aggregator':
-  	version: '2.5'
+    version: '2.5'
   'pipeline-stage-tags-metadata':
-  	version: '1.2.4'
+    version: '1.2.4'
   'pipeline-stage-step':
-  	version: '2.3'
+    version: '2.3'
   'pipeline-model-api':
-  	version: '1.2.4'
+    version: '1.2.4'
   'pipeline-model-extensions':
-  	version: '1.2.4'
+    version: '1.2.4'
   'branch-api':
-  	version: '2.0.15'
+    version: '2.0.15'
   'docker-workflow':
-  	version: '1.14'
+    version: '1.14'
   'pipeline-model-definition':
-  	version: '1.2.4'
+    version: '1.2.4'
   'credentials':
-  	version: '2.1.16'
+    version: '2.1.16'
   'puppet-enterprise-pipeline':
-  	version: '1.3.1'
+    version: '1.3.1'
   'workflow-api':
-  	version: '2.23.1'
+    version: '2.23.1'
   'workflow-basic-steps':
-  	version: '2.6'
+    version: '2.6'
   'workflow-cps':
-  	version: '2.41'
+    version: '2.41'
   'workflow-durable-task-step':
-  	version: '2.17'
+    version: '2.17'
   'workflow-scm-step':
-  	version: '2.6'
+    version: '2.6'
   'plain-credentials':
-  	version: '1.4'
+    version: '1.4'
   'structs':
-  	version: '1.10'
+    version: '1.10'
   'mailer':
-  	version: '1.20'
+    version: '1.20'
   'matrix-project':
-  	version: '1.12'
+    version: '1.12'
   'parameterized-trigger':
-  	version: '2.35.2'
+    version: '2.35.2'
   'promoted-builds':
-  	version: '2.31'
+    version: '2.31'
   'ssh-credentials':
-  	version: '1.13'
+    version: '1.13'
   'token-macro':
-  	version: '2.3'
+    version: '2.3'
   'workflow-step-api':
-  	version: '2.13'
+    version: '2.13'
   'workflow-job':
-  	version: '2.15'
+    version: '2.15'
   'workflow-support':
-  	version: '2.16'
+    version: '2.16'
   'conditional-buildstep':
-  	version: '1.3.6'
+    version: '1.3.6'
   'maven-plugin':
-  	version: '3.0'
+    version: '3.0'
   'run-condition': 
-  	version: '1.0'
+    version: '1.0'
   'display-url-api':
-  	version: '2.1.0'
+    version: '2.1.0'
   'junit':
-  	version: '1.21'
+    version: '1.21'
   'apache-httpcomponents-client-4-api':
-  	version: '4.5.3-2.0'
+    version: '4.5.3-2.0'
   'javadoc':
-  	version: '1.4'
+    version: '1.4'
   'ace-editor':
-  	version: '1.1'
+    version: '1.1'
   'jsch':
-  	version: '0.1.54.1'
+    version: '0.1.54.1'
   'durable-task':
   version:'1.15'
   'jquery':
-  	version: '1.12.4-0'
+    version: '1.12.4-0'
   'jquery-detached':
-  	version: '1.2.1'
+    version: '1.2.1'
   'github':
-  	version: '1.28.1'
+    version: '1.28.1'
