@@ -122,3 +122,5 @@ profile::jenkins::plugs:
     version: '1.2.1'
   'github':
     version: '1.28.1'
+  'credentials-binding':
+    version: '1.13'
