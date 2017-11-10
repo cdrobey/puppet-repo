@@ -41,6 +41,6 @@ profile::jenkins::plugs:
   'rebuild':
     version: '1.27'
   'metrics':
-    version: '3.2.10'
+    version: '3.1.2.10'
   'job-dsl':
     version: '1.66'
