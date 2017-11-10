@@ -1,6 +1,6 @@
 ---
 profile::jenkins::plugs:
-  'workflow-aggregator-plugin':
+  'pipeline':
     version: '2.5'
   'pipeline-input-step':
     version: '2.5' 
