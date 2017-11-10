@@ -41,4 +41,5 @@ profile::jenkins::plugs:
   'mailer':
   'parameterized-trigger':
   'promoted-builds':
+  'pipeline':
 
