@@ -32,8 +32,6 @@ profile::jenkins::plugs:
     version: '2.9'
   'pipeline-build-step':
     version: '2.5.1'
-  'credentials-binding':
-    version: '1.13'
   'cloudbees-folder':
     version: '6.2.1'
   'git-server':
