@@ -1,16 +1,16 @@
-# master
+# puppetmaster
 #
-# Install and configure base puppet master profile.
+# Install and configure base puppet puppetmaster profile.
 #
-# @summary  This profiles opens the required firewall ports for the PE master server
+# @summary  This profiles opens the required firewall ports for the PE puppetmaster server
 #           communicate.
 #
 # @param    none
 #
 # @example
-#   include profile::master::security or assign in PE classifier
-# == Class: profile::master::security
-class profile::apps::master
+#   include profile::puppetmaster::security or assign in PE classifier
+# == Class: profile::puppetmaster::security
+class profile::apps::puppetmaster
 {
   firewall { '200 allow puppet access':
     dport  => [80, 443, 4433, 8081, 8140, 8142, 8143, 8170, 61613],
