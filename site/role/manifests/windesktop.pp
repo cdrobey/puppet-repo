@@ -11,5 +11,5 @@
 #   include role::windows or assign in PE classifier
 # == Class: role::windows
 class role::windesktop {
-  include profile::windesktop
+  include profile::base
 }

@@ -12,6 +12,6 @@
 #   include role::iis or assign in PE classifier
 # == Class: role::iis
 class role::iis {
-  include profile::iis
-  include profile::iis
+  include profile::base
+  include profile::apps::iis
 }

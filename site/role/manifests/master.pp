@@ -12,6 +12,6 @@
 #   include role::master or assign in PE classifier
 # == Class: role::master
 class role::master {
-  include 'profile::linux'
-  include 'profile::master'
+  include 'profile::base'
+  include 'profile::apps::master'
 }

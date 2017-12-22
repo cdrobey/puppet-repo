@@ -12,6 +12,6 @@
 #   include role::apprc or assign in PE classifier
 # == Class: role::apprc
 class role::apprcdemo {
-  include profile::linux
-  include profile::apprc
+  include profile::base
+  include profile::apps::apprc
 }

@@ -12,6 +12,6 @@
 #   include role::print or assign in PE classifier
 # == Class: role::print
 class role::print {
-  include profile::linux
-  include profile::print
+  include profile::base
+  include profile::apps::print
 }

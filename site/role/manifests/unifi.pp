@@ -11,6 +11,6 @@
 #   include role::unifi or assign in PE classifier
 # == Class: role::unifi
 class role::unifi {
-  include profile::linux
-  include profile::unifi
+  include profile::base
+  include profile::apps::unifi
 }

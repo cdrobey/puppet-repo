@@ -11,5 +11,5 @@
 #   include role::linux or assign in PE classifier
 # == Class: role::linux
 class role::linux {
-  include 'profile::linux'
+  include 'profile::base'
 }

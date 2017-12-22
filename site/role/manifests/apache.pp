@@ -11,6 +11,6 @@
 #   include role::apache or assign in PE classifier
 # == Class: role::apache
 class role::apache {
-  include profile::linux
-  include profile::apache
+  include profile::base
+  include profile::apps::apache
 }

@@ -12,6 +12,6 @@
 #   include role::jenkins or assign in PE classifier
 # == Class: role::jenkins
 class role::jenkins {
-  include profile::linux
-  include profile::jenkins
+  include profile::base
+  include profile::apps::jenkins
 }
