@@ -1,5 +1,5 @@
 ---
-profile::apprc::apps:
+profile::apps:apprc::apps:
   foo_app: 
     app_name: 'foo'
     app_start: 'echo Starttttttttttttttttttttttt!'
