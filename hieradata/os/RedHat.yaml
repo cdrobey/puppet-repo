@@ -3,7 +3,6 @@ profile::base::linux::accounts::user_defaults:
   shell: '/bin/bash'
   purge_ssh_keys: true
   hushlogin: true
-profile::base::linux::accounts
 profile::base::linux::accounts::users:
   'deploy':
     ensure: present
