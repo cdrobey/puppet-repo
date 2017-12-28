@@ -26,7 +26,30 @@ File { backup => false }
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
+
+  # Save the trusted pp_role to a shorter variable so it's easier to work with.
+  $role = $trusted['extensions']['pp_role']
+
+  case $role {
+    default: {
+
+      # Check if the role class has been defined.
+      # Include it if so. If not, include the base profile and a warning.
+      if defined($role) {
+        include $role
+      } else {
+        notify { "No matching role for ${role} found":
+          loglevel => 'warning',
+        }
+        include role::base
+      }
+
+    }
+    undef, '': {
+      notify { "${trusted['certname']} does not have a pp_role trusted fact!":
+        loglevel => 'warning',
+      }
+      include profile::base
+    }
+  }
 }
