@@ -1,13 +1,4 @@
 ---
-profile::base::windows::accounts::users:
-  'admin':
-    ensure: present
-    comment: "Admin Account"
-    managehome: false
-    groups:
-      - Administrators
-    password: "T3st!Passw0rd"
-
 profile::base::windows::app::packages:
   - 7zip
   - git
