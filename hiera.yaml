@@ -9,7 +9,7 @@ hierarchy:
     paths:
       - "%{facts.domain}/%{facts.hostname}.yaml"
       - "env/%{trusted.extensions.pp_environment}.yaml"
-      - "apps/%{trusted.extensions.pp_applications}.yaml"
+      - "apps/%{trusted.extensions.pp_application}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
       - "os/%{facts.os.family}.yaml"
       - "common.yaml"
