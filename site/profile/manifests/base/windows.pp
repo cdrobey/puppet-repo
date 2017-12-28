@@ -16,5 +16,4 @@ class profile::base::windows {
   include profile::base::windows::motd
   include profile::base::windows::rdp
   include profile::base::windows::time
-  include profile::base::windows::security
 }
