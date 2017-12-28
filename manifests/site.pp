@@ -28,7 +28,7 @@ File { backup => false }
 node default {
 
   # Save the trusted pp_role to a shorter variable so it's easier to work with.
-  $role = $trusted['extensions']['pp_role']
+  $role = "role::${trusted['extensions']['pp_role']}"
 
   case $role {
     default: {
@@ -36,7 +36,7 @@ node default {
       # Check if the role class has been defined.
       # Include it if so. If not, include the base profile and a warning.
       if defined($role) {
-        include "role::${role}"
+        include $role
       } else {
         notify { "No matching role for ${role} found":
           loglevel => 'warning',
