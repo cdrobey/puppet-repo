@@ -6,10 +6,21 @@ defaults:  # Used for any hierarchy level that omits these keys.
 
 hierarchy:
   - name: "Per-node data"
-    path: "%{facts.domain}/%{facts.hostname}.yaml"
+    paths:
+      - "%{facts.domain}/%{facts.hostname}.yaml"
+      - "apps/%{trusted.extensions.pp_environment}.yaml"
+      - "apps/%{trusted.extensions.pp_applications}.yaml"
+      - "role/%{trusted.extensions.pp_role}.yaml"
+      - "os/%{facts.os.family}.yaml"
+      - "common.yaml"
 
-  - name: "Per-OS defaults"
-    path: "os/%{facts.osfamily}.yaml"
 
-  - name: "Common data"
-    path: "common.yaml"
+hierarchy:
+  - name: "In module hierarchy"
+    paths:
+      - "%{facts.virtual}.yaml"
+      - "%{facts.os.name}-%{facts.os.release.major}.yaml"
+      - "%{facts.os.name}.yaml"
+      - "%{facts.os.family}-%{facts.os.release.major}.yaml"
+      - "%{facts.os.family}.yaml"
+      - "common.yaml"
