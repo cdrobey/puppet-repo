@@ -8,7 +8,7 @@ hierarchy:
   - name: "Per-node data"
     paths:
       - "%{facts.domain}/%{facts.hostname}.yaml"
-      - "apps/%{trusted.extensions.pp_environment}.yaml"
+      - "env/%{trusted.extensions.pp_environment}.yaml"
       - "apps/%{trusted.extensions.pp_applications}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
       - "os/%{facts.os.family}.yaml"
