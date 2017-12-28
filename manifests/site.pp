@@ -36,7 +36,7 @@ node default {
       # Check if the role class has been defined.
       # Include it if so. If not, include the base profile and a warning.
       if defined($role) {
-        include $role
+        include "role::${role}"
       } else {
         notify { "No matching role for ${role} found":
           loglevel => 'warning',
