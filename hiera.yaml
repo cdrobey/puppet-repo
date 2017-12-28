@@ -15,7 +15,7 @@ hierarchy:
       - "common.yaml"
   - name: "Hiera encrypted values for base configurations."
     lookup_key: eyaml_lookup_key
-    path: "os/%{facts.os.family}.secrets.eyaml"
+    path: "secrets/common.eyaml"
     options:
       pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
       pkcs7_public_key:  /etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem
