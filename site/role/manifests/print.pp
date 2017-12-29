@@ -13,5 +13,5 @@
 # == Class: role::print
 class role::print {
   include profile::base
-  include profile::apps::print
+  include profile::os::print
 }
