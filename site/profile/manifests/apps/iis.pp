@@ -19,7 +19,6 @@ class profile::apps::iis {
     'Web-Static-Content',
     'Web-Mgmt-Tools',
     'Web-Mgmt-Console',
-    'Web-iis-Auth',
     'Web-Stat-Compression',
     'Web-Dyn-Compression',
     'Web-Dir-Browsing',
