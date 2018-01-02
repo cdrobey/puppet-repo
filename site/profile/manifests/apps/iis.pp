@@ -12,31 +12,7 @@
 # == Class: profile::apps::iis
 class profile::apps::iis {
 
-  $iis_features = [
-    'web-server',
-    'web-webserver',
-    'Web-Common-Http',
-    'Web-Static-Content',
-    'Web-Mgmt-Tools',
-    'Web-Mgmt-Console',
-    'Web-Stat-Compression',
-    'Web-Dyn-Compression',
-    'Web-Dir-Browsing',
-    'Web-Http-Errors',
-    'Web-Http-Logging',
-    'Web-Default-Doc',
-    'Web-Asp-Net',
-    'Web-Includes',
-    'Web-Filtering',
-    'Web-Mgmt-Service',
-    'Web-Security',
-    'Web-Basic-Auth',
-    'Web-Performance',
-    'Web-Request-Monitor',
-    'Web-App-Dev',
-    'Web-Health',
-    'Web-Http-Redirect'
-  ]
+$iis_features = ['Web-WebServer','Web-Scripting-Tools']
 
   iis_feature { $iis_features:
     ensure => 'present',
@@ -55,7 +31,7 @@ class profile::apps::iis {
     ensure => 'directory',
   }
   -> iis_site { 'Default Web Site':
-    ensure       => 'present',
+    ensure       => 'started',
     logpath      => 'c:\\logs\\iis',
     physicalpath => 'c:\\iiserver\\DefaultWebSite',
   }
