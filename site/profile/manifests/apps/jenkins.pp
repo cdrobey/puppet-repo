@@ -23,7 +23,7 @@ class profile::apps::jenkins (
   class { 'jenkins::master':
   }
 
-  jenkins::user { 'admin':
+  jenkins::user { 'test':
     email    => 'jdoe@example.com',
     password => 'puppetlabs',
   }
