@@ -23,6 +23,11 @@ class profile::apps::jenkins (
   class { 'jenkins::master':
   }
 
+  jenkins::user { 'admin':
+    email    => 'jdoe@example.com',
+    password => 'puppetlabs',
+  }
+
   $plugs.each | $plugin_name, $plugin_data | {
       jenkins::plugin { $plugin_name:
         version => $plugin_data['version']
