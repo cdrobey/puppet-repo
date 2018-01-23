@@ -30,7 +30,7 @@ profile::base::linux::motd::content: |
                  Kernel: %{facts.kernel} %{facts.kernelversion}
                  Uptime: %{facts.uptime_days} Days
 
-profile::base::linux::ssh::manage_firewall: true
+profile::base::linux::ssh::manage_firewall: 'true'
 profile::base::linux::ssh::password_authentication: 'no'
 profile::base::linux::ssh::permit_root_login: 'no'
 profile::base::linux::ssh::permit_empty_passwords: 'no'
