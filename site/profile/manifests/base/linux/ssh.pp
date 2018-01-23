@@ -23,7 +23,7 @@ class profile::base::linux::ssh (
 ) {
 
   class { 'ssh':
-    keys                             => undef,
+    key                             => undef,
     sshd_password_authentication     => $password_authentication,
     permit_root_login                => $permit_root_login,
     sshd_config_permitemptypasswords => $permit_empty_passwords,
