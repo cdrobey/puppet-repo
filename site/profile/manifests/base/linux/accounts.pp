@@ -17,12 +17,12 @@ class profile::base::linux::accounts (
   ) {
   $users.each | $users_name, $users_data | {
     accounts::user { $users_name:
-      ensure       => $users_data['ensure'],
-      comment      => $users_data['comment'],
-      groups       => $users_data['groups'],
-      purge_sshkey => $users_data['purge_sshkey'],
-      sshkeys      => $users_data['sshkeys'],
-      password     => $users_data['password'],
+      ensure         => $users_data['ensure'],
+      comment        => $users_data['comment'],
+      groups         => $users_data['groups'],
+      purge_ssh_keys => $users_data['purge_ssh_keys'],
+      sshkeys        => $users_data['sshkeys'],
+      password       => $users_data['password'],
     }
   }
 }
