@@ -16,7 +16,7 @@ class profile::base::linux {
   include 'profile::base::linux::security'
   include 'profile::base::linux::motd'
   include 'profile::base::linux::ssh'
-  include 'profile::base::linux::sudoers'
+  #include 'profile::base::linux::sudoers'
   include 'profile::base::linux::time'
 
   firewall { '200 allow puppet agent access':
