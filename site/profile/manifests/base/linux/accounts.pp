@@ -23,7 +23,6 @@ class profile::base::linux::accounts (
       purge_sshkey => $users_data['purge_sshkey'],
       sshkeys      => $users_data['sshkeys'],
       password     => $users_data['password'],
-
     }
   }
 }
