@@ -9,7 +9,7 @@ mod "puppetlabs/apt", :latest
 mod 'puppetlabs-firewall', :latest
 mod 'ghoneycutt-ssh', :latest
 mod 'ghoneycutt-common', :latest
-mod 'deric-accounts', :latest
+mod 'puppetlabs-accounts', '1.3.0'
 mod "saz-sudo", '4.2.0'
 mod 'deric-gpasswd', '0.3.2'
 mod 'darin-zypprepo', :latest

@@ -14,10 +14,8 @@
 # == Class: profile::base::linux::accounts
 class profile::base::linux::accounts (
   $users,
-  $user_defaults,
   ) {
   class { 'accounts':
-    user_defaults => $user_defaults,
     users         => $users,
   }
 }
