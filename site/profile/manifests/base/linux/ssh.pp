@@ -23,9 +23,9 @@ class profile::base::linux::ssh (
     action =>  accept,
   }
 
-  #class { 'ssh':
+  class { 'ssh':
    # sshd_password_authentication => 'no',
     #permit_root_login            => 'no',
     #sshd_config_banner           => '/etc/motd',
-  #}
+  }
 }
