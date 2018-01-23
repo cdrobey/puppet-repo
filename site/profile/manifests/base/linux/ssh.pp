@@ -21,6 +21,13 @@ class profile::base::linux::ssh (
   $manage_firewall,
   $banner,
 ) {
+
+  firewall { '201 allow ssh access':
+    dport  => [22],
+    proto  => tcp,
+    action =>  accept,
+  }
+
   class { 'ssh':
     sshd_password_authentication => $password_authentication,
     permit_root_login            => $permit_root_login,
