@@ -15,8 +15,17 @@
 class profile::base::linux::accounts (
   $users,
   ) {
-
   include accounts
 
-  accounts::users { $users: }
+  $users.each | $users_name, $users_data | {
+    accounts::users { $users_name:
+      ensure       => $users_data['ensure'],
+      comment      => $users_data['comment'],
+      groups       => $users_data['groups'],
+      purge_sshkey => $users_data['purge_sshkey'],
+      sshkeys      => $users_data['sshkeys'],
+      password     => $users_data['password'],
+
+    }
+  }
 }
