@@ -17,8 +17,6 @@
 class profile::base::linux::ssh (
   $password_authentication,
   $permit_root_login,
-  $permit_empty_passwords,
-  $manage_firewall,
   $banner,
 ) {
 
