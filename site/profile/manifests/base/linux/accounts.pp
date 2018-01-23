@@ -15,7 +15,8 @@
 class profile::base::linux::accounts (
   $users,
   ) {
-  class { 'accounts':
-    users         => $users,
-  }
+
+  include accounts
+
+  accounts::users { $users: }
 }
