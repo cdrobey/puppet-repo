@@ -15,8 +15,6 @@
 class profile::base::linux::accounts (
   $users,
   ) {
-  include accounts
-
   $users.each | $users_name, $users_data | {
     accounts::users { $users_name:
       ensure       => $users_data['ensure'],
