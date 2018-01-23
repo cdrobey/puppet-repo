@@ -24,4 +24,10 @@ class profile::base::linux {
     proto  => tcp,
     action =>  accept,
   }
+
+  firewall { '201 allow ssh access':
+    dport  => [22],
+    proto  => tcp,
+    action =>  accept,
+  }
 }
