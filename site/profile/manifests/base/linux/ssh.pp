@@ -27,7 +27,7 @@ class profile::base::linux::ssh (
   }
 
   class { 'ssh':
-    sshd_password_authentication => 'no',
+    sshd_password_authentication => $password_authentication,
     permit_root_login            => 'no',
     sshd_config_banner           => $banner,
   }

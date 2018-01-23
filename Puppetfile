@@ -7,7 +7,7 @@ mod "puppetlabs/motd", :latest
 mod "puppetlabs-registry", :latest
 mod "puppetlabs/apt", :latest
 mod 'puppetlabs-firewall', :latest
-mod 'ghoneycutt-ssh', :latest
+mod 'ghoneycutt-ssh', '3.56.1'
 mod 'ghoneycutt-common', :latest
 mod 'puppetlabs-accounts', '1.3.0'
 mod "saz-sudo", '4.2.0'
