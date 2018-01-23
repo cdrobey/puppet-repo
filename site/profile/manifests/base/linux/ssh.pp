@@ -15,8 +15,6 @@
 #   include profile::base::linux::ssh or assign in PE classifier
 # == Class: profile::base::linux::ssh
 class profile::base::linux::ssh (
-  $password_authentication,
-  $banner,
 ) {
 
   firewall { '201 allow ssh access':
@@ -28,6 +26,6 @@ class profile::base::linux::ssh (
   class { 'ssh':
     sshd_password_authentication => 'no',
     permit_root_login            => 'no',
-    sshd_config_banner           => $banner,
+    sshd_config_banner           => '/etc/motd',
   }
 }
