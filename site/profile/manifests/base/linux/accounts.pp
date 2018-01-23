@@ -16,7 +16,7 @@ class profile::base::linux::accounts (
   $users,
   ) {
   $users.each | $users_name, $users_data | {
-    accounts::users { $users_name:
+    accounts::user { $users_name:
       ensure       => $users_data['ensure'],
       comment      => $users_data['comment'],
       groups       => $users_data['groups'],
