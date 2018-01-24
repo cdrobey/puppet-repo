@@ -20,7 +20,7 @@ class profile::apps::unifi (
     proto  => tcp,
     action =>  accept,
   }
-  firewall { '200 allow unifi access':
+  firewall { '202 allow unifi access':
     dport  => [ 3478 ],
     proto  => udp,
     action =>  accept,
