@@ -13,6 +13,7 @@
 # == Class: profile::apps::unifi
 class profile::apps::unifi (
   $repo_release = 'stable',
+  $package_ensure = 'latest',
 ){
   firewall { '200 allow unifi access':
     dport  => [80, 443, 8080, 8443, 8843, 8880, 3478, 6789, 10001],
@@ -21,6 +22,7 @@ class profile::apps::unifi (
   }
 
   class { 'unifi':
-    repo_release => $repo_release,
+    repo_release   => $repo_release,
+    package_ensure => $package_ensure,
   }
 }
