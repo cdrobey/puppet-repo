@@ -20,7 +20,11 @@ class profile::apps::unifi (
     proto  => tcp,
     action =>  accept,
   }
-
+  firewall { '200 allow unifi access':
+    dport  => [ 3478 ],
+    proto  => udp,
+    action =>  accept,
+  }
   class { 'unifi':
     repo_release   => $repo_release,
     package_ensure => $package_ensure,
