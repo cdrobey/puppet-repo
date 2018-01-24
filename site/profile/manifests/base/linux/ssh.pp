@@ -31,7 +31,6 @@ class profile::base::linux::ssh (
     sshd_password_authentication => $password_authentication,
     permit_root_login            => $permit_root_login,
     sshd_config_banner           => $banner,
-    purge_sshkeys                => true,
     keys                         => $keys,
   }
 }
