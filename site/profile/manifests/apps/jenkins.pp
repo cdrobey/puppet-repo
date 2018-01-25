@@ -23,15 +23,10 @@ class profile::apps::jenkins (
   class { 'jenkins::master':
   }
 
-  jenkins::user { 'test':
-    email    => 'jdoe@example.com',
-    password => 'puppetlabs',
-  }
-
   $plugs.each | $plugin_name, $plugin_data | {
-      jenkins::plugin { $plugin_name:
-        version => $plugin_data['version']
-      }
+    jenkins::plugin { $plugin_name:
+      version => $plugin_data['version']
+    }
   }
   ensure_packages(['puppet-lint'], {'ensure' => 'present', 'provider' =>  'puppet_gem'})
 }
