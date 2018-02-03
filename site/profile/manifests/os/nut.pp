@@ -27,7 +27,10 @@ class profile::os::nut (
   class { '::nut':
     listen => [
       {
-        'address' => $facts['ipaddress'],
+        'address' => $facts['ipaddress_ens160'],
+      },
+      {
+        'address' => $facts['ipaddress6_ens160'],
       },
     ],
   }
