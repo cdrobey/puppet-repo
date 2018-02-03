@@ -24,7 +24,7 @@ class profile::os::nut (
     action =>  accept,
   }
 
-  class { '::nut':
+  class { 'nut':
     listen => [
       {
         'address' => $facts['ipaddress_ens160'],
