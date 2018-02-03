@@ -42,6 +42,7 @@ mod 'darin-zypprepo', '1.0.2'
 mod 'puppet-archive', '2.1.0'
 mod 'puppetlabs-apache', '2.3.0'
 mod 'bodgit-nut', '1.0.1'
+mod 'thrnio-ip', '1.0.1'
 
 mod 'apprc',
   :git    => 'https://github.com/cdrobey/apprc.git',
