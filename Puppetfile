@@ -41,6 +41,7 @@ mod 'puppetlabs-java', '2.0.0'
 mod 'darin-zypprepo', '1.0.2'
 mod 'puppet-archive', '2.1.0'
 mod 'puppetlabs-apache', '2.3.0'
+mod 'netmanagers-nut', '1.1.0'
 
 mod 'apprc',
   :git    => 'https://github.com/cdrobey/apprc.git',
