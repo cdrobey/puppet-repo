@@ -24,13 +24,13 @@ class profile::os::nut (
     action =>  accept,
   }
 
-  class { 'nut':
+  class { '::nut':
     listen => [
       {
-        'address' => '10.1.1.50',
+        'address' => $::ipaddress_eth0,
       },
       {
-        'address' => '127.0.0.1',
+        'address' => $::ipaddress6_eth0,
       },
     ],
   }
