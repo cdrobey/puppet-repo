@@ -30,16 +30,12 @@ class profile::os::nut (
     driver => 'usbhid-ups',
     port   => 'auto',
   }
-  nut::user { 'local':
-    password => 'password',
+  nut::user { 'monuser':
+    password => 'secret',
     upsmon   => 'master',
   }
-  #nut::user { 'remote':
-  #  password => 'secret',
-  #  upsmon   => 'slave',
-  #}
-  #nut::client::ups { 'sua1000i@localhost':
-  #  user     => 'local',
-  #  password => 'password',
-  #}
+  nut::client::ups { 'ups@localhost':
+    user     => 'monuser',
+    password => 'secret',
+  }
 }
