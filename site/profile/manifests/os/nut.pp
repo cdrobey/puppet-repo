@@ -24,8 +24,13 @@ class profile::os::nut (
     action =>  accept,
   }
 
-  include nut
-
+  class { '::nut':
+    listen => [
+      {
+        'address' => $facts['ipaddress'],
+      },
+    ],
+  }
   nut::ups { 'ups':
     driver => 'usbhid-ups',
     port   => 'auto',
