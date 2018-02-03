@@ -24,10 +24,10 @@ class profile::os::nut (
     action =>  accept,
   }
 
-  class { '::nut':
+  class { 'nut':
     listen => [
       {
-        'address' => '10.1.1.50',
+        'address' => $facts['ipaddress'],
       },
     ],
   }
