@@ -27,10 +27,7 @@ class profile::os::nut (
   class { '::nut':
     listen => [
       {
-        'address' => $::ipaddress_ens160,
-      },
-      {
-        'address' => $::ipaddress6_ens160,
+        'address' => '10.1.1.50',
       },
     ],
   }
