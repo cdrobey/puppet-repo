@@ -19,26 +19,27 @@ class profile::apps::monitor (
     }
 
     class { 'influxdb':
-        ensure            => 'present',
+        ensure              => 'present',
+        monitoring_database => 'Monitoring'
     }
 
     class { 'grafana':
     }
+
     grafana_datasource { 'influxdb':
         grafana_url      => 'http://monitor.fr.lan:3000',
         grafana_user     => 'admin',
         grafana_password => 'grafana',
         type             => 'influxdb',
         url              => 'http://localhost:8086',
-        database         => 'pfsense',
+        database         => 'Monitoring',
         is_default       => true,
     }
-    grafana_user { 'username':
+    -> grafana_user { 'username':
         grafana_url      => 'http://localhost:3000',
         grafana_user     => 'admin',
         grafana_password => 'grafana',
         full_name        => 'Grafana User',
-        password         => 'grafan',
-        email            => '',
+        password         => 'grafana',
     }
 }
