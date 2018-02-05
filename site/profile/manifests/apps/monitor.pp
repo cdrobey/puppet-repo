@@ -13,7 +13,7 @@
 class profile::apps::monitor (
 ){
     firewall { '300 allow communication to InfluxDB':
-        dport  => [8086],
+        dport  => [8086, 8083],
         proto  => tcp,
         action =>  accept,
     }
