@@ -45,7 +45,7 @@ mod 'bodgit-nut', '1.0.1'
 mod 'thrnio-ip', '1.0.1'
 
 mod 'influxdb',
-  :git    => 'https://github.com/dgolja/golja-influxdb/tree/master'
+  :git    => 'https://github.com/dgolja/golja-influxdb/tree/master',
   :branch => 'master'
 
 mod 'apprc',
