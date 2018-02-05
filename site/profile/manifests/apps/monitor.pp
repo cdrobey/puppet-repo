@@ -22,8 +22,8 @@ class profile::apps::monitor (
         ensure            => 'present',
     }
 
-    class { 'grafana': }
-
+    class { 'grafana':
+    }
     grafana_datasource { 'influxdb':
         grafana_url      => 'http://monitor.fr.lan:3000',
         grafana_user     => 'admin',
@@ -33,4 +33,13 @@ class profile::apps::monitor (
         database         => 'pfsense',
         is_default       => true,
     }
+    grafana_user { 'username':
+        grafana_url      => 'http://localhost:3000',
+        grafana_user     => 'admin',
+        grafana_password => 'grafana',
+        full_name        => 'Grafana User',
+        password         => 'grafan',
+        email            => '',
+    }
+}
 }
