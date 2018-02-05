@@ -13,10 +13,14 @@
 class profile::apps::monitor (
 ){
     firewall { '300 allow communication to InfluxDB':
-        dport  => [8083],
+        dport  => [8086],
         proto  => tcp,
         action =>  accept,
     }
 
-    class { 'influxdb': }
+    class { 'influxdb':
+        ensure            => 'present',
+        http_bind_address => "${::fqdn}:8086",
+
+    }
 }
