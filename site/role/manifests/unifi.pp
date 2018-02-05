@@ -14,4 +14,5 @@ class role::unifi {
   include profile::base
   include profile::os::nut
   include profile::apps::unifi
+  include profile::apps::monitor
 }
