@@ -20,7 +20,6 @@ class profile::apps::monitor (
 
     class { 'influxdb':
         ensure              => 'present',
-        monitoring_database => 'Monitoring'
     }
 
     class { 'grafana':
