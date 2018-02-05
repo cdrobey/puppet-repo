@@ -24,13 +24,4 @@ class profile::apps::monitor (
 
     class { 'grafana':
     }
-
-    grafana_datasource { 'influxdb':
-        grafana_url => 'http://monitor.fr.lan:3000',
-        access_mode => 'proxy',
-        type        => 'influxdb',
-        url         => 'http://localhost:8086',
-        database    => 'pfsense',
-        is_default  => true,
-    }
 }
