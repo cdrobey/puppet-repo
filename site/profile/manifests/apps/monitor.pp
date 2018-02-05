@@ -8,10 +8,9 @@
 # @param    none
 #
 # @example
-#   include profile::appc or assign in PE classifier
-# == Class: profile::apps::influ
+#   include profile::monitor or assign in PE classifier
+# == Class: profile::apps::monitor
 class profile::apps::monitor (
-    $port,
 ){
     firewall { '300 allow communication to InfluxDB':
         dport  => [8083],
