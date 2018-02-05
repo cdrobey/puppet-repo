@@ -20,7 +20,5 @@ class profile::apps::monitor (
 
     class { 'influxdb':
         ensure            => 'present',
-        http_bind_address => "${::fqdn}:8086",
-
     }
 }
