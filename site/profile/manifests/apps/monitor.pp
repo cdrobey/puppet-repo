@@ -42,4 +42,3 @@ class profile::apps::monitor (
         email            => '',
     }
 }
-}
