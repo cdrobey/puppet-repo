@@ -18,8 +18,11 @@ class profile::apps::monitor (
         action =>  accept,
     }
 
-    class { 'influxdb':
-        ensure => 'present',
+    class {'influxdb':
+        ensure         => 'present',
+        manage_repos   => true,
+        manage_service => true,
+        version        => '1.4.0',
     }
 
     class { 'grafana':
