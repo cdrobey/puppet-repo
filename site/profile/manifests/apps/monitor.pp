@@ -22,7 +22,7 @@ class profile::apps::monitor (
         ensure         => 'present',
         manage_repos   => true,
         manage_service => true,
-        version        => '1.4.0',
+        version        => '1.4.2-1',
     }
 
     class { 'grafana':
