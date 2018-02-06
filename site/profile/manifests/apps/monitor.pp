@@ -38,7 +38,7 @@ class profile::apps::monitor (
         is_default       => true,
     }
 
-    -> class { 'telegraf':
+    class { 'telegraf':
         hostname => $facts['hostname'],
         outputs  => {
             'influxdb' => {
