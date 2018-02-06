@@ -25,7 +25,7 @@ class profile::apps::monitor (
         version        => '1.4.2-1',
     }
 
-    class { 'grafana':
+    -> class { 'grafana':
     }
     -> grafana_datasource { 'influxdb':
         grafana_url      => 'http://localhost:3000',
@@ -36,5 +36,17 @@ class profile::apps::monitor (
         database         => 'Monitor',
         access_mode      => 'proxy',
         is_default       => true,
+    }
+
+    class { 'telegraf':
+        hostname => $facts['hostname'],
+        outputs  => {
+            'influxdb' => {
+                'urls'     => [ 'http://monitor:8086', ],
+                'database' => 'Monitor',
+                'username' => 'monitor',
+                'password' => 'monitor',
+            }
+        },
     }
 }
