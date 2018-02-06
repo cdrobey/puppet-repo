@@ -27,7 +27,7 @@ class profile::apps::monitor (
 
     class { 'grafana':
     }
-    grafana_datasource { 'influxdb':
+    -> grafana_datasource { 'influxdb':
         grafana_url      => 'http://localhost:3000',
         grafana_user     => 'admin',
         grafana_password => 'admin',
