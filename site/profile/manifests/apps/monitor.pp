@@ -44,8 +44,6 @@ class profile::apps::monitor (
             'influxdb' => {
                 'urls'     => [ 'http://monitor:8086', ],
                 'database' => 'Monitor',
-                'username' => 'monitor',
-                'password' => 'monitor',
             }
         },
         inputs   => {
