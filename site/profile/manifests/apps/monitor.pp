@@ -48,5 +48,14 @@ class profile::apps::monitor (
                 'password' => 'monitor',
             }
         },
+        inputs   => {
+            'cpu'    => {},
+            'mem'    => {},
+            'io'     => {},
+            'net'    => {},
+            'disk'   => {},
+            'swap'   => {},
+            'system' => {},
+        }
     }
 }
