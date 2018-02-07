@@ -11,9 +11,10 @@
 #   include profile::os::monitor or assign in PE classifier
 # == Class: profile::os::monitor
 class profile::os::monitor (
-  $influxdbhost, $influxdbport, $influxdbname
-}{
-
+  $influxdbhost,
+  $influxdbport,
+  $influxdbname
+){
   firewall { '200 allow tcp monitorer access':
     dport  => [80, 443, 631, 515, 5353],
     proto  => tcp,
