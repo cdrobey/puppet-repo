@@ -50,3 +50,7 @@ profile::base::linux::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
 profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
+profile::os::monitor::influxdbhost: 'monitor'
+profile::os::monitor::influxdbport: '8086'
+profile::os::monitor::influxdbname: 'Monitor'

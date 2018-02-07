@@ -8,9 +8,9 @@
 # @param    none
 #
 # @example
-#   include profile::monitor or assign in PE classifier
-# == Class: profile::apps::monitor
-class profile::apps::monitor (
+#   include profile::apps::monitormaster or assign in PE classifier
+# == Class: profile::apps::monitormaster
+class profile::apps::monitormaster (
 ){
     firewall { '300 allow communication to InfluxDB and Grafana':
         dport  => [8086, 8083, 3000],
@@ -27,7 +27,7 @@ class profile::apps::monitor (
 
     -> class { 'grafana':
     }
-    -> grafana_datasource { 'influxdb':
+    grafana_datasource { 'influxdb':
         grafana_url      => 'http://localhost:3000',
         grafana_user     => 'admin',
         grafana_password => 'admin',
@@ -36,24 +36,5 @@ class profile::apps::monitor (
         database         => 'Monitor',
         access_mode      => 'proxy',
         is_default       => true,
-    }
-
-    class { 'telegraf':
-        hostname => $facts['hostname'],
-        outputs  => {
-            'influxdb' => {
-                'urls'     => [ 'http://monitor:8086', ],
-                'database' => 'Monitor',
-            }
-        },
-        inputs   => {
-            'cpu'    => {},
-            'mem'    => {},
-            'io'     => {},
-            'net'    => {},
-            'disk'   => {},
-            'swap'   => {},
-            'system' => {},
-        }
     }
 }
