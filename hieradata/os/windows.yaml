@@ -24,3 +24,6 @@ profile::base::windows::motd::content: |
 profile::base::windows::rdp::rdp_enable: true
 profile::base::windows::rdp::rdp_nla_enable: false
 
+profile::os::monitor::influxdburi: "http://monitor:8086"
+profile::os::monitor::influxdbname: 'Monitor'
+
