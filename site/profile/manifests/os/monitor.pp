@@ -15,7 +15,7 @@ class profile::os::monitor (
   $influxdburi,
   $influxdbname
 ){
-  if $facts['trusted']['extensions']['pp_environment'] == 'home' {
+  if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
       hostname => $facts['hostname'],
       outputs  => {
