@@ -12,5 +12,4 @@
 # == Class: role::linux
 class role::base {
   include 'profile::base'
-  include profile::os::monitor
 }
