@@ -13,6 +13,7 @@
 class role::unifi {
   include profile::base
   include profile::os::nut
+  include profile::os::monitor
   include profile::apps::unifi
   include profile::apps::monitormaster
   include profile::os::monitor
