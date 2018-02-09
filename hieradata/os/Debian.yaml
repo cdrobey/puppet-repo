@@ -55,9 +55,9 @@ profile::os::monitor::influxdbinputs:
   cpu:
     - percpu: true
       totalcpu: true
-  mem:
-  io:
-  net:
-  disk:
-  swap:
-  system:
+  mem: [{}]
+  io: [{}]
+  net: [{}]
+  disk: [{}]
+  swap: [{}]
+  system: [{}]
