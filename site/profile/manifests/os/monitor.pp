@@ -13,7 +13,8 @@
 # == Class: profile::os::monitor
 class profile::os::monitor (
   $influxdburi,
-  $influxdbname
+  $influxdbname,
+  $influxdbinputs,
 ){
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
@@ -24,15 +25,7 @@ class profile::os::monitor (
           'database' => $influxdbname,
         }
       },
-      inputs   => {
-        'cpu'    => {},
-        'mem'    => {},
-        'io'     => {},
-        'net'    => {},
-        'disk'   => {},
-        'swap'   => {},
-        'system' => {},
-      }
+      inputs   => $influxdbinputs,
     }
   }
 }
