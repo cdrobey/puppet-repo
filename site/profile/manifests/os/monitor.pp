@@ -25,7 +25,7 @@ class profile::os::monitor (
           'database' => $influxdbname,
         }
       },
-      inputs   => $influxdbinputs
+      inputs   => hiera_hash("${module_name}::influxdbinputs",undef)
     }
   }
 }
