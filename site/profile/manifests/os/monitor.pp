@@ -16,7 +16,7 @@ class profile::os::monitor (
   $influxdbname,
 ){
 
-  $inputs = hiera_hash('profile::os::monitor:influxdbinputs', undef)
+  $inputs = hiera_hash('profile::os::monitor::influxdbinputs', undef)
 
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
