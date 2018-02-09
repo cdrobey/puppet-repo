@@ -14,8 +14,15 @@
 class profile::os::monitor (
   $influxdburi,
   $influxdbname,
-  #$influxdbinputs,
+  $influxdbinputs,
 ){
+
+  $_inputs = lookup({
+    name          => 'profile::os::monitor::influxdbinputs',
+    default_value => $influxdbinputs,
+    merge         => deep,
+  })
+
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
       hostname => $facts['hostname'],
@@ -25,7 +32,7 @@ class profile::os::monitor (
           'database' => $influxdbname,
         }
       },
-     # inputs   => hiera_hash('profile::os::monitor::influxdbinputs',undef)
+      inputs   => $_inputs,
     }
   }
 }
