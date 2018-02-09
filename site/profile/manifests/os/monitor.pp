@@ -14,10 +14,8 @@
 class profile::os::monitor (
   $influxdburi,
   $influxdbname,
+  $influxdbinputs,
 ){
-
-  $_inputs = hiera_hash('profile::os::monitor::influxdbinputs', undef)
-
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
       hostname => $facts['hostname'],
@@ -27,7 +25,7 @@ class profile::os::monitor (
           'database' => $influxdbname,
         }
       },
-      inputs   => $_inputs,
+      inputs   => $influxdbinputs,
     }
   }
 }
