@@ -25,7 +25,7 @@ class profile::os::monitor (
           'database' => $influxdbname,
         }
       },
-      inputs = $influxdbinputs,
+      inputs   => $influxdbinputs,
     }
   }
 }
