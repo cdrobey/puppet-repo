@@ -28,7 +28,7 @@ profile::base::windows::rdp::rdp_nla_enable: false
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
-profile::os::monitor::inputs
+profile::os::monitor::inputs:
   win_cpu:
     win_perf_counters.object:
       ObjectName: Processor
