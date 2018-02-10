@@ -33,5 +33,6 @@ class profile::os::monitor (
     telegraf::input { $input_name:
       plugin_type => $input_data['plugin_type'],
       options     => $input_data['options'],
+    }
   }
 }
