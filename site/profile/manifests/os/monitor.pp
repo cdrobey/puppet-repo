@@ -32,7 +32,7 @@ class profile::os::monitor (
       telegraf::input { $influxdbdname:
         plugin_type => $influxdbd['plugin_type'],
         options     => $influxdbd['options'],
-        }
+      }
     }
   }
 }
