@@ -31,8 +31,8 @@ profile::os::monitor::influxdbinputs:
 
 profile::os::monitor::influxdbinput_list:
   - win_disk:
-     plugin_type: 'inputs.win_perf_counters.object'
-     options:
+     - plugin_type: 'inputs.win_perf_counters.object'
+     - options:
         ObjectName: 'LogicalDisk'
         Instances: '*'
         Counters:
