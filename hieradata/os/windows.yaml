@@ -31,3 +31,4 @@ profile::os::monitor::influxdbinputs:
   win_perf_counters.object: [{}]
   win_perf_counters.object: [{}]
   win_perf_counters.object: [{}]
+  profile::os::monitor::inputs: undef
