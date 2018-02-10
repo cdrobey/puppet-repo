@@ -35,11 +35,11 @@ profile::os::monitor::influxdbinput_list:
     options:
       ObjectName: 'LogicalDisk'
       Instances: '*'
-       Counters:
-        - '% Idle Time'
-        - '% Disk Time'
-        - '% Disk Read Time'
-        - '% Disk Write Time'
-        - '% User Time'
-        - 'Current Disk Queue Length'
+      Counters:
+      - '% Idle Time'
+      - '% Disk Time'
+      - '% Disk Read Time'
+      - '% Disk Write Time'
+      - '% User Time'
+      - 'Current Disk Queue Length'
       Measurement: 'win_disk'
