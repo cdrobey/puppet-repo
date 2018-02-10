@@ -28,58 +28,28 @@ profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
   win_perf_counters.object:
-    ObjectName: Processor
-    Instances:
-      - '*'
-    Counters:
-      - '% Idle Time'
-      - '% Interrupt Time'
-      - '% Privileged Time'
-      - '% User Time'
-      - '% Processor Time'
-    Measurement: 'win_cpu'
-  win_perf_counters.object:
-    ObjectName: LogicalDisk
-    Instances:
-      - '*'
-    Counters:
-      - '% Idle Time'
-      - '% Disk Time'
-      - '% Disk Read Time'
-      - '% Disk Write Time'
-      - '% User Time'
-      - 'Current Disk Queue Length'
-    Measurement: 'win_disk'
-  win_perf_counters.object:
-    ObjectName: System
-    Instances:
-      - '------'
-    Counters:
-      - 'Context Switches/sec'
-      - 'System Calls/sec'
-      - 'Processor Queue Length'
-    Measurement: 'win_system'
-  win_perf_counters.object:
-    ObjectName: Memory
-    Instances:
-      - '------'
-    Counters:
-      - 'Available Bytes'
-      - 'Cache Faults/sec'
-      - 'Demand Zero Faults/sec'
-      - 'Page Faults/sec'
-      - 'Pages/sec'
-      - 'Transition Faults/sec'
-      - 'Pool Nonpaged Bytes'
-      - 'Pool Paged Bytes'
-    Measurement: 'win_mem'
-  win_perf_counters.object:
-    ObjectName: Network Interface
-    Instances:
-      - '*'
-    Counters:
-      - 'Bytes Received/sec'
-      - 'Bytes Sent/sec'
-      - 'Packets Received/sec'
-      - 'Packets Sent/sec'
-    Measurement: 'win_net'
+    - CPU
+      ObjectName: Processor
+      Instances:
+        - '*'
+      Counters:
+        - '% Idle Time'
+        - '% Interrupt Time'
+        - '% Privileged Time'
+        - '% User Time'
+        - '% Processor Time'
+      Measurement: 'win_cpu'
+  - DISK
+    win_perf_counters.object:
+      ObjectName: LogicalDisk
+      Instances:
+        - '*'
+      Counters:
+        - '% Idle Time'
+        - '% Disk Time'
+        - '% Disk Read Time'
+        - '% Disk Write Time'
+        - '% User Time'
+        - 'Current Disk Queue Length'
+      Measurement: 'win_disk'
+  
