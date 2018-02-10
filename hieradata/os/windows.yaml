@@ -27,8 +27,9 @@ profile::base::windows::rdp::rdp_nla_enable: false
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
-  win_perf_counters.object:
-    - CPU
+profile::os::monitor::input
+  Processor:
+    win_perf_counters.object:
       ObjectName: Processor
       Instances:
         - '*'
@@ -39,7 +40,7 @@ profile::os::monitor::influxdbinputs:
         - '% User Time'
         - '% Processor Time'
       Measurement: 'win_cpu'
-  - DISK
+  LogicalDisk:
     win_perf_counters.object:
       ObjectName: LogicalDisk
       Instances:
@@ -52,4 +53,3 @@ profile::os::monitor::influxdbinputs:
         - '% User Time'
         - 'Current Disk Queue Length'
       Measurement: 'win_disk'
-  
