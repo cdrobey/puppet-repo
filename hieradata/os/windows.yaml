@@ -29,7 +29,6 @@ profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
 profile::os::monitor::inputs
-  Processor:
     win_perf_counters.object:
       ObjectName: Processor
       Instances:
