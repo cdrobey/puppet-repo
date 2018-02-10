@@ -29,6 +29,5 @@ profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
   win_perf_counters:
     - ObjectName: Processor
-      - Instances: '*'
-        Counters:
-          - '% Processor Time'
+      Counters:
+        - '% Processor Time'
