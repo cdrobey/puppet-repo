@@ -30,10 +30,8 @@ class profile::os::monitor (
     }
   }
   $inputs.each | $input_name, $input_data | {
-    notify("Input Data: ${input_data}")
-
-# telegraf::input { $input_name:
-#  * => $input_data
-#   }
+    telegraf::input { $input_name:
+      plugin_type => $input_data['plugin_type'],
+      options     => $input_data['options'],
   }
 }
