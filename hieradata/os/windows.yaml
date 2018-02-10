@@ -29,7 +29,7 @@ profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
 profile::os::monitor::inputs
-  'Processor':
+  - 'Processor':
     win_perf_counters.object:
       ObjectName: Processor
       Instances:
@@ -41,7 +41,7 @@ profile::os::monitor::inputs
         - '% User Time'
         - '% Processor Time'
       Measurement: 'win_cpu'
-  'LogicalDisk':
+  - 'LogicalDisk':
     win_perf_counters.object:
       ObjectName: LogicalDisk
       Instances:
