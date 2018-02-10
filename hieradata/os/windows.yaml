@@ -28,17 +28,14 @@ profile::base::windows::rdp::rdp_nla_enable: false
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
-  win_perf_counters.object: [{}]
-  win_perf_counters.object: [{}]
-  win_perf_counters.object: [{}]
 
-  profile::os::monitor::influxdbd:
+profile::os::monitor::influxdbd:
   win_disk:
     inputs.win_perf_counters.object:
       ObjectName: 'LogicalDisk'
       Instances: '*''
       Counters:
-        -'% Idle Time'
+        - '% Idle Time'
         - '% Disk Time'
         - '% Disk Read Time'
         - '% Disk Write Time'
