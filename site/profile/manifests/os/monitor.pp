@@ -29,9 +29,10 @@ class profile::os::monitor (
       inputs   => $influxdbinputs,
     }
     $influxdbd.each | $influxdbdname, $influxdbdinputs | {
-      telegraf::input { $influxdbdname:
-        plugin_type => $influxdbd['plugin_type'],
-        options     => $influxdbd['options'],
+#      telegraf::input { $influxdbdname:
+#        plugin_type => $influxdbd['plugin_type'],
+#        options     => $influxdbd['options'],
+        notice("${influxdbdname['plugin_type']} = ${influxdbdname['options']}"
       }
     }
   }
