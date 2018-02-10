@@ -9,7 +9,7 @@ profile::base::windows::app::packages:
   - googlechrome
   - vmwarevsphereclient
   - firefox
-  - notepad++
+  - vim
 
 profile::base::windows::time::ntp_servers:
   - fw.fr.lan
