@@ -15,7 +15,7 @@ class profile::os::monitor (
   $influxdburi,
   $influxdbname,
   $influxdbinputs,
-  $influxdbd,
+  $influxdbinput_list,
 ){
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
@@ -28,10 +28,10 @@ class profile::os::monitor (
       },
       inputs   => $influxdbinputs,
     }
-    $influxdbd.each | $influxdbdname, $influxdbdinputs | {
-      telegraf::input { $influxdbdname:
-        plugin_type => $influxdbdinputs['plugin_type'],
-        options     => $influxdbdinputs['options'],
+    $influxdbinput_list.each | $input_name, $input | {
+      telegraf::input { $input_name:
+        plugin_type => $input['plugin_type'],
+        options     => $input['options'],
       }
     }
   }
