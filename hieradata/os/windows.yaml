@@ -27,7 +27,10 @@ profile::base::windows::rdp::rdp_nla_enable: false
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs:
-  win_perf_counters:
-    - ObjectName: Processor
-      Counters:
-        - '% Processor Time'
+  win_perf_counters.object:
+    ObjectName: Processor
+    Instances:
+      - '*'
+    Counters:
+      - '% Processor Time'
+    Measurement: 'win_cpu'
