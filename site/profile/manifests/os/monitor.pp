@@ -28,12 +28,13 @@ class profile::os::monitor (
       },
       inputs   => $influxdbinputs,
     }
-    $influxdbd.each | $plugin_type, $options | {
+    $influxdbd.each | $name, $inputs | {
+      $inputs.each | $plugin_type, $input | {
         telegraf::input { $name:
             plugin_type => $plugin_type,
-            options     => $options,
+            options     => $input,
         }
+      }
     }
   }
-
 }
