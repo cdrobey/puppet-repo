@@ -31,14 +31,15 @@ profile::os::monitor::influxdbinputs:
 
 profile::os::monitor::influxdbd:
   win_disk:
-    - 'inputs.win_perf_counters.object':
-      ObjectName: 'LogicalDisk'
-      Instances: '*'
-      Counters:
-        - '% Idle Time'
-        - '% Disk Time'
-        - '% Disk Read Time'
-        - '% Disk Write Time'
-        - '% User Time'
-        - 'Current Disk Queue Length'
-      Measurement: 'win_disk'
+    - plugin_type: 'inputs.win_perf_counters.object'
+    - options:
+        ObjectName: 'LogicalDisk'
+        Instances: '*'
+        Counters:
+          - '% Idle Time'
+          - '% Disk Time'
+          - '% Disk Read Time'
+          - '% Disk Write Time'
+          - '% User Time'
+          - 'Current Disk Queue Length'
+        Measurement: 'win_disk'
