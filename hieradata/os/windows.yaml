@@ -30,7 +30,7 @@ profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
 
 profile::os::monitor::influxdbinput_list:
-  - win_disk:
+  win_disk:
     plugin_type: 'win_perf_counters.object'
     options:
       ObjectName: 'LogicalDisk'
@@ -44,55 +44,55 @@ profile::os::monitor::influxdbinput_list:
       - '% User Time'
       - 'Current Disk Queue Length'
       Measurement: 'win_disk'
-  - win_cpu:
+  win_cpu:
     plugin_type: 'win_perf_counters.object'
-      options:
-        ObjectName: 'Processor'
-        Instances:
-          - '*'
-        Counters:
-        - '% Idle Time'
-        - '% Interrupt Time'
-        - '% Privileged Time'
-        - '% User Time'
-        - '% Processor Time'
-        Measurement: 'win_cpu'
-  - win_system:
+    options:
+      ObjectName: 'Processor'
+      Instances:
+        - '*'
+      Counters:
+      - '% Idle Time'
+      - '% Interrupt Time'
+      - '% Privileged Time'
+      - '% User Time'
+      - '% Processor Time'
+      Measurement: 'win_cpu'
+  win_system:
     plugin_type: 'win_perf_counters.object'
-      options:
-        ObjectName: 'Processor'
-        Instances:
-          - '------'
-        Counters:
-        - 'Context Switches/sec'
-        - 'System Calls/sec'
-        - 'Processor Queue Length'
-        Measurement: 'win_system'
-  - win_mem:
+    options:
+      ObjectName: 'Processor'
+      Instances:
+        - '------'
+      Counters:
+      - 'Context Switches/sec'
+      - 'System Calls/sec'
+      - 'Processor Queue Length'
+      Measurement: 'win_system'
+  win_mem:
     plugin_type: 'win_perf_counters.object'
-      options:
-        ObjectName: 'Processor'
-        Instances:
-          - '------'
-        Counters:
-        - 'Available Bytes'
-        - 'Cache Faults/sec'
-        - 'Demand Zero Faults/sec'
-        - 'Page Faults/sec'
-        - 'Pages/sec'
-        - 'Transition Faults/sec'
-        - 'Pool Nonpaged Bytes'
-        - 'Pool Paged Bytes'
-        Measurement: 'win_mem'  
-  - win_net:
+    options:
+      ObjectName: 'Processor'
+      Instances:
+        - '------'
+      Counters:
+      - 'Available Bytes'
+      - 'Cache Faults/sec'
+      - 'Demand Zero Faults/sec'
+      - 'Page Faults/sec'
+      - 'Pages/sec'
+      - 'Transition Faults/sec'
+      - 'Pool Nonpaged Bytes'
+      - 'Pool Paged Bytes'
+      Measurement: 'win_mem'  
+  win_net:
     plugin_type: 'win_perf_counters.object'
-      options:
-        ObjectName: 'Network Interface'
-        Instances:
-          - '*'
-        Counters:
-        - 'Bytes Received/sec'
-        - 'Bytes Sent/sec'
-        - 'Packets Received/sec'
-        - 'Packets Sent/sec'
-        Measurement: 'win_net'  
+    options:
+      ObjectName: 'Network Interface'
+      Instances:
+        - '*'
+      Counters:
+      - 'Bytes Received/sec'
+      - 'Bytes Sent/sec'
+      - 'Packets Received/sec'
+      - 'Packets Sent/sec'
+      Measurement: 'win_net'  
