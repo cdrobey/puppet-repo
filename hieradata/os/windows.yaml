@@ -43,3 +43,14 @@ profile::os::monitor::influxdbinput_list:
       - '% User Time'
       - '% Processor Time'
       Measurement: 'win_cpu'
+  win_system:
+    plugin_type: 'win_perf_counters.object'
+    options:
+      ObjectName: 'Processor'
+      Instances:
+        - '------'
+      Counters:
+      - 'Context Switches/sec'
+      - 'System Calls/sec'
+      - 'Processor Queue Length'
+      Measurement: 'win_system'
