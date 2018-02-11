@@ -53,12 +53,12 @@ profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
-profile::os::monitor::influxdbinputs:
-   system: [{}] cpu:
-    - percpu: true
-      totalcpu: true
-  mem: [{}]
-  io: [{}]
-  net: [{}]
-  disk: [{}]
-  swap: [{}]
+profile::os::monitor::influxdbinputs: 
+  cpu: {}
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  swap: {}
+  system: {}
+profile::os::monitor::influxdbinput_list: {}
