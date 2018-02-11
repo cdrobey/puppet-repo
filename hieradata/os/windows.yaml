@@ -54,3 +54,19 @@ profile::os::monitor::influxdbinput_list:
       - 'System Calls/sec'
       - 'Processor Queue Length'
       Measurement: 'win_system'
+win_mem:
+  plugin_type: 'win_perf_counters.object'
+  options:
+    ObjectName: 'Processor'
+    Instances:
+      - '------'
+    Counters:
+    - 'Available Bytes'
+    - 'Cache Faults/sec'
+    - 'Demand Zero Faults/sec'
+    - 'Page Faults/sec'
+    - 'Pages/sec'
+    - 'Transition Faults/sec'
+    - 'Pool Nonpaged Bytes'
+    - 'Pool Paged Bytes'
+    Measurement: 'win_mem'
