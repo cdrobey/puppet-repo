@@ -43,7 +43,6 @@
         - '% Processor Time'
         Measurement: 'win_cpu'
         IncludeTotal: true
-
     win_system:
       plugin_type: 'win_perf_counters.object'
       options:
