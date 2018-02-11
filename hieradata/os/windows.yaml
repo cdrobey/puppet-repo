@@ -44,19 +44,6 @@ profile::os::monitor::influxdbinput_list:
       - '% User Time'
       - 'Current Disk Queue Length'
       Measurement: 'win_disk'
-  win_cpu:
-    plugin_type: 'win_perf_counters.object'
-    options:
-      ObjectName: 'Processor'
-      Instances:
-        - '*'
-      Counters:
-      - '% Idle Time'
-      - '% Interrupt Time'
-      - '% Privileged Time'
-      - '% User Time'
-      - '% Processor Time'
-      Measurement: 'win_cpu'
   win_system:
     plugin_type: 'win_perf_counters.object'
     options:
