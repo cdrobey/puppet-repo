@@ -15,7 +15,7 @@ class profile::os::monitor (
   $influxdburi,
   $influxdbname,
   $influxdbinputs,
-  Hash $influxdbinput_list = Undef,
+  $influxdbinput_list,
 ){
   if $trusted['extensions']['pp_environment'] == 'home' {
     class { 'telegraf':
