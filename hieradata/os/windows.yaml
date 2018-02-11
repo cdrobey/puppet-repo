@@ -53,6 +53,9 @@
         - 'Context Switches/sec'
         - 'System Calls/sec'
         - 'Processor Queue Length'
+        - 'Threads'
+        - 'System Up Time'
+        - 'Processes'
         Measurement: 'win_system'
     win_mem:
       plugin_type: 'win_perf_counters.object'
@@ -82,3 +85,21 @@
         - 'Packets Received/sec'
         - 'Packets Sent/sec'
         Measurement: 'win_net'
+        win_disk:
+      plugin_type: 'win_perf_counters.object'
+      options:
+        ObjectName: 'LogicalDisk'
+        Instances:
+          - '*'
+        Counters:
+        - '% Idle Time'
+        - '% Disk Time'
+        - '% Disk Read Time'
+        - '% Disk Write Time'
+        - '% User Time'
+        - '% Free Space'
+        - 'Current Disk Queue Length'
+        - 'Free Megabytes'
+        - 'Disk Read Bytes/sec'
+        - 'Disk Write Bytes/sec'
+        Measurement: 'win_disk'
