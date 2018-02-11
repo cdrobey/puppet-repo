@@ -61,4 +61,4 @@ profile::os::monitor::influxdbinputs:
   disk: [{}]
   swap: [{}]
   system: [{}]
-profile::os::monitor::influxdbinput_list:
+profile::os::monitor::influxdbinput_list: {}
