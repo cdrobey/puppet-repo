@@ -53,3 +53,46 @@
         - 'System Calls/sec'
         - 'Processor Queue Length'
         Measurement: 'win_system'
+    win_mem:
+      plugin_type: 'win_perf_counters.object'
+      options:
+        ObjectName: 'Memory'
+        Instances:
+          - '------'
+        Counters:
+        - 'Available Bytes'
+        - 'Cache Faults/sec'
+        - 'Demand Zero Faults/sec'
+        - 'Page Faults/sec'
+        - 'Pages/sec'
+        - 'Transition Faults/sec'
+        - 'Pool Nonpaged Bytes'
+        - 'Pool Paged Bytes'
+        Measurement: 'win_mem'
+    win_net:
+      plugin_type: 'win_perf_counters.object'
+      options:
+        ObjectName: 'Network Interface'
+        Instances:
+          - '*'
+        Counters:
+        - 'Bytes Received/sec'
+        - 'Bytes Sent/sec'
+        - 'Packets Received/sec'
+        - 'Packets Sent/sec'
+        Measurement: 'win_net'
+    win_disk:
+      - plugin_type: 'win_perf_counters.object'
+      - options:
+          ObjectName: 'LogicalDisk'
+          Instances: 
+            - '*'
+          Counters:
+            - '% Idle Time'
+            - '% Disk Time'
+            - '% Disk Read Time'
+            - '% Disk Write Time'
+            - '% User Time'
+            - 'Current Disk Queue Length'
+          Measurement: 'win_disk'
+
