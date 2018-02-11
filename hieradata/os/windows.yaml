@@ -30,7 +30,7 @@ profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
 
 profile::os::monitor::influxdbinput_list:
-  win_disk:
+  - win_disk:
     plugin_type: 'win_perf_counters.object'
     options:
       ObjectName: 'LogicalDisk'
@@ -44,7 +44,7 @@ profile::os::monitor::influxdbinput_list:
       - '% User Time'
       - 'Current Disk Queue Length'
       Measurement: 'win_disk'
-  win_cpu:
+  - win_cpu:
     plugin_type: 'win_perf_counters.object'
       options:
         ObjectName: 'Processor'
@@ -57,7 +57,7 @@ profile::os::monitor::influxdbinput_list:
         - '% User Time'
         - '% Processor Time'
         Measurement: 'win_cpu'
-  win_system:
+  - win_system:
     plugin_type: 'win_perf_counters.object'
       options:
         ObjectName: 'Processor'
@@ -68,7 +68,7 @@ profile::os::monitor::influxdbinput_list:
         - 'System Calls/sec'
         - 'Processor Queue Length'
         Measurement: 'win_system'
-  win_mem:
+  - win_mem:
     plugin_type: 'win_perf_counters.object'
       options:
         ObjectName: 'Processor'
@@ -84,7 +84,7 @@ profile::os::monitor::influxdbinput_list:
         - 'Pool Nonpaged Bytes'
         - 'Pool Paged Bytes'
         Measurement: 'win_mem'  
-  win_net:
+  - win_net:
     plugin_type: 'win_perf_counters.object'
       options:
         ObjectName: 'Network Interface'
