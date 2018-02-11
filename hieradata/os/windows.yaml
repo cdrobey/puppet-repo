@@ -34,7 +34,8 @@ profile::os::monitor::influxdbinput_list:
     plugin_type: 'win_perf_counters.object'
     options:
       ObjectName: 'LogicalDisk'
-      Instances: '[*]'
+      Instances:
+        - '*'
       Counters:
       - '% Idle Time'
       - '% Disk Time'
