@@ -1,3 +1,18 @@
 ---
 profile::apps::unifi::repo_release:: 'testing'
 
+profile::os::monitor::influxdbinputs: 
+  cpu: {}
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  diskio: {}
+  processes: {}
+  swap: {}
+  system: {}
+  kernel: {}
+  ping:
+    url:
+      - www.google.com
+
