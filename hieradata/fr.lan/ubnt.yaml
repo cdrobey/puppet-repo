@@ -3,8 +3,8 @@ profile::apps::unifi::repo_release:: 'testing'
 
 profile::os::monitor::influxdbinputs: 
   cpu:
-    totalcpu: true
     percpu: true
+    totalcpu: true
   mem: {}
   io: {}
   net: {}
