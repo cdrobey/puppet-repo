@@ -57,6 +57,9 @@ profile::os::monitor::influxdbinputs:
   io: {}
   net: {}
   disk: {}
+  diskio: {}
+  processes: {}
   swap: {}
   system: {}
+  kernel: {}
 profile::os::monitor::influxdbinput_list: {}
