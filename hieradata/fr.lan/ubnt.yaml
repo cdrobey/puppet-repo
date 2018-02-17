@@ -3,6 +3,8 @@ profile::apps::unifi::repo_release:: 'testing'
 
 profile::os::monitor::influxdbinputs: 
   cpu: {}
+    totalcpu: true
+    percpu: true
   mem: {}
   io: {}
   net: {}
@@ -13,6 +15,6 @@ profile::os::monitor::influxdbinputs:
   system: {}
   kernel: {}
   ping:
-    url:
+    urls:
       - www.google.com
 

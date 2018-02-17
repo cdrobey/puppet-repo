@@ -53,6 +53,8 @@ profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu: {}
+    totalcpu: true
+    percpu: true
   mem: {}
   io: {}
   net: {}
