@@ -2,7 +2,7 @@
 profile::apps::unifi::repo_release:: 'testing'
 
 profile::os::monitor::influxdbinputs: 
-  cpu: {}
+  cpu:
     totalcpu: true
     percpu: true
   mem: {}
