@@ -85,7 +85,7 @@
         - 'Packets Received/sec'
         - 'Packets Sent/sec'
         Measurement: 'win_net'
-        win_disk:
+    win_disk:
       plugin_type: 'win_perf_counters.object'
       options:
         ObjectName: 'LogicalDisk'
