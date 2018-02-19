@@ -17,22 +17,20 @@ class profile::os::monitor (
   $influxdbinputs,
   $influxdbinput_list,
 ){
-  if $trusted['extensions']['pp_environment'] == 'home' {
-    class { 'telegraf':
-      hostname => $facts['hostname'],
-      outputs  => {
-        'influxdb' => {
-          'urls'     => [ $influxdburi, ],
-          'database' => $influxdbname,
-        }
-      },
-      inputs   => $influxdbinputs,
-    }
-    $influxdbinput_list.each | $input_name, $input | {
-      telegraf::input { $input_name:
-        plugin_type => $input['plugin_type'],
-        options     => $input['options'],
+  class { 'telegraf':
+    hostname => $facts['hostname'],
+    outputs  => {
+      'influxdb' => {
+        'urls'     => [ $influxdburi, ],
+        'database' => $influxdbname,
       }
+    },
+    inputs   => $influxdbinputs,
+  }
+  $influxdbinput_list.each | $input_name, $input | {
+    telegraf::input { $input_name:
+      plugin_type => $input['plugin_type'],
+      options     => $input['options'],
     }
   }
 }
