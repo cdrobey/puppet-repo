@@ -31,6 +31,21 @@ class profile::base::windows::rdp (
     $rdp_nla_setting = '0'
   }
 
+  class { 'windows_firewall':
+    ensure => 'started' }
+
+  windows_firewall::exception { 'WINRM':
+    ensure       => present,
+    direction    => 'in',
+    action       => 'Allow',
+    enabled      => 'yes',
+    protocol     => 'TCP',
+    local_port   => '5985',
+    remote_port  => 'any',
+    display_name => 'Windows Remote Management HTTP-In',
+    description  => 'Inbound rule for Windows Remote Management via WS-Management. [TCP 5985]',
+  }
+
   # Remote Desktop Connection
   registry::value { 'rdp':
     key   => 'HKLM\System\CurrentControlSet\Control\Terminal Server',

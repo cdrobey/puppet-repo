@@ -45,6 +45,7 @@ mod 'bodgit-nut', '1.0.1'
 mod 'thrnio-ip', '1.0.1'
 mod 'puppet-grafana', '4.1.0'
 mod 'datacentred-telegraf', '1.5.0'
+mod 'puppet-windows_firewall', '2.0.0'
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
