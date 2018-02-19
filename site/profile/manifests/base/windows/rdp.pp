@@ -32,7 +32,7 @@ class profile::base::windows::rdp (
   }
 
   class { 'windows_firewall':
-    ensure => 'started' }
+    ensure => 'running' }
 
   windows_firewall::exception { 'WINRM':
     ensure       => present,
