@@ -32,6 +32,8 @@ class profile::apps::monitormaster (
         grafana_url => 'http://localhost:3000',
         type        => 'influxdb',
         url         => 'http://localhost:8086',
+        user        => 'admin',
+        password    => 'admin',
         database    => 'Monitor',
         access_mode => 'proxy',
         is_default  => true,
