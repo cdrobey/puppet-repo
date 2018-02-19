@@ -29,13 +29,11 @@ class profile::apps::monitormaster (
     -> class { 'grafana':
     }
     grafana_datasource { 'influxdb':
-        grafana_url      => 'http://localhost:3000',
-        grafana_user     => 'admin',
-        grafana_password => 'admin',
-        type             => 'influxdb',
-        url              => 'http://localhost:8086',
-        database         => 'Monitor',
-        access_mode      => 'proxy',
-        is_default       => true,
+        grafana_url => 'http://localhost:3000',
+        type        => 'influxdb',
+        url         => 'http://localhost:8086',
+        database    => 'Monitor',
+        access_mode => 'proxy',
+        is_default  => true,
     }
 }
