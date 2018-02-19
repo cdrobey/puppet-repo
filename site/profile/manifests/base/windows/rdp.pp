@@ -34,16 +34,50 @@ class profile::base::windows::rdp (
   class { 'windows_firewall':
     ensure => 'running' }
 
-  windows_firewall::exception { 'WINRM':
+  windows_firewall::exception { 'WINRDP':
     ensure       => present,
     direction    => 'in',
     action       => 'Allow',
     enabled      => 'yes',
     protocol     => 'TCP',
-    local_port   => '5985',
+    local_port   => '3389',
     remote_port  => 'any',
-    display_name => 'Windows Remote Management HTTP-In',
-    description  => 'Inbound rule for Windows Remote Management via WS-Management. [TCP 5985]',
+    display_name => 'Windows Remote Desktop (TCP-IN)',
+    description  => 'Inbound rule for Windows Remote Desktop via TCP. [TCP 3389]',
+  }
+  windows_firewall::exception { 'WINRDP':
+    ensure       => present,
+    direction    => 'out',
+    action       => 'Allow',
+    enabled      => 'yes',
+    protocol     => 'TCP',
+    local_port   => '3389',
+    remote_port  => 'any',
+    display_name => 'Windows Remote Desktop (TCP-IN)',
+    description  => 'Outbound rule for Windows Remote Desktop via TCP. [TCP 3389]',
+  }
+  windows_firewall::exception { 'WINRDP':
+    ensure       => present,
+    direction    => 'out',
+    action       => 'Allow',
+    enabled      => 'yes',
+    protocol     => 'UDP',
+    local_port   => '3389',
+    remote_port  => 'any',
+    display_name => 'Windows Remote Desktop (UDP-OUT)',
+    description  => 'Outbound rule for Windows Remote Desktop via TCP. [UDP 3389]',
+  }
+
+    windows_firewall::exception { 'WINRDP':
+    ensure       => present,
+    direction    => 'in',
+    action       => 'Allow',
+    enabled      => 'yes',
+    protocol     => 'UDP',
+    local_port   => '3389',
+    remote_port  => 'any',
+    display_name => 'Windows Remote Desktop (TCP-IN)',
+    description  => 'Inbound rule for Windows Remote Desktop via UDP. [UDP 3389]',
   }
 
   # Remote Desktop Connection
