@@ -30,7 +30,8 @@ class profile::apps::samba (
   }
   $users.each | $user_name, $user | {
     samba::server::user {'$user_name':
-      password => $user['password']
+      user_name => $user_name,
+      password  => $user['password']
     }
   }
 }
