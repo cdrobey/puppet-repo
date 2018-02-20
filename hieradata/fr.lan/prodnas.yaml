@@ -1,7 +1,7 @@
 ---
 profile::apps::samba::workgroup: FR.LAN
 profile::apps::samba::users:
-  'chris':
+  'deploy':
     password: 'Testing'
 profile::apps::samba::shares:
   'Test':
