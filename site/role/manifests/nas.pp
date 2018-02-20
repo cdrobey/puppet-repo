@@ -13,5 +13,5 @@
 class role::nas {
   include profile::base
   include profile::os::monitor
-  include profile::app::samba
+  include profile::apps::samba
 }
