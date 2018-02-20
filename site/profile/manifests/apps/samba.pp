@@ -23,15 +23,9 @@ class profile::apps::samba (
 
   $shares.each | $share_name, $share | {
     samba::server::share {'$share_name':
-      comment              => $share['comment'],
-      path                 => $share['path'],
-      browsable            => $share['browsable'],
-      create_mask          => $share['create_mask'],
-      force_create_mask    => $share['force_create_mask'],
-      directory_mask       => $share['directory_mask'],
-      force_directory_mask => $share['force_directory_mask'],
-      force_group          => $share['force_group'],
-      force_user           => $share['force_user'],
+      comment   => $share['comment'],
+      path      => $share['path'],
+      browsable => $share['browsable'],
     }
   }
   $users.each | $user_name, $user | {
