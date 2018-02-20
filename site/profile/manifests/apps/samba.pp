@@ -18,7 +18,7 @@ class profile::apps::samba (
   class {'samba::server':
     workgroup     => $workgroup,
     server_string => 'Samba Server',
-    security      => 'share'
+    security      => 'user'
   }
 
   $shares.each | $share_name, $share | {
