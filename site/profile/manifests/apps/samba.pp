@@ -15,6 +15,18 @@ class profile::apps::samba (
   $users,
   $shares,
 ){
+
+  firewall { '300 allow tcp communication to smbd/nbmd':
+    dport  => [137, 138, 139, 445],
+    proto  => tcp,
+    action =>  accept,
+  }
+  firewall { '301 allow udp communication to smbd/nbmd':
+    dport  => [137, 138, 139, 445],
+    proto  => udp,
+    action =>  accept,
+  }
+
   class {'samba::server':
     workgroup     => $workgroup,
     server_string => 'Samba Server',
