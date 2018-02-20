@@ -29,7 +29,7 @@ class profile::apps::samba (
     }
   }
   $users.each | $user_name, $user | {
-    samba::server::share {'$user_name':
+    samba::server::user {'$user_name':
       password => $user['password']
     }
   }
