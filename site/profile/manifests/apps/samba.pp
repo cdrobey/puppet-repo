@@ -22,15 +22,14 @@ class profile::apps::samba (
   }
 
   $shares.each | $share_name, $share | {
-    samba::server::share {'$share_name':
+    samba::server::share { $share_name:
       comment   => $share['comment'],
       path      => $share['path'],
       browsable => $share['browsable'],
     }
   }
   $users.each | $user_name, $user | {
-    samba::server::user {'$user_name':
-      user_name => $user_name,
+    samba::server::user {$user_name:
       password  => $user['password']
     }
   }
