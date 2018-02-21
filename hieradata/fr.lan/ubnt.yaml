@@ -16,7 +16,7 @@ profile::os::monitor::influxdbinputs:
   kernel: {}
   ping:
     urls:
-      - www.google.com
+      - 8.8.8.8
   puppetagent:
     Location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
 
