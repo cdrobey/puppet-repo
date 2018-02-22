@@ -22,7 +22,7 @@ mod 'jmkeyes-unifi', :latest
 mod 'puppetlabs/registry', :latest
 mod 'puppetlabs-chocolatey', :latest
 mod 'puppetlabs-powershell', '2.1.2'
-mod 'puppetlabs-dsc', :latest
+mod 'puppetlabs-dsc', '1.4.1'
 mod 'puppet-windows_firewall', '1.1.0'
 mod 'puppet-dotnet', '1.1.0'
 mod 'liamjbennett-win_facts', '0.0.2'
