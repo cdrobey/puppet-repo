@@ -12,7 +12,7 @@
 #   include profile::base::linux::network or assign in PE classifier
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
-  $interfaces,
+  Hash $interfaces = undef,
 ) {
   if $interfaces {
     class { 'network':
