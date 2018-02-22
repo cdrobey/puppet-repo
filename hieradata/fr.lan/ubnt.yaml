@@ -1,5 +1,11 @@
 ---
-profile::apps::unifi::repo_release:: 'testing'
+profile::base::linux::network::interfaces:
+  ens160:
+    ipaddress: '10.1.1.52'
+    netmask: '255.255.255.0'
+    gateway: '10.1.1.1'
+    dns_nameservers: '10.1.1.1'
+    dns_search: 'fr.lan'
 
 profile::os::monitor::influxdbinputs: 
   cpu:
