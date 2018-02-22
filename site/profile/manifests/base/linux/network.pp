@@ -14,7 +14,7 @@
 class profile::base::linux::network (
   Hash $interfaces = undef,
 ) {
-  if $interfaces {
+  if empty($interfaces) {
     class { 'network':
       interfaces_hash => $interfaces,
     }
