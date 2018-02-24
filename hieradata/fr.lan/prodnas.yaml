@@ -7,28 +7,3 @@ profile::base::linux::network::interfaces:
     gateway: '10.1.1.1'
     dns1: '10.1.1.1'
     dns_search: 'fr.lan'
-
-profile::apps::samba::workgroup: FR.LAN
-profile::apps::samba::users:
-  'deploy':
-    password: 'Testing'
-profile::apps::samba::shares:
-  'Test':
-    comment: 'Test Share'
-    path: '/tmp'
-    browsable: true
-
-
-profile::os::monitor::influxdbinputs: 
-  cpu:
-    percpu: true
-    totalcpu: true
-  mem: {}
-  io: {}
-  net: {}
-  disk: {}
-  diskio: {}
-  processes: {}
-  swap: {}
-  system: {}
-  kernel: {}

@@ -1,0 +1,20 @@
+---
+profile::os::monitor::influxdbinputs: 
+  cpu:
+    percpu: true
+    totalcpu: true
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  diskio: {}
+  processes: {}
+  swap: {}
+  system: {}
+  kernel: {}
+  ping:
+    urls:
+      - 8.8.8.8
+  puppetagent:
+    location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
+
