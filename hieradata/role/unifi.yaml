@@ -21,6 +21,4 @@ profile::os::monitor::influxdbinputs:
     servers: 
       - 8.8.8.8
     domains:
-      - www.google.com
-    record_type: 'A'
-
+      - "www.google.com"
