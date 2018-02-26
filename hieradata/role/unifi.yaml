@@ -18,9 +18,9 @@ profile::os::monitor::influxdbinputs:
   puppetagent:
     location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
   dns_query:
-   servers: 
-    - 8.8.8.8
-   domains:
-    - www.google.com
-  record_type: 'A'
+    servers: 
+      - 8.8.8.8
+    domains:
+      - www.google.com
+    record_type: 'A'
 
