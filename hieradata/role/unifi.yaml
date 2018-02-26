@@ -20,5 +20,6 @@ profile::os::monitor::influxdbinputs:
   dns_query:
     servers: 
       - 8.8.8.8
+      - 10.1.1.1
     domains:
       - "www.google.com"
