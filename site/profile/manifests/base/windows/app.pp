@@ -32,8 +32,8 @@ class profile::base::windows::app (
     notify => Reboot['package_reboot']
   }
   service { 'WinRM':
-    ensure    => 'running',
-    enable    => true,
+    ensure => 'running',
+    enable => true,
   }
   # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {
