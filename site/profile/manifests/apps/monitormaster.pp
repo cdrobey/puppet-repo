@@ -37,6 +37,5 @@ class profile::apps::monitormaster (
         database         => 'Monitor',
         access_mode      => 'proxy',
         is_default       => true,
-        with_credentials => false,
     }
 }
