@@ -10,7 +10,7 @@
     - vmwarevsphereclient
     - firefox
     - vim
-  
+    - vmware-tools
   profile::base::windows::time::ntp_servers:
     - fw.fr.lan
     - us.pool.ntp.org
