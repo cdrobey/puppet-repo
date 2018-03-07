@@ -29,15 +29,11 @@ class profile::base::windows::app (
     notify => Reboot['package_reboot']
   }
   package { 'powershell':
-    notify => [
-      Reboot['package_reboot'],
-      Service['WinRM'],
-    ],
+    notify => Reboot['package_reboot']
   }
   service { 'WinRM':
     ensure    => 'running',
     enable    => true,
-    subscribe => Package['powershell']
   }
   # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {

@@ -24,11 +24,6 @@ class profile::base::windows::time (
     data   => 'Unrestricted',
   }
 
-  reboot { 'dsc_reboot' :
-    message => 'DSC has requested a reboot',
-    when    => 'pending'
-  }
-
   dsc_systemlocale { 'set systmelocale':
     dsc_systemlocale     => 'en-us',
     dsc_issingleinstance => 'yes',
