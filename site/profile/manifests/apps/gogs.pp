@@ -22,7 +22,7 @@ class profile::apps::gogs {
     app_ini_sections => {
       'server'     => {
         'DOMAIN'           => $::fqdn,
-        'HTTP_PORT'        => 80,
+        'HTTP_PORT'        => 3000,
         'ROOT_URL'         => "https://${::fqdn}/",
         'HTTP_ADDR'        => '0.0.0.0',
         'DISABLE_SSH'      => false,
@@ -77,7 +77,7 @@ class profile::apps::gogs {
 
   firewall{ '100 allow web connections':
     proto  => 'tcp',
-    dport  => 80,
+    dport  => 3000,
     action => accept,
   }
 }
