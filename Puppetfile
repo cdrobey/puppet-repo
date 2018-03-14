@@ -48,6 +48,7 @@ mod 'datacentred-telegraf', '1.5.0'
 mod 'puppet-windows_firewall', '2.0.0'
 mod 'ajjahn-samba', '0.5.0'
 mod 'example42-network', '3.3.10'
+mod 'kschu91-gogs', '1.2.0'
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
