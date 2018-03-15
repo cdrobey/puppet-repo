@@ -12,7 +12,7 @@
     - vim
   profile::base::windows::time::ntp_servers:
     - fw.fr.lan
-    - us.pool.ntp.org
+    - us.pool.ntp.orgX
   profile::base::windows::time::timezone: 'Mountain Standard Time'
   
   profile::base::windows::motd::content: |
