@@ -11,6 +11,6 @@
 #   include role::linux or assign in PE classifier
 # == Class: role::linux
 class role::base {
-  include 'profile::base'
+  include profile::base
   include profile::os::monitor
 }

@@ -12,7 +12,7 @@
 #   include role::puppetmaster or assign in PE classifier
 # == Class: role::puppetmaster
 class role::puppetmaster {
-  include 'profile::base'
-  include 'profile::os::monitor'
-  include 'profile::apps::puppetmaster'
+  include profile::base
+  include profile::os::monitor
+  include profile::apps::puppetmaster
 }
