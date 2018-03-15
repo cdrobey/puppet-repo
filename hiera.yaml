@@ -7,9 +7,9 @@ defaults:  # Used for any hierarchy level that omits these keys.
 hierarchy:
   - name: "Hiera Paths for node, environment, apps, roles, and os."
     paths:
-      - "%{facts.domain}/%{facts.hostname}.yaml"
+      - "node/%{facts.domain}/%{facts.hostname}.yaml"
+      - "domain/%{facts.domain}.yaml"
       - "env/%{trusted.extensions.pp_environment}.yaml"
-      - "apps/%{trusted.extensions.pp_application}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
       - "os/%{facts.os.family}.yaml"
       - "common.yaml"
