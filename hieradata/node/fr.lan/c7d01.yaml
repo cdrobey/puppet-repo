@@ -1,6 +1,6 @@
 ---
 profile::base::linux::network::interfaces:
-  ens160:
+  ens192:
     ipaddress: '10.1.1.53'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
