@@ -11,6 +11,7 @@
 #   include profile::base::linux or assign in PE classifier
 # == Class: profile::base::linux
 class profile::base::linux {
+  include profile::base::linux::network
   include 'profile::base::linux::accounts'
   include 'profile::base::linux::app'
   include 'profile::base::linux::security'

@@ -10,7 +10,6 @@
 #   include role::test or assign in PE classifier
 # == Class: role::test
 class role::test {
-  include profile::base::linux::network
   include profile::base
   include profile::os::monitor
 }
