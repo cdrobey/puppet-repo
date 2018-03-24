@@ -19,12 +19,12 @@ class profile::os::docker (
   }
   $docker_list.each | $docker_name, $docker | {
     docker::run { $docker_name:
-      image           => $docker['image'],
-      detach          => $docker['detach'],
-      service_prefix  => $docker['service_prefix'],
-      ports           => $docker['ports'],
-      expose          => $docker['expose'],
-      volumes         => $docker['volumes'],
+      image          => $docker['image'],
+      detach         => $docker['detach'],
+      service_prefix => $docker['service_prefix'],
+      ports          => $docker['ports'],
+      expose         => $docker['expose'],
+      volumes        => $docker['volumes'],
     }
   }
 }
