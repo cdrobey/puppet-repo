@@ -19,15 +19,15 @@ class profile::os::docker (
   }
   $docker_list.each | $docker_name, $docker | {
     docker::run { $docker_name:
-      image            => $docker['base'],
-      detach           => $docker['true'],
-      service_prefix   => $docker['prefix'],
-      ports            => $docker['ports'],
-      expose           => $docker['expose'],
-      net              => $docker['net'],
-      disable_network  => $docker['false'],
-      volumes          => $docker['volumes'],
-      restart_service  => $docker['restart'],
+      image           => $docker['base'],
+      detach          => $docker['true'],
+      service_prefix  => $docker['prefix'],
+      ports           => $docker['ports'],
+      expose          => $docker['expose'],
+      net             => $docker['net'],
+      disable_network => $docker['false'],
+      volumes         => $docker['volumes'],
+      restart_service => $docker['restart'],
+    }
   }
 }
-
