@@ -1,7 +1,11 @@
 ---
-
  profile::os::docker::docker_list:
-  win_cpu:
+  base:
+    image: 'base'
     detach: true
     service_prefix: 'docker-'
-    
+    ports:
+      - 80
+    expose:
+    volumes:
+      '/tmp': '/tmp'
