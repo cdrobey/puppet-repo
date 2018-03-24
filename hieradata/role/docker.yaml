@@ -1,0 +1,15 @@
+---
+profile::os::docker::docker_list:
+  'test':
+    detach: true
+    service_prefix: 'docker-'
+    ports:
+      - 80
+      - 443
+    expose:
+      - 80
+      - 443
+    net:
+    volumes:
+      '/tmp':'/tmp'
+    restart: true
