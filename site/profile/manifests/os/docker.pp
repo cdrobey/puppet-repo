@@ -18,6 +18,8 @@ class profile::os::docker (
     version => 'latest',
   }
   $docker_list.each | $docker_name, $docker | {
+    docker::image { $docker_name: }
+
     docker::run { $docker_name:
       image          => $docker['image'],
       detach         => $docker['detach'],
