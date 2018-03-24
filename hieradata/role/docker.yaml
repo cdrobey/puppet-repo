@@ -9,3 +9,12 @@
     expose:
       - 80
     volumes: '/tmp:/tmp'
+  ubuntu:
+    image: 'ubuntu'
+    detach: true
+    service_prefix: 'docker-'
+    ports:
+      - 80
+    expose:
+      - 80
+    volumes: '/tmp:/tmp'
