@@ -8,5 +8,4 @@
       - 80
     expose:
       - 80
-    volumes:
-      '/tmp': '/tmp'
+    volumes: '/tmp:/tmp'
