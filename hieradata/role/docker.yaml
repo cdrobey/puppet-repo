@@ -7,5 +7,6 @@
     ports:
       - 80
     expose:
+      - 80
     volumes:
       '/tmp': '/tmp'
