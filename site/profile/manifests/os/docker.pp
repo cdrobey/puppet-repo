@@ -19,7 +19,6 @@ class profile::os::docker (
   }
   $docker_list.each | $docker_name, $docker | {
     docker::image { $docker['image']:
-        image_tag => '$docker_name'
     }
 
     docker::run { $docker_name:
