@@ -1,6 +1,6 @@
 ---
  profile::os::docker::docker_list:
-  test:
-    image: 'ubuntu'
+  nginxtest:
+    image: 'nginx'
     detach: true
     service_prefix: 'docker-'
