@@ -6,5 +6,5 @@ profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::base::windows::time::ntp_servers:
   - fw.fr.lan
-  - us.pool.ntp.orgX
+  - us.pool.ntp.org
 profile::base::windows::time::timezone: 'Mountain Standard Time'
