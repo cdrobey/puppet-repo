@@ -16,10 +16,11 @@ class profile::os::docker (
 ){
   class { 'docker':
     version   => 'latest',
-    image_tag => '$docker_name'
   }
   $docker_list.each | $docker_name, $docker | {
-    docker::image { $docker['image']: }
+    docker::image { $docker['image']:
+        image_tag => '$docker_name'
+    }
 
     docker::run { $docker_name:
       image          => $docker['image'],
