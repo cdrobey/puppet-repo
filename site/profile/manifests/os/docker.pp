@@ -15,14 +15,16 @@ class profile::os::docker (
   $docker_list,
 ){
   class { 'docker':
-    version => 'latest',
+    version   => 'latest',
+    image_tag => '$docker_name'
   }
   $docker_list.each | $docker_name, $docker | {
     docker::image { $docker['image']: }
 
     docker::run { $docker_name:
-      image  => $docker['image'],
-      detach => $docker['detach'],
+      image          => $docker['image'],
+      detach         => $docker['detach'],
+      service_prefix => docker['service_prefix']
     }
   }
 }
