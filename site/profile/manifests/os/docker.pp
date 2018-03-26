@@ -24,7 +24,9 @@ class profile::os::docker (
     docker::run { $docker_name:
       image          => $docker['image'],
       detach         => $docker['detach'],
-      service_prefix => $docker['service_prefix']
+      service_prefix => $docker['service_prefix'],
+      exposed        => $docker['exposed'],
+      ports          => $docker['ports'],
     }
   }
 }

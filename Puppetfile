@@ -1,15 +1,16 @@
-forge "http://forge.puppetlabs.com"
+forge 'http://forge.puppetlabs.com'
 
-mod "puppetlabs/stdlib", :latest
-mod "puppetlabs/concat", :latest
-mod "puppetlabs/ntp", :latest
-mod "puppetlabs/motd", :latest
-mod "puppetlabs-registry", :latest
+
+mod 'puppetlabs/stdlib', :latest
+mod 'puppetlabs/concat', :latest
+mod 'puppetlabs/ntp', :latest
+mod 'puppetlabs/motd', :latest
+mod 'puppetlabs-registry', :latest
 mod 'puppetlabs-firewall', :latest
 mod 'ghoneycutt-ssh', '3.56.1'
 mod 'ghoneycutt-common', :latest
 mod 'puppetlabs-accounts', '1.3.0'
-mod "saz-sudo", '4.2.0'
+mod 'saz-sudo', '4.2.0'
 mod 'deric-gpasswd', '0.3.2'
 mod 'puppetlabs/apt', '3.0.0'
 mod 'andschwa-unattended_upgrades', :latest
