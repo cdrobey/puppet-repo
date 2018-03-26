@@ -14,4 +14,5 @@
 class role::print {
   include profile::base
   include profile::os::print
+  include profile::os::monitor
 }

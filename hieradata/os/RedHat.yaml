@@ -43,10 +43,6 @@ profile::base::linux::sudoers::configs:
     'content'   : "deploy ALL=(ALL) NOPASSWD: ALL"
     'priority'  : 10
 
-profile::base::linux::time::ntp_servers:
-  - fw.fr.lan
-  - us.pool.ntp.org
-profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
 
 profile::os::monitor::influxdburi: "http://monitor:8086"
 profile::os::monitor::influxdbname: 'Monitor'

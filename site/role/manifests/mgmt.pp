@@ -10,11 +10,10 @@
 # @example
 #   include role::unifi or assign in PE classifier
 # == Class: role::unifi
-class role::unifi {
+class role::mgmt {
   include profile::base
   include profile::os::monitor
   include profile::apps::unifi
   include profile::apps::gogs
   include profile::apps::monitormaster
-  include profile::os::monitor
 }
