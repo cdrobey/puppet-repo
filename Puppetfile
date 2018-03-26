@@ -1,6 +1,5 @@
 forge 'http://forge.puppetlabs.com'
 
-
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/ntp', :latest
