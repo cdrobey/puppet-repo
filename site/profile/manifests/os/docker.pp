@@ -18,15 +18,11 @@ class profile::os::docker (
     version => 'latest',
   }
   $docker_list.each | $docker_name, $docker | {
-    docker::image { $docker_name: }
+    docker::image { $docker['image']: }
 
     docker::run { $docker_name:
-      image          => $docker['image'],
-      detach         => $docker['detach'],
-      service_prefix => $docker['service_prefix'],
-      ports          => $docker['ports'],
-      expose         => $docker['expose'],
-      volumes        => $docker['volumes'],
+      image  => $docker['image'],
+      detach => $docker['detach'],
     }
   }
 }
