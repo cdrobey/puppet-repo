@@ -6,5 +6,5 @@
     service_prefix: 'docker-'
     ports:
       - 80
-    exposed:
+    expose:
       - 80
