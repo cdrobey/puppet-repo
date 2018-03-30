@@ -60,7 +60,7 @@ profile::os::monitor::influxdbinputs:
   kernel: {}
 profile::os::monitor::influxdbinput_list: {}
 
-profile::base::linux::network:::dnsservers: 
+profile::base::linux::network:::nameservers: 
   - '10.1.1.1'
   - '8.8.8.8'
   - '8.8.4.4'

@@ -13,7 +13,7 @@
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
   $interfaces,
-  $dnsservers,
+  $nameservers,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
@@ -24,6 +24,6 @@ class profile::base::linux::network (
     name   => 'resolvconf',
   }
   class { 'resolv_conf':
-    nameservers => $dnsservers,
+    nameservers => $nameservers,
   }
 }
