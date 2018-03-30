@@ -24,8 +24,8 @@ class profile::base::linux::network (
     ensure => purge,
     name   => 'resolvconf',
   }
-  class { 'resolv_conf':
-    nameservers => $nameservers,
-    searchpath  => $searchpath,
-  }
+class { 'resolv_conf':
+    nameservers => ['192.168.1.1', '192.168.2.2', '192.168.3.3'],
+    searchpath  => ['sub1.example.com', 'sub2.example.com'],
+}
 }
