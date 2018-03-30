@@ -65,5 +65,6 @@ profile::base::linux::network::nameservers:
   - '8.8.8.8'
 profile::base::linux::network::searchpath: 
   - 'fr.lan'
+profile::base::linux::network::domainname: 'fr.lan'
 
   

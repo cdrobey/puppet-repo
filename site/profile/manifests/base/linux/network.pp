@@ -15,6 +15,7 @@ class profile::base::linux::network (
   $interfaces,
   $nameservers,
   $searchpath,
+  $domainname,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
@@ -29,5 +30,6 @@ class profile::base::linux::network (
   class { 'resolv_conf':
       nameservers => $nameservers,
       searchpath  => $searchpath,
+      domainname  => $domainname,
   }
 }
