@@ -39,10 +39,12 @@ mod 'puppet-grafana', '4.2.0'
 mod 'datacentred-telegraf', '1.5.0'
 mod 'puppet-windows_firewall', '2.0.0'
 mod 'ajjahn-samba', '0.5.0'
-mod 'example42-network', '3.3.10'
 mod 'kschu91-gogs', '1.2.0'
 mod 'puppetlabs-docker', '1.1.0'
 mod 'saz-resolv_conf', '3.3.0'
+mod 'jethrocarr-hostname', '1.0.3'
+mod 'example42-network', '3.3.10'
+
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',

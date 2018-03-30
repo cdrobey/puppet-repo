@@ -15,7 +15,13 @@ class profile::base::linux::network (
   $interfaces,
   $nameservers,
   $searchpath,
+  $hostname,
+  $ip,
 ) {
+  class { 'hostname':
+    hostname => $hostname,
+    ip       => $ip,
+  }
   class { 'network':
     interfaces_hash => $interfaces,
   }
