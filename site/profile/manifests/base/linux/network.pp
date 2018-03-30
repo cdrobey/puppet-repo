@@ -13,8 +13,6 @@
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
   $interfaces,
-  $nameservers,
-  $searchpath,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
