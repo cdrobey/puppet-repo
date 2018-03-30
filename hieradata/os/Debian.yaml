@@ -62,5 +62,5 @@ profile::os::monitor::influxdbinput_list: {}
 
 profile::base::linux::network::nameservers: 
   - '10.1.1.1'
-profile::base::linux::network::domainname: 'fr.lan'
+profile::base::linux::network::searchpath: 'fr.lan'
   

@@ -14,19 +14,20 @@
 class profile::base::linux::network (
   $interfaces,
   $nameservers,
+  $searchpath,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
   }
   if $facts['os']['family'] == 'Debian'{
     package { 'resolvconf':
-      ensure => purge,
+      ensure => absent,
       name   => 'resolvconf',
     }
   }
 
   class { 'resolv_conf':
       nameservers => $nameservers,
-      searchpath  => ['sub1.example.com', 'sub2.example.com'],
+      searchpath  => $searchpath,
   }
 }
