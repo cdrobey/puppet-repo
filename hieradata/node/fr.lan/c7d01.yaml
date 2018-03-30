@@ -4,3 +4,8 @@ profile::base::linux::network::interfaces:
     ipaddress: '10.1.1.55'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
+profile::base::linux::network::ip: '10.1.1.55'
+profile::base::linux::network::profile: 'c7d01'
+
+
+
