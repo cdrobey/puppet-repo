@@ -57,3 +57,9 @@ profile::os::monitor::influxdbinputs:
   swap: {}
   system: {}
 profile::os::monitor::influxdbinput_list: {}
+
+profile::base::linux::network::nameservers: 
+  - '10.1.1.1'
+  - '8.8.8.8'
+profile::base::linux::network::searchpath: 
+  - 'fr.lan'
