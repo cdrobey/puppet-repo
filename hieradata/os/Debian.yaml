@@ -59,3 +59,11 @@ profile::os::monitor::influxdbinputs:
   system: {}
   kernel: {}
 profile::os::monitor::influxdbinput_list: {}
+
+profile::base::linux::network:::dnsdomain: 'fr.lan'
+profile::base::linux::network:::dnsservers: 
+  - '10.1.1.1'
+  - '8.8.8.8'
+  - '8.8.4.4'
+profile::base::linux::network::dnssearchpath: 
+  - 'fr.lan'

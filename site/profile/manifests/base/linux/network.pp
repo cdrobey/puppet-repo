@@ -13,8 +13,21 @@
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
   $interfaces,
+  $dnsservers,
+  $dnsdomain,
+  $dnssearchpath,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
+  }
+
+  package { 'resolvconf':
+    ensure => purge,
+    name   => 'resolvconf',
+  }
+  class { 'resolv_conf':
+    nameservers => $dnsservers,
+    domainname  => $dnsdomain,
+    searchpath  => $dnssearchpath,
   }
 }
