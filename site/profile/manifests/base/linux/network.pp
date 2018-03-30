@@ -27,7 +27,5 @@ class profile::base::linux::network (
   }
   class { 'resolv_conf':
     nameservers => $dnsservers,
-    domainname  => $dnsdomain,
-    searchpath  => $dnssearchpath,
   }
 }
