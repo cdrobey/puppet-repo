@@ -1,11 +1,12 @@
 ---
+profile::base::linux::network::hostname: 'c7d01'
+profile::base::linux::network::ip: '10.1.1.55'
 profile::base::linux::network::interfaces:
   ens192:
     ipaddress: '10.1.1.55'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
-profile::base::linux::network::ip: '10.1.1.55'
-profile::base::linux::network::hostname: 'c7d01'
+
 
 
 
