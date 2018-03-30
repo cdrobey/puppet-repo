@@ -13,17 +13,20 @@
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
   $interfaces,
+  $nameservers,
 ) {
   class { 'network':
     interfaces_hash => $interfaces,
   }
-
-  package { 'resolvconf':
-    ensure => purge,
-    name   => 'resolvconf',
+  if $facts['os']['family'] == 'Debian'{
+    package { 'resolvconf':
+      ensure => purge,
+      name   => 'resolvconf',
+    }
   }
-class { 'resolv_conf':
-    nameservers => ['10.1.1.1', '192.168.2.2', '192.168.3.3'],
-    searchpath  => ['sub1.example.com', 'sub2.example.com'],
-}
+
+  class { 'resolv_conf':
+      nameservers => $nameservers,
+      searchpath  => ['sub1.example.com', 'sub2.example.com'],
+  }
 }
