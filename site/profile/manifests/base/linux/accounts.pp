@@ -13,7 +13,7 @@
 #   include profile::base::linux::accounts or assign in PE classifier
 # == Class: profile::base::linux::accounts
 class profile::base::linux::accounts (
-  $users,
+  Hash $users,
   ) {
   $users.each | $users_name, $users_data | {
     accounts::user { $users_name:
