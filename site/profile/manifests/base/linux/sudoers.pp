@@ -15,7 +15,7 @@
 class profile::base::linux::sudoers (
   Boolean $purge,
   Boolean $config_file_replace,
-  Hash $configs,
+  $configs,
 ) {
 
   class { 'sudo':

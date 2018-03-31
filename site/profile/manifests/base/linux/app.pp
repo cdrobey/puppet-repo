@@ -14,8 +14,8 @@
 #   include profile::base::linux::app or assign in PE classifier
 # == Class: profile::base::linux::app
 class profile::base::linux::app (
-  String $update_frequency,
-  String $upgrade_frequency,
+  $update_frequency,
+  $upgrade_frequency,
   Array $packages,
 ) {
 

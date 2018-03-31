@@ -15,9 +15,9 @@
 #   include profile::base::linux::ssh or assign in PE classifier
 # == Class: profile::base::linux::ssh
 class profile::base::linux::ssh (
-  String $password_authentication,
-  String $permit_root_login,
-  String $banner,
+  $password_authentication,
+  $permit_root_login,
+  $banner,
 ) {
 
   firewall { '201 allow ssh access':
