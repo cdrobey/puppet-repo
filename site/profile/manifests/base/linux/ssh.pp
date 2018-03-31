@@ -18,7 +18,7 @@ class profile::base::linux::ssh (
   String $password_authentication,
   String $permit_root_login,
   String $banner,
-  String $keys,
+  Array $keys,
 ) {
 
   firewall { '201 allow ssh access':
