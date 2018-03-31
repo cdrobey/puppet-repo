@@ -32,9 +32,9 @@ profile::base::linux::ssh::password_authentication: 'no'
 profile::base::linux::ssh::permit_root_login: 'no'
 profile::base::linux::ssh::banner: '/etc/motd'
 
-profile::base::linux::sudoers::purge: 'false'
-profile::base::linux::sudoers::config_file_replace: 'false'
-profile::base::linux::sudoers::includedirsudoers: 'true'
+profile::base::linux::sudoers::purge: false
+profile::base::linux::sudoers::config_file_replace: false
+profile::base::linux::sudoers::includedirsudoers: true
 
 profile::base::linux::sudoers::configs:
   'deploy':
