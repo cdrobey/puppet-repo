@@ -12,11 +12,11 @@
 #   include profile::base::linux::network or assign in PE classifier
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
-  $interfaces,
-  $nameservers,
-  $searchpath,
-  $hostname,
-  $ip,
+  Hash $interfaces,
+  Array $nameservers,
+  Arrary $searchpath,
+  String $hostname,
+  String $ip,
 ) {
   class { 'hostname':
     hostname => $hostname,

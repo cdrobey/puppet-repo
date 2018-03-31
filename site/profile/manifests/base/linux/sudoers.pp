@@ -13,9 +13,9 @@
 #   include profile::base::linux::sudoers or assign in PE classifier
 # == Class: profile::base::linux::sudoers
 class profile::base::linux::sudoers (
-  $purge,
-  $config_file_replace,
-  $configs,
+  String $purge,
+  String $config_file_replace,
+  Hash $configs,
 ) {
 
   class { 'sudo':
