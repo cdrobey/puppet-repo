@@ -11,7 +11,7 @@
 #   include profile::base::linux::motd or assign in PE classifier
 # == Class: profile::base::linux::motd
 class profile::base::linux::motd (
-  $content,
+  String $content,
 ) {
   # Set Message of the Day
   class { 'motd':

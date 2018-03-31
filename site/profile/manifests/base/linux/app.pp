@@ -14,9 +14,9 @@
 #   include profile::base::linux::app or assign in PE classifier
 # == Class: profile::base::linux::app
 class profile::base::linux::app (
-  $update_frequency,
-  $upgrade_frequency,
-  $packages,
+  String $update_frequency,
+  String $upgrade_frequency,
+  Array $packages,
 ) {
 
   if $facts['os']['family'] == 'Debian'{
