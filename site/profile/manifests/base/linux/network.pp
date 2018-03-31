@@ -14,7 +14,7 @@
 class profile::base::linux::network (
   Hash $interfaces,
   Array $nameservers,
-  Arrary $searchpath,
+  Array $searchpath,
   String $hostname,
   String $ip,
 ) {
