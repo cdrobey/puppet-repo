@@ -1,6 +1,5 @@
 ---
 profile::base::linux::network::hostname: 'u1604d01'
-profile::base::linux::network::ip: '10.1.1.54'
 profile::base::linux::network::interfaces:
   ens160:
     ipaddress: '10.1.1.54'

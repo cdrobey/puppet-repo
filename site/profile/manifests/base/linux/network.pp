@@ -12,28 +12,12 @@
 #   include profile::base::linux::network or assign in PE classifier
 # == Class: profile::base::linux::network
 class profile::base::linux::network (
-  Hash $interfaces,
-  Array $nameservers,
-  Array $searchpath,
   String $hostname,
-  String $ip,
+  Hash $interfaces,
 ) {
-  class { 'hostname':
-    hostname => $hostname,
-    ip       => $ip,
-  }
-  class { 'network':
-    interfaces_hash => $interfaces,
-  }
-  if $facts['os']['family'] == 'Debian'{
-    package { 'resolvconf':
-      ensure => absent,
-      name   => 'resolvconf',
-    }
-  }
 
-  class { 'resolv_conf':
-      nameservers => $nameservers,
-      searchpath  => $searchpath,
+  class { 'network':
+    hostname        => $hostname,
+    interfaces_hash => $interfaces,
   }
 }
