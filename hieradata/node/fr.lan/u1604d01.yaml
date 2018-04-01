@@ -6,11 +6,11 @@ profile::base::linux::network::interfaces:
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
   ens160:1:
-    ipaddress: '10.1.1.55'
+    ipaddress: '10.1.1.56'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
   ens160:2:
-    ipaddress: '10.1.1.55'
+    ipaddress: '10.1.1.57'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
 
