@@ -11,5 +11,4 @@
 # == Class: role::docker
 class role::docker {
   include profile::base
-  include profile::os::docker
 }
