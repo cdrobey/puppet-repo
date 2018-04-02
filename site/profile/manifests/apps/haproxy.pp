@@ -27,4 +27,17 @@ class profile::apps::haproxy (
     ports             => '8443',
     options           => 'check',
   }
+
+  haproxy::listen { 'monitor':
+    collect_exported => false,
+    ipaddress        => '10.1.1.56',
+    ports            => '443',
+  }
+  haproxy::balancermember { 'bm01':
+    listening_service => 'monitor',
+    server_names      => 'monitor.fr.lan',
+    ipaddresses       => '127.0.0.1',
+    ports             => '3000',
+    options           => 'check',
+  }
 }
