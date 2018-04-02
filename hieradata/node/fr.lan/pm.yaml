@@ -2,7 +2,7 @@
 
 profile::base::linux::network::hostname: 'pm'
 profile::base::linux::network::interfaces:
-  ens160:
+  ens192:
     ipaddress: '10.1.1.51'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
