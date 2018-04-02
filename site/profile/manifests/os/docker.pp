@@ -22,6 +22,7 @@ class profile::os::docker (
     }
 
     docker::run { $docker_name:
+      ensure         => true,
       image          => $docker['image'],
       detach         => $docker['detach'],
       service_prefix => $docker['service_prefix'],
