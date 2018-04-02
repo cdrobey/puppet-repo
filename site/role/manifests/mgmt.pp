@@ -14,7 +14,6 @@
 class role::mgmt {
   include profile::base
   include profile::os::monitor
-  include profile::apps::haproxy
   include profile::apps::unifi
   include profile::apps::monitormaster
 }
