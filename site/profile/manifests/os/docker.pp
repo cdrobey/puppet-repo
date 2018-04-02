@@ -40,11 +40,8 @@ class profile::os::docker (
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
       env             => $docker['env'],
-      net             => 'my-net',
       restart_service => true,
       pull_on_start   => false,
-      before_stop     => 'echo "So Long, and Thanks for All the Fish"',
-      before_start    => 'echo "Run this on the host before starting the Docker container"',
       docker_service  => true,
 
     }
