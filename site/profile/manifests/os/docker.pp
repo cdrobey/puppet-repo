@@ -27,6 +27,11 @@ class profile::os::docker (
       service_prefix => $docker['service_prefix'],
       expose         => $docker['expose'],
       ports          => $docker['ports'],
+      volumes        => $docker['volumes'],
+      pull_on_start  => false,
+      before_stop    => 'echo "So Long, and Thanks for All the Fish"',
+      before_start   => 'echo "Run this on the host before starting the Docker container"',
+
     }
   }
 }
