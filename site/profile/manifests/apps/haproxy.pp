@@ -16,14 +16,14 @@ class profile::apps::haproxy (
   include haproxy
   haproxy::listen { 'lb00':
     collect_exported => false,
-    ipaddress        => $facts['ipaddress'],
+    ipaddress        => '10.1.1.56',
     ports            => '80',
   }
   haproxy::balancermember { 'bm00':
     listening_service => 'lb00',
     server_names      => $facts['fqdn'],
     ipaddresses       => $facts['ipaddress'],
-    ports             => '80',
+    ports             => '8443',
     options           => 'check',
   }
 }
