@@ -30,7 +30,7 @@ class profile::apps::haproxy (
 
   haproxy::listen { 'monitor':
     collect_exported => false,
-    ipaddress        => '10.1.1.56',
+    ipaddress        => '10.1.1.57',
     ports            => '443',
   }
   haproxy::balancermember { 'bm01':
