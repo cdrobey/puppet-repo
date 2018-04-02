@@ -40,7 +40,7 @@ class profile::os::docker (
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
       env             => $docker['env'],
-      net             => 'my-net'
+      net             => 'my-net',
       restart_service => true,
       pull_on_start   => false,
       docker_service  => true,
