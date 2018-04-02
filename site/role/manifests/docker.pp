@@ -10,7 +10,7 @@
 # @example
 #   include role::test or assign in PE classifier
 # == Class: role::test
-class role::test {
+class role::docker {
   include profile::base
   include profile::os::docker
 }
