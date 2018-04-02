@@ -8,8 +8,7 @@ profile::os::docker::docker_list:
   phpipam:
     image: 'pierrecdn/phpipam'
     service_prefix: 'phpipam-'
-    exposed: '80:80'
     ports: '80:80'
-    links:  'phpipam-mysql:mysql'
+    links: 'phpipam-mysql:mysql'
 
       
