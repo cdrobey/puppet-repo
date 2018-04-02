@@ -15,21 +15,16 @@ class profile::apps::haproxy (
 ){
   include haproxy
 
-  haproxy::frontend { 'fe00':
-    ipaddress    => $::ipaddress,
-    ports        => '80',
-    mode         => 'tcp',
-    bind_options => 'accept-proxy',
-    options      => {
-      'default_backend' => 'be00',
-      'timeout client'  => '30s',
-    },
+  haproxy::listen { 'unifi':
+    collect_exported => false,
+    ipaddress        => '10.1.1.56',
+    ports            => '80',
   }
-
-  haproxy::backend { 'be00':
-    options => {
-      'balance' => 'roundrobin',
-      'server'  => 'server unifi 127.0.0.1:8443 check'
-    },
+  haproxy::balancermember { 'bm00':
+    listening_service => 'unifi',
+    server_names      => 'unifi.fr.lan',
+    ipaddresses       => '127.0.0.1',
+    ports             => '8443',
+    options           => 'check',
   }
 }
