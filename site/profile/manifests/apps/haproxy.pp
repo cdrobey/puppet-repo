@@ -12,32 +12,25 @@
 #   include profile::haproxy or assign in PE classifier
 # == Class: profile::apps::haproxy
 class profile::apps::haproxy (
+  Hash $listeners,
+  Hash $balancers,
 ){
   include haproxy
 
-  haproxy::listen { 'unifi':
-    collect_exported => false,
-    ipaddress        => '10.1.1.56',
-    ports            => '443',
+  $listeners.each | $listener_name, $listener_data | {
+    haproxy::listen { $listener_name:
+      collect_exported => $listener_data['collect_exported'],
+      ipaddress        => $listener_data['ipaddress'],
+      ports            => $listener_data['ports'],
+    }
   }
-  haproxy::balancermember { 'bm00':
-    listening_service => 'unifi',
-    server_names      => 'unifi.fr.lan',
-    ipaddresses       => '127.0.0.1',
-    ports             => '8443',
-    options           => 'check',
-  }
-
-  haproxy::listen { 'monitor':
-    collect_exported => false,
-    ipaddress        => '10.1.1.57',
-    ports            => '443',
-  }
-  haproxy::balancermember { 'bm01':
-    listening_service => 'monitor',
-    server_names      => 'monitor.fr.lan',
-    ipaddresses       => '127.0.0.1',
-    ports             => '3000',
-    options           => 'check',
+  $balancers.each | $balancer_name, $balancer_data | {
+    haproxy::balancermember { $balancer_name:
+      listening_service => balancer_data['listening_service'],
+      server_names      => balancer_data['server_names'],
+      ipaddresses       => balancer_data['ipaddresses'],
+      ports             => balancer_data['ports'],
+      options           => balancer_data['options'],
+    }
   }
 }
