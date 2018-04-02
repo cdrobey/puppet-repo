@@ -23,7 +23,6 @@ class profile::os::docker (
 
     docker::run { $docker_name:
       image           => $docker['image'],
-      detach          => $docker['detach'],
       service_prefix  => $docker['service_prefix'],
       expose          => $docker['expose'],
       ports           => $docker['ports'],
@@ -35,9 +34,5 @@ class profile::os::docker (
       docker_service  => true,
 
     }
-  }
-  docker::run { 'helloworld':
-    image   => 'base',
-    command => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
   }
 }
