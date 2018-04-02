@@ -1,4 +1,5 @@
 ---
+  
 profile::base::linux::network::hostname: 'u1604d01'
 profile::base::linux::network::interfaces:
   ens160:
