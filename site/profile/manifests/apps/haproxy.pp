@@ -28,11 +28,27 @@ class profile::apps::haproxy (
     },
   }
 
-  haproxy::balancermember { 'bm00':
-    listening_service => 'lb00',
-    server_names      => $facts['fqdn'],
-    ipaddresses       => $facts['ipaddress'],
-    ports             => '8443',
-    options           => 'check',
+  haproxy::frontend { 'fe00':
+    ipaddress    => $::ipaddress,
+    ports        => '80',
+    mode         => 'tcp',
+    bind_options => 'accept-proxy',
+    options      => {
+      'default_backend' => 'be00',
+      'timeout client'  => '30s',
+      'option'          => [
+        'tcplog',
+        'accept-invalid-http-request',
+      ],
+    },
+  }
+
+  haproxy::backend { 'be00':
+    options => {
+      'option'  => [
+        'tcplog',
+      ],
+      'balance' => 'roundrobin',
+    },
   }
 }
