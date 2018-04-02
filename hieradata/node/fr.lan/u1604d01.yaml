@@ -1,6 +1,22 @@
 ---
+  
+profile::base::linux::network::hostname: 'u1604d01'
 profile::base::linux::network::interfaces:
   ens160:
     ipaddress: '10.1.1.54'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
+  ens160:1:
+    ipaddress: '10.1.1.56'
+    netmask: '255.255.255.0'
+    gateway: '10.1.1.1'
+  ens160:2:
+    ipaddress: '10.1.1.57'
+    netmask: '255.255.255.0'
+    gateway: '10.1.1.1'
+  ens160:2:
+    ipaddress: '10.1.1.58'
+    netmask: '255.255.255.0'
+    gateway: '10.1.1.1'
+
+
