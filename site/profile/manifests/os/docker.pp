@@ -15,7 +15,7 @@ class profile::os::docker (
   Hash $docker_list = undef,
 ){
   firewall { '200 allow http/https access':
-    dport  => [80],
+    dport  => [80, 443],
     proto  => tcp,
     action =>  accept,
   }
