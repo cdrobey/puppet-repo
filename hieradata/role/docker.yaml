@@ -1,3 +1,7 @@
 ---
   
 profile::os::docker::docker_list:
+  phpipam-mysql:
+    image: 'mysql:5.6'
+    detach: true
+    service_prefix: 'phpipam-'
