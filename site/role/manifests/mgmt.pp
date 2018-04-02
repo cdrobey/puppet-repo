@@ -1,19 +1,20 @@
-# unifi
+# management
 #
-# Install and configure unifi application server
+# Install and configure management application server
 #
-# @summary  This role delivers a unifi application server to manage Ubiquiti network devices.
-#           Unifi provides a unified interface for management of firewall, waps, and switches.
+# @summary  This role delivers a management application server to manage systems services.  The role
+#           builds a unifi network management station and grafana/influxdb/telegraf measurement
+#           system.
 #
 # @param    none
 #
 # @example
-#   include role::unifi or assign in PE classifier
-# == Class: role::unifi
+#   include role::mgmt or assign in PE classifier
+# == Class: role::mgmt
 class role::mgmt {
   include profile::base
   include profile::os::monitor
   include profile::apps::haproxy
-  include profile::apps::unifi
+  include profile::apps::management
   include profile::apps::monitormaster
 }
