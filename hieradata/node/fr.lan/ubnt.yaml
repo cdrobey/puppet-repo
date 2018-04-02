@@ -5,3 +5,5 @@ profile::base::linux::network::interfaces:
     ipaddress: '10.1.1.50'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
+    dns_search: 'fr.lan'
+    dns_nameservers: '10.1.1.1'
