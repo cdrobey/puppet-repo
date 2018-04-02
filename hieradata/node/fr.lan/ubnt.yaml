@@ -1,8 +1,9 @@
 ---
+
 profile::base::linux::network::hostname: 'ubnt'
 profile::base::linux::network::interfaces:
   ens160:
-    ipaddress: '10.1.1.50'
+    ipaddress: '10.1.1.55'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
     dns_search: 'fr.lan'
