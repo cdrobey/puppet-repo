@@ -15,17 +15,16 @@ class profile::apps::haproxy (
 ){
   include haproxy
 
-  haproxy::frontend { 'puppet00':
+  haproxy::frontend { 'fe00':
     ipaddress    => $::ipaddress,
-    ports        => '8140',
+    ports        => '80',
     mode         => 'tcp',
     bind_options => 'accept-proxy',
     options      => {
-      'default_backend' => 'puppet_backend00',
+      'default_backend' => 'be00',
       'timeout client'  => '30s',
       'option'          => [
         'tcplog',
-        'accept-invalid-http-request',
       ],
     },
   }
