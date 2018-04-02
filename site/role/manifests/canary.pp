@@ -12,4 +12,5 @@
 # == Class: role::canary
 class role::canary {
   include profile::base
+  include profile::apps::haproxy
 }
