@@ -26,11 +26,11 @@ class profile::apps::haproxy (
   }
   $balancers.each | $balancer_name, $balancer_data | {
     haproxy::balancermember { $balancer_name:
-      listening_service => balancer_data['listening_service'],
-      server_names      => balancer_data['server_names'],
-      ipaddresses       => balancer_data['ipaddresses'],
-      ports             => balancer_data['ports'],
-      options           => balancer_data['options'],
+      listening_service => $balancer_data['listening_service'],
+      server_names      => $balancer_data['server_names'],
+      ipaddresses       => $balancer_data['ipaddresses'],
+      ports             => $balancer_data['ports'],
+      options           => $balancer_data['options'],
     }
   }
 }

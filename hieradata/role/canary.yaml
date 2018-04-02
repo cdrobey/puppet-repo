@@ -10,13 +10,13 @@ profile::apps::haproxy::listeners:
     ipaddress: '10.1.1.57'
     ports: '443'
 profile::apps::haproxy::balancers:
-  unifibe:
+  unifi:
     listening_service: 'unifi'
     server_names: 'unifi.fr.lan'
     ipaddresses: '127.0.0.1'
     ports:  '443'
     options: 'check'
-  monitorbe:
+  monitor:
     listening_service: 'monitor'
     server_names: 'monitor.fr.lan'
     ipaddresses: '127.0.0.1'
