@@ -39,6 +39,7 @@ class profile::os::docker (
       expose          => $docker['expose'],
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
+      env             => $docker['env'],
       net             => 'my-net',
       restart_service => true,
       pull_on_start   => false,
