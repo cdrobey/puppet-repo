@@ -15,26 +15,13 @@ class profile::apps::haproxy (
 ){
   include haproxy
 
-  haproxy::listen { 'lb00':
-    mode    => 'tcp',
-    options => {
-      'option'  => [
-        'tcplog',
-      ],
-      'balance' => 'roundrobin',
-    },
-    bind    => {
-      '10.1.1.56:80' => ['ssl', 'crt', 'unifi.fr.lan'],
-    },
-  }
-
-  haproxy::frontend { 'fe00':
-    ipaddress    => '10.1.1.54',
-    ports        => '80',
+  haproxy::frontend { 'puppet00':
+    ipaddress    => $::ipaddress,
+    ports        => '8140',
     mode         => 'tcp',
     bind_options => 'accept-proxy',
     options      => {
-      'default_backend' => 'be00',
+      'default_backend' => 'puppet_backend00',
       'timeout client'  => '30s',
       'option'          => [
         'tcplog',
@@ -49,6 +36,7 @@ class profile::apps::haproxy (
         'tcplog',
       ],
       'balance' => 'roundrobin',
+      'server'  => 'server web03 127.0.0.1:8443 check'
     },
   }
 }
