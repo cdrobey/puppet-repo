@@ -18,7 +18,7 @@ class profile::apps::haproxy (
   haproxy::listen { 'unifi':
     collect_exported => false,
     ipaddress        => '10.1.1.56',
-    ports            => '80',
+    ports            => '443',
   }
   haproxy::balancermember { 'bm00':
     listening_service => 'unifi',
