@@ -8,3 +8,9 @@ profile::base::linux::network::interfaces:
     gateway: '10.1.1.1'
     dns_search: 'fr.lan'
     dns_nameservers: '10.1.1.1'
+  ens160:1:
+    ipaddress: '10.1.1.56'
+    netmask: '255.255.255.0'
+  ens160:2:
+    ipaddress: '10.1.1.57'
+    netmask: '255.255.255.0'
