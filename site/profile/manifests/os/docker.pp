@@ -25,8 +25,8 @@ class profile::os::docker (
   }
 
   docker_network { 'my-net':
-    ensure   => present,
-    subnet   => '192.168.64.0/24',
+    ensure => present,
+    subnet => '192.168.64.0/24',
   }
 
   $docker_list.each | $docker_name, $docker | {
@@ -39,7 +39,7 @@ class profile::os::docker (
       expose          => $docker['expose'],
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
-      net             => 'my-net'
+      net             => 'my-net',
       restart_service => true,
       pull_on_start   => false,
       before_stop     => 'echo "So Long, and Thanks for All the Fish"',
