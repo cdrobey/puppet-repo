@@ -44,7 +44,6 @@ class profile::os::docker (
       restart_service => true,
       pull_on_start   => false,
       docker_service  => true,
-
     }
   }
 }
