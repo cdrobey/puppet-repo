@@ -1,6 +1,6 @@
 ---
 
-profile::os::monitor::haproxy::listeners:
+profile::apps::haproxy::listeners:
   unifi:
     collect_exported: false,
     ipaddress: '10.1.1.56'
@@ -9,7 +9,7 @@ profile::os::monitor::haproxy::listeners:
     collect_exported: false,
     ipaddress: '10.1.1.57'
     ports: '443'
-profile::os::monitor::haproxy::balancers:
+profile::apps::haproxy::balancers:
   unifi:
     listening_service: 'unifi'
     server_names: 'unifi.fr.lan'
