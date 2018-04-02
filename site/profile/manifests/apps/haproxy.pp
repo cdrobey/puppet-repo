@@ -22,7 +22,7 @@ class profile::apps::haproxy (
   haproxy::balancermember { 'bm00':
     listening_service => 'lb00',
     server_names      => $facts['fqdn'],
-    ipaddress         => $facts['ipaddress'],
+    ipaddresses       => $facts['ipaddress'],
     ports             => '80',
     options           => 'check',
   }
