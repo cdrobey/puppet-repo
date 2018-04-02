@@ -29,7 +29,7 @@ class profile::apps::haproxy (
   }
 
   haproxy::frontend { 'fe00':
-    ipaddress    => $::ipaddress,
+    ipaddress    => '10.1.1.54',
     ports        => '80',
     mode         => 'tcp',
     bind_options => 'accept-proxy',
