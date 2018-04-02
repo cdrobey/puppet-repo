@@ -41,7 +41,6 @@ mod 'puppet-windows_firewall', '2.0.0'
 mod 'ajjahn-samba', '0.5.0'
 mod 'kschu91-gogs', '1.2.0'
 mod 'puppetlabs-docker', '1.1.0'
-mod 'example42-network', '3.3.10'
 mod 'puppetlabs-haproxy', '2.1.0'
 
 
