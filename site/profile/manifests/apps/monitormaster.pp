@@ -11,7 +11,7 @@
 #   include profile::apps::monitormaster or assign in PE classifier
 # == Class: profile::apps::monitormaster
 class profile::apps::monitormaster (
-    $influxdbversion = '1.4.2-1',
+    $influxdbversion = 'installed',
 ){
     firewall { '300 allow communication to InfluxDB and Grafana':
         dport  => [8086, 8083, 3000],
