@@ -12,7 +12,7 @@
 #   include profile::os::docker or assign in PE classifier
 # == Class: profile::os::docker
 class profile::os::docker (
-  $docker_list,
+  Hash $docker_list = undef,
 ){
   class { 'docker':
     version   => 'latest',
