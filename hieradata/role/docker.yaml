@@ -1,2 +1,3 @@
 ---
- profile::os::docker::docker_list: undef
+  
+profile::os::docker::docker_list:
