@@ -14,8 +14,4 @@ profile::base::linux::network::interfaces:
   ens160:2:
     ipaddress: '10.1.1.57'
     netmask: '255.255.255.0'
-  ens160:2:
-    ipaddress: '10.1.1.58'
-    netmask: '255.255.255.0'
-
 
