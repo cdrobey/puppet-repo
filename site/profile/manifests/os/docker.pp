@@ -22,17 +22,22 @@ class profile::os::docker (
     }
 
     docker::run { $docker_name:
-      image          => $docker['image'],
-      detach         => $docker['detach'],
-      service_prefix => $docker['service_prefix'],
-      expose         => $docker['expose'],
-      ports          => $docker['ports'],
-      volumes        => $docker['volumes'],
-      pull_on_start  => false,
-      before_stop    => 'echo "So Long, and Thanks for All the Fish"',
-      before_start   => 'echo "Run this on the host before starting the Docker container"',
-      docker_service => true,
+      image           => $docker['image'],
+      detach          => $docker['detach'],
+      service_prefix  => $docker['service_prefix'],
+      expose          => $docker['expose'],
+      ports           => $docker['ports'],
+      volumes         => $docker['volumes'],
+      restart_service => true,
+      pull_on_start   => false,
+      before_stop     => 'echo "So Long, and Thanks for All the Fish"',
+      before_start    => 'echo "Run this on the host before starting the Docker container"',
+      docker_service  => true,
 
     }
+  }
+  docker::run { 'helloworld':
+    image   => 'base',
+    command => '/bin/sh -c "while true; do echo hello world; sleep 1; done"',
   }
 }
