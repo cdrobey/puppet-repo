@@ -1,4 +1,5 @@
 ---
+profile::base::linux::network::hostname: 'ubnt'
 profile::base::linux::network::interfaces:
   ens160:
     ipaddress: '10.1.1.50'
