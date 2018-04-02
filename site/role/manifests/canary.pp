@@ -14,5 +14,5 @@ class role::canary {
   include profile::base
   include profile::apps::haproxy
   include profile::apps::unifi
-
+  include profile::apps::monitormaster
 }
