@@ -1,9 +1,0 @@
----
-
-
-profile::base::linux::network::hostname: 'nas'
-profile::base::linux::network::interfaces:
-  ens192:
-    ipaddress: '10.1.1.52'
-    netmask: '255.255.255.0'
-    gateway: '10.1.1.1'
