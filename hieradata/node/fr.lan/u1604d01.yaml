@@ -6,7 +6,7 @@ profile::base::linux::network::interfaces:
     ipaddress: '10.1.1.54'
     netmask: '255.255.255.0'
     gateway: '10.1.1.1'
-    dns_search: 'fr.an'
+    dns_search: 'fr.lan'
     dns_nameservers: '10.1.1.1'
   ens160:1:
     ipaddress: '10.1.1.56'
