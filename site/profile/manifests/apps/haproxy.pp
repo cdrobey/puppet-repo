@@ -29,7 +29,7 @@ class profile::apps::haproxy (
   haproxy::backend { 'be00':
     options => {
       'balance' => 'roundrobin',
-      'server'  => 'server web03 127.0.0.1:8443 check'
+      'server'  => 'server unifi 127.0.0.1:8443 check'
     },
   }
 }
