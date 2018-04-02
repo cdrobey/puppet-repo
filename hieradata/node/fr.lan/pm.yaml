@@ -1,4 +1,5 @@
 ---
+profile::base::linux::network::hostname: 'pm'
 profile::base::linux::network::interfaces:
   ens192:
     ipaddress: '10.1.1.51'
