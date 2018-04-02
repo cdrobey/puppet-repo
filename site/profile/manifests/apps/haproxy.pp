@@ -14,11 +14,20 @@
 class profile::apps::haproxy (
 ){
   include haproxy
+
   haproxy::listen { 'lb00':
-    collect_exported => false,
-    ipaddress        => '10.1.1.56',
-    ports            => '80',
+    mode    => 'tcp',
+    options => {
+      'option'  => [
+        'tcplog',
+      ],
+      'balance' => 'roundrobin',
+    },
+    bind    => {
+      '10.1.1.56:80' => ['ssl', 'crt', 'unifi.fr.lan'],
+    },
   }
+
   haproxy::balancermember { 'bm00':
     listening_service => 'lb00',
     server_names      => $facts['fqdn'],
