@@ -23,17 +23,11 @@ class profile::apps::haproxy (
     options      => {
       'default_backend' => 'be00',
       'timeout client'  => '30s',
-      'option'          => [
-        'tcplog',
-      ],
     },
   }
 
   haproxy::backend { 'be00':
     options => {
-      'option'  => [
-        'tcplog',
-      ],
       'balance' => 'roundrobin',
       'server'  => 'server web03 127.0.0.1:8443 check'
     },
