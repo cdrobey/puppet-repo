@@ -1,10 +1,2 @@
 ---
  profile::os::docker::docker_list:
-  nginxtest:
-    image: 'nginx'
-    detach: true
-    service_prefix: 'docker-'
-    ports:
-      - 80
-    expose:
-      - 80
