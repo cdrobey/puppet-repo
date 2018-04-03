@@ -24,9 +24,8 @@ class profile::os::docker (
     version   => 'latest',
   }
 
-  docker_network { 'my-net':
+  docker_network { 'docker-net':
     ensure => present,
-    subnet => '192.168.64.0/24',
   }
 
   $docker_list.each | $docker_name, $docker | {
@@ -40,7 +39,7 @@ class profile::os::docker (
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
       env             => $docker['env'],
-      net             => 'my-net',
+      net             => 'docker-net',
       restart_service => true,
       pull_on_start   => false,
       docker_service  => true,
