@@ -11,6 +11,7 @@ profile::os::docker::docker_list:
     service_prefix: 'phpipam-'
     ports: '80:80'
     links: 'phpipam-mysql:mysql'
+    env: 'MYSQL_ENV_MYSQL_PASSWORD=phpipam'
 
 
 
