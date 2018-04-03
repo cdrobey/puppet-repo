@@ -5,13 +5,13 @@ profile::os::docker::docker_list:
     image: 'mysql:5.6'
     service_prefix: 'phpipam-'
     volumes: '/mysql:/var/lib/mysql'
-    env: "MYSQL_ROOT_PASSWORD=my-secret-pw"
+    env: 'MYSQL_ROOT_PASSWORD=my-secret-pw'
   phpipam:
     image: 'pierrecdn/phpipam'
     service_prefix: 'phpipam-'
     ports: '80:80'
     links: 'phpipam-mysql:mysql'
-    env: "MYSQL_HOST=phpipam-mysql"
+    env: 'MYSQL_HOST=phpipam-mysql'
 
 
       
