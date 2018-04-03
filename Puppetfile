@@ -43,6 +43,7 @@ mod 'kschu91-gogs', '1.2.0'
 mod 'puppetlabs-docker', '1.1.0'
 mod 'puppetlabs-haproxy', '2.1.0'
 mod 'herculesteam-augeasproviders_sysctl', '2.2.0'
+mod 'herculesteam-augeasproviders_core', '2.1.4'
 
 
 mod 'influxdb',
