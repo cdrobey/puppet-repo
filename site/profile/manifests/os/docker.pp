@@ -14,6 +14,18 @@
 class profile::os::docker (
   Hash $docker_list = undef,
 ){
+  sysctl { 'net.ipv4.ip_forward':
+    ensure => present,
+    value  => '1',
+  }
+
+  firewall { '100 snat for network ens192':
+    chain    => 'POSTROUTING',
+    jump     => 'MASQUERADE',
+    proto    => 'all',
+    outiface => 'ens192',
+    table    => 'nat',
+  }
   firewall { '200 allow http/https access':
     dport  => [80, 443],
     proto  => tcp,
