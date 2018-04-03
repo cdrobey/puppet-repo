@@ -24,10 +24,6 @@ class profile::os::docker (
     version   => 'latest',
   }
 
-  docker_network { 'docker-net':
-    ensure => present,
-  }
-
   $docker_list.each | $docker_name, $docker | {
     docker::image { $docker['image']:
     }
@@ -39,7 +35,7 @@ class profile::os::docker (
       ports           => $docker['ports'],
       volumes         => $docker['volumes'],
       env             => $docker['env'],
-      net             => 'docker-net',
+      links           => $docker['links'],
       restart_service => true,
       pull_on_start   => false,
       docker_service  => true,
