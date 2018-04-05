@@ -13,7 +13,7 @@
 # == Class: profile::apps::haproxy
 class profile::apps::haproxy (
   Hash $listeners,
-  Hash $balancers,
+# Hash $balancers,
 ){
   include haproxy
 
@@ -34,7 +34,4 @@ class profile::apps::haproxy (
   #  }
 #  }
 Haproxy::Balancermember <<| listening_service == 'unifi' |>>
-
-
-
 }
