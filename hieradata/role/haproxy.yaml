@@ -1,14 +1,12 @@
 ---
 profile::apps::haproxy::listeners:
   unifi:
-    collect_exported: false,
-    ipaddress: '10.1.1.56'
+    ipaddress: '0.0.0.0'
     ports: '443'
 profile::apps::haproxy::balancers:
   unifi:
     listening_service: 'unifi'
-    server_names: 'unifi.fr.lan'
-    ipaddresses: '127.0.0.1'
+    server_names: 'co-u1604-unip01.local.familyroberson.com'
     ports:  '8443'
     options: 'check'
 
