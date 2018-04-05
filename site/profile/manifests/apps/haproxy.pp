@@ -17,6 +17,12 @@ class profile::apps::haproxy (
 ){
   include haproxy
 
+  firewall { '300 allow communication to InfluxDB and Grafana':
+    dport  => [80, 443, 3000],
+    proto  => tcp,
+    action =>  accept,
+  }
+
   $listeners.each | $listener_name, $listener_data | {
     haproxy::listen { $listener_name:
       collect_exported => $listener_data['collect_exported'],
