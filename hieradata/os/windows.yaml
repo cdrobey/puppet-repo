@@ -20,7 +20,7 @@
   profile::base::windows::rdp::rdp_enable: true
   profile::base::windows::rdp::rdp_nla_enable: false
   
-  profile::os::monitor::influxdburi: "http://monitor:8086"
+  profile::os::monitor::influxdburi: "http://c0-u1604-gidbp01:8086"
   profile::os::monitor::influxdbname: 'Monitor'
   profile::os::monitor::influxdbinputs: 
   profile::os::monitor::influxdbinput_list:
