@@ -14,16 +14,21 @@
 #   include profile::base::linux::app or assign in PE classifier
 # == Class: profile::base::linux::app
 class profile::base::linux::app (
-  $update_frequency,
-  $upgrade_frequency,
+  String $update_frequency,
+  String $upgrade_frequency,
   Array $packages,
 ) {
 
   if $facts['os']['family'] == 'Debian'{
     class { 'apt':
       update => {
-        frequency => $update_frequency,
+        'frequency' => $update_frequency,
       },
+    }
+    class {'unattended_upgrades':
+      auto => {
+        'reboot' => true,
+        },
     }
     class {'unattended_upgrades':
       period => '$upgrade_frequency',

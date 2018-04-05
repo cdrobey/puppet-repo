@@ -12,6 +12,7 @@ mod 'puppetlabs-accounts', '1.3.0'
 mod 'saz-sudo', '4.2.0'
 mod 'deric-gpasswd', '0.3.2'
 mod 'puppetlabs/apt', '3.0.0'
+mod 'puppet-unattended_upgrades', '3.1.0'
 mod 'andschwa-unattended_upgrades', :latest
 mod 'stahnma/epel', :latest
 mod 'jmkeyes-unifi', :latest
