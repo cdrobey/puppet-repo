@@ -25,11 +25,7 @@ class profile::base::linux::app (
         'frequency' => $update_frequency,
       },
     }
-    class { 'unattended_upgrades':
-      auto => {
-        'reboot' => true
-      },
-    }
+    class { 'unattended_upgrades': }
   }
   ensure_packages($packages, {'ensure' => 'present'})
 }
