@@ -27,7 +27,7 @@ class profile::apps::unifi (
   }
 
   @@haproxy::balancermember { $::fqdn:
-    listening_service => 'unifi',
+    listening_service => 'test',
     server_names      => $::hostname,
     ipaddresses       => $::ipaddress,
     ports             => '8443',

@@ -33,5 +33,5 @@ class profile::apps::haproxy (
   #    options           => $balancer_data['options'],
   #  }
 #  }
-Haproxy::Balancermember <<| listening_service == 'unifi' |>>
+Haproxy::Balancermember <<| listening_service == 'test' |>>
 }

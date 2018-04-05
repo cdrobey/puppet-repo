@@ -1,6 +1,6 @@
 ---
 profile::apps::haproxy::listeners:
-  unifi:
+  test:
     ipaddress: '0.0.0.0'
     ports: '443'
 profile::apps::haproxy::balancers:
