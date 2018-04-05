@@ -28,6 +28,5 @@ class profile::apps::haproxy (
       ports     => $listener_data['ports'],
     }
     Haproxy::Balancermember <<| listening_service == $listener_name |>>
-
   }
 }
