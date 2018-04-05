@@ -13,7 +13,6 @@
 # == Class: profile::apps::haproxy
 class profile::apps::haproxy (
   Hash $listeners,
-# Hash $balancers,
 ){
   include haproxy
 
@@ -25,9 +24,8 @@ class profile::apps::haproxy (
 
   $listeners.each | $listener_name, $listener_data | {
     haproxy::listen { $listener_name:
-      collect_exported => $listener_data['collect_exported'],
-      ipaddress        => $listener_data['ipaddress'],
-      ports            => $listener_data['ports'],
+      ipaddress => $listener_data['ipaddress'],
+      ports     => $listener_data['ports'],
     }
     Haproxy::Balancermember <<| listening_service == $listener_name |>>
 
