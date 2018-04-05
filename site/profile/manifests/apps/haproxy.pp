@@ -18,7 +18,7 @@ class profile::apps::haproxy (
   include haproxy
 
   firewall { '300 allow communication to InfluxDB and Grafana':
-    dport  => [80, 443, 3000],
+    dport  => [80, 443],
     proto  => tcp,
     action =>  accept,
   }
@@ -29,15 +29,7 @@ class profile::apps::haproxy (
       ipaddress        => $listener_data['ipaddress'],
       ports            => $listener_data['ports'],
     }
+    Haproxy::Balancermember <<| listening_service == $listener_name |>>
+
   }
-  #$balancers.each | $balancer_name, $balancer_data | {
-  #  haproxy::balancermember { $balancer_name:
-  #    listening_service => $balancer_data['listening_service'],
-  #    server_names      => $balancer_data['server_names'],
-  #    ipaddresses       => $balancer_data['ipaddresses'],
-  #    ports             => $balancer_data['ports'],
-  #    options           => $balancer_data['options'],
-  #  }
-#  }
-Haproxy::Balancermember <<| listening_service == 'test' |>>
 }

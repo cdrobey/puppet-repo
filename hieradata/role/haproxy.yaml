@@ -1,11 +1,11 @@
 ---
 profile::apps::haproxy::listeners:
-  test:
+  unifi:
     ipaddress: '0.0.0.0'
     ports: '443'
-profile::apps::haproxy::balancers:
-
-
+  monitormaster:
+    ipaddress: '0.0.0.0'
+    ports: '80'
 
 profile::os::monitor::influxdbinputs: 
   cpu:

@@ -15,23 +15,23 @@ class profile::apps::unifi (
   $repo_release = 'stable',
   $package_ensure = 'latest',
 ){
-  firewall { '200 allow unifi access':
+  firewall { '200 allow unifi tcp access':
     dport  => [80, 443, 8080, 8443, 8843, 8880, 3478, 6789, 10001],
     proto  => tcp,
     action =>  accept,
   }
-  firewall { '202 allow unifi access':
+  firewall { '202 allow unifi udp access':
     dport  => [ 3478 ],
     proto  => udp,
     action =>  accept,
   }
 
-  @@haproxy::balancermember { $::fqdn:
-    listening_service => 'test',
-    server_names      => $::hostname,
-    ipaddresses       => $::ipaddress,
-    ports             => '8443',
-    options           => 'check',
+  @@haproxy::balancermember { $facts['fqdn']:
+      listening_service => 'unifi',
+      server_names      => $facts['hostname'],
+      ipaddresses       => $facts['ipaddress'],
+      ports             => '8443',
+      options           => 'check',
   }
 
   class { 'unifi':
