@@ -1,10 +1,10 @@
 ---
 profile::apps::haproxy::listeners:
   unifi:
-    ipaddress: '0.0.0.0'
+    ipaddress: '10.1.1.11'
     ports: '443'
   monitormaster:
-    ipaddress: '0.0.0.0'
+    ipaddress: '10.1.1.12'
     ports: '80'
 
 profile::os::monitor::influxdbinputs: 
