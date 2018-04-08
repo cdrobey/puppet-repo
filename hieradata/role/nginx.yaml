@@ -1,0 +1,42 @@
+---
+profile::apps::nginx::listeners:
+  'monitor':
+    ports: '80'
+    proxy: 'http://co-u1604-idbp01:3000'
+  'unifi':
+    ports: '80'
+    proxy: 'https://co-u1604-unip01:8443'
+  'puppet':
+    port: '80'
+    proxy: 'http://co-u1604-pmp01'
+
+
+      nginx::resource::server { 'kibana.myhost.com':
+  listen_port => 80,
+  proxy       => 'http://localhost:5601',
+}
+
+profile::os::monitor::influxdbinputs: 
+  cpu:
+    percpu: true
+    totalcpu: true
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  diskio: {}
+  processes: {}
+  swap: {}
+  system: {}
+  kernel: {}
+  ping:
+    urls:
+      - 8.8.8.8
+  puppetagent:
+    location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
+  dns_query:
+    servers: 
+      - 8.8.8.8
+      - 10.1.1.1
+    domains:
+      - "www.google.com"
