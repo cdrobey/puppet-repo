@@ -6,6 +6,9 @@ profile::apps::haproxy::listeners:
   monitormaster:
     ipaddress: '10.1.1.11'
     ports: '80'
+  puppet:
+    ipaddress: '10.1.1.13'
+    ports: '80'
 
 profile::os::monitor::influxdbinputs: 
   cpu:
