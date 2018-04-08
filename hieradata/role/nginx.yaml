@@ -9,12 +9,9 @@ profile::apps::nginx::listeners:
   'puppet':
     port: '80'
     proxy: 'http://co-u1604-pmp01'
-
-
-      nginx::resource::server { 'kibana.myhost.com':
-  listen_port => 80,
-  proxy       => 'http://localhost:5601',
-}
+  'vcsa':
+    port: '80'
+    proxy: 'https://co-vcsa-p01/ui/'
 
 profile::os::monitor::influxdbinputs: 
   cpu:
