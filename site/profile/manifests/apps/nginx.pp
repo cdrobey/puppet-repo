@@ -24,7 +24,6 @@ class profile::apps::nginx (
 
   $listeners.each | $listener_name, $listener_data | {
     nginx::resource::server { $listener_name:
-      ssl         => true,
       listen_port => $listener_data['port'],
       proxy       => $listener_data['proxy'],
     }
