@@ -9,18 +9,3 @@ profile::apps::samba::shares:
     comment: 'Test Share'
     path: '/tmp'
     browsable: true
-
-
-profile::os::monitor::influxdbinputs: 
-  cpu:
-    percpu: true
-    totalcpu: true
-  mem: {}
-  io: {}
-  net: {}
-  disk: {}
-  diskio: {}
-  processes: {}
-  swap: {}
-  system: {}
-  kernel: {}
