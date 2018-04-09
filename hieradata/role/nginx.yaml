@@ -13,6 +13,8 @@ profile::apps::nginx::listeners:
     port: 80
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
 
+profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
+profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:
     percpu: true
