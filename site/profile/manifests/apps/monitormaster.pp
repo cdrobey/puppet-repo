@@ -18,16 +18,6 @@ class profile::apps::monitormaster (
         proto  => tcp,
         action =>  accept,
     }
-
-    @@haproxy::balancermember { $facts['fqdn']:
-        listening_service => 'monitormaster',
-        server_names      => $facts['hostname'],
-        ipaddresses       => $facts['ipaddress'],
-        ports             => '3000',
-        options           => 'check',
-    }
-
-
     class {'influxdb':
         ensure         => 'present',
         manage_repos   => true,

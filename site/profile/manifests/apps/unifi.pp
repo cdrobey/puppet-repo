@@ -26,14 +26,6 @@ class profile::apps::unifi (
     action =>  accept,
   }
 
-  @@haproxy::balancermember { $facts['fqdn']:
-      listening_service => 'unifi',
-      server_names      => $facts['hostname'],
-      ipaddresses       => $facts['ipaddress'],
-      ports             => '8443',
-      options           => 'check',
-  }
-
   class { 'unifi':
     repo_release   => $repo_release,
     package_ensure => $package_ensure,

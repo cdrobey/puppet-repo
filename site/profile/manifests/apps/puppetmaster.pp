@@ -17,12 +17,4 @@ class profile::apps::puppetmaster
     proto  => tcp,
     action =>  accept,
   }
-
-  @@haproxy::balancermember { $facts['fqdn']:
-    listening_service => 'puppet',
-    server_names      => $facts['hostname'],
-    ipaddresses       => $facts['ipaddress'],
-    ports             => '8443',
-    options           => 'check',
-  }
 }
