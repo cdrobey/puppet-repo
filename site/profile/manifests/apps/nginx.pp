@@ -20,7 +20,9 @@ class profile::apps::nginx (
     action =>  accept,
   }
 
-  include nginx
+  class { 'nginx':
+    ssl => true,
+  }
 
   $listeners.each | $listener_name, $listener_data | {
     nginx::resource::server { $listener_name:
