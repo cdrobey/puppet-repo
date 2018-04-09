@@ -2,16 +2,16 @@
 profile::apps::nginx::listeners:
   'monitor':
     ports: 80
-    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000'
+    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
   'puppet':
     port: 80
-    proxy: 'http://co-u1604-pmp01.local.familyroberson.com'
+    proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'vcsa':
     port: 443
     proxy: 'https://co-vcsa-p01.local.familyroberson.com/ui/'
   'unifi':
     port: 443
-    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443'
+    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
 
 profile::os::monitor::influxdbinputs: 
   cpu:
