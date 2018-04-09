@@ -29,7 +29,7 @@ profile::os::monitor::influxdbinputs:
   ping:
     urls:
       - 8.8.8.8
-    dns_query:
+  dns_query:
     servers: 
       - 8.8.8.8
     domains:
