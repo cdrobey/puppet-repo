@@ -7,10 +7,10 @@ profile::apps::nginx::listeners:
     port: 80
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com'
   'vcsa':
-    port: 80
+    port: 443
     proxy: 'https://co-vcsa-p01.local.familyroberson.com/ui/'
   'unifi':
-    port: 80
+    port: 443
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443'
 
 profile::os::monitor::influxdbinputs: 
