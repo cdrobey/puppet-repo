@@ -2,10 +2,10 @@
 profile::apps::nginx::listeners:
   'monitor':
     ports: 80
-    proxy: 'http://co-u1604-idbp01:3000.local.familyroberson.com'
+    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000'
   'unifi':
     ports: 80
-    proxy: 'https://co-u1604-unip01:8443.local.familyroberson.com'
+    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443'
   'puppet':
     port: 80
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com'
