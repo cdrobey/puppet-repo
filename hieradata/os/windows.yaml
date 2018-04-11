@@ -99,6 +99,5 @@
         - 'Disk Write Bytes/sec'
       Measurement: 'win_disk'
 
-profile::base::windows::time::ntp_servers:
-  - time.google.com
+profile::base::windows::time::ntp_servers: 'time.google.com'
 profile::base::windows::time::timezone: 'Mountain Standard Time'
