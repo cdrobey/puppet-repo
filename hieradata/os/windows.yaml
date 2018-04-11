@@ -10,7 +10,12 @@
     - vmwarevsphereclient
     - firefox
     - vim
-
+  
+  profile::base::windows::time::ntp_servers:
+    - fw.fr.lan
+    - us.pool.ntp.org
+  profile::base::windows::time::timezone: 'Mountain Standard Time'
+  
   profile::base::windows::motd::content: |
     Welcome to %{facts.hostname} - %{facts.fqdn}
     Access  to  and  use of this server is  restricted to those
@@ -20,7 +25,7 @@
   profile::base::windows::rdp::rdp_enable: true
   profile::base::windows::rdp::rdp_nla_enable: false
   
-  profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
+  profile::os::monitor::influxdburi: "http://monitor:8086"
   profile::os::monitor::influxdbname: 'Monitor'
   profile::os::monitor::influxdbinputs: 
   profile::os::monitor::influxdbinput_list:
@@ -97,7 +102,4 @@
         - 'Free Megabytes'
         - 'Disk Read Bytes/sec'
         - 'Disk Write Bytes/sec'
-      Measurement: 'win_disk'
-
-profile::base::windows::time::ntp_servers: 'time.google.com'
-profile::base::windows::time::timezone: 'Mountain Standard Time'
+        Measurement: 'win_disk'
