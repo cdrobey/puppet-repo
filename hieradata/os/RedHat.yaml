@@ -56,3 +56,13 @@ profile::os::monitor::influxdbinputs:
   swap: {}
   system: {}
 profile::os::monitor::influxdbinput_list: {}
+
+profile::base::linux::time::ntp_servers:
+  - fw.fr.lan
+  - time.google.com
+profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
+profile::base::windows::time::ntp_servers:
+  - fw.fr.lan
+  - time.google.com
+profile::base::windows::time::timezone: 'Mountain Standard Time'
