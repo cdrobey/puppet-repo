@@ -97,7 +97,7 @@
         - 'Free Megabytes'
         - 'Disk Read Bytes/sec'
         - 'Disk Write Bytes/sec'
-Measurement: 'win_disk'
+      Measurement: 'win_disk'
 
 profile::base::linux::time::ntp_servers:
   - fw.fr.lan
