@@ -53,8 +53,8 @@ class profile::apps::nginx (
 
   nginx::resource::server{'service.familyroberson.com': }
 
-  nginx::resource::location{'/unifi':
-    proxy => 'http://unifi_app/' ,
+  nginx::resource::location{ '/unifi':
+    proxy  => 'http://unifi_app/' ,
     server => 'service.familyroberson.com',
-
   }
+}
