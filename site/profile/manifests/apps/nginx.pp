@@ -48,7 +48,7 @@ class profile::apps::nginx (
 
 
   $locations.each | $location, $location_data | {
-    nginx::resource::location { $listener_name:
+    nginx::resource::location { $location:
       ensure => present,
       proxy  => $location_data['proxy'],
       server => $location_data['server'],
