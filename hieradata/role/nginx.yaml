@@ -1,18 +1,14 @@
 ---
-profile::apps::nginx::listeners:
-  'monitor.local.familyroberson.com':
-    ports: 80
-    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
-  'puppet.local.familyroberson.com':
-    port: 443
-    proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
-  'vcsa.local.familyroberson.com':
-    port: 443
-    proxy: 'https://co-vcsa-p01.local.familyroberson.com/ui/'
-  'unifi.local.familyroberson.com':
-    port: 443
-    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
+profile::apps::nginx::virtualhost: 'service.local.familyroberson.com'
+profile::apps::nginx::listeners: 443
 
+
+profile::apps::nginx::listeners:
+  -
+    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
+    location: '/monitor'
+    server: 'co-u1604-nginxp01.local.familyroberson.com'
+    
 profile::apps::nginx::certdomains:
   - 'puppet.local.familyroberson.com'
   - 'unifi.local.familyroberson.com'

@@ -11,6 +11,8 @@
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
 class profile::apps::nginx (
+  Array $virtualhost,
+  Integer $virtualhostport,
   Hash $listeners,
   Array $certdomains,
   String $certemail,
@@ -37,21 +39,20 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
+  nginx::resource::server { $virtualhost:
+    location => $virtualhostport,
+    ssl      => true,
+    ssl_cert => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
+    ssl_key  => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+  }
+
+
   $listeners.each | $listener_name, $listener_data | {
-    if $listener_data['port'] == 443 {
-      nginx::resource::server { $listener_name:
-        listen_port => $listener_data['port'],
-        proxy       => $listener_data['proxy'],
-        ssl         => true,
-        ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
-        ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-      }
-    }
-    else {
-      nginx::resource::server { $listener_name:
-        listen_port => $listener_data['port'],
-        proxy       => $listener_data['proxy'],
-      }
+    nginx::resource::location { $virtualhost:
+      ensure   => present,
+      proxy    => $listener_data['proxy'],
+      location => $listener_data['location'],
+      server   => $listener_data['server'],
     }
   }
 }
