@@ -48,11 +48,10 @@ class profile::apps::nginx (
 
 
   $listeners.each | $listener_name, $listener_data | {
-    nginx::resource::location { $virtualhost:
-      ensure   => present,
-      proxy    => $listener_data['proxy'],
-      location => $listener_data['location'],
-      server   => $listener_data['server'],
+    nginx::resource::location { $listener_data['location']:
+      ensur  => present,
+      proxy  => $listener_data['proxy'],
+      server => $listener_data['server'],
     }
   }
 }
