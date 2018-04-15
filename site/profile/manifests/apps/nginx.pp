@@ -11,7 +11,7 @@
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
 class profile::apps::nginx (
-  Array $virtualhost,
+  String $virtualhost,
   Integer $virtualhostport,
   Hash $listeners,
   Array $certdomains,
