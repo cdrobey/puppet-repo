@@ -43,9 +43,6 @@ class profile::apps::nginx (
     nginx::resource::server { $listener_name:
       listen_port => $listener_data['port'],
       proxy       => $listener_data['proxy'],
-      ssl         => true,
-      ssl_cert    => '/tmp/server.crt',
-      ssl_key     => '/tmp/server.pem',
     }
   }
 }
