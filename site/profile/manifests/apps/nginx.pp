@@ -13,7 +13,7 @@
 class profile::apps::nginx (
   String $virtualhost,
   Integer $virtualhostport,
-  Array $listeners,
+  Hash $listeners,
   Array $certdomains,
   String $certemail,
 ){
@@ -48,8 +48,8 @@ class profile::apps::nginx (
 
 
   $listeners.each | $listener_name, $listener_data | {
-    nginx::resource::location { $listener_data['location']:
-      ensur  => present,
+    nginx::resource::location { $listener_name:
+      ensure => present,
       proxy  => $listener_data['proxy'],
       server => $listener_data['server'],
     }
