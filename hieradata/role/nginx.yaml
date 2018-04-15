@@ -1,7 +1,7 @@
 ---
 profile::apps::nginx::listeners:
   'monitor.local.familyroberson.com':
-    ports: 443
+    ports: 80
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
   'puppet.local.familyroberson.com':
     port: 443
