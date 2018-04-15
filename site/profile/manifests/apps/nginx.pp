@@ -24,22 +24,22 @@ class profile::apps::nginx (
     action =>  accept,
   }
 
-  class { 'letsencrypt':
+  class { 'nginx': }
+
+  -> class { 'letsencrypt':
     email          => $certemail,
     install_method => 'vcs',
     repo           => 'https://github.com/certbot/certbot.git',
   }
 
-  letsencrypt::certonly { $certdomains:
+  -> letsencrypt::certonly { $certdomains:
     plugin               => 'nginx',
     manage_cron          => true,
     suppress_cron_output => true,
     before               => Service['nginx'],
   }
 
-  class { 'nginx': }
-
-  nginx::resource::server { $virtualhost:
+  ->nginx::resource::server { $virtualhost:
     listen_port => $virtualhostport,
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
