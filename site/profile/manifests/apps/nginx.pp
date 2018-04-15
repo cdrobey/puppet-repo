@@ -52,5 +52,5 @@ class profile::apps::nginx (
   #    proxy  => $location_data['proxy'],
   #    server => 'www.familyroberson.com',
   #  }
-  %}
+  #}
 }
