@@ -1,12 +1,12 @@
 ---
-profile::apps::nginx::virtualhost: 'service.local.familyroberson.com'
+profile::apps::nginx::virtualhost: 'service.familyroberson.com'
 profile::apps::nginx::virtualhostport: 443
 profile::apps::nginx::locations:
   '/monitor':
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
 
 profile::apps::nginx::certdomains:
-  - 'service.local.familyroberson.com'
+  - 'service.familyroberson.com'
   - 'familyroberson.com'
 profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  
 
