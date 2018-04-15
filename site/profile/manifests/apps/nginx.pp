@@ -23,10 +23,9 @@ class profile::apps::nginx (
   }
 
   class { 'letsencrypt':
-      email           => $certemail,
-      install_method  => 'vcs',
-      repo            => 'https://github.com/certbot/certbot.git',
-      additional_args => [ '--expand' ]
+    email          => $certemail,
+    install_method => 'vcs',
+    repo           => 'https://github.com/certbot/certbot.git',
   }
 
   letsencrypt::certonly { 'letsencryptcert':
@@ -34,6 +33,7 @@ class profile::apps::nginx (
     plugin               => 'nginx',
     manage_cron          => true,
     suppress_cron_output => true,
+    additional_args      => [ '--expand' ],
     before               => Class['nginx'],
   }
 

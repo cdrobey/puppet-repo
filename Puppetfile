@@ -50,7 +50,7 @@ mod 'puppetlabs-vcsrepo', '2.3.0'
 
 
 mod 'puppet-letsencrypt',
-  :git    => https://github.com/voxpupuli/puppet-letsencrypt
+  :git    => 'https://github.com/voxpupuli/puppet-letsencrypt.git',
   :branch => 'master'
 
 mod 'influxdb',
