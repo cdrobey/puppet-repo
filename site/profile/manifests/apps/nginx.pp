@@ -32,7 +32,7 @@ class profile::apps::nginx (
     repo           => 'https://github.com/certbot/certbot.git',
   }
 
-  -> letsencrypt::certonly { $certdomains:
+  letsencrypt::certonly { $certdomains:
     plugin               => 'nginx',
     manage_cron          => true,
     suppress_cron_output => true,
