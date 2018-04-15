@@ -39,7 +39,7 @@ class profile::apps::nginx (
   class { 'nginx': }
 
   $listeners.each | $listener_name, $listener_data | {
-    if $listener_data['port'] == '443' {
+    if $listener_data['port'] == 443 {
       nginx::resource::server { $listener_name:
         listen_port => $listener_data['port'],
         proxy       => $listener_data['proxy'],
