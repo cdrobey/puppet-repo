@@ -1,6 +1,6 @@
 ---
 profile::apps::nginx::virtualhost: 'service.local.familyroberson.com'
-profile::apps::nginx::listeners: 443
+profile::apps::nginx::virtualhostport: 443
 
 
 profile::apps::nginx::listeners:
@@ -8,7 +8,7 @@ profile::apps::nginx::listeners:
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
     location: '/monitor'
     server: 'co-u1604-nginxp01.local.familyroberson.com'
-    
+
 profile::apps::nginx::certdomains:
   - 'puppet.local.familyroberson.com'
   - 'unifi.local.familyroberson.com'
