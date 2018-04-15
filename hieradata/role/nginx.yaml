@@ -14,6 +14,7 @@ profile::apps::nginx::listeners:
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
 
 profile::apps::nginx::certdomains:
+  - 'unifi.local.familyroberson.com'
   - 'vcsa.local.familyroberson.com'
   - 'local.familyroberson.com'
   - 'familyroberson.com'
