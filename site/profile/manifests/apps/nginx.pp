@@ -33,7 +33,7 @@ class profile::apps::nginx (
     manage_cron          => true,
     suppress_cron_output => true,
     additional_args      => [ '--expand' ],
-    before               => Class['nginx'],
+    before               => Service['nginx'],
   }
 
   class { 'nginx': }
