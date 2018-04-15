@@ -47,6 +47,7 @@ mod 'herculesteam-augeasproviders_sysctl', '2.2.0'
 mod 'herculesteam-augeasproviders_core', '2.1.4'
 mod 'puppet-nginx', '0.11.0'
 mod 'puppet-letsencrypt', '2.3.0'
+mod 'puppetlabs-vcsrepo', '2.3.0'
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
