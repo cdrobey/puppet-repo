@@ -15,6 +15,7 @@ profile::apps::nginx::listeners:
 
 profile::apps::nginx::certdomains:
   - 'familyroberson.com'
+  - 'local.familyroberson.com'
 profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  
 
 profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
