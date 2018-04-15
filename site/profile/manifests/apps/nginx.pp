@@ -51,7 +51,7 @@ class profile::apps::nginx (
     ],
   }
 
-  nginx::resource::server{'service.familyroberson.com': 
+  nginx::resource::server{'service.familyroberson.com':
     listen_port => 443,
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
