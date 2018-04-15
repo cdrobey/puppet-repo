@@ -45,18 +45,16 @@ class profile::apps::nginx (
   #  ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
   #  ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   #}
-  nginx::resource::location { 'service.familyroberson.com':
-    ensure   => present,
-    location => '/monitor',
-    proxy    => 'https://co-u1604-unip01:3000',
-    server   => 'service.familyroberson.com',
+  nginx::resource::upstream { 'unifi_app':
+    members => [
+      'co-u1604-unip01',
+    ],
   }
 
-  #$locations.each | $location, $location_data | {
-  #  nginx::resource::location { $location:
-  #    ensure => present,
-  #    proxy  => $location_data['proxy'],
-  #    server => 'www.familyroberson.com',
-  #  }
-  #}
-}
+  nginx::resource::server{'service.familyroberson.com': }
+
+  nginx::resource::location{'/unifi':
+    proxy => 'http://unifi_app/' ,
+    server => 'service.familyroberson.com',
+
+  }
