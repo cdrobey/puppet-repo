@@ -28,7 +28,7 @@ class profile::apps::nginx (
 
   letsencrypt::certonly { 'letsencryptcert':
     domains              => $certdomains,
-    plugin               => 'nginx',
+    plugin               => 'webroot',
     manage_cron          => true,
     suppress_cron_output => true,
     before               => Class['nginx'],
