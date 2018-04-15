@@ -51,7 +51,7 @@ class profile::apps::nginx (
     nginx::resource::location { $location:
       ensure => present,
       proxy  => $location_data['proxy'],
-      server => $location_data['server'],
+      server => $virtualhost,
     }
   }
 }
