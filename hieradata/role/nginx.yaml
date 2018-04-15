@@ -1,7 +1,7 @@
 ---
 profile::apps::nginx::virtualhost: 'service.local.familyroberson.com'
 profile::apps::nginx::virtualhostport: 443
-profile::apps::nginx::listeners:
+profile::apps::nginx::locations:
   '/monitor':
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
     server: 'service.local.familyroberson.com'
