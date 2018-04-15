@@ -44,16 +44,14 @@ class profile::apps::nginx (
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-    www_root    => '/opt/html/',
-
   }
 
 
-  $locations.each | $location, $location_data | {
-    nginx::resource::location { $location:
-      ensure => present,
-      proxy  => $location_data['proxy'],
-      server => $virtualhost,
-    }
-  }
+#  $locations.each | $location, $location_data | {
+#    nginx::resource::location { $location:
+#      ensure => present,
+#      proxy  => $location_data['proxy'],
+#      server => $virtualhost,
+#    }
+#  }
 }
