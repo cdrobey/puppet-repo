@@ -46,7 +46,7 @@ class profile::apps::nginx (
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   }
 
-  -> $locations.each | $location, $location_data | {
+  $locations.each | $location, $location_data | {
     nginx::resource::location { $location:
       ensure => present,
       proxy  => $location_data['proxy'],
