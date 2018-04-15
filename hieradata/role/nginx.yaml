@@ -1,18 +1,13 @@
 ---
 profile::apps::nginx::virtualhost: 'service.local.familyroberson.com'
 profile::apps::nginx::virtualhostport: 443
-
-
 profile::apps::nginx::listeners:
   '/monitor':
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
     server: 'service.local.familyroberson.com'
 
 profile::apps::nginx::certdomains:
-  - 'puppet.local.familyroberson.com'
-  - 'unifi.local.familyroberson.com'
-  - 'vcsa.local.familyroberson.com'
-  - 'local.familyroberson.com'
+  - 'service.local.familyroberson.com'
   - 'familyroberson.com'
 profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  
 
