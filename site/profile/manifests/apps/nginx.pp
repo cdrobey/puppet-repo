@@ -44,7 +44,6 @@ class profile::apps::nginx (
         listen_port => $listener_data['port'],
         proxy       => $listener_data['proxy'],
         ssl         => true,
-        ssl_only    => true,
         ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
         ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
       }
