@@ -49,7 +49,7 @@ class profile::apps::nginx (
     nginx::resource::location { $location:
       ensure => present,
       proxy  => $location_data['proxy'],
-      server => $virtualhost,
+      server => 'www.familyroberson.com',
     }
   }
 }
