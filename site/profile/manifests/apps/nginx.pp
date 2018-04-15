@@ -26,7 +26,7 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  -> class { 'letsencrypt':
+  class { 'letsencrypt':
     email          => $certemail,
     install_method => 'vcs',
     repo           => 'https://github.com/certbot/certbot.git',
@@ -38,7 +38,7 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  -> nginx::resource::server { $virtualhost:
+  nginx::resource::server { $virtualhost:
     listen_port => $virtualhostport,
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
