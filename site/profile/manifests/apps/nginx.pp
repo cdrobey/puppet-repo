@@ -39,13 +39,19 @@ class profile::apps::nginx (
   class { 'nginx': }
 
   $listeners.each | $listener_name, $listener_data | {
-    nginx::resource::server { $listener_name:
-      listen_port => $listener_data['port'],
-      proxy       => $listener_data['proxy'],
-      if $listener_data['port'] == '443' {
+    if $listener_data['port'] == '443' {
+      nginx::resource::server { $listener_name:
+        listen_port => $listener_data['port'],
+        proxy       => $listener_data['proxy'],
         ssl         => true,
         ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
         ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+      }
+    }
+    else {
+      nginx::resource::server { $listener_name:
+        listen_port => $listener_data['port'],
+        proxy       => $listener_data['proxy'],
       }
     }
   }
