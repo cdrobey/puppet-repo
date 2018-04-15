@@ -36,7 +36,6 @@ class profile::apps::nginx (
     plugin               => 'nginx',
     manage_cron          => true,
     suppress_cron_output => true,
-    before               => Service['nginx'],
   }
 
   -> nginx::resource::server { $virtualhost:
