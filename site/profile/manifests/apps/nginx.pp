@@ -39,19 +39,18 @@ class profile::apps::nginx (
     before               => Service['nginx'],
   }
 
-  ->nginx::resource::server { $virtualhost:
+  -> nginx::resource::server { $virtualhost:
     listen_port => $virtualhostport,
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   }
 
-
-#  $locations.each | $location, $location_data | {
-#    nginx::resource::location { $location:
-#      ensure => present,
-#      proxy  => $location_data['proxy'],
-#      server => $virtualhost,
-#    }
-#  }
+  -> $locations.each | $location, $location_data | {
+    nginx::resource::location { $location:
+      ensure => present,
+      proxy  => $location_data['proxy'],
+      server => $virtualhost,
+    }
+  }
 }
