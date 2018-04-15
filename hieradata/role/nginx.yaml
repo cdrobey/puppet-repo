@@ -1,15 +1,15 @@
 ---
 profile::apps::nginx::listeners:
-  'monitor':
+  'monitor monitor.local.familyroberson.com':
     ports: 80
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
-  'puppet':
+  'puppet puppet.local.familyroberson.com':
     port: 80
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
-  'vcsa':
+  'vcsa vcsa.local.familyroberson.com':
     port: 443
     proxy: 'https://co-vcsa-p01.local.familyroberson.com/ui/'
-  'unifi':
+  'unifi unifi.local.familyroberson.com':
     port: 443
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
 
