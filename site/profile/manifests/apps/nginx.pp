@@ -12,6 +12,8 @@
 # == Class: profile::apps::nginx
 class profile::apps::nginx (
   Hash $listeners,
+  Array $certdomains,
+  String $certemail,
 ){
 
   firewall { '300 allow communication to InfluxDB and Grafana':
@@ -20,12 +22,27 @@ class profile::apps::nginx (
     action =>  accept,
   }
 
-  include nginx
+  class { 'letsencrypt':
+      email => $certemail,
+  }
+
+  letsencrypt::certonly { 'letsencryptcert':
+    domains              => $certdomains,
+    plugin               => 'nginx',
+    manage_cron          => true,
+    suppress_cron_output => true,
+    before               => Class['nginx'],
+  }
+
+  class { 'nginx': }
 
   $listeners.each | $listener_name, $listener_data | {
     nginx::resource::server { $listener_name:
       listen_port => $listener_data['port'],
       proxy       => $listener_data['proxy'],
+      ssl         => true,
+      ssl_cert    => '/tmp/server.crt',
+      ssl_key     => '/tmp/server.pem',
     }
   }
 }
