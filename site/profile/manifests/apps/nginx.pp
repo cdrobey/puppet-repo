@@ -38,7 +38,7 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::server { 'monitor.familyroberson.com':
+  nginx::resource::server { 'unifi.familyroberson.com':
     listen_port => $virtualhostport,
     proxy       => 'https://co-u1604-unip01:8443',
     ssl         => true,
