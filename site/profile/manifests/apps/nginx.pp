@@ -44,6 +44,8 @@ class profile::apps::nginx (
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+    www_root    => '/opt/html/',
+
   }
 
 
