@@ -38,18 +38,19 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::server { $virtualhost:
+  nginx::resource::server { 'service.familyroberson.com':
     listen_port => $virtualhostport,
+    proxy       => 'https://co-u1604-unip01:8443',
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   }
 
-  $locations.each | $location, $location_data | {
-    nginx::resource::location { $location:
-      ensure => present,
-      proxy  => $location_data['proxy'],
-      server => 'www.familyroberson.com',
-    }
-  }
+  #$locations.each | $location, $location_data | {
+  #  nginx::resource::location { $location:
+  #    ensure => present,
+  #    proxy  => $location_data['proxy'],
+  #    server => 'www.familyroberson.com',
+  #  }
+  %}
 }
