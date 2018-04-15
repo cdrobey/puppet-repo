@@ -40,7 +40,7 @@ class profile::apps::nginx (
   class { 'nginx': }
 
   nginx::resource::server { $virtualhost:
-    location => $virtualhostport,
+    port     => $virtualhostport,
     ssl      => true,
     ssl_cert => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key  => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
