@@ -43,12 +43,6 @@ class profile::apps::nginx (
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-  }
-  nginx::resource::location{ '/':
-    ensure   => present,
-    ssl      => true,
-    ssl_only => true,
-    proxy    => 'https://co-u1604-unip01:8443/' ,
-    server   => 'service.familyroberson.com',
+    proxy       => 'https://co-u1604-unip01:8443/' ,
   }
 }
