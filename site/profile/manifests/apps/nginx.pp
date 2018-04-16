@@ -39,7 +39,7 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::server{ 'unifi.familyroberson.com':
+  nginx::resource::server{ 'service.familyroberson.com':
     listen_port      => 443,
     ssl              => true,
     ssl_cert         => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',

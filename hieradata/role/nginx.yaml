@@ -14,7 +14,7 @@ profile::apps::nginx::proxysetheaders:
   - 'Connection "Upgrade"'
 
 profile::apps::nginx::certdomains:
-  - 'unifi.familyroberson.com'
+  - 'service.familyroberson.com'
   - 'familyroberson.com'
 profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  
 
