@@ -16,6 +16,7 @@ class profile::apps::nginx (
   Hash $locations,
   Array $certdomains,
   String $certemail,
+  Array $proxysetheaders,
 ){
 
   firewall { '300 allow communication to InfluxDB and Grafana':
@@ -38,11 +39,12 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::server{ 'service.familyroberson.com':
-    listen_port => 443,
-    ssl         => true,
-    ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
-    ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-    proxy       => 'https://co-u1604-unip01:8443/' ,
+  nginx::resource::server{ 'unifi.familyroberson.com':
+    listen_port      => 443,
+    ssl              => true,
+    ssl_cert         => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
+    ssl_key          => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+    proxy            => 'https://co-u1604-unip01:8443/' ,
+    proxy_set_header => $proxysetheaders,
   }
 }

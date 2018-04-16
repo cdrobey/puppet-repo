@@ -5,6 +5,14 @@ profile::apps::nginx::locations:
   '/monitor':
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
 
+profile::apps::nginx::proxysetheaders:
+  - 'Host $host'
+  - 'X-Real-IP $remote_addr'
+  - 'X-Forwarded-For $proxy_add_x_forwarded_for'
+  - 'Proxy ""'
+  - 'Upgrade $http_upgrade'
+  - 'Connection "Upgrade"'
+
 profile::apps::nginx::certdomains:
   - 'unifi.familyroberson.com'
   - 'familyroberson.com'
