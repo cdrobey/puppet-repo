@@ -38,12 +38,6 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::upstream { 'unifi_app':
-    members => [
-      'co-u1604-unip01',
-    ],
-  }
-
   nginx::resource::server{'service.familyroberson.com':
     listen_port => 443,
     ssl         => true,
@@ -51,8 +45,8 @@ class profile::apps::nginx (
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   }
 
-  nginx::resource::location{ '/unifi':
-    proxy  => 'http://unifi_app/' ,
+  -> nginx::resource::location{ '/unifi':
+    proxy  => 'http://co-u1604-unip01/' ,
     server => 'service.familyroberson.com',
   }
 }
