@@ -6,6 +6,7 @@ profile::apps::nginx::locations:
     proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
 
 profile::apps::nginx::certdomains:
+  - 'unifi.familyroberson.com'
   - 'service.familyroberson.com'
   - 'familyroberson.com'
 profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  

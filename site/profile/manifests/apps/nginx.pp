@@ -38,17 +38,17 @@ class profile::apps::nginx (
     suppress_cron_output => true,
   }
 
-  nginx::resource::server{ 'service.familyroberson.com':
+  nginx::resource::server{ 'unifi.familyroberson.com':
     listen_port => 443,
     ssl         => true,
     ssl_cert    => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     ssl_key     => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
   }
-  nginx::resource::location{ '/unifi':
+  nginx::resource::location{ '/':
     ensure   => present,
     ssl      => true,
     ssl_only => true,
-    proxy    => 'https://co-u1604-unip01:8443' ,
+    proxy    => 'https://co-u1604-unip01:8443/' ,
     server   => 'service.familyroberson.com',
   }
 }
