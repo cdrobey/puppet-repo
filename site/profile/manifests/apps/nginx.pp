@@ -49,6 +49,6 @@ class profile::apps::nginx (
     ssl      => true,
     ssl_only => true,
     proxy    => 'https://co-u1604-unip01:8443/' ,
-    server   => 'service.familyroberson.com',
+    server   => 'unifi.familyroberson.com',
   }
 }
