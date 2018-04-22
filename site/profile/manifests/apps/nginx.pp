@@ -13,7 +13,6 @@
 class profile::apps::nginx (
   String $virtualhost,
   Integer $virtualhostport,
-  Hash $locations,
   Array $certdomains,
   String $certemail,
   Array $proxysetheaders,
