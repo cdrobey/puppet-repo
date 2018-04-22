@@ -26,12 +26,12 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  nginx::resource::server{ 'service.familyroberson.com':
-    listen_port      => 443,
-    ssl              => true,
-    ssl_cert         => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
-    ssl_key          => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-    proxy            => 'https://co-u1604-unip01:8443/' ,
-    proxy_set_header => $proxysetheaders,
-  }
+  #nginx::resource::server{ 'service.familyroberson.com':
+  #  listen_port      => 443,
+  #  ssl              => true,
+  #  ssl_cert         => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
+  #  ssl_key          => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+  #  proxy            => 'https://co-u1604-unip01:8443/' ,
+  #  proxy_set_header => $proxysetheaders,
+  #}
 }
