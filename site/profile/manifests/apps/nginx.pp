@@ -27,18 +27,6 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  class { 'letsencrypt':
-    email          => $certemail,
-    install_method => 'vcs',
-    repo           => 'https://github.com/certbot/certbot.git',
-  }
-
-  letsencrypt::certonly { $certdomains:
-    plugin               => 'nginx',
-    manage_cron          => true,
-    suppress_cron_output => true,
-  }
-
   nginx::resource::server{ 'service.familyroberson.com':
     listen_port      => 443,
     ssl              => true,
