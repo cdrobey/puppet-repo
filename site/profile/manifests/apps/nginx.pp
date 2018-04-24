@@ -11,10 +11,6 @@
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
 class profile::apps::nginx (
-  String $virtualhost,
-  Integer $virtualhostport,
-  Array $certdomains,
-  String $certemail,
   Array $proxysetheaders,
 ){
 
@@ -29,8 +25,8 @@ class profile::apps::nginx (
   nginx::resource::server{ 'unifi.familyroberson.com':
     listen_port      => 443,
     ssl              => true,
-    ssl_cert         => '/etc/ssl/public/fullchain.pem',
-    ssl_key          => '/etc/ssl/public/privkey.pem',
+    ssl_cert         => '/etc/ssl/public/familyroberson.crt',
+    ssl_key          => '/etc/ssl/public/familyroberson.key',
     proxy            => 'https://co-u1604-unip01:8443/' ,
     proxy_set_header => $proxysetheaders,
   }
