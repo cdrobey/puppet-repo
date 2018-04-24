@@ -11,6 +11,8 @@
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
 class profile::apps::nginx (
+  Integer $proxyport,
+  Hash $proxylist,
   Array $proxysetheaders,
 ){
 
@@ -22,12 +24,14 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  nginx::resource::server{ 'unifi.familyroberson.com':
-    listen_port      => 443,
-    ssl              => true,
-    ssl_cert         => '/etc/ssl/public/familyroberson.crt',
-    ssl_key          => '/etc/ssl/public/familyroberson.key',
-    proxy            => 'https://co-u1604-unip01:8443/' ,
-    proxy_set_header => $proxysetheaders,
+  $proxylist.each | $proxy_name, $proxy | {
+    nginx::resource::server{ $proxy_name:
+      listen_port      => $proxyport,
+      ssl              => true,
+      ssl_cert         => '/etc/ssl/public/familyroberson.crt',
+      ssl_key          => '/etc/ssl/public/familyroberson.key',
+      proxy            => $proxy['proxy'],
+      proxy_set_header => $proxysetheaders,
+    }
   }
 }
