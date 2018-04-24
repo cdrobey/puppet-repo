@@ -7,7 +7,6 @@ profile::apps::nginx::proxylist:
     proxy: 'https://co-u1604-uni01.local.familyroberson.com:8443/'
   'puppet.familyroberson.com': 
     proxy: 'https://co-u1604-pmp01.local.familyroberson.com/'
-
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
@@ -15,12 +14,6 @@ profile::apps::nginx::proxysetheaders:
   - 'Proxy ""'
   - 'Upgrade $http_upgrade'
   - 'Connection "Upgrade"'
-profile::apps::nginx::certdomains:
-  - 'puppet.familyroberson.com'
-  - 'monitor.familyroberson.com'
-  - 'unifi.familyroberson.com'
-  - 'familyroberson.com'
-profile::apps::nginx::certemail: 'cdr.web.all@gmail.com'  
 
 profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
 profile::os::monitor::influxdbname: 'Monitor'
