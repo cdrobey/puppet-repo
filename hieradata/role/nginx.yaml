@@ -8,7 +8,7 @@ profile::apps::nginx::proxylist:
   'puppet.familyroberson.com': 
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'jenkins.familyroberson.com': 
-    proxy: 'http://co-u1604-jenp01:8080/.local.familyroberson.com:8080/'
+    proxy: 'http://co-u1604-jenp01:8080.local.familyroberson.com:8080/'
   'ipam.familyroberson.com': 
     proxy: 'http://co-u1604-docp01.local.familyroberson.com/'
 profile::apps::nginx::proxysetheaders:
