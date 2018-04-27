@@ -21,13 +21,14 @@ profile::base::linux::app::packages:
 
 profile::base::linux::motd::content: |
   ===========================================================
-          Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
+  Welcome to %{facts.fqdn}
   Access  to  and  use of this server is  restricted to those
   activities expressly permitted by the system administration
   staff. If you're not sure if it's allowed, then DON'T DO IT.
   ===========================================================
-                 Kernel: %{facts.kernel} %{facts.kernelversion}
-                 Uptime: %{facts.uptime_days} Days
+                Release: %{facts.operatingsystem} %{facts.operatingsystemrelease}
+                Kernel: %{facts.kernel} %{facts.kernelversion}
+                Uptime: %{facts.uptime_days} Days
 
 profile::base::linux::ssh::password_authentication: 'no'
 profile::base::linux::ssh::permit_root_login: 'no'
