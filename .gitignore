@@ -1,1 +1,2 @@
 hieradata/nodes/example-puppet-master.yaml
+*.change

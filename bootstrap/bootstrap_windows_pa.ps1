@@ -1,17 +1,4 @@
-﻿#--------------------------------------------------------------
-# This scripts bootstraps a windows node by installing a puppet
-# agent.  Original code taken from the Heat bootstrap.
-#--------------------------------------------------------------
-
-#--------------------------------------------------------------
-# Short .bat file to setup winrm for communication.  Terraform
-# uses the Go winrm library which only uses cleartext.
-#--------------------------------------------------------------
-<script>
-  winrm quickconfig -q & winrm set winrm/config @{MaxTimeoutms="1800000"} & winrm set winrm/config/service @{AllowUnencrypted="true"} & winrm set winrm/config/service/auth @{Basic="true"}
-</script>
-
-# Set Verbose Mode
+﻿# Set Verbose Mode
 #--------------------------------------------------------------
 # Global Variables:
 #   - PATH:       PATHs needed for command execution
