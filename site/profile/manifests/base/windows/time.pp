@@ -24,7 +24,7 @@ class profile::base::windows::time (
     data   => 'Unrestricted',
   }
 
-  if $facts['operatingsystem'] == 'windows' or $facts['operatingsystemrelease'] > '7' {
+  if $facts['operatingsystem'] == 'windows' and $facts['operatingsystemrelease'] > '7' {
     dsc_systemlocale { 'set systemlocale':
       dsc_systemlocale     => 'en-us',
       dsc_issingleinstance => 'yes',
