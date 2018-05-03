@@ -15,7 +15,7 @@ class profile::os::daas (
 #  $installurl,
 #  $systemuuid,
 ){
-    remote_file { '/c/JumpCloudInstaller.exe':
+  remote_file { 'C:\\JumpCloudInstaller.exe':
     ensure => present,
     source => 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
   }
