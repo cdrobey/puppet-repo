@@ -20,7 +20,7 @@ class profile::os::daas (
     source => 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
   }
 
-  -> dsc_package { 'jumpcloudagent':
+  -> dsc_package { 'JumpCloudInstaller':
     dsc_ensure    => 'present',
     dsc_name      => 'JumpCloud',
     dsc_productid => '96542816-DAD1-4D02-8363-CA4121E5CAE7',
@@ -28,7 +28,7 @@ class profile::os::daas (
     dsc_arguments => '-k 5ae9d5a0f9f52a0e29ad3a28 /VERYSILENT /NORESTART',
   }
 
-  -> service { 'JumpCloud Agent':
+  -> service { 'JumpCloudInstaller':
     ensure => 'running',
     enable => true,
   }
