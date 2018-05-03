@@ -1,0 +1,20 @@
+---
+  profile::base::windows::app::packages:
+    - 7zip
+    - git
+    - putty
+    - winscp
+    - flashplayerplugin
+    - adobereader
+    - googlechrome
+    - vmwarevsphereclient
+    - firefox
+    - vim
+    - teamviewer
+    - veeam-endpoint-backup-free
+    - google-backup-and-sync
+
+profile::base::windows::time::ntp_servers:
+  - fwserver.fm.local
+  - time.google.com
+profile::base::windows::time::timezone: 'Central Standard Time'
