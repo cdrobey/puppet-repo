@@ -24,10 +24,12 @@ class profile::base::windows::time (
     data   => 'Unrestricted',
   }
 
-  dsc_systemlocale { 'set systmelocale':
-    dsc_systemlocale     => 'en-us',
-    dsc_issingleinstance => 'yes',
-    require              => Package['powershell'],
+  if $facts['operatingsystem'] == 'windows' or $facts['operatingsystemrelease'] > '7' {
+    dsc_systemlocale { 'set systemlocale':
+      dsc_systemlocale     => 'en-us',
+      dsc_issingleinstance => 'yes',
+      require              => Package['powershell'],
+    }
   }
 
   dsc_xtimezone { 'set timezone':
