@@ -29,3 +29,4 @@ class profile::os::daas (
     ensure => 'running',
     enable => true,
   }
+}
