@@ -11,8 +11,8 @@
 #   include role::desktop or assign in PE classifier
 # == Class: role::desktop
 class role::desktop {
-#  include profile::base
-#  include profile::os::monitor
+  include profile::base
+  #include profile::os::monitor
   include profile::os::daas
 }
 
