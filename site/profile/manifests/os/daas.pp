@@ -30,13 +30,13 @@ class profile::os::daas (
 
 
   -> package { 'JumpCloud v1.0':
-    ensure          => installed,
+    ensure          => '1.0',
     source          => 'C:\\JumpCloudInstaller.exe',
     install_options => ['-k 5ae9d5a0f9f52a0e29ad3a28', '/VERYSILENT', '/NORESTART']
   }
 
-  -> service { 'JumpCloud v1.0':
-    ensure => 'running',
-    enable => true,
-  }
+# -> service { 'JumpCloud v1.0':
+#   ensure => 'running',
+#   enable => true,
+# }
 }
