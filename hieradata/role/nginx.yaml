@@ -12,7 +12,7 @@ profile::apps::nginx::proxylist:
   'ipam.familyroberson.com': 
     proxy: 'http://co-u1604-docp01.local.familyroberson.com/'
   'discovery.familyroberson.com':
-    proxy: 'http://co-u1604-docp01.local.familyroberson.com:8443/'
+    proxy: 'https://co-u1604-docp01.local.familyroberson.com:8443/'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
