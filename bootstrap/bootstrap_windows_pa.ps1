@@ -1,16 +1,20 @@
 ﻿# Set Verbose Mode
 #--------------------------------------------------------------
 # Global Variables:
-#   - PATH:       PATHs needed for command execution
-#   - HOME:       Home Directory of script account
-#   - PEINSTALL:  Command to install PE agent
-#   - WORKDIR:    TMP directory for script
-#   - LOGFILE:    Execution Log for bootstrap on client hosts
+#   - PEINSTALL_FILE: Location of installation from PM
+#   - PEINSTALL_URL:  Download URL from PM
+#   - PP_ROLE:        Puppet Role for Windows System
+#   - PP_APPLICATION: Puppetl Application for Windows System
+#   - PP_ENVIRONMENT: Default Puppet Environment
+#   - CSR_PATH:       Location of trusted facts
+#   - CSR_FILE:       File used for creating trusted facts
+#   - PASSWORD:       Admin Account Password
 #--------------------------------------------------------------
-<powershell>
-
+# Execution:
+#   powershell.exe -ExecutionPolicy Bypass C:\bootstrap_windows_pa.ps1
+##--------------------------------------------------------------
 $PEINSTALL_FILE="c:\pe_install.ps1"
-$PEINSTALL_URL="https://${puppet_name}:8140/packages/current/install.ps1"
+$PEINSTALL_URL="https://${puppet_master}:8140/packages/current/install.ps1"
 $PP_ROLE="${pp_role}"
 $PP_APPLICATION="${pp_application}"
 $PP_ENVIRONMENT="${pp_environment}"
@@ -87,4 +91,3 @@ pre_install_pa
 install_pa
 post_install_pa
 run_puppet
-</powershell>
