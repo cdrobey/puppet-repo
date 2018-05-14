@@ -20,6 +20,7 @@ class profile::os::daas (
     apply => finished,
   }
 
+
   file { 'C:\\Install':
     ensure => directory
   }
@@ -27,6 +28,9 @@ class profile::os::daas (
   -> remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
     ensure => present,
     source => $installurl,
+  }
+  package { 'msvisualcplusplus2013-redist':
+    provider => chocolatey,
   }
 
   -> package { 'JumpCloud v1.0':

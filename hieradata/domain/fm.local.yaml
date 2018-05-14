@@ -13,8 +13,6 @@
     - teamviewer
     - veeam-endpoint-backup-free
     - google-backup-and-sync
-    - msvisualcplusplus2013-redist
-
 
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
