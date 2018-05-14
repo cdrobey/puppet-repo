@@ -18,3 +18,6 @@ profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
   - time.google.com
 profile::base::windows::time::timezone: 'Central Standard Time'
+
+profile::os::daas::installurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe'
+profile::os::daas::installuuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b'
