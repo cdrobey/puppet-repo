@@ -13,8 +13,13 @@
 # == Class: profile::os::daas
 class profile::os::daas (
   String $installurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
-  String $installuuid = '-k 53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
+  String $installuuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
 ){
+
+  reboot { 'jc_reboot':
+    apply => finished,
+  }
+
   file { 'C:\\Install':
     ensure => directory
   }
@@ -27,7 +32,8 @@ class profile::os::daas (
   -> package { 'JumpCloud v1.0':
     ensure          => '1.0',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
-    install_options => [ $installuuid, '/VERYSILENT', '/NORESTART']
+    install_options => [ '-k', $installuuid, '/VERYSILENT', '/NORESTART'],
+    notify          => Reboot['jc_reboot'],
   }
 
   -> service { 'jumpcloud-agent':
