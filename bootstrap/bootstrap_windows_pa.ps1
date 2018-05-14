@@ -11,6 +11,7 @@
 #   - PASSWORD:       Admin Account Password
 #--------------------------------------------------------------
 # Execution:
+#   winrm /quickconfig
 #   powershell.exe -ExecutionPolicy Bypass C:\bootstrap_windows_pa.ps1
 ##--------------------------------------------------------------
 $PEINSTALL_FILE="c:\pe_install.ps1"
