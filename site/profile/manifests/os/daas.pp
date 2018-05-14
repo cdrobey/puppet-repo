@@ -13,7 +13,7 @@
 # == Class: profile::os::daas
 class profile::os::daas (
   String $installurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
-  String $installuuid = '5ae9d5a0f9f52a0e29ad3a28',
+  String $installuuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
 ){
   file { 'C:\\Install':
     ensure => directory
