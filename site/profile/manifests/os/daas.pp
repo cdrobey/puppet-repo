@@ -26,7 +26,7 @@ class profile::os::daas (
 
   -> package { 'JumpCloud v1.0':
     ensure          => '1.0',
-    source          => 'C:\\JumpCloudInstaller.exe',
+    source          => 'C:\\Install\\JumpCloudInstaller.exe',
     install_options => ["-k ${installuuid}", '/VERYSILENT', '/NORESTART']
   }
 
