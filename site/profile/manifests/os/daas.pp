@@ -20,7 +20,6 @@ class profile::os::daas (
     apply => finished,
   }
 
-
   file { 'C:\\Install':
     ensure => directory
   }
@@ -29,7 +28,7 @@ class profile::os::daas (
     ensure => present,
     source => $installurl,
   }
-  package { 'msvisualcplusplus2013-redist':
+  -> package { 'msvisualcplusplus2013-redist':
     provider => chocolatey,
   }
 
