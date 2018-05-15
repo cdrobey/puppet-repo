@@ -18,7 +18,7 @@ class profile::base::windows::app (
   include chocolatey
 
   Package {
-    ensure => installed,
+    ensure => latest,
     provider => chocolatey,
   }
   schedule { 'package_schedule':
