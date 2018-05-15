@@ -11,7 +11,6 @@
     - firefox
     - vim
     - teamviewer
-    - google-backup-and-sync
     - veeam-endpoint-backup-free
 
 profile::base::windows::time::ntp_servers:
