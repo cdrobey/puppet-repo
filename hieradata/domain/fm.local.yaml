@@ -18,5 +18,6 @@ profile::base::windows::time::ntp_servers:
   - time.google.com
 profile::base::windows::time::timezone: 'Central Standard Time'
 
-profile::os::daas::installurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe'
-profile::os::daas::installuuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b'
+profile::os::dfaas::gsyncinstallurl: 'https://dl.google.com/drive/gsync_enterprise64.msi',
+profile::os::dfaas::jcinstallurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
+profile::os::dfaas::jcinstalluuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
