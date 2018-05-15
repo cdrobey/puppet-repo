@@ -11,10 +11,10 @@
 #   - PASSWORD:       Admin Account Password
 #--------------------------------------------------------------
 # Execution:
-#   winrm /quickconfig
+#   winrm quickconfig
 #   powershell.exe -ExecutionPolicy Bypass C:\bootstrap_windows_pa.ps1
 ##--------------------------------------------------------------
-$PEINSTALL_FILE="c:\pe_install.ps1"
+$PEINSTALL_FILE="c:\Install\bootstrap_windows_pa.ps1"
 $PEINSTALL_URL="https://${puppet_master}:8140/packages/current/install.ps1"
 $PP_ROLE="${pp_role}"
 $PP_APPLICATION="${pp_application}"
