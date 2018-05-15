@@ -14,7 +14,6 @@ class role::desktop {
   include profile::base
   #include profile::os::monitor
   include profile::os::daas
-  include profile::os::faas
 }
 
 
