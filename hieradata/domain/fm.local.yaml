@@ -12,7 +12,7 @@
     - vim
     - teamviewer
     - veeam-endpoint-backup-free
-    - avastfreeantivirus
+    - microsoftsecurityessentials
 
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
