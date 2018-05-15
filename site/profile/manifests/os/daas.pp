@@ -20,14 +20,15 @@ class profile::os::daas (
     apply => finished,
   }
 
-
-  file { 'C:\\Install':
-    ensure => directory
+  file { 'installdir':
+    ensure => directory,
+    path   => 'C:\\Install',
   }
 
-  -> remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
-    ensure => present,
-    source => $installurl,
+  remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
+    ensure  => present,
+    source  => $installurl,
+    require => File['installdir'],
   }
 
   -> package { 'JumpCloud v1.0':
@@ -41,4 +42,15 @@ class profile::os::daas (
     ensure => 'running',
     enable => true,
   }
+
+  remote_file { 'C:\\Install\\gsync_enterprise64.exe':
+    ensure  => present,
+    source  => 'https://dl.google.com/drive/gsync_enterprise64.msi',
+    require => File['installdir'],
+  }
+
+  -> package { 'Google Backup and Sync':
+    ensure          => present,
+    source          => 'C:\\Install\\gsync_enterprise64.exe',
+    install_options => [ '/VERYSILENT', '/NORESTART'],
 }
