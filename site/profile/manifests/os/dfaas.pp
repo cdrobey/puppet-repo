@@ -1,27 +1,28 @@
-# daas
+# dfaas
 #
-# Install and configure jump cloud Directory as a Service.
+# Install and configure jump cloud Directory and Google Backup and Sync.
 #
-# @summary  This profiles installs directory as a service provider
-#           JumpCloud on Windows.
+# @summary  This profiles installs software used for servicing accounts and file
+#           replication/sync.
 #
-# @param    installurl - URL of file installation location
-#           systemuuid - UUID of system provided by Jumploud
+# @param    gsyncinstallurl - URL of Google Backup and Sync installation location
+#           jcinstallurl - URL of JumpCloudfile installation location
+#           jcinstalluuid - UUID of system provided by Jumploud
 #
 # @example
-#   include profile::os::daas or assign in PE classifier
-# == Class: profile::os::daas
-class profile::os::daas (
+#   include profile::os::dfaas or assign in PE classifier
+# == Class: profile::os::dfaas
+class profile::os::dfaas (
   String $gsyncinstallurl = 'https://dl.google.com/drive/gsync_enterprise64.msi',
   String $jcinstallurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
   String $jcinstalluuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
 ){
 
-  reboot { 'jc_reboot':
+  reboot { 'dfaas_reboot':
     apply => finished,
   }
 
-  file { 'installdir':
+  file { 'dfaas_install':
     ensure => directory,
     path   => 'C:\\Install',
   }
@@ -29,14 +30,14 @@ class profile::os::daas (
   remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
     ensure  => present,
     source  => $jcinstallurl,
-    require => File['installdir'],
+    require => File['dfaas_install'],
   }
 
   -> package { 'JumpCloud v1.0':
     ensure          => '1.0',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
     install_options => [ '-k', $jcinstalluuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
-    notify          => Reboot['jc_reboot'],
+    notify          => Reboot['dfaas_reboot'],
   }
 
   -> service { 'jumpcloud-agent':
@@ -47,7 +48,7 @@ class profile::os::daas (
   remote_file { 'C:\\Install\\gsync_enterprise64.msi':
     ensure  => present,
     source  => $gsyncinstallurl,
-    require => File['installdir'],
+    require => File['dfaas_install'],
   }
 
   -> package { 'Google Backup and Sync':
