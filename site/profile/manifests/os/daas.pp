@@ -43,7 +43,7 @@ class profile::os::daas (
     enable => true,
   }
 
-  remote_file { 'C:\\Install\\gsync_enterprise64.exe':
+  remote_file { 'C:\\Install\\gsync_enterprise64.msi':
     ensure  => present,
     source  => 'https://dl.google.com/drive/gsync_enterprise64.msi',
     require => File['installdir'],
