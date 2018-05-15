@@ -12,7 +12,6 @@
     - vim
     - teamviewer
     - veeam-endpoint-backup-free
-    - google-backup-and-sync
 
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
