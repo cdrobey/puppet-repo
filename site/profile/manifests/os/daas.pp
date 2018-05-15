@@ -50,7 +50,7 @@ class profile::os::daas (
   }
 
   -> package { 'Google Backup and Sync':
-    ensure          => present,
+    ensure          => installed,
     source          => 'C:\\Install\\gsync_enterprise64.exe',
     install_options => [ '/VERYSILENT', '/NORESTART'],
   }
