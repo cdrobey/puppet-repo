@@ -29,14 +29,11 @@ class profile::os::daas (
     ensure => present,
     source => $installurl,
   }
-  #-> package { 'msvisualcplusplus2013-redist':
-  #  provider => chocolatey,
-  #}
 
   -> package { 'JumpCloud v1.0':
     ensure          => '1.0',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
-    install_options => [ '-k', $installuuid, '/VERYSILENT', '/NORESTART'],
+    install_options => [ '-k', $installuuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
     notify          => Reboot['jc_reboot'],
   }
 
