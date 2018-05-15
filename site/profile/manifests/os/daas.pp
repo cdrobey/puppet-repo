@@ -12,8 +12,9 @@
 #   include profile::os::daas or assign in PE classifier
 # == Class: profile::os::daas
 class profile::os::daas (
-  String $installurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
-  String $installuuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
+  String $gsyncinstallurl = 'https://dl.google.com/drive/gsync_enterprise64.msi',
+  String $jcinstallurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
+  String $jcinstalluuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
 ){
 
   reboot { 'jc_reboot':
@@ -27,14 +28,14 @@ class profile::os::daas (
 
   remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
     ensure  => present,
-    source  => $installurl,
+    source  => $jcinstallurl,
     require => File['installdir'],
   }
 
   -> package { 'JumpCloud v1.0':
     ensure          => '1.0',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
-    install_options => [ '-k', $installuuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
+    install_options => [ '-k', $jcinstalluuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
     notify          => Reboot['jc_reboot'],
   }
 
@@ -45,13 +46,12 @@ class profile::os::daas (
 
   remote_file { 'C:\\Install\\gsync_enterprise64.msi':
     ensure  => present,
-    source  => 'https://dl.google.com/drive/gsync_enterprise64.msi',
+    source  => $gsyncinstallurl,
     require => File['installdir'],
   }
 
   -> package { 'Google Backup and Sync':
-    ensure          => installed,
-    source          => 'C:\\Install\\gsync_enterprise64.msi',
-    install_options => [ '/VERYSILENT', '/NORESTART'],
+    ensure => installed,
+    source => 'C:\\Install\\gsync_enterprise64.msi',
   }
 }
