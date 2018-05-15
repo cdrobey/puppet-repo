@@ -14,12 +14,7 @@
 class profile::os::faas (
   String $installurl = 'https://dl.google.com/drive/gsync_enterprise64.msi',
 ){
-  file { 'GsyncInstall':
-    ensure => directory,
-    path   => 'C:\\Install',
-  }
-
-  -> remote_file { 'C:\\Install\\gsync_enterprise64.exe':
+  remote_file { 'C:\\Install\\gsync_enterprise64.exe':
     ensure => present,
     source => $installurl,
   }
