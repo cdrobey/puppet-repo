@@ -53,4 +53,5 @@ class profile::os::daas (
     ensure          => present,
     source          => 'C:\\Install\\gsync_enterprise64.exe',
     install_options => [ '/VERYSILENT', '/NORESTART'],
+  }
 }
