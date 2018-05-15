@@ -51,7 +51,7 @@ class profile::os::dfaas (
     require => File['dfaas_install'],
   }
 
-  -> package { 'Google Backup and Sync':
+  -> package { 'Backup and Sync from Google':
     ensure => installed,
     source => 'C:\\Install\\gsync_enterprise64.msi',
   }
