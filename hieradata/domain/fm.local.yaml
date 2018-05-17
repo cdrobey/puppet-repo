@@ -13,6 +13,7 @@
     - teamviewer
     - microsoftsecurityessentials
     - officeproplus2013
+    - dashlane
 
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
