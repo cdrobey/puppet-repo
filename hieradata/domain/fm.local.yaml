@@ -12,6 +12,7 @@
     - vim
     - teamviewer
     - microsoftsecurityessentials
+    - officeproplus2013
 
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
