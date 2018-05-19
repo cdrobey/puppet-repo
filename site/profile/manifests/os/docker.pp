@@ -27,7 +27,7 @@ class profile::os::docker (
     table    => 'nat',
   }
   firewall { '200 allow http/https access':
-    dport  => [80, 443],
+    dport  => [80, 443, 12080],
     proto  => tcp,
     action =>  accept,
   }
