@@ -10,7 +10,7 @@ profile::apps::nginx::proxylist:
   'jenkins.familyroberson.com': 
     proxy: 'http://co-u1604-jenp01.local.familyroberson.com:8080/'
   'ipam.familyroberson.com': 
-    proxy: 'http://co-u1604-docp01.local.familyroberson.com:3080/'
+    proxy: 'http://co-u1604-docp01.local.familyroberson.com:12080/'
   'discovery.familyroberson.com':
     proxy: 'https://co-u1604-docp01.local.familyroberson.com:8443/'
 profile::apps::nginx::proxysetheaders:
