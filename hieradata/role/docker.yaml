@@ -9,7 +9,7 @@ profile::os::docker::docker_list:
   phpipam:
     image: 'pierrecdn/phpipam'
     service_prefix: 'phpipam-'
-    ports: '80:12080'
+    ports: '12080:80'
     links: 'phpipam-mysql:mysql'
     env: 'MYSQL_ENV_MYSQL_PASSWORD=phpipam'
 
