@@ -14,7 +14,7 @@
 class profile::base::windows::rdp (
   $rdp_enable,
   $rdp_nla_enable,
-  ){
+){
   # Remote Desktop Connection logic (Remote Desktop is enabled = 0, Remote Desktop is disabled = 1)
   if $rdp_enable {
     $rdp_setting = '0'
