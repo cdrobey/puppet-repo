@@ -50,7 +50,11 @@ mod 'puppet-nginx', '0.11.0'
 mod 'puppetlabs-vcsrepo', '2.3.0'
 =======
 mod 'lwf-remote_file', '1.1.3'
+<<<<<<< HEAD
 >>>>>>> Add JumpCloud Role and bulld bootstrap.
+=======
+mod 'puppet-windows_autoupdate', '2.0.0'
+>>>>>>> Added windows update valutes.
 
 
 mod 'puppet-letsencrypt',

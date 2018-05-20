@@ -11,5 +11,5 @@
 #   include profile::base::windows::security or assign in PE classifier
 # == Class: profile::base::windows::security
 class profile::base::windows::security {
-  include profile::base::windows::security::cis
+  include profile::base::windows::security::update
 }
