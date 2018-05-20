@@ -21,18 +21,6 @@ $PP_APPLICATION="${pp_application}"
 $PP_ENVIRONMENT="${pp_environment}"
 $CSR_PATH="C:\ProgramData\PuppetLabs\puppet\etc\"
 $CSR_FILE="csr_attributes.yaml"
-$ADMIN_PASSWORD="${password}"
-
-#--------------------------------------------------------------
-# Setup Administrator Passwords
-#--------------------------------------------------------------
-function install_administrator {
-  Write-Host "======================= install_administrator ======================="
-
-  $admin = [adsi]("WinNT://./administrator, user")
-  $admin.psbase.invoke("SetPassword", $ADMIN_PASSWORD)
-
-}
 
 #--------------------------------------------------------------
 # Peform pre-agent installation tasks.
@@ -87,7 +75,6 @@ function run_puppet {
 #--------------------------------------------------------------
 # Main Script
 #--------------------------------------------------------------
-install_administrator
 pre_install_pa
 install_pa
 post_install_pa
