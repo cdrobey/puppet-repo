@@ -21,9 +21,14 @@ class profile::base::windows::app (
     ensure => latest,
     provider => chocolatey,
   }
-  # Static packages with Reboot
+
+  schedule { 'package_schedule':
+    range   => '02:00 - 04:00',
+    weekday => 'Monday',
+  }
   reboot { 'package_reboot':
-    when => 'pending',
+    when     => 'pending',
+    schedule => 'package_schedule'
   }
   package { 'dotnet4.5':
     notify => Reboot['package_reboot']
