@@ -45,6 +45,7 @@ mod 'puppetlabs-haproxy', '2.1.0'
 mod 'herculesteam-augeasproviders_sysctl', '2.2.0'
 mod 'herculesteam-augeasproviders_core', '2.1.4'
 mod 'lwf-remote_file', '1.1.3'
+mod 'puppet-windows_autoupdate', '2.0.0'
 
 
 mod 'influxdb',
