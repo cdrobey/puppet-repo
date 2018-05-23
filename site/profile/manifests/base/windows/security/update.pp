@@ -14,7 +14,6 @@ class profile::base::windows::security::update (
   String $install_time = '4',
 ) {
   class { 'windows_autoupdate':,
-    noAutoUpdate           => '0',
     au_options             => '4',
     scheduled_install_day  => $install_day,
     scheduled_install_time => $install_time,
