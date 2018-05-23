@@ -2,7 +2,7 @@
 profile::base::linux::time::ntp_servers:
   - fw.fr.lan
   - time.google.com
-profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Chicago"
 
 profile::base::windows::time::ntp_servers:
   - fw.fr.lan
