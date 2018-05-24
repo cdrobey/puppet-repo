@@ -2,7 +2,7 @@
   profile::base::windows::app::packages:
     - 7zip
     - git
-    - putty
+    - putty.install
     - winscp
     - flashplayerplugin
     - adobereader
