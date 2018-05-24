@@ -19,7 +19,7 @@
 profile::base::windows::time::ntp_servers:
   - fwserver.fm.local
   - time.google.com
-profile::base::windows::time::timezone: 'Central Standard Time'
+profile::base::windows::time::timezone: 'Central Time'
 
 profile::os::dfaas::gsyncinstallurl: 'https://dl.google.com/drive/gsync_enterprise64.msi',
 profile::os::dfaas::jcinstallurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
