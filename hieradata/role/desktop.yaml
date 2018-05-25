@@ -14,7 +14,7 @@ profile::base::windows::app::packages:
 profile::base::windows::time::ntp_servers:
   - fw.fr.lan
   - us.pool.ntp.org
-profile::base::windows::time::timezone: 'Mountain Standard Time'
+profile::base::windows::time::timezone: 'Central Standard Time'
 
 profile::base::windows::motd::content: |
   Welcome to %{facts.hostname} - %{facts.fqdn}
