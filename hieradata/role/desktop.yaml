@@ -1,20 +1,15 @@
 ---
-  profile::base::windows::app::packages:
-    - 7zip
-    - git
-    - putty
-    - winscp
-    - flashplayerplugin
-    - adobereader
-    - googlechrome
-    - vmwarevsphereclient
-    - firefox
-    - vim
-  
-  profile::base::windows::time::ntp_servers:
-    - fw.fr.lan
-    - us.pool.ntp.org
-  profile::base::windows::time::timezone: 'Central Standard Time'
+profile::base::windows::app::packages:
+  - 7zip
+  - git
+  - putty
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - firefox
+  - vim
 
   profile::base::windows::motd::content: |
     Welcome to %{facts.hostname} - %{facts.fqdn}

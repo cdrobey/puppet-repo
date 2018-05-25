@@ -21,10 +21,6 @@ class profile::base::windows::app (
     ensure => latest,
     provider => chocolatey,
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> Created maintenance schedule.
   schedule { 'package_schedule':
     range   => '02:00 - 04:00',
     weekday => 'Monday',

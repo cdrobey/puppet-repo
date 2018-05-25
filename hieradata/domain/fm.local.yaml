@@ -1,20 +1,20 @@
 ---
-  profile::base::windows::app::packages:
-    - 7zip
-    - git
-    - putty.install
-    - winscp
-    - flashplayerplugin
-    - adobereader
-    - googlechrome
-    - vmwarevsphereclient
-    - firefox
-    - vim
-    - teamviewer
-    - microsoftsecurityessentials
-    - officeproplus2013
-    - dashlane
-    - openvpn
+profile::base::windows::app::packages:
+  - 7zip
+  - git
+  - putty.install
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - firefox
+  - vim
+  - teamviewer
+  - microsoftsecurityessentials
+  - officeproplus2013
+  - dashlane
+  - openvpn
 
 profile::base::windows::time::timezone: "Central Standard Time"
 profile::base::windows::time::ntp_servers:
