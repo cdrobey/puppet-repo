@@ -12,7 +12,7 @@
 #   include profile::os::docker or assign in PE classifier
 # == Class: profile::os::docker
 class profile::os::docker (
-  Hash $docker_list = undef,
+  Hash $docker_list = [],
 ){
   sysctl { 'net.ipv4.ip_forward':
     ensure => present,
