@@ -13,12 +13,12 @@
 #   include profile::base::windows::app or assign in PE classifier
 # == Class: profile::base::windows::app
 class profile::base::windows::app (
-  $packages,
+  Array $packages,
 ) {
   include chocolatey
 
   Package {
-    ensure => latest,
+    ensure => installed,
     provider => chocolatey,
   }
   schedule { 'package_schedule':
