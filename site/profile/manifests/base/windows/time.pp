@@ -32,8 +32,6 @@ class profile::base::windows::time (
     }
   }
 
-  notify {"The value of timezone: ${timezone}": }
-
   dsc_xtimezone { 'set timezone':
     dsc_timezone         => $timezone,
     dsc_issingleinstance => 'yes',
