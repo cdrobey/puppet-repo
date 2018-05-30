@@ -8,10 +8,10 @@ hierarchy:
   - name: "Hiera Paths for node, environment, apps, roles, and os."
     paths:
       - "node/%{facts.domain}/%{facts.hostname}.yaml"
+      - "domain/%{facts.domain}.yaml"
+      - "os/%{facts.os.family}.yaml"
       - "env/%{trusted.extensions.pp_environment}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
-      - "os/%{facts.os.family}.yaml"
-      - "domain/%{facts.domain}.yaml"
       - "common.yaml"
   - name: "Hiera encrypted values for base configurations."
     lookup_key: eyaml_lookup_key
