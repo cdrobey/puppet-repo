@@ -12,7 +12,6 @@
 # == Class: role::desktop
 class role::desktop {
   include profile::base
-  include profile::os::dfaas
 }
 
 
