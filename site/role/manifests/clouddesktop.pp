@@ -1,16 +1,16 @@
-# desktop
+# clouddesktop
 #
-# Install and configure a desktop OS.
+# Install and configure a clouddesktop OS.
 #
-# @summary  This role delivers a desktop baseline configuration for a minimal secure linux and windows
+# @summary  This role delivers a clouddesktop baseline configuration for a minimal secure linux and windows
 #           configurations. It integrates a series of profiles built for baseline system compliance.
 #
 # @param    none
 #
 # @example
-#   include role::desktop or assign in PE classifier
-# == Class: role::desktop
-class role::desktop {
+#   include role::clouddesktop or assign in PE classifier
+# == Class: role::clouddesktop
+class role::clouddesktop {
   include profile::base
   include profile::os::dfaas
 }
