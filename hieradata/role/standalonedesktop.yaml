@@ -1,0 +1,105 @@
+---
+profile::base::windows::app::packages:
+  - 7zip
+  - git
+  - putty
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - firefox
+  - vim
+
+profile::base::windows::time::ntp_servers:
+  - fw.fr.lan
+  - us.pool.ntp.org
+profile::base::windows::time::timezone: 'Central Standard Time'
+
+profile::base::windows::motd::content: |
+  Welcome to %{facts.hostname} - %{facts.fqdn}
+  Access  to  and  use of this server is  restricted to those
+  activities expressly permitted by the system administration
+  staff. If you're not sure if it's allowed, then DON'T DO IT.
+
+profile::base::windows::rdp::rdp_enable: true
+profile::base::windows::rdp::rdp_nla_enable: false
+
+profile::os::monitor::influxdburi: "http://monitor:8086"
+profile::os::monitor::influxdbname: 'Monitor'
+profile::os::monitor::influxdbinputs: 
+profile::os::monitor::influxdbinput_list:
+  win_cpu:
+    plugin_type: 'win_perf_counters.object'
+    options: 
+      ObjectName: 'Processor'
+      Instances:
+        - '*'
+      Counters:
+      - '% Idle Time'
+      - '% Interrupt Time'
+      - '% Privileged Time'
+      - '% User Time'
+      - '% Processor Time'
+      Measurement: 'win_cpu'
+      IncludeTotal: true
+  win_system:
+    plugin_type: 'win_perf_counters.object'
+    options:
+      ObjectName: 'System'
+      Instances:
+        - '------'
+      Counters:
+      - 'Context Switches/sec'
+      - 'System Calls/sec'
+      - 'Processor Queue Length'
+      - 'Threads'
+      - 'System Up Time'
+      - 'Processes'
+      Measurement: 'win_system'
+  win_mem:
+    plugin_type: 'win_perf_counters.object'
+    options:
+      ObjectName: 'Memory'
+      Instances:
+        - '------'
+      Counters:
+      - 'Available Bytes'
+      - 'Cache Faults/sec'
+      - 'Demand Zero Faults/sec'
+      - 'Page Faults/sec'
+      - 'Pages/sec'
+      - 'Transition Faults/sec'
+      - 'Pool Nonpaged Bytes'
+      - 'Pool Paged Bytes'
+      Measurement: 'win_mem'
+  win_net:
+    plugin_type: 'win_perf_counters.object'
+    options:
+      ObjectName: 'Network Interface'
+      Instances:
+        - '*'
+      Counters:
+      - 'Bytes Received/sec'
+      - 'Bytes Sent/sec'
+      - 'Packets Received/sec'
+      - 'Packets Sent/sec'
+      Measurement: 'win_net'
+  win_disk:
+    plugin_type: 'win_perf_counters.object'
+    options:
+      ObjectName: 'LogicalDisk'
+      Instances:
+        - '*'
+      Counters:
+      - '% Idle Time'
+      - '% Disk Time'
+      - '% Disk Read Time'
+      - '% Disk Write Time'
+      - '% User Time'
+      - '% Free Space'
+      - 'Current Disk Queue Length'
+      - 'Free Megabytes'
+      - 'Disk Read Bytes/sec'
+      - 'Disk Write Bytes/sec'
+      Measurement: 'win_disk'
