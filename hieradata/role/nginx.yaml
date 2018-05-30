@@ -9,10 +9,6 @@ profile::apps::nginx::proxylist:
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'jenkins.familyroberson.com': 
     proxy: 'http://co-u1604-jenp01.local.familyroberson.com:8080/'
-  'ipam.familyroberson.com': 
-    proxy: 'http://co-u1604-docp01.local.familyroberson.com:12080/'
-  'discovery.familyroberson.com':
-    proxy: 'https://co-u1604-docp01.local.familyroberson.com:8443/'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
