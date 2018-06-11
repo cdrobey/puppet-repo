@@ -18,7 +18,6 @@ profile::base::linux::app::packages:
   - vim
   - git
   - net-tools
-  - apache
 
 profile::base::linux::motd::content: |
   ===========================================================
