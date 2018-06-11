@@ -12,7 +12,7 @@
 #   include profile::base::linux::time or assign in PE classifier
 # == Class: profile::base::linux::time
 class profile::base::linux::time (
-  $timezone,
+  String $timezone,
   Array $ntp_servers,
 ) {
 
