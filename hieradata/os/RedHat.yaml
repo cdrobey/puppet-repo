@@ -19,6 +19,10 @@ profile::base::linux::app::packages:
   - git
   - net-tools
 
+profile::base::linux::time::ntp_servers:
+  - time.google.com
+profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
 profile::base::linux::motd::content: |
   ===========================================================
   Welcome to %{facts.fqdn}
@@ -57,7 +61,3 @@ profile::os::monitor::influxdbinputs:
   swap: {}
   system: {}
 profile::os::monitor::influxdbinput_list: {}
-
-profile::base::linux::time::ntp_servers:
-  - time.google.com
-profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
