@@ -10,6 +10,7 @@
 # @example
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
+# test comment
 class profile::apps::nginx (
   Integer $proxyport,
   Hash $proxylist,
