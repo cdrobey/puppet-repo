@@ -1,4 +1,7 @@
 ---
+puppet_enterprise::profile::agent::pxp_enabled: false
+
+
 profile::base::windows::app::packages:
   - 7zip
   - git
@@ -104,4 +107,3 @@ profile::os::monitor::influxdbinput_list:
       - 'Disk Write Bytes/sec'
       Measurement: 'win_disk'
       
-  puppet_enterprise::profile::agent::pxp_enabled
