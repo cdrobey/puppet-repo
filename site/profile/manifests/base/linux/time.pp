@@ -12,8 +12,8 @@
 #   include profile::base::linux::time or assign in PE classifier
 # == Class: profile::base::linux::time
 class profile::base::linux::time (
-  $timezone,
-  Array $ntp_servers,
+  String $timezone= '/usr/share/zoneinfo/America/Denver',
+  Array $ntp_servers = [ 'time.google.com' ],
 ) {
 
   class { 'ntp':

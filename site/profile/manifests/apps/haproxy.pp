@@ -13,24 +13,20 @@
 # == Class: profile::apps::haproxy
 class profile::apps::haproxy (
   Hash $listeners,
-  Hash $balancers,
 ){
   include haproxy
 
+  firewall { '300 allow communication to InfluxDB and Grafana':
+    dport  => [80, 443],
+    proto  => tcp,
+    action =>  accept,
+  }
+
   $listeners.each | $listener_name, $listener_data | {
     haproxy::listen { $listener_name:
-      collect_exported => $listener_data['collect_exported'],
-      ipaddress        => $listener_data['ipaddress'],
-      ports            => $listener_data['ports'],
+      ipaddress => $listener_data['ipaddress'],
+      ports     => $listener_data['ports'],
     }
-  }
-  $balancers.each | $balancer_name, $balancer_data | {
-    haproxy::balancermember { $balancer_name:
-      listening_service => $balancer_data['listening_service'],
-      server_names      => $balancer_data['server_names'],
-      ipaddresses       => $balancer_data['ipaddresses'],
-      ports             => $balancer_data['ports'],
-      options           => $balancer_data['options'],
-    }
+    Haproxy::Balancermember <<| listening_service == $listener_name |>>
   }
 }

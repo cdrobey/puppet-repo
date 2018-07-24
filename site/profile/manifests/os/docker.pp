@@ -12,7 +12,7 @@
 #   include profile::os::docker or assign in PE classifier
 # == Class: profile::os::docker
 class profile::os::docker (
-  Hash $docker_list = undef,
+  Hash $docker_list = {},
 ){
   sysctl { 'net.ipv4.ip_forward':
     ensure => present,
@@ -27,7 +27,7 @@ class profile::os::docker (
     table    => 'nat',
   }
   firewall { '200 allow http/https access':
-    dport  => [80, 443],
+    dport  => [80, 443, 12080, 8443],
     proto  => tcp,
     action =>  accept,
   }

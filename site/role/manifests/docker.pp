@@ -12,5 +12,6 @@
 # == Class: role::test
 class role::docker {
   include profile::base
+  include profile::os::monitor
   include profile::os::docker
 }

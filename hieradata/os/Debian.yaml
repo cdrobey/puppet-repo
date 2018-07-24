@@ -20,13 +20,14 @@ profile::base::linux::app::packages:
 
 profile::base::linux::motd::content: |
   ===========================================================
-          Welcome to %{facts.hostname} - %{facts.fqdn} - %{facts.operatingsystem} %{facts.operatingsystemrelease}
+  Welcome to %{facts.fqdn}
   Access  to  and  use of this server is  restricted to those
   activities expressly permitted by the system administration
   staff. If you're not sure if it's allowed, then DON'T DO IT.
   ===========================================================
-                 Kernel: %{facts.kernel} %{facts.kernelversion}
-                 Uptime: %{facts.uptime_days} Days
+                Release: %{facts.operatingsystem} %{facts.operatingsystemrelease}
+                Kernel: %{facts.kernel} %{facts.kernelversion}
+                Uptime: %{facts.uptime_days} Days
 
 profile::base::linux::ssh::password_authentication: 'no'
 profile::base::linux::ssh::permit_root_login: 'no'
@@ -42,7 +43,7 @@ profile::base::linux::sudoers::configs:
     'priority'  : 10
 
 
-profile::os::monitor::influxdburi: "http://monitor:8086"
+profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:
@@ -58,3 +59,13 @@ profile::os::monitor::influxdbinputs:
   system: {}
   kernel: {}
 profile::os::monitor::influxdbinput_list: {}
+
+profile::base::linux::time::ntp_servers:
+  - fw.fr.lan
+  - time.google.com
+profile::base::linux::time::timezone: "/usr/share/zoneinfo/America/Denver"
+
+profile::base::windows::time::ntp_servers:
+  - fw.fr.lan
+  - time.google.com
+profile::base::windows::time::timezone: 'Mountain Standard Time'

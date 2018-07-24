@@ -1,7 +1,6 @@
 ---
 puppet_enterprise::profile::agent::pxp_enabled: false
 
-
 profile::base::windows::app::packages:
   - 7zip
   - git
@@ -28,7 +27,7 @@ profile::base::windows::motd::content: |
 profile::base::windows::rdp::rdp_enable: true
 profile::base::windows::rdp::rdp_nla_enable: false
 
-profile::os::monitor::influxdburi: "http://monitor:8086"
+profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
 profile::os::monitor::influxdbinput_list:
@@ -106,4 +105,3 @@ profile::os::monitor::influxdbinput_list:
       - 'Disk Read Bytes/sec'
       - 'Disk Write Bytes/sec'
       Measurement: 'win_disk'
-      

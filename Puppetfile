@@ -12,7 +12,7 @@ mod 'puppetlabs-accounts', '1.3.0'
 mod 'saz-sudo', '4.2.0'
 mod 'deric-gpasswd', '0.3.2'
 mod 'puppetlabs/apt', '3.0.0'
-mod 'andschwa-unattended_upgrades', :latest
+mod 'puppet-unattended_upgrades', '3.1.0'
 mod 'stahnma/epel', :latest
 mod 'jmkeyes-unifi', :latest
 mod 'puppetlabs-powershell', '2.1.2'
@@ -44,9 +44,15 @@ mod 'puppetlabs-docker', '1.1.0'
 mod 'puppetlabs-haproxy', '2.1.0'
 mod 'herculesteam-augeasproviders_sysctl', '2.2.0'
 mod 'herculesteam-augeasproviders_core', '2.1.4'
+mod 'puppet-nginx', '0.11.0'
+mod 'puppetlabs-vcsrepo', '2.3.0'
 mod 'lwf-remote_file', '1.1.3'
 mod 'puppet-windows_autoupdate', '2.0.0'
 
+
+mod 'puppet-letsencrypt',
+  :git    => 'https://github.com/voxpupuli/puppet-letsencrypt.git',
+  :branch => 'master'
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',

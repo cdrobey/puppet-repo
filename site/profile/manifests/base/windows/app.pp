@@ -21,7 +21,6 @@ class profile::base::windows::app (
     ensure => installed,
     provider => chocolatey,
   }
-
   schedule { 'package_schedule':
     range   => '02:00 - 04:00',
     weekday => 'Monday',
