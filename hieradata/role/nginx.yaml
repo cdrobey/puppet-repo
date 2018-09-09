@@ -17,9 +17,7 @@ profile::apps::nginx::proxysetheaders:
   - 'Upgrade $http_upgrade'
   - 'Connection "Upgrade"'
 
-
-
-profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
+profile::os::monitor::influxdburi: "http://co-u1604-idbp01.local.familyroberson.com:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:
@@ -33,4 +31,12 @@ profile::os::monitor::influxdbinputs:
   processes: {}
   swap: {}
   system: {}
+  ping:
+    urls:
+      - 8.8.8.8
+  dns_query:
+    servers: 
+      - 8.8.8.8
+    domains:
+      - "www.google.com"
 profile::os::monitor::influxdbinput_list: {}
