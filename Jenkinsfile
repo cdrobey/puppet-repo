@@ -11,13 +11,13 @@ node {
   puppet.credentials 'pe-access-token'
 
   stage ('Code Deploy to Master') {
-    puppet.codeDeploy 'production'
+    puppet.codeDeploy 'development'
   }
-  stage ('Production Check') {
-    puppet.job 'production', noop: true
+  stage ('development Check') {
+    puppet.job 'development', noop: true
 
   }
-  stage ('Production Deployment') {
-    puppet.job 'production'
+  stage ('development Deployment') {
+    puppet.job 'development'
   }
 }

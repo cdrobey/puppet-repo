@@ -26,17 +26,3 @@ profile::os::monitor::influxdbinputs:
   mem: {}
   io: {}
   net: {}
-  disk: {}
-  diskio: {}
-  processes: {}
-  swap: {}
-  system: {}
-  kernel: {}
-  ping:
-    urls:
-      - 8.8.8.8
-  dns_query:
-    servers: 
-      - 8.8.8.8
-    domains:
-      - "www.google.com"
