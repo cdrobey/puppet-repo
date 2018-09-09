@@ -21,7 +21,7 @@ class profile::os::monitor (
     hostname => $facts['hostname'],
     outputs  => {
       'influxdb' => {
-        'urls'     => [ $influxdburi, ],
+        'urls'     => [ $influxdburi ],
         'database' => $influxdbname,
       }
     },
