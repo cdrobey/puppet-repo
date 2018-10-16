@@ -15,10 +15,6 @@ class profile::apps::puppetreporter (
 ){
     class { 'puppet_metrics_dashboard':
         add_dashboard_examples => true,
-        influxdb_database_name => ['puppet_metrics','telegraf','graphite'],
         master_list            => ['co-u1604-pmp01.local.familyroberson.com'],
-        consume_graphite       => true,
-        configure_telegraf     => true,
-        enable_telegraf        => true,
     }
 }
