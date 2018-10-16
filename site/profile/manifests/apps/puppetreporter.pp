@@ -13,11 +13,6 @@
 class profile::apps::puppetreporter (
     $influxdbversion = 'installed',
 ){
-    firewall { '300 allow communication to InfluxDB and Grafana':
-        dport  => [8086, 8083, 3000],
-        proto  => tcp,
-        action =>  accept,
-    }
     class { 'puppet_metrics_dashboard':
         add_dashboard_examples => true,
         influxdb_database_name => ['puppet_metrics','telegraf','graphite'],
