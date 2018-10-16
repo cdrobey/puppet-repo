@@ -12,8 +12,8 @@
 # == Class: profile::apps::puppetreporter
 class profile::apps::puppetreporter (
 ){
-    firewall { '300 allow communication to InfluxDB and Grafana':
-        dport  => [8086, 8083, 3000],
+    firewall { '800 allow ssh access':
+        dport  => [3000],
         proto  => tcp,
         action =>  accept,
     }
