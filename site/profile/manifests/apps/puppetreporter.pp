@@ -11,8 +11,13 @@
 #   include profile::apps::puppetreporter or assign in PE classifier
 # == Class: profile::apps::puppetreporter
 class profile::apps::puppetreporter (
-    $influxdbversion = 'installed',
 ){
+    firewall { '300 allow communication to InfluxDB and Grafana':
+        dport  => [8086, 8083, 3000],
+        proto  => tcp,
+        action =>  accept,
+    }
+
     class { 'puppet_metrics_dashboard':
         add_dashboard_examples => false,
         master_list            => ['co-u1604-pmp01.local.familyroberson.com'],

@@ -11,6 +11,6 @@
 #   include role::puppetreporter or assign in PE classifier
 # == Class: role::puppetreporter
 class role::puppetreporter {
-  # include profile::base
+  include profile::base
   include profile::apps::puppetreporter
 }
