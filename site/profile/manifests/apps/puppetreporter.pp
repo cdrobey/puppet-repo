@@ -14,7 +14,7 @@ class profile::apps::puppetreporter (
     $influxdbversion = 'installed',
 ){
     class { 'puppet_metrics_dashboard':
-        add_dashboard_examples => true,
+        add_dashboard_examples => false,
         master_list            => ['co-u1604-pmp01.local.familyroberson.com'],
     }
 }
