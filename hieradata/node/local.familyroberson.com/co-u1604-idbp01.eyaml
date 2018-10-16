@@ -13,18 +13,18 @@ profile::os::monitor::influxdbinputs:
   processes: {}
   swap: {}
   system: {}
-  vsphere:
-    vcenters: 
-      - "https://co-vcsa-p01.local.familyroberson.com/sdk"
-    username: 'administrator@vcsa.local'
-    password: >
-      ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
-      DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
-      plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT
-      tPiet9vW0vFU5YtKQVWJq8SwMziKgquwol5h/v5rtZt53xYX/mojn9KyETZr
-      QQIPbmFuuMO2Q2w+WZsKAkmiCgFzLkR+uyP8KrT3R+212slnRnWvxz/UzynI
-      15FkrE9aRclfeCWX3N/rTTgrEWgyIRiXp4kPvjISfikFKANTy6BBJiLasddp
-      7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
-      PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
-      RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
+#  vsphere:
+#    vcenters: 
+#      - "https://co-vcsa-p01.local.familyroberson.com/sdk"
+#    username: 'administrator@vcsa.local'
+#    password: >
+#      ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+#      DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
+#      plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT
+#      tPiet9vW0vFU5YtKQVWJq8SwMziKgquwol5h/v5rtZt53xYX/mojn9KyETZr
+#      QQIPbmFuuMO2Q2w+WZsKAkmiCgFzLkR+uyP8KrT3R+212slnRnWvxz/UzynI
+#      15FkrE9aRclfeCWX3N/rTTgrEWgyIRiXp4kPvjISfikFKANTy6BBJiLasddp
+#      7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
+#      PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
+#      RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
 profile::os::monitor::influxdbinput_list: {}
