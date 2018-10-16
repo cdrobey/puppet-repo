@@ -1,0 +1,34 @@
+---
+profile::base::windows::accounts::users:
+  'admin':
+    ensure: present
+    comment: "Admin Account"
+    managehome: false
+    groups:
+      - Administrators
+    password: >
+      ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
+      plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT
+      tPiet9vW0vFU5YtKQVWJq8SwMziKgquwol5h/v5rtZt53xYX/mojn9KyETZr
+      QQIPbmFuuMO2Q2w+WZsKAkmiCgFzLkR+uyP8KrT3R+212slnRnWvxz/UzynI
+      15FkrE9aRclfeCWX3N/rTTgrEWgyIRiXp4kPvjISfikFKANTy6BBJiLasddp
+      7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
+      PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
+      RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
+  'Deploy':
+    ensure: present
+    comment: "Deploy Account"
+    managehome: false
+    groups:
+      - Administrators
+    password: >
+      ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
+      plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT
+      tPiet9vW0vFU5YtKQVWJq8SwMziKgquwol5h/v5rtZt53xYX/mojn9KyETZr
+      QQIPbmFuuMO2Q2w+WZsKAkmiCgFzLkR+uyP8KrT3R+212slnRnWvxz/UzynI
+      15FkrE9aRclfeCWX3N/rTTgrEWgyIRiXp4kPvjISfikFKANTy6BBJiLasddp
+      7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
+      PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
+      RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
