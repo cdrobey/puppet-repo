@@ -4,7 +4,7 @@ defaults:
   datadir: hieradata
   data_hash: yaml_data
 hierarchy:
-- name: "Encruypted Hiera Paths for node, environment, apps, roles, and os."
+  - name: "Encruypted Hiera Paths for node, environment, apps, roles, and os."
     lookup_key: eyaml_lookup_key
     paths:
       - "node/%{facts.domain}/%{facts.hostname}.eyaml"
