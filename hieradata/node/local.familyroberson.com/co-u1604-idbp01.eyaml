@@ -12,5 +12,4 @@ profile::os::monitor::influxdbinputs:
   swap: {}
   system: {}
   vsphere: {}
-
 profile::os::monitor::influxdbinput_list: {}
