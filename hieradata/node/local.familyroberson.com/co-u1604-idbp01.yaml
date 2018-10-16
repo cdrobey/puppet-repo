@@ -18,14 +18,14 @@ profile::os::monitor::influxdbinputs:
       - https://vcenter.local/sdk
     username: 'administrator@vcsa.local'
     password: >
-    ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
-    DQYJKoZIhvcNAQEBBQAEggEAJAHOwqf8/6EFygQp8kI3QUQV5/HGSrpEZlWi
-    hF3LqpVpNIcaR600nzyWsM+jk0bioY7vTdXc8i1fQ/K4+W1r0/HRKxRtF8g+
-    XtERjazoGFBNFIWEMp+rLLnCdU0cxHGL3fokDKVBaIZ3wODUDVkF0e/Oqo09
-    DhZuIl3kDr4cgmnlq9ogCOxxM8GwaE8s0/A2f/49SnWBruaz6aU2O81ccok/
-    jRbTnxTCfabqXmpC8aubP7nlEnofzxKveOrKJqjqLd9QUF6Z3Xv1FFaTat7i
-    JsOYcyGej0w00565SARfsTA1G1eNYylXVMp+HpW1u3WVBnapnzXXn9uMQDNK
-    EFAFQTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBA1RnWPRlZbLakUZvMk
-    dnz2gBAHgBME8W3RgCnAZmkZ5UQK]
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAJAHOwqf8/6EFygQp8kI3QUQV5/HGSrpEZlWi
+      hF3LqpVpNIcaR600nzyWsM+jk0bioY7vTdXc8i1fQ/K4+W1r0/HRKxRtF8g+
+      XtERjazoGFBNFIWEMp+rLLnCdU0cxHGL3fokDKVBaIZ3wODUDVkF0e/Oqo09
+      DhZuIl3kDr4cgmnlq9ogCOxxM8GwaE8s0/A2f/49SnWBruaz6aU2O81ccok/
+      jRbTnxTCfabqXmpC8aubP7nlEnofzxKveOrKJqjqLd9QUF6Z3Xv1FFaTat7i
+      JsOYcyGej0w00565SARfsTA1G1eNYylXVMp+HpW1u3WVBnapnzXXn9uMQDNK
+      EFAFQTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBA1RnWPRlZbLakUZvMk
+      dnz2gBAHgBME8W3RgCnAZmkZ5UQK]
 
 profile::os::monitor::influxdbinput_list: {}
