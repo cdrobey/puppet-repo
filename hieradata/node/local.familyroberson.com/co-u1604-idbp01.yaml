@@ -15,7 +15,7 @@ profile::os::monitor::influxdbinputs:
   system: {}
   vsphere:
     vcenters: 
-      - https://vcenter.local/sdk
+      - https://co-vcsa-p01.local.familyroberson.com/sdk
     username: 'administrator@vcsa.local'
     password: >
       ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
