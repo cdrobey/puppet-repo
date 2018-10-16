@@ -13,7 +13,7 @@ hierarchy:
       - "env/%{trusted.extensions.pp_environment}.yaml"
       - "role/%{trusted.extensions.pp_role}.yaml"
       - "common.yaml"
-  - name: "Hiera encrypted values for base configurations."
+  - name: "Hiera encrypted."
     lookup_key: eyaml_lookup_key
     paths: 
       - "secrets/common.eyaml"
