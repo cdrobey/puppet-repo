@@ -19,7 +19,10 @@ class profile::apps::puppetreporter (
     }
 
     class { 'puppet_metrics_dashboard':
-        add_dashboard_examples => false,
+        add_dashboard_examples => true,
+        overwrite_dashboards   => false,
         master_list            => ['co-u1604-pmp01.local.familyroberson.com'],
+        influxdb_database_name => ['puppet_metrics','telegraf','graphite'],
+        consume_graphite       => true,
     }
 }
