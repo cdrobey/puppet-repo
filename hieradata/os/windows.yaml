@@ -27,7 +27,7 @@ profile::base::windows::motd::content: |
 profile::base::windows::rdp::rdp_enable: true
 profile::base::windows::rdp::rdp_nla_enable: false
 
-profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
+profile::os::monitor::influxdburi: "http://co-c7-idbp01:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
 profile::os::monitor::influxdbinput_list:

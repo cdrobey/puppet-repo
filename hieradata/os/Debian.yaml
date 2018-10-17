@@ -43,7 +43,7 @@ profile::base::linux::sudoers::configs:
     'priority'  : 10
 
 
-profile::os::monitor::influxdburi: "http://co-u1604-idbp01:8086"
+profile::os::monitor::influxdburi: "http://co-c7-idbp01:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:
