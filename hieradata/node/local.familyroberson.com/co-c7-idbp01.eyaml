@@ -1,5 +1,5 @@
 ---
-profile::os::monitor::influxdburi: "http://co-c7-cand01.local.familyroberson.com:8086"
+profile::os::monitor::influxdburi: "http://co-c7-idbp01.local.familyroberson.com:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:
