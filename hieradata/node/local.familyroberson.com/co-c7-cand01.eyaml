@@ -27,6 +27,6 @@ profile::os::monitor::influxdbinputs:
       7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
       PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
       RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
-    insecure_skip_verify: false
+    insecure_skip_verify: true
 
 profile::os::monitor::influxdbinput_list: {}
