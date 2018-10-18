@@ -2,7 +2,7 @@
 profile::apps::nginx::proxyport: 443
 profile::apps::nginx::proxylist:
   'monitor.familyroberson.com':
-    proxy: 'http://co-u1604-idbp01.local.familyroberson.com:3000/'
+    proxy: 'http://co-c7-idbp01.local.familyroberson.com:3000/'
   'unifi.familyroberson.com': 
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
   'puppet.familyroberson.com': 
