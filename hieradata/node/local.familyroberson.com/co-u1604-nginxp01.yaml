@@ -17,7 +17,7 @@ profile::apps::nginx::proxysetheaders:
   - 'Upgrade $http_upgrade'
   - 'Connection "Upgrade"'
 
-profile::os::monitor::influxdburi: "http://co-c7-idbp01.local.familyroberson.com:8086"
+profile::os::monitor::influxdburi: "http://co-c75-idbp01.local.familyroberson.com:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
   cpu:

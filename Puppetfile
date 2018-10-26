@@ -21,7 +21,6 @@ mod 'puppet-dotnet', '1.1.0'
 mod 'liamjbennett-win_facts', '0.0.2'
 mod 'puppet-download_file', '2.1.0'
 mod 'puppetlabs-reboot', '1.2.1'
-mod 'WhatsARanjit-node_manager', '0.4.2'
 mod 'puppetlabs-chocolatey', '3.0.0'
 mod 'ayohrling-local_security_policy', '0.6.1'
 mod 'tse-winntp', '1.0.1'
@@ -50,8 +49,6 @@ mod 'lwf-remote_file', '1.1.3'
 mod 'puppet-windows_autoupdate', '2.0.0'
 mod 'puppetlabs-puppet_agent', '1.7.0'
 mod 'puppetlabs-transition', '0.1.1'
-mod 'puppetlabs-puppet_metrics_dashboard', '1.0.2'
-
 
 mod 'puppet-letsencrypt',
   :git    => 'https://github.com/voxpupuli/puppet-letsencrypt.git',
@@ -60,7 +57,3 @@ mod 'puppet-letsencrypt',
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
   :branch => 'master'
-
-mod 'apprc',
-  :git    => 'https://github.com/cdrobey/apprc.git',
-  :branch => 'development'
