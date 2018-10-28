@@ -60,4 +60,6 @@ profile::os::monitor::influxdbinputs:
   disk: {}
   swap: {}
   system: {}
+  puppetagent:
+    location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
 profile::os::monitor::influxdbinput_list: {}
