@@ -13,14 +13,19 @@
 class profile::apps::monitormaster (
     $influxdbversion = 'installed',
 ){
-    #firewall { '300 allow communication to InfluxDB and Grafana':
-    #    dport  => [8086, 8083, 3000],
-    #    proto  => tcp,
-    #    action =>  accept,
-    #}
 
     firewall { '300 allow influxdb access':
         dport  => [8086],
+        proto  => tcp,
+        action =>  accept,
+    }
+    firewall { '301 allow influxdb access':
+        dport  => [8083],
+        proto  => tcp,
+        action =>  accept,
+    }
+    firewall { '302 allow grafana access':
+        dport  => [3000],
         proto  => tcp,
         action =>  accept,
     }
