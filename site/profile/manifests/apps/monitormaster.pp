@@ -18,6 +18,12 @@ class profile::apps::monitormaster (
     #    proto  => tcp,
     #    action =>  accept,
     #}
+
+    firewall { '300 allow influxdb access':
+        dport  => [8086],
+        proto  => tcp,
+        action =>  accept,
+    }
     class {'influxdb':
         ensure         => 'present',
         manage_repos   => true,
