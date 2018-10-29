@@ -24,8 +24,8 @@ class profile::apps::graylog (
     distribution => 'jre',
   }
   -> class { 'elasticsearch':
-    version      => 5,
-    manage_repo  => true,
+    version     => 5,
+    manage_repo => true,
   }
   -> elasticsearch::instance { 'graylog':
     config => {
