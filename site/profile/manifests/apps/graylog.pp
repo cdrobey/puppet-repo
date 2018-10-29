@@ -12,11 +12,11 @@
 # == Class: profile::apps::graylog
 class profile::apps::graylog (
 ){
-class {'mongodb::globals':
-  manage_package_repo => true,
-}
--> class {'mongodb::client': }
--> class {'mongodb::server': }
+  class {'mongodb::globals':
+    manage_package_repo => true,
+  }
+  -> class {'mongodb::client': }
+  -> class {'mongodb::server': }
 
   class { 'java':
     distribution => 'jre',
