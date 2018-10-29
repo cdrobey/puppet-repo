@@ -28,7 +28,5 @@ profile::os::monitor::influxdbinputs:
       PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
       RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
     insecure_skip_verify: true
-  puppetagent:
-    location: "/opt/puppetlabs/puppet/cache/state/last_run_summary.yaml"
-
+  
 profile::os::monitor::influxdbinput_list: {}
