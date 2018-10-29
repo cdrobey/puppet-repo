@@ -11,7 +11,6 @@
 #   include profile::graylog or assign in PE classifier
 # == Class: profile::apps::graylog
 class profile::apps::graylog (
-  Hash $listeners,
 ){
 class {'mongodb::globals':
   manage_package_repo => true,
