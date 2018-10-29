@@ -21,8 +21,11 @@ class profile::apps::graylog (
   class { 'java':
     distribution => 'jre',
   }
-  -> class { 'elasticsearch':
-    version     => '6.4.2',
+  class { 'elastic_stack::repo':
+    version => 5,
+  }
+  class { 'elasticsearch':
+      version => '5.6.4',
   }
   -> elasticsearch::instance { 'graylog':
     config => {
