@@ -13,4 +13,5 @@
 class role::graylog {
   include profile::base
   include profile::os::monitor
+  include profile::apps::graylog
 }
