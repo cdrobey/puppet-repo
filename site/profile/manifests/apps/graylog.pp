@@ -23,7 +23,7 @@ class profile::apps::graylog (
     action =>  accept,
   }
   firewall { '302 allow mongodb access':
-    dport  => [9000],
+    dport  => [27017],
     proto  => tcp,
     action =>  accept,
   }
@@ -51,12 +51,12 @@ class profile::apps::graylog (
   }
   -> class { 'graylog::server':
     config => {
-      'password_secret'     => 'mOP51XcWO1TQ8ajtz2k=',
-      'root_password_sha2'  => '69fef8305e2165a3427f19a6fc09786beaa943dee3b460e68d4e1a61c6bce25d  -',
-      'web_enable'          => true,
-      'web_listen_uri'      => "http://${facts['fqdn']}:9000",
-      'rest_listen_uri'     => "http://${facts['fqdn']}:9000/api/",
-      'rest_transport_uri'  => "http://${facts['fqdn']}:9000/api/",
+      'password_secret'    => 'mOP51XcWO1TQ8ajtz2k=',
+      'root_password_sha2' => '69fef8305e2165a3427f19a6fc09786beaa943dee3b460e68d4e1a61c6bce25d  -',
+      'web_enable'         => true,
+      'web_listen_uri'     => "http://${facts['fqdn']}:9000",
+      'rest_listen_uri'    => "http://${facts['fqdn']}:9000/api/",
+      'rest_transport_uri' => "http://${facts['fqdn']}:9000/api/",
     }
   }
 }
