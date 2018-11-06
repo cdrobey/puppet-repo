@@ -47,6 +47,8 @@ class profile::apps::graylog (
     config          => {
       'password_secret'    => 'mOP51XcWO1TQ8ajtz2k=',
       'root_password_sha2' => '69fef8305e2165a3427f19a6fc09786beaa943dee3b460e68d4e1a61c6bce25d  -',
+      'web_enable'         => true,
+      'web_listen_uri'     => 'http://co-c75-glp01.local.familyroberson.com:9000/',
     }
   }
 }
