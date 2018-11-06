@@ -12,6 +12,13 @@
 # == Class: profile::apps::graylog
 class profile::apps::graylog (
 ){
+
+  firewall { '300 allow graylog access':
+      dport  => [9000],
+      proto  => tcp,
+      action =>  accept,
+  }
+
   class {'mongodb::globals':
     manage_package_repo => true,
   }
