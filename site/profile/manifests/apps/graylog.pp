@@ -21,24 +21,4 @@ class profile::apps::graylog (
   class { 'java':
     distribution => 'jre',
   }
-
-  class { 'elasticsearch':
-      version => '5.6.4',
-  }
-  -> elasticsearch::instance { 'graylog':
-    config => {
-      'cluster.name' => 'graylog',
-      'network.host' => '127.0.0.1',
-    }
-  }
-
-  class { 'graylog::repository':
-    version => '2.4.6'
-  }
-  -> class { 'graylog::server':
-    config          => {
-      'password_secret'    => 'mOP51XcWO1TQ8ajtz2k=',
-      'root_password_sha2' => '69fef8305e2165a3427f19a6fc09786beaa943dee3b460e68d4e1a61c6bce25d  -',
-    }
-  }
 }
