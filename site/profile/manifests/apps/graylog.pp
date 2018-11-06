@@ -57,8 +57,6 @@ class profile::apps::graylog (
       'web_listen_uri'      => "http://${facts['fqdn']}:9000",
       'rest_listen_uri'     => "http://${facts['fqdn']}:9000/api/",
       'rest_transport_uri'  => "http://${facts['fqdn']}:9000/api/",
-      'elasticsearch_hosts' => "http://${facts['fqdn']}:9200",
-      'mongodb_uri'         => "mongodb://${facts['fqdn']}:27017",
     }
   }
 }
