@@ -34,12 +34,8 @@ class profile::apps::graylog (
   -> class {'mongodb::client': }
   -> class {'mongodb::server': }
 
-  
-
-
   -> class { 'elasticsearch':
   }
-
   -> elasticsearch::instance { 'graylog':
     config => {
       'cluster.name' => 'graylog',
