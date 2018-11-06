@@ -24,7 +24,7 @@ class profile::apps::graylog (
 
 
   class { 'graylog::repository':
-    version => '2.4.6'
+    version => '2.4'
   }
   -> class { 'graylog::server':
     config          => {
