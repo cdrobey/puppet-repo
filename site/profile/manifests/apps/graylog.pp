@@ -22,7 +22,7 @@ class profile::apps::graylog (
     proto  => tcp,
     action =>  accept,
   }
-  firewall { '300 allow graylog access':
+  firewall { '302 allow mongodb access':
     dport  => [9000],
     proto  => tcp,
     action =>  accept,
@@ -34,22 +34,23 @@ class profile::apps::graylog (
   -> class {'mongodb::client': }
   -> class {'mongodb::server': }
 
+  
+
+
+  -> class { 'elasticsearch':
+  }
+
+  -> elasticsearch::instance { 'graylog':
+    config => {
+      'cluster.name' => 'graylog',
+      'network.host' => '127.0.0.1',
+    }
+  }
+
   class { 'java':
     distribution => 'jre',
   }
-
-
--> class { 'elasticsearch':
-}
-
--> elasticsearch::instance { 'graylog':
-  config => {
-    'cluster.name' => 'graylog',
-    'network.host' => '127.0.0.1',
-  }
-}
-
-  class { 'graylog::repository':
+  -> class { 'graylog::repository':
     version => '2.4'
   }
   -> class { 'graylog::server':
