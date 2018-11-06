@@ -51,6 +51,7 @@ class profile::apps::graylog (
   }
   -> class { 'graylog::server':
     config => {
+      'root_username'      => 'admin',
       'password_secret'    => '2FCsLlZ0Ch0PuAzq068=',
       'root_password_sha2' => 'e62edce0d3e07c595dc8e0348945faca95cd436abf239cc6db0642314c062785',
       'web_enable'         => true,
