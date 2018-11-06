@@ -23,11 +23,7 @@ class profile::apps::graylog (
   }
 
 
-class { 'elastic_stack::repo':
-  version => 5,
-}
 -> class { 'elasticsearch':
-  version => '5.6.4',
 }
 
 -> elasticsearch::instance { 'graylog':
