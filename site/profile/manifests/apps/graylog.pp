@@ -53,7 +53,7 @@ class profile::apps::graylog (
     config => {
       'root_username'      => 'admin',
       'password_secret'    => '2FCsLlZ0Ch0PuAzq068=',
-      'root_password_sha2' => 'e62edce0d3e07c595dc8e0348945faca95cd436abf239cc6db0642314c062785',
+      'root_password_sha2' => '0f343519a67604a6db993b1fa23fc4734554f54c3ecd1899d257d683caff21d3',
       'web_enable'         => true,
       'web_listen_uri'     => "http://${facts['fqdn']}:9000",
       'rest_listen_uri'    => "http://${facts['fqdn']}:9000/api/",
