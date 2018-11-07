@@ -44,20 +44,16 @@ class profile::apps::graylog (
   -> class {'mongodb::client': }
   -> class {'mongodb::server': }
 
-  #-> class { 'elasticsearch':
-  #}
-  #-> elasticsearch::instance { 'graylog':
-  #  config => {
-  #    'cluster.name' => 'graylog',
-  #    'network.host' => '127.0.0.1',
-  #  }
-  #}
-  elasticsearch::index { 'graylog_deflector':
-    ensure => 'absent'
+  -> class { 'elasticsearch':
+    version => '5.6.13'
   }
-  class { 'elasticsearch':
-  ensure => 'absent'
+  -> elasticsearch::instance { 'graylog':
+    config => {
+      'cluster.name' => 'graylog',
+      'network.host' => '127.0.0.1',
+    }
   }
+
 
   class { 'java':
     distribution => 'jre',
