@@ -27,6 +27,11 @@ class profile::apps::graylog (
     proto  => tcp,
     action =>  accept,
   }
+  firewall { '302 allow graylog syslog input':
+    dport  => [5140],
+    proto  => tcp,
+    action =>  accept,
+  }
 
   class {'mongodb::globals':
     manage_package_repo => true,
