@@ -44,6 +44,9 @@ class profile::apps::graylog (
   -> class {'mongodb::client': }
   -> class {'mongodb::server': }
 
+  class { 'elastic_stack::repo':
+    version => 5,
+  }
   -> class { 'elasticsearch':
     version => '5.6.13'
   }
