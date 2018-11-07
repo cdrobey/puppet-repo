@@ -32,6 +32,11 @@ class profile::apps::graylog (
     proto  => udp,
     action =>  accept,
   }
+  firewall { '303 allow graylog syslog input':
+    dport  => [5140],
+    proto  => tcp,
+    action =>  accept,
+  }
 
   class {'mongodb::globals':
     manage_package_repo => true,
@@ -46,6 +51,9 @@ class profile::apps::graylog (
       'cluster.name' => 'graylog',
       'network.host' => '127.0.0.1',
     }
+  }
+  elasticsearch::index { 'graylog_deflector':
+    ensure => 'absent'
   }
 
   class { 'java':
