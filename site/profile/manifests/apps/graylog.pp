@@ -47,10 +47,10 @@ class profile::apps::graylog (
   class { 'elastic_stack::repo':
     version => 5,
   }
-  -> class { 'elasticsearch':
+  class { 'elasticsearch':
     version => '5.6.13'
   }
-  -> elasticsearch::instance { 'graylog':
+  elasticsearch::instance { 'graylog':
     config => {
       'cluster.name' => 'graylog',
       'network.host' => '127.0.0.1',
