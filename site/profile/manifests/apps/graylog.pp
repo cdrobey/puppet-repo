@@ -48,7 +48,10 @@ class profile::apps::graylog (
     version => 5,
   }
   class { 'elasticsearch':
-    version => '5.6.13'
+    version      => '5.6.13',
+    api_protocol => 'http',
+    api_host     => $facts['fqdn'],
+    api_port     => 9200,
   }
   elasticsearch::instance { 'graylog':
     config => {
