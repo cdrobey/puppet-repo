@@ -56,7 +56,7 @@ class profile::apps::graylog (
   elasticsearch::instance { 'graylog':
     config => {
       'cluster.name' => 'graylog',
-      'network.host' => '127.0.0.1',
+      'network.host' => $facts['fqdn'],
     }
   }
 
