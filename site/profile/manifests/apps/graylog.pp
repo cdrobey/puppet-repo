@@ -28,12 +28,12 @@ class profile::apps::graylog (
     action =>  accept,
   }
   firewall { '303 allow graylog syslog udp input':
-    dport  => [5542],
+    dport  => [5442],
     proto  => udp,
     action =>  accept,
   }
   firewall { '304 allow graylog syslog tcp input':
-    dport  => [5542],
+    dport  => [5442],
     proto  => tcp,
     action =>  accept,
   }
