@@ -11,8 +11,18 @@
 # == Class: profile::apps::splunk
 class profile::apps::splunk (
 ){
-    firewall { '200 allow http/https access':
-        dport  => [80, 443],
+    firewall { '300 allow splunk web access':
+        dport  => [ 8000 ],
+        proto  => tcp,
+        action =>  accept,
+    }
+    firewall { '301 allow splunkd access':
+        dport  => [ 8089 ],
+        proto  => tcp,
+        action =>  accept,
+    }
+        firewall { '302 allow logging access':
+        dport  => [ 9997 ],
         proto  => tcp,
         action =>  accept,
     }
