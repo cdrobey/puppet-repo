@@ -21,8 +21,13 @@ class profile::apps::splunk (
         proto  => tcp,
         action =>  accept,
     }
-        firewall { '302 allow logging access':
+    firewall { '302 allow logging access':
         dport  => [ 9997 ],
+        proto  => tcp,
+        action =>  accept,
+    }
+    firewall { '303 allow splunk pfSense access':
+        dport  => [ 5442 ],
         proto  => tcp,
         action =>  accept,
     }
