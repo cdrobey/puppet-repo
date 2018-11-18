@@ -28,7 +28,7 @@ class profile::apps::splunk (
     }
     firewall { '303 allow splunk pfSense access':
         dport  => [ 5442 ],
-        proto  => tcp,
+        proto  => udp,
         action =>  accept,
     }
 
