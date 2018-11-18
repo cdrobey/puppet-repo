@@ -10,7 +10,6 @@
 #   include profile::splunk or assign in PE classifier
 # == Class: profile::apps::splunk
 class profile::apps::splunk (
-    $port,
 ){
     firewall { '200 allow http/https access':
         dport  => [80, 443],
