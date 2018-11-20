@@ -12,8 +12,8 @@
 #   include profile::base::windows::rdp or assign in PE classifier
 # == Class: profile::base::windows::rdp
 class profile::base::windows::rdp (
-  String $rdp_enable,
-  String $rdp_nla_enable,
+  Boolean $rdp_enable,
+  Boolean $rdp_nla_enable,
   String $rdp_disconnect = '0x000493e0',
   String $rdp_idle = '0x0001B7740',
 
