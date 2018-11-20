@@ -33,7 +33,7 @@ class profile::apps::splunk (
     }
     firewall { '304 allow splunk netflow access':
         dport  => [ 9995 ],
-        proto  => udp,
+        proto  => tcp,
         action =>  accept,
     }
     class { 'splunk::params':
