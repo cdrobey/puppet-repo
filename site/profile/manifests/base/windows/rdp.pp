@@ -12,8 +12,11 @@
 #   include profile::base::windows::rdp or assign in PE classifier
 # == Class: profile::base::windows::rdp
 class profile::base::windows::rdp (
-  $rdp_enable,
-  $rdp_nla_enable,
+  String $rdp_enable,
+  String $rdp_nla_enable,
+  String $rdp_disconnect = '0x000493e0',
+  String $rdp_idle = '0x0001B7740',
+
 ){
   # Remote Desktop Connection logic (Remote Desktop is enabled = 0, Remote Desktop is disabled = 1)
   if $rdp_enable {
@@ -76,14 +79,14 @@ class profile::base::windows::rdp (
   # Set time limit for active but idle Remote Desktop Services sessions: 10 minutes
   registry_value { 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Terminal Services\MaxIdleTime':
     type   => dword,
-    data   => '0x0001B7740',
+    data   => $rdp_disconnect,
     notify => Reboot['rdp_reboot'],
   }
 
   # Set time limit for disconnected sessions: 5 minutes
   registry_value { 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Terminal Services\MaxDisconnectionTime':
     type   => dword,
-    data   => '0x000493e0',
+    data   => $rdp_idle,
     notify => Reboot['rdp_reboot'],
   }
 

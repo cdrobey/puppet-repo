@@ -1,0 +1,5 @@
+---
+profile::base::windows::rdp::rdp_enable: true
+profile::base::windows::rdp::rdp_nla_enable: false
+profile::base::windows::rdp::rdp_idle: '0'
+profile::base::windows::rdp::rdp_disconnect: '0'
