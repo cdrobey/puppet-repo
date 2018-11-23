@@ -11,7 +11,7 @@
 #   include profile::base::windows::motd or assign in PE classifier
 # == Class: profile::base::windows::motd
 class profile::base::windows::motd (
-  $content,
+  String $content,
 ) {
   registry_value { '32:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\policies\system\legalnoticecaption':
     ensure => present,

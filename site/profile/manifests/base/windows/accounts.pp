@@ -12,7 +12,7 @@
 #   include profile::base::windows::accounts or assign in PE classifier
 # == Class: profile::base::windows::accounts
 class profile::base::windows::accounts (
-  $users,
+  Hash $users,
 ) {
   # Add all dynamic accounts
   each ($users) | $name, $user | {

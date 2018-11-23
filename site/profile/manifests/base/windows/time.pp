@@ -12,8 +12,8 @@
 #   include profile::base::windows::time or assign in PE classifier
 # == Class: profile::base::windows::time
 class profile::base::windows::time (
-  $timezone,
-  $ntp_servers,
+  String $timezone,
+  String $ntp_servers,
 ) {
   class { 'winntp':
     servers => $ntp_servers,
