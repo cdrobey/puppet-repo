@@ -10,7 +10,7 @@ profile::apps::nginx::proxylist:
   'jenkins.familyroberson.com': 
     proxy: 'http://co-u1604-jenp01.local.familyroberson.com:8080/'
   'splunk.familyroberson.com': 
-    proxy: 'http://co-u1604-sp01.local.familyroberson.com:8080/'
+    proxy: 'http://co-c75-sp01.local.familyroberson.com:8080/'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
