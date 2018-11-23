@@ -13,7 +13,7 @@
 # == Class: profile::base::windows::time
 class profile::base::windows::time (
   String $timezone,
-  String $ntp_servers,
+  Array $ntp_servers,
 ) {
   class { 'winntp':
     servers => $ntp_servers,
