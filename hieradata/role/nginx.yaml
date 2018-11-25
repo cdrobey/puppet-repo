@@ -1,0 +1,42 @@
+---
+profile::apps::nginx::proxyport: 443
+profile::apps::nginx::proxylist:
+  'monitor.familyroberson.com':
+    proxy: 'http://co-c75-idbp01.local.familyroberson.com:3000/'
+  'unifi.familyroberson.com': 
+    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
+  'puppet.familyroberson.com': 
+    proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
+profile::apps::nginx::proxysetheaders:
+  - 'Host $host'
+  - 'X-Real-IP $remote_addr'
+  - 'X-Forwarded-For $proxy_add_x_forwarded_for'
+  - 'Proxy ""'
+  - 'Upgrade $http_upgrade'
+  - 'Connection "Upgrade"'
+
+profile::os::monitor::influxdburi: "http://co-c75-idbp01.local.familyroberson.com:8086"
+profile::os::monitor::influxdbname: 'Monitor'
+profile::os::monitor::influxdbinputs: 
+  cpu:
+    totalcpu: true
+    percpu: true
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  diskio: {}
+  processes: {}
+  swap: {}
+  system: {}
+  ping:
+    urls:
+      - 1.1.1.1
+      - 1.0.0.1
+  dns_query:
+    servers: 
+      - 1.1.1.1
+      - 1.0.0.1
+    domains:
+      - "www.google.com"
+profile::os::monitor::influxdbinput_list: {}
