@@ -28,5 +28,15 @@ profile::os::monitor::influxdbinputs:
       PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
       RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
     insecure_skip_verify: true
+  ping:
+    urls:
+      - 1.1.1.1
+      - 1.0.0.1
+  dns_query:
+    servers: 
+      - 1.1.1.1
+      - 1.0.0.1
+    domains:
+      - "www.google.com"
   
 profile::os::monitor::influxdbinput_list: {}

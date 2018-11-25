@@ -29,14 +29,4 @@ profile::os::monitor::influxdbinputs:
   processes: {}
   swap: {}
   system: {}
-  ping:
-    urls:
-      - 1.1.1.1
-      - 1.0.0.1
-  dns_query:
-    servers: 
-      - 1.1.1.1
-      - 1.0.0.1
-    domains:
-      - "www.google.com"
 profile::os::monitor::influxdbinput_list: {}
