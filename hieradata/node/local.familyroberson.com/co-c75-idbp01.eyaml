@@ -1,4 +1,15 @@
 ---
+profile::base::linux::app::update_frequency: 'daily'
+profile::base::linux::app::upgrade_frequency: '1'
+profile::base::linux::app::packages:
+  - mlocate
+  - python
+  - curl
+  - vim
+  - git
+  - net-tools
+  - nut
+
 profile::os::monitor::influxdburi: "http://localhost:8086"
 profile::os::monitor::influxdbname: 'Monitor'
 profile::os::monitor::influxdbinputs: 
