@@ -9,6 +9,7 @@ profile::base::linux::app::packages:
   - git
   - net-tools
   - epel-release
+  - usbutils
 
 profile::os::monitor::influxdburi: "http://localhost:8086"
 profile::os::monitor::influxdbname: 'Monitor'
