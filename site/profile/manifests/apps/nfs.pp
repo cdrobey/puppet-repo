@@ -38,7 +38,7 @@ class profile::apps::nfs (
   class { 'nfs':
     server_enabled => true
   }
-  nfs::server::export{ '/mnt/vmware':
+  nfs::server::export{ '/mnt/fs01/vmware':
     ensure  => 'mounted',
     clients => '10.1.1.0/24(rw,insecure,async,no_root_squash) localhost(rw)'
   }
