@@ -12,6 +12,7 @@
 # == Class: role::nas
 class role::nas {
   include profile::base
-  include profile::os::monitor
+  #include profile::os::monitor
   include profile::apps::samba
+  include profile::apps::nfs
 }

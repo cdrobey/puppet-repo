@@ -55,6 +55,7 @@ mod 'graylog-graylog', '0.6.0'
 mod 'elastic-elastic_stack', '6.2.4'
 mod 'richardc-datacat', '0.6.2'
 mod 'puppet-splunk', '7.3.0'
+mod 'derdanne-nfs', '2.0.10'
 
 mod 'puppet-letsencrypt',
   :git    => 'https://github.com/voxpupuli/puppet-letsencrypt.git',
