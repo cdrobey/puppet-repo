@@ -11,7 +11,7 @@
 #   include profile::apps::nfs or assign in PE classifier
 # == Class: profile::apps::nfs
 class profile::apps::nfs (
-  Hash $exports = undef,
+  Hash $exports = {},
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
