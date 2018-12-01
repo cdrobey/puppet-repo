@@ -1,6 +1,6 @@
 ---
 profile::base::windows::accounts::users:
-  'admin':
+  'chris':
     ensure: present
     password: >
       ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
