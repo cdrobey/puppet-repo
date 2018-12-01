@@ -34,7 +34,16 @@ class profile::apps::nfs (
     proto  => tcp,
     action =>  accept,
   }
-
+    firewall { '304 allow udp communication to mountd':
+    dport  => [20048],
+    proto  => udp,
+    action =>  accept,
+  }
+  firewall { '305 allow tcp communication to mountd':
+    dport  => [20048],
+    proto  => tcp,
+    action =>  accept,
+  }
   class { 'nfs':
     server_enabled => true
   }
