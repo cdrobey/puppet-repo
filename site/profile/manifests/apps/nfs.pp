@@ -41,18 +41,10 @@ class profile::apps::nfs (
   }
 
   class { 'nfs':
-      server_enabled => true
+    server_enabled => true
   }
-  nfs::server::export{ '/data_folder':
-      ensure  => 'mounted',
-      clients => '10.0.0.0/24(rw,insecure,async,no_root_squash) localhost(rw)'
-    }
-  }
-
-  $exports.each | $export_name, $exports | {
-    nfs::server::share { $export_name:
-      ensure  => 'mounted'
-      clients => $exports['clients'],
-    }
+  nfs::server::export{ '/mnt/vmware':
+    ensure  => 'mounted',
+    clients => '10.0.0.0/24(rw,insecure,async,no_root_squash) localhost(rw)'
   }
 }
