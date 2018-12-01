@@ -14,11 +14,6 @@ class profile::apps::nfs (
   Hash $exports = {},
 ){
 
-  firewall { '300 allow tcp communication to smbd/nbmd':
-    dport  => [137, 138, 139, 445],
-    proto  => tcp,
-    action =>  accept,
-  }
   firewall { '300 allow udp communication to nfsd':
     dport  => [111],
     proto  => udp,
