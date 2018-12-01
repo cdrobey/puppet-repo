@@ -33,16 +33,10 @@ class profile::apps::samba (
     security      => 'user'
   }
 
-  $shares.each | $share_name, $share | {
-    samba::server::share { $share_name:
-      comment   => $share['comment'],
-      path      => $share['path'],
-      browsable => $share['browsable'],
-    }
-  }
   $users.each | $user_name, $user | {
-    samba::server::user {$user_name:
-      password  => $user['password']
+    smb_user {$user_name:
+      ensure   => present,
+      password => $user['password']
     }
   }
 }
