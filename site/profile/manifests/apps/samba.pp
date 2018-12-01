@@ -31,7 +31,7 @@ class profile::apps::samba (
     adminuser          => 'administrator',
     adminpassword      => 'c0mPL3xe_P455woRd',
     sambaloglevel      => 1,
-    joindomain         => false,
+    join_domain        => false,
     logtosyslog        => true,
     sambaclassloglevel => {
       'smb'     => 2,
