@@ -12,8 +12,8 @@
 # == Class: profile::apps::samba
 class profile::apps::samba (
   String $workgroup = 'HOME',
-  Hash $users = undef,
-  Hash $shares = undef,
+  Hash $users = [],
+  Hash $shares = [],
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
