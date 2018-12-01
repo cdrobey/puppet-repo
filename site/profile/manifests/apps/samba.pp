@@ -27,7 +27,7 @@ class profile::apps::samba (
     action =>  accept,
   }
 
-  class {'samba::server':
+  class {'samba::classic':
     workgroup     => $workgroup,
     server_string => 'Samba Server',
     security      => 'user'
