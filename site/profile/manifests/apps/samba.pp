@@ -11,9 +11,9 @@
 #   include profile::apps::samba or assign in PE classifier
 # == Class: profile::apps::samba
 class profile::apps::samba (
-  $workgroup,
-  $users,
-  $shares,
+  String $workgroup = 'HOME',
+  Hash $users = undef,
+  Hash $shares = undef,
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
