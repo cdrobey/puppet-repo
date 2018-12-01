@@ -27,16 +27,45 @@ class profile::apps::samba (
     action =>  accept,
   }
 
-  class {'samba::classic':
-    workgroup     => $workgroup,
-    server_string => 'Samba Server',
-    security      => 'user'
+  class { 'samba::classic':
+    domain             => 'LOCAL',
+    realm              => 'local.familyroberson.com',
+    smbname            => 'NAS',
+    adminuser          => 'administrator',
+    adminpassword      => 'c0mPL3xe_P455woRd',
+    sambaloglevel      => 1,
+    joindomain         => false,
+    logtosyslog        => true,
+    sambaclassloglevel => {
+      'smb'     => 2,
+      'idmap'   => 2,
+      'winbind' => 2,
+    },
+    globaloptions      => {
+      'winbind cache time' => 10,
+    },
   }
 
-  $users.each | $user_name, $user | {
-    smb_user {$user_name:
-      ensure   => present,
-      password => $user['password']
-    }
+  # recover uid and gid from Domain Controler (unix attributes)
+  samba::idmap { 'Domain DC':
+    domain      => 'DC',
+    idrangemin  => 10000,
+    idrangemax  => 19999,
+    backend     => 'ad',
+    schema_mode => 'rfc2307',
   }
+
+  # a default map (*) is needed for idmap to work
+  samba::idmap { 'Domain *':
+    domain     => '*',
+    idrangemin => 100000,
+    idrangemax => 199999,
+    backend    => 'tdb',
+  }
+#  $users.each | $user_name, $user | {
+#    smb_user {$user_name:
+#      ensure   => present,
+#      password => $user['password']
+#    }
+#  }
 }
