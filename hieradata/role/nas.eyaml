@@ -1,8 +1,6 @@
 ---
-profile::base::windows::accounts::users:
-  'chris':
-    ensure: present
-    password: >
+profile::base::windows::accounts::ldap_user: 'admin'
+profile::base::windows::accounts::ldap_password: >
       ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
       DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
       plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT

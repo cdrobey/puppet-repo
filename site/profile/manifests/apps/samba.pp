@@ -11,6 +11,8 @@
 #   include profile::apps::samba or assign in PE classifier
 # == Class: profile::apps::samba
 class profile::apps::samba (
+  String $ldap_user,
+  String $ldap_password,
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
@@ -43,26 +45,14 @@ class profile::apps::samba (
     },
   }
 
-  # recover uid and gid from Domain Controler (unix attributes)
   samba::idmap { 'Domain DC':
-    domain      => 'DC',
-    idrangemin  => 10000,
-    idrangemax  => 19999,
-    backend     => 'ad',
-    schema_mode => 'rfc2307',
+    domain       => '*',
+    idrangemin   => 10000,
+    idrangemax   => 19999,
+    backend      => 'ldap',
+    ldap_base_dn => 'o=5aeb5ceb0522cc3e85b134bc,dc=jumpcloud,dc=com',
+    ldap_user_dn => $ldap_user,
+    ldap_passwd  => $ldap_password,
+    ldap_url     => 'ldap://ldap.jumpcloud.com',
   }
-
-  # a default map (*) is needed for idmap to work
-  samba::idmap { 'Domain *':
-    domain     => '*',
-    idrangemin => 100000,
-    idrangemax => 199999,
-    backend    => 'tdb',
-  }
-#  $users.each | $user_name, $user | {
-#    smb_user {$user_name:
-#      ensure   => present,
-#      password => $user['password']
-#    }
-#  }
 }
