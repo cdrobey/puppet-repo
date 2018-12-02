@@ -1,5 +1,5 @@
 ---
-profile::apps::samba::ldap_user: 'admin'
+profile::apps::samba::ldap_user: 'uid=admin,ou=Users,o=5aeb5ceb0522cc3e85b134bc,dc=jumpcloud,dc=com'
 profile::apps::samba::ldap_password: >
   ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
   DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
