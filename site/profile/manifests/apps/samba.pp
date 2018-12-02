@@ -54,4 +54,10 @@ class profile::apps::samba (
     groups     => ['domain users',
       'administrators'],
   }
+  samba::share { 'Test Share':
+    path    => '/mnt/fs00/test',
+    options => {
+      'browsable' => 'Yes',
+    },
+  }
 }
