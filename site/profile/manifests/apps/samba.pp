@@ -27,13 +27,15 @@ class profile::apps::samba (
   }
 
   class { 'samba::classic':
-    domain        => 'local',
-    realm         => 'local.familyroberson.com',
-    smbname       => $facts['hostname'],
-    security      => 'user',
-    sambaloglevel => 1,
-    join_domain   => false,
-    globaloptions => {
+    domain         => 'local',
+    realm          => 'local.familyroberson.com',
+    smbname        => $facts['hostname'],
+    security       => 'user',
+    sambaloglevel  => 1,
+    join_domain    => false,
+    manage_winbind => false,
+    krbconf        => false,
+    globaloptions  => {
       'idmap config * : backend' => 'tdb',
       'ldap suffix'              => 'dc=jumpcloud,dc=com',
       'ldap admin dn'            => $ldap_user,
