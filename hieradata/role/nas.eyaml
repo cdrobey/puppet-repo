@@ -1,6 +1,6 @@
 ---
+profile::apps::samba::nodename: 'nas'
 profile::apps::samba::workgroup: 'local'
-profile::apps::samba::node: 'nas'
 profile::apps::samba::realm: 'local.familyroberson.com'
 
 profile::base::linux::accounts::users:
