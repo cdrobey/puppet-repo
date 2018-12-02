@@ -31,7 +31,7 @@ class profile::apps::samba (
     realm         => 'local.familyroberson.com',
     smbname       => $facts['hostname'],
     security      => 'user',
-    sambaloglevel => '1',
+    sambaloglevel => 1,
     join_domain   => false,
   }
 
