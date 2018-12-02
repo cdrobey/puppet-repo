@@ -41,6 +41,13 @@ class profile::apps::samba (
       'passdb backend' => 'smbpasswd'
     }
   }
+  smb_user { 'test':
+    ensure         => present,
+    password       => 'PassW0rd',
+    force_password => true,
+    groups         => ['domain users'],
+  }
+
   samba::share { 'Test Share':
     path    => '/mnt/fs00/test',
     options => {
