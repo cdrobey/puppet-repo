@@ -28,21 +28,16 @@ class profile::apps::samba (
 
   class { 'samba::classic':
     domain        => 'local',
-    realm         => 'local.familyroberson.com',
     smbname       => $facts['hostname'],
     security      => 'user',
     sambaloglevel => 1,
     join_domain   => false,
-  }
-
-  samba::idmap { 'Domain DC':
-    domain       => '*',
-    idrangemin   => 10000,
-    idrangemax   => 19999,
-    backend      => 'ldap',
-    ldap_base_dn => 'o=5aeb5ceb0522cc3e85b134bc,dc=jumpcloud,dc=com',
-    ldap_user_dn => $ldap_user,
-    ldap_passwd  => $ldap_password,
-    ldap_url     => 'ldap://ldap.jumpcloud.com',
+    globaloptions => {
+      'idmap config * : backend' => 'tdb',
+      'ldap suffix'              => 'dc=jumpcloud,dc=com',
+      'ldap admin dn'            => $ldap_user,
+      'ldap ssl'                 => 'no',
+      'passdb backend'           => 'ldapsam:ldaps://ldap.jumpcloud.com:636',
+    }
   }
 }
