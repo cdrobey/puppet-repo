@@ -30,11 +30,10 @@ class profile::apps::samba (
     realm          => $facts['domain'],
     smbname        => $facts['hostname'],
     security       => 'user',
-    sambaloglevel  => 1,
+    sambaloglevel  => 5,
     join_domain    => false,
     manage_winbind => false,
     krbconf        => false,
-    sambaloglevel  => 5,
   }
   smb_user { 'test':
     ensure         => present,
