@@ -49,7 +49,7 @@ class profile::apps::samba (
   }
 
   samba::share { 'Test Share':
-    path    => '/mnt/fs00/test',
+    path    => '/mnt/fs01/test',
     options => {
       'browsable' => 'Yes',
     },
