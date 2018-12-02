@@ -27,7 +27,7 @@ class profile::apps::samba (
 
   class { 'samba::classic':
     domain         => $workgroup,
-    realm          => '*',
+    realm          => $facts['fqdn'],
     smbname        => $facts['hostname'],
     security       => 'user',
     sambaloglevel  => 5,
