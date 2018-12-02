@@ -34,6 +34,7 @@ class profile::apps::samba (
     join_domain    => false,
     manage_winbind => false,
     krbconf        => false,
+    sambaloglevel  => 5,
   }
   smb_user { 'test':
     ensure         => present,
