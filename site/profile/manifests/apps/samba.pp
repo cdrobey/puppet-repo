@@ -28,6 +28,7 @@ class profile::apps::samba (
 
   class { 'samba::classic':
     domain        => 'local',
+    realm         => 'local.familyroberson.com',
     smbname       => $facts['hostname'],
     security      => 'user',
     sambaloglevel => 1,
