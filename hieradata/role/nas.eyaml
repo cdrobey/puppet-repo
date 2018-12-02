@@ -1,2 +1,2 @@
 ---
-profile::apps::samba::workgroup: 'WORKGROUP'
+profile::apps::samba::workgroup: 'LOCAL'
