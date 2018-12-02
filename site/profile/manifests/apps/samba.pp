@@ -11,8 +11,7 @@
 #   include profile::apps::samba or assign in PE classifier
 # == Class: profile::apps::samba
 class profile::apps::samba (
-  String $ldap_user,
-  String $ldap_password,
+  String $workgroup,
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
@@ -27,20 +26,32 @@ class profile::apps::samba (
   }
 
   class { 'samba::classic':
-    domain         => 'local',
-    realm          => 'local.familyroberson.com',
+    domain         => $workgroup,
+    realm          => $facts['domain'],
     smbname        => $facts['hostname'],
     security       => 'user',
     sambaloglevel  => 1,
     join_domain    => false,
     manage_winbind => false,
     krbconf        => false,
-    globaloptions  => {
-      'idmap config * : backend' => 'tdb',
-      'ldap suffix'              => 'dc=jumpcloud,dc=com',
-      'ldap admin dn'            => $ldap_user,
-      'ldap ssl'                 => 'no',
-      'passdb backend'           => 'ldapsam:ldaps://ldap.jumpcloud.com:636',
-    }
+  }
+  smb_user { 'test':
+    ensure         => present,
+    password       => 'PassW0rd',
+    groups         => ['family'],
+    attributes     => {
+      uidNumber   => '15000',
+      gidNumber   => '15000',
+    },
+  }
+  smb_group { 'family':
+    ensure     => present,
+    scope      => 'Domain',
+    type       => 'Security',
+    attributes => {
+      gidNumber        => '15000',
+    },
+    groups     => ['domain users',
+      'administrators'],
   }
 }
