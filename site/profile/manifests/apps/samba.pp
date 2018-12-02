@@ -27,22 +27,11 @@ class profile::apps::samba (
   }
 
   class { 'samba::classic':
-    domain             => 'LOCAL',
-    realm              => 'local.familyroberson.com',
-    smbname            => 'NAS',
-    adminuser          => 'administrator',
-    adminpassword      => 'c0mPL3xe_P455woRd',
-    sambaloglevel      => 1,
-    join_domain        => false,
-    logtosyslog        => true,
-    sambaclassloglevel => {
-      'smb'     => 2,
-      'idmap'   => 2,
-      'winbind' => 2,
-    },
-    globaloptions      => {
-      'winbind cache time' => 10,
-    },
+    domain        => 'local',
+    realm         => 'familyroberson.com',
+    smbname       => $facts['hostname'],
+    sambaloglevel => 1,
+    join_domain   => false,
   }
 
   samba::idmap { 'Domain DC':
