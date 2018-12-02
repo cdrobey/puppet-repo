@@ -35,25 +35,6 @@ class profile::apps::samba (
     manage_winbind => false,
     krbconf        => false,
   }
-  smb_user { 'test':
-    ensure         => present,
-    password       => 'PassW0rd',
-    groups         => ['family'],
-    attributes     => {
-      uidNumber   => '15000',
-      gidNumber   => '15000',
-    },
-  }
-  smb_group { 'family':
-    ensure     => present,
-    scope      => 'Domain',
-    type       => 'Security',
-    attributes => {
-      gidNumber        => '15000',
-    },
-    groups     => ['domain users',
-      'administrators'],
-  }
   samba::share { 'Test Share':
     path    => '/mnt/fs00/test',
     options => {
