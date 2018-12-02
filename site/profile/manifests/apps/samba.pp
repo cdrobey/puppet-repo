@@ -34,7 +34,7 @@ class profile::apps::samba (
     join_domain    => false,
     manage_winbind => false,
     krbconf        => false,
-    options        => {
+    globaloptions  => {
       'local master'   => 'no',
       'passdb backend' => 'smbpasswd'
     }
