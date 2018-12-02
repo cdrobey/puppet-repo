@@ -11,7 +11,9 @@
 #   include profile::apps::samba or assign in PE classifier
 # == Class: profile::apps::samba
 class profile::apps::samba (
+  String $nodename,
   String $workgroup,
+  String $realm,
 ){
 
   firewall { '300 allow tcp communication to smbd/nbmd':
@@ -27,8 +29,8 @@ class profile::apps::samba (
 
   class { 'samba::classic':
     domain         => $workgroup,
-    realm          => $facts['fqdn'],
-    smbname        => $facts['hostname'],
+    realm          => $realm,
+    smbname        => $nodename,
     security       => 'user',
     sambaloglevel  => 5,
     join_domain    => false,
