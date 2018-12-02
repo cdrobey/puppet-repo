@@ -27,13 +27,17 @@ class profile::apps::samba (
 
   class { 'samba::classic':
     domain         => $workgroup,
-    realm          => $facts['domain'],
+    realm          => '*',
     smbname        => $facts['hostname'],
     security       => 'user',
     sambaloglevel  => 5,
     join_domain    => false,
     manage_winbind => false,
     krbconf        => false,
+    options        => {
+      'local master'   => 'no',
+      'passdb backend' => 'smbpasswd'
+    }
   }
   samba::share { 'Test Share':
     path    => '/mnt/fs00/test',
