@@ -14,5 +14,4 @@ class role::monitormaster {
   include profile::base
   include profile::os::monitor
   include profile::apps::monitormaster
-  include profile::os::nut
 }
