@@ -1,17 +1,18 @@
-# test
+# docker
 #
-# Install and configure test system profiles for testting.
+# Install and configure docker system profiles for docker.
 #
-# @summary  This role delivers a test configuration for checking different profiles in a development
-#   environment.
+# @summary  This role delivers a docker configuration for incorporating the docker infrastructure
+#           and loads the appropriate container configuration.
 #
 # @param    none
 #
 # @example
-#   include role::test or assign in PE classifier
-# == Class: role::test
+#   include role::docker or assign in PE classifier
+# == Class: role::docker
 class role::docker {
   include profile::base
   include profile::os::monitor
   include profile::os::docker
+  include profile::apps::cd4pe
 }
