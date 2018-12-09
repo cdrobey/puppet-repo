@@ -64,7 +64,7 @@ class profile::apps::cd4pe (
 
   archive { 'bootstrap-cd4pe-artifactory-data_s3':
     ensure       => present,
-    source       => 'puppet:///modules/profile/apps/cd4pe/cd4pe-artifactory-data_s3.tar.gz',
+    source       => 'puppet:///modules/profile/apps/cd4pe-artifactory-data_s3.tar.gz',
     path         => '/tmp/bootstrap-cd4pe-artifactory-data_s3.tar.gz',
     extract_path => '/var/lib/docker/volumes/data_s3/_data',
     creates      => '/var/lib/docker/volumes/data_s3/_data/etc',
