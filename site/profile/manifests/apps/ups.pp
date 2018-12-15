@@ -21,6 +21,7 @@ class profile::apps::ups (
 
   file { '/etc/apcupsd/ups_metrics.sh':
     ensure  => file,
+    mode    => '0770'
     source  => 'puppet:///modules/profile/apps/ups_metrics.epp',
   }
 }
