@@ -21,6 +21,6 @@ class profile::apps::ups (
 
   file { '/etc/apcupsd/ups_metrics.sh':
     ensure  => file,
-    content => epp('app/ups/ups_metrics.epp'),
+    source  => 'puppet:///modules/profile/apps/cd4pe-artifactory-data_s3.tar.gz/ups/ups_metrics.epp',
   }
 }
