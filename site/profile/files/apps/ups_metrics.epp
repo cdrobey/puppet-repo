@@ -1,0 +1,23 @@
+#!/bin/bash
+
+UPS_NAME="ups"
+UPS_HOST="fw"
+UPS_PORT="3551"
+
+GATHER_COMMAND="apcaccess -u status ${UPS_HOST}:${UPS_PORT} ${UPS_NAME}"
+
+(
+  M_BCHARGE=$(${GATHER_COMMAND} | grep BCHARGE | cut -d' ' -f4)
+  M_LINEV=$(${GATHER_COMMAND} | grep LINEV | cut -d' ' -f4)
+  M_LOADPCT=$(${GATHER_COMMAND} | grep LOADPCT | cut -d' ' -f4)
+  M_NOMPOWER=$(${GATHER_COMMAND} | grep NOMPOWER | cut -d' ' -f3)
+  M_TIMELEFT=$(${GATHER_COMMAND} | grep TIMELEFT | cut -d' ' -f4)
+
+  M_WATTAGE=$(echo "${M_LOADPCT}*.01*${M_NOMPOWER}" | bc)
+
+  # cpu,host=server01,region=uswest value=1 1434055562000000000
+  METRICS="bcharge=${M_BCHARGE},linev=${M_LINEV},loadpct=${M_LOADPCT},nompower=$
+{M_NOMPOWER},wattage=${M_WATTAGE},timeleft=${M_TIMELEFT}"
+
+  echo ups,host=$(hostname -f),ups=${UPS_NAME} ${METRICS} $(date +%s)
+) 2>/dev/null
