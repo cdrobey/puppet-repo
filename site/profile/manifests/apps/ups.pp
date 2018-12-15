@@ -12,16 +12,15 @@
 #   include profile::windows or assign in PE classifier
 # == Class: profile::apps::unifi
 class profile::apps::ups (
-  $repo_release = 'stable',
-  $package_ensure = 'latest',
+  String $package_ensure = 'installed',
 ){
   package { 'apcupsd':
-    ensure  => installed,
+    ensure  => $package_resource,
   }
 
   file { '/etc/apcupsd/ups_metrics.sh':
     ensure  => file,
-    mode    => '0770'
+    mode    => "770",
     source  => 'puppet:///modules/profile/apps/ups_metrics.epp',
   }
 }
