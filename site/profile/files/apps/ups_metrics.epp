@@ -12,6 +12,6 @@ M_NOMPOWER=$(${GATHER_COMMAND} | grep NOMPOWER | cut -d' ' -f3)
 M_WATTAGE=$(echo $M_LOADPCT*.01*$M_NOMPOWER | bc)
 M_DATE=$(date +%s)
 
-INFLUX="ups,host=${UPS_HOST},ups=${UPS_NAME} bcharge=${M_BCHARGE},loadpct=${M_LOADPCT},nompower=${M_NOMPOWER},wattage=${M_WATTAGE} ${M_DATE}"
+INFLUX="ups,host=${UPS_HOST},ups=${UPS_NAME} bcharge=${M_BCHARGE},loadpct=${M_LOADPCT},nompower=${M_NOMPOWER},wattage=${M_WATTAGE}"
 
 echo "${INFLUX}"
