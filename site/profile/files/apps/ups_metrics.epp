@@ -14,4 +14,4 @@ M_DATE=$(date +%s)
 
 INFLUX="ups,host=${UPS_HOST},ups=${UPS_NAME} bcharge=${M_BCHARGE},loadpct=${M_LOADPCT},nompower=${M_NOMPOWER},wattage=${M_WATTAGE} ${M_DATE}"
 
-curl -i -XPOST 'http://localhost:8086/write?db=Monitor' --data-binary "${INFLUX}"
+echo "${INFLUX}"

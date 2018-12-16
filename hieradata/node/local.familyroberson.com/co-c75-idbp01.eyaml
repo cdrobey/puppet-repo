@@ -50,5 +50,8 @@ profile::os::monitor::influxdbinputs:
       - 1.0.0.1
     domains:
       - "www.google.com"
+  exec:
+    commands:
+      - /etc/apcupsd/ups_metrics.sh
   
 profile::os::monitor::influxdbinput_list: {}
