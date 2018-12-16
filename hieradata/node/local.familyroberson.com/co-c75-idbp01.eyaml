@@ -53,5 +53,7 @@ profile::os::monitor::influxdbinputs:
   exec:
     commands:
       - /etc/apcupsd/ups_metrics.sh
+    timeout: 5s
+    data_format: influx
   
 profile::os::monitor::influxdbinput_list: {}
