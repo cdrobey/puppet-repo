@@ -22,7 +22,7 @@ class profile::apps::ups (
 
   file { '/etc/apcupsd/ups_metrics.sh':
     ensure  => file,
-    mode    => "770",
+    mode    => "777",
     source  => 'puppet:///modules/profile/apps/ups_metrics.epp',
   }
 }
