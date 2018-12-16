@@ -9,9 +9,10 @@ GATHER_COMMAND="apcaccess -u status ${UPS_HOST}:${UPS_PORT} ${UPS_NAME}"
 M_BCHARGE=$(${GATHER_COMMAND} | grep BCHARGE | cut -d' ' -f4)
 M_LOADPCT=$(${GATHER_COMMAND} | grep LOADPCT | cut -d' ' -f4)
 M_NOMPOWER=$(${GATHER_COMMAND} | grep NOMPOWER | cut -d' ' -f3)
-M_WATTAGE=$(echo $M_LOADPCT*.01*$M_NOMPOWER | bc)
-M_DATE=$(date +%s)
+M_TIMELEFT=$(${GATHER_COMMAND} | grep TIMELEFT | cut -d' ' -f3)
 
-INFLUX="ups,host=${UPS_HOST},ups=${UPS_NAME} bcharge=${M_BCHARGE},loadpct=${M_LOADPCT},nompower=${M_NOMPOWER},wattage=${M_WATTAGE}"
+M_WATTAGE=$(echo $M_LOADPCT*.01*$M_NOMPOWER | bc)
+
+INFLUX="ups,host=${UPS_HOST},ups=${UPS_NAME} bcharge=${M_BCHARGE},loadpct=${M_LOADPCT},nompower=${M_NOMPOWER},wattage=${M_WATTAGE},timeleft=${M_TIMELEFT}"
 
 echo "${INFLUX}"
