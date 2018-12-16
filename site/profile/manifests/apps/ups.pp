@@ -17,7 +17,7 @@ class profile::apps::ups (
   package { 'apcupsd':
     ensure  => $package_resource,
   }
-  pacage {'bc':
+  package {'bc':
     ensure => $package_resource}
 
   file { '/etc/apcupsd/ups_metrics.sh':
