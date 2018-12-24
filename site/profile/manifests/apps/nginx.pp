@@ -33,6 +33,10 @@ class profile::apps::nginx (
       ssl_key          => '/etc/ssl/public/familyroberson.key',
       proxy            => $proxy['proxy'],
       proxy_set_header => $proxysetheaders,
+      server_cfg_append    => {
+        'ssl_verify_client'      => 'off',
+        'ssl_verify_depth'       => 1,
+      },
     }
   }
 }
