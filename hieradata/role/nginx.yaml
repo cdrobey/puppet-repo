@@ -3,7 +3,7 @@ profile::apps::nginx::proxylist:
   'monitor.familyroberson.com':
     proxy: 'http://co-c75-idbp01.local.familyroberson.com:3000/'
   'unifi.familyroberson.com': 
-    proxy: 'http://co-u1604-unip01.local.familyroberson.com:8080/'
+    proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
   'puppet.familyroberson.com': 
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'omv.familyroberson.com': 
