@@ -27,8 +27,8 @@ class profile::apps::nginx (
 
   nginx::resource::server { $facts['hostname']:
     ensure              => present,
-    www_root            => '/var/www',
-    location_cfg_append => { 'rewrite' => '^ https://$server_name$request_uri? permanent' },
+    listen_port         => '80',
+    location_cfg_append => { 'rewrite' => 'return 301 https://$server_name$request_uri;' },
   }
 
   $proxylist.each | $proxy_name, $proxy | {
