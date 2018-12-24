@@ -34,7 +34,7 @@ class profile::apps::nginx (
 #  }
 
   $proxylist.each | $proxy_name, $proxy | {
-    nginx::resource::server { $proxy:
+    nginx::resource::server { $proxy_name:
       use_default_location => false,
       index_files          => [],
       server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
