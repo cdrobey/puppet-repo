@@ -28,7 +28,7 @@ class profile::apps::nginx (
   nginx::resource::server { 'co-c75-nginxp01.local.familyroberson.com':
     use_default_location => false,
     index_files          => [],
-    server_cfg_append    => { 'return' => '301 https://$server_name$request_uri;' },
+    server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
   }
 
   $proxylist.each | $proxy_name, $proxy | {
