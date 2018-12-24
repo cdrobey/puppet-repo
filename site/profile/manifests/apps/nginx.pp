@@ -35,9 +35,7 @@ class profile::apps::nginx (
 
   $proxylist.each | $proxy_name, $proxy | {
     nginx::resource::server { "${proxy_name}-80":
-          server_name      => [ $proxy_name ],
-
-      server_name          => $proxy_name,
+      server_name      => [ $proxy_name ],
       listen_port          => 80,
       use_default_location => false,
       index_files          => [],
