@@ -16,8 +16,8 @@ class profile::apps::nginx (
   Array $proxysetheaders,
 ){
 
-  firewall { '300 allow communication to InfluxDB and Grafana':
-    dport  => [80, 443],
+  firewall { '300 allow communication to https':
+    dport  => [ 443 ],
     proto  => tcp,
     action =>  accept,
   }
@@ -25,17 +25,11 @@ class profile::apps::nginx (
   class { 'nginx': }
 
   $proxylist.each | $proxy_name, $proxy | {
-    nginx::resource::server { "${proxy_name}-80":
-      server_name      => [ $proxy_name ],
-      listen_port          => 80,
-      use_default_location => false,
-      index_files          => [],
-      server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
-    }
-
-    nginx::resource::server{ "${proxy_name}-443":
+    nginx::resource::server{ "${proxy_name}":
       server_name      => [ $proxy_name ],
       listen_port      => 443,
+      ssl_port         => 443,
+      ssl_only         => true,
       ssl              => true,
       ssl_cert         => '/etc/ssl/public/familyroberson.crt',
       ssl_key          => '/etc/ssl/public/familyroberson.key',
