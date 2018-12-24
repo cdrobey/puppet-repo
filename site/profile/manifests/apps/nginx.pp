@@ -26,8 +26,7 @@ class profile::apps::nginx (
   class { 'nginx': }
 
   nginx::resource::server { 'co-c75-nginxp01.local.familyroberson.com':
-    ensure              => present,
-    location_cfg_append => { 'rewrite' => '^ https://$server_name$request_uri? permanent' },
+    server_cfg_append => { 'return 301' => 'https://$server_name$request_uri;' },
   }
 
   $proxylist.each | $proxy_name, $proxy | {
