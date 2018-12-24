@@ -12,6 +12,7 @@
 # == Class: profile::apps::nginx
 # test comment
 class profile::apps::nginx (
+  Array $serverlist,
   Integer $proxyport,
   Hash $proxylist,
   Array $proxysetheaders,
@@ -27,7 +28,7 @@ class profile::apps::nginx (
 
   nginx::resource::server { 'default':
     use_default_location => false,
-    server_name          => [ 'monitor.familyroberson.com', 'unifi.familyroberson.com', 'puppet.familyroberson.com' ],
+    server_name          => $serverlist,
     index_files          => [],
     server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
   }

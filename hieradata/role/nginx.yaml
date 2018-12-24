@@ -1,4 +1,9 @@
 ---
+profile::apps::nginx::serverlist:
+  - 'co-c75-idbp01.local.familyroberson.com'
+  - 'co-u1604-unip01.local.familyroberson.com'
+  - 'co-u1604-pmp01.local.familyroberson.com'
+  - 'co-omv4-ovp01.local.familyroberson.com'
 profile::apps::nginx::proxyport: 443
 profile::apps::nginx::proxylist:
   'monitor.familyroberson.com':
