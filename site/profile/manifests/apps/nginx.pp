@@ -30,7 +30,7 @@ class profile::apps::nginx (
     use_default_location => false,
     server_name          => ['*.familyroberson.com'],
     index_files          => [],
-    server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
+    server_cfg_append    => { 'return' => '301 https://$host$request_uri' },
   }
 
   $proxylist.each | $proxy_name, $proxy | {
