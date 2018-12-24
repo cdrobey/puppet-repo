@@ -27,7 +27,7 @@ class profile::apps::nginx (
 
   nginx::resource::server { $facts['hostname']:
     ensure              => present,
-    listen_port         => '80',
+    listen_port         => 80,
     location_cfg_append => { 'rewrite' => 'return 301 https://$server_name$request_uri;' },
   }
 
