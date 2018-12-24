@@ -26,20 +26,14 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-#  nginx::resource::server { 'default':
-#    use_default_location => false,
-#    server_name          => ['*.familyroberson.com'],
-#    index_files          => [],
-#    server_cfg_append    => { 'return' => '301 https://$host$request_uri' },
-#  }
+  nginx::resource::server { 'default':
+    use_default_location => false,
+    server_name          => ['*.familyroberson.com'],
+    index_files          => [],
+    server_cfg_append    => { 'return' => '301 https://*.familyroberson.com?request_uri' },
+  }
 
   $proxylist.each | $proxy_name, $proxy | {
-    nginx::resource::server { $proxy_name:
-      use_default_location => false,
-      index_files          => [],
-      server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
-    }
-
     nginx::resource::server{ $proxy_name:
       listen_port      => $proxyport,
       ssl              => true,
