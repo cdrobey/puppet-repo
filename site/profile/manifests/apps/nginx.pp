@@ -25,7 +25,7 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  nginx::resource::server { "${name}.${::domain}":
+  nginx::resource::server { "$facts['hostname'].$facts['fqdq']":
     ensure              => present,
     www_root            => '/var/www',
     location_cfg_append => { 'rewrite' => '^ https://$server_name$request_uri? permanent' },
