@@ -1,4 +1,19 @@
 ---
+profile::os::monitor::influxdburi: "http://co-c75-idbp01:8086.local.familyroberson.com"
+profile::os::monitor::influxdbname: 'Monitor'
+profile::os::monitor::influxdbinputs: 
+  cpu:
+    totalcpu: true
+    percpu: true
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  swap: {}
+  system: {}
+  
+profile::os::monitor::influxdbinput_list: {}
+
 profile::apps::nginx::proxyport: 443
 profile::apps::nginx::proxylist:
   'monitor.familyroberson.com':
@@ -14,18 +29,3 @@ profile::apps::nginx::proxysetheaders:
   - 'Proxy ""'
   - 'Upgrade $http_upgrade'
   - 'Connection "Upgrade"'
-
-profile::os::monitor::influxdburi: "http://co-c75-idbp01:8086.local.familyroberson.com"
-profile::os::monitor::influxdbname: 'Monitor'
-profile::os::monitor::influxdbinputs: 
-  cpu:
-    totalcpu: true
-    percpu: true
-  mem: {}
-  io: {}
-  net: {}
-  disk: {}
-  swap: {}
-  system: {}
-  
-profile::os::monitor::influxdbinput_list: {}
