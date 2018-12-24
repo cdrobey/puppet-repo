@@ -27,9 +27,9 @@ class profile::apps::nginx (
   $proxylist.each | $proxy_name, $proxy | {
     nginx::resource::server{ "${proxy_name}":
       server_name      => [ $proxy_name ],
+      listen_port      => 443,
       ssl_port         => 443,
       ssl              => true,
-      ssl_only         => false,
       ssl_cert         => '/etc/ssl/public/familyroberson.crt',
       ssl_key          => '/etc/ssl/public/familyroberson.key',
       proxy            => $proxy['proxy'],
