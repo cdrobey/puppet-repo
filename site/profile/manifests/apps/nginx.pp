@@ -25,7 +25,7 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
-  nginx::resource::server { 'co-c75-nginxp01':
+  nginx::resource::server { 'default':
     use_default_location => false,
     server_name          => [ 'monitor.familyroberson.com', 'unifi.familyroberson.com', 'puppet.familyroberson.com' ],
     index_files          => [],
