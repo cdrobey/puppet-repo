@@ -7,6 +7,8 @@ profile::apps::nginx::proxylist:
     proxy: 'https://co-u1604-unip01.local.familyroberson.com:8443/'
   'puppet.familyroberson.com': 
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
+  'omv.familyroberson.com': 
+    proxy: 'http://co-omv4-ovp01.local.familyroberson.com/'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
