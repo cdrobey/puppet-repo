@@ -25,6 +25,12 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
+  nginx::resource::server { "${name}.${::domain}":
+    ensure              => present,
+    www_root            => '/var/www',
+    location_cfg_append => { 'rewrite' => '^ https://$server_name$request_uri? permanent' },
+  }
+
   $proxylist.each | $proxy_name, $proxy | {
     nginx::resource::server{ $proxy_name:
       listen_port      => $proxyport,
