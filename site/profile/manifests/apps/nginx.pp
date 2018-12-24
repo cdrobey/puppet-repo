@@ -29,6 +29,7 @@ class profile::apps::nginx (
       server_name      => [ $proxy_name ],
       ssl_port         => 443,
       ssl              => true,
+      ssl_only         => false,
       ssl_cert         => '/etc/ssl/public/familyroberson.crt',
       ssl_key          => '/etc/ssl/public/familyroberson.key',
       proxy            => $proxy['proxy'],
