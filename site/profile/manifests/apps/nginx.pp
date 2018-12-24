@@ -35,6 +35,8 @@ class profile::apps::nginx (
 
   $proxylist.each | $proxy_name, $proxy | {
     nginx::resource::server { "${proxy_name}-80":
+          server_name      => [ $proxy_name ],
+
       server_name          => $proxy_name,
       listen_port          => 80,
       use_default_location => false,
@@ -43,7 +45,7 @@ class profile::apps::nginx (
     }
 
     nginx::resource::server{ "${proxy_name}-443":
-      server_name      => $proxy_name,
+      server_name      => [ $proxy_name ],
       listen_port      => 443,
       ssl              => true,
       ssl_cert         => '/etc/ssl/public/familyroberson.crt',
