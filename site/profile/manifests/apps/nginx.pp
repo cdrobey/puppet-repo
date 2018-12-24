@@ -28,7 +28,7 @@ class profile::apps::nginx (
 
   nginx::resource::server { 'default':
     use_default_location => false,
-    server_name          => '*.familyroberson.com',
+    server_name          => ['*.familyroberson.com'],
     index_files          => [],
     server_cfg_append    => { 'return' => '301 https://$server_name$request_uri' },
   }
