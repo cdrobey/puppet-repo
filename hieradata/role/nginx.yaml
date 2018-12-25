@@ -8,8 +8,6 @@ profile::apps::nginx::proxylist:
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'omv.familyroberson.com': 
     proxy: 'http://co-omv4-ovp01.local.familyroberson.com/'
-  'vcsa.familyroberson.com': 
-    proxy: 'http://co-vcsa-p01.local.familyroberson.com/ui'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
