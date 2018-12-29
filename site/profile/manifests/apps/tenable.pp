@@ -12,7 +12,7 @@
 class profile::apps::tenable (
 ){
     firewall { '300 allow tenable web access':
-        dport  => [ 8443 ],
+        dport  => [ 8834 ],
         proto  => tcp,
         action =>  accept,
     }
