@@ -9,7 +9,7 @@ profile::apps::nginx::proxylist:
   'omv.familyroberson.com': 
     proxy: 'http://co-omv4-ovp01.local.familyroberson.com/'
   'tenable.familyroberson.com': 
-    proxy: 'http://co-c75-tenp01.local.familyroberson.com:8843/'
+    proxy: 'https://co-c75-tenp01.local.familyroberson.com:8843/'
 profile::apps::nginx::proxysetheaders:
   - 'Host $host'
   - 'X-Real-IP $remote_addr'
