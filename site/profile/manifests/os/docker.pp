@@ -14,42 +14,39 @@
 class profile::os::docker (
   Hash $docker_list = {},
 ){
-  sysctl { 'net.ipv4.ip_forward':
-    ensure => present,
-    value  => '1',
-  }
-
-  firewall { '100 snat for network ens192':
-    chain    => 'POSTROUTING',
-    jump     => 'MASQUERADE',
-    proto    => 'all',
-    outiface => 'ens192',
-    table    => 'nat',
-  }
-  firewall { '200 allow http/https access':
-    dport  => [80, 443, 12080, 8443],
-    proto  => tcp,
-    action =>  accept,
-  }
-
   class { 'docker':
     version   => 'latest',
   }
-  docker::image { 'unifi':
-    image => 'linuxserver/unifi',
+  docker::image { 'linuxserver/unifi':
+    image_tag => 'latest',
 
   }
   docker::run { 'unifi':
     image           => 'linuxserver/unifi',
     service_prefix  => 'docker',
-    expose          => ['3478','10001','8080','8081','8443','8843','8880','6789'],
-    ports           => ['3478','10001','8080','8081','8443','8843','8880','6789'],
-    volumes         => ['/unifi', '/config'],
+    expose          => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
+    volumes         => ['/unifi:/config'],
     restart_service => true,
     pull_on_start   => false,
     docker_service  => true,
+    network         => 'unifi-network',
   }
 
+
+['3306', '7000', '8000', '8080', '8081'].each |$port| {
+    firewall { "300 allow cd4pe ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
+  docker_network { 'unifi-network':
+    ensure      => 'present',
+    driver      => 'bridge',
+    ipam_driver => 'default',
+    subnet      => '172.16.100.0/24',
+  }
 
 
 # $docker_list.each | $docker_name, $docker | {
