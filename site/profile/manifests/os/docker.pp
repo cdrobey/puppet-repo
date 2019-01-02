@@ -14,21 +14,21 @@
 class profile::os::docker (
   Hash $docker_list = {},
 ){
-  class { 'docker':
+  class { 'docker-unifi':
     version   => 'latest',
   }
-  docker::image { 'unifi':
-    image     => 'linuxserver/unifi',
-    image_tag => 'latest',
+  docker::image { 'docker-unifi':
+    image => 'linuxserver/unifi',
   }
   docker::run { 'unifi':
-    image           => 'linuxserver/unifi',
-    expose          => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
-    volumes         => ['/unifi:/config'],
-    restart_service => true,
-    pull_on_start   => false,
-    docker_service  => true,
-    net             => 'unifi-network',
+    image   => 'linuxserver/unifi',
+    expose  => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
+    volumes => ['/unifi:/config'],
+    net     => 'unifi-network',
+
+#    restart_service => true,
+#    pull_on_start   => false,
+#    docker_service  => true,
   }
 
 
