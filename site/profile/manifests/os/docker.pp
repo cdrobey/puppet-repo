@@ -14,13 +14,13 @@
 class profile::os::docker (
   Hash $docker_list = {},
 ){
-  class { 'docker-unifi':
+  class { 'docker':
     version   => 'latest',
   }
   docker::image { 'docker-unifi':
     image => 'linuxserver/unifi',
   }
-  docker::run { 'unifi':
+  docker::run { 'docker-unifi':
     image   => 'linuxserver/unifi',
     expose  => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
     volumes => ['/unifi:/config'],
