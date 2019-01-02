@@ -12,3 +12,21 @@ profile::os::docker::docker_list:
     - '/config'
   env:
   links:
+
+profile::os::monitor::influxdburi: "http://co-c75-idbp01:8086"
+profile::os::monitor::influxdbname: 'Monitor'
+profile::os::monitor::influxdbinputs: 
+  cpu:
+    totalcpu: true
+    percpu: true
+  mem: {}
+  io: {}
+  net: {}
+  disk: {}
+  swap: {}
+  system: {}
+  docker: 
+    endpoint: "unix:///var/run/docker.sock"
+
+  
+profile::os::monitor::influxdbinput_list: {}
