@@ -21,7 +21,7 @@ class profile::os::docker (
     image_tag => 'latest',
 
   }
-  docker::run { 'unifi':
+  docker::run { 'linuxserver/unifi':
     image           => 'linuxserver/unifi',
     service_prefix  => 'docker',
     expose          => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
