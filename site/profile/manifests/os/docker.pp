@@ -33,7 +33,7 @@ class profile::os::docker (
   }
 
 
-['3306', '7000', '8000', '8080', '8081'].each |$port| {
+  ['3478','10001','8080','8081','8443','8843','8880','6789'].each |$port| {
     firewall { "300 unifi ${port}":
       proto  => 'tcp',
       dport  => $port,
