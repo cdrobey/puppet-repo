@@ -34,7 +34,7 @@ class profile::os::docker (
 
 
 ['3306', '7000', '8000', '8080', '8081'].each |$port| {
-    firewall { "300 allow cd4pe ${port}":
+    firewall { "300 unifi ${port}":
       proto  => 'tcp',
       dport  => $port,
       action => 'accept',
