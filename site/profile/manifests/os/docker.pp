@@ -15,10 +15,12 @@ class profile::os::docker (
   Hash $docker_list = {},
 ){
   class { 'docker':
-    version   => 'unstable',
+    version   => 'latest',
   }
   docker::image { 'unifi':
-    image => 'linuxserver/unifi',
+    image     => 'linuxserver/unifi',
+    image_tag => 'unstable'
+
   }
   docker::run { 'unifi':
     image   => 'linuxserver/unifi',
