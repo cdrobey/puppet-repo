@@ -1,6 +1,17 @@
 ---
   
 profile::os::docker::docker_list:
+  image: linuxserver/unifi
+  service_prefix: 'docker-'
+  expose: 
+    - '8443'
+  ports:
+    - '8443'
+  volumes:
+    - '/unifi'
+    - '/config'
+  env:
+  links:
 
 
 
