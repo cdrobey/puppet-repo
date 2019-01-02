@@ -35,22 +35,36 @@ class profile::os::docker (
   class { 'docker':
     version   => 'latest',
   }
+  docker::image { 'unifi':
+    image => 'linuxserver/unifi',
 
-  $docker_list.each | $docker_name, $docker | {
-    docker::image { $docker['image']:
-    }
-
-    docker::run { $docker_name:
-      image           => $docker['image'],
-      service_prefix  => $docker['service_prefix'],
-      expose          => $docker['expose'],
-      ports           => $docker['ports'],
-      volumes         => $docker['volumes'],
-      env             => $docker['env'],
-      links           => $docker['links'],
-      restart_service => true,
-      pull_on_start   => false,
-      docker_service  => true,
-    }
   }
+  docker::run { 'unifi':
+    image           => 'linuxserver/unifi',
+    service_prefix  => 'docker',
+    expose          => ['8443'],
+    ports           => ['8443'],
+    volumes         => ['/unifi', '/config'],
+    restart_service => true,
+    pull_on_start   => false,
+    docker_service  => true,
+  }
+
+# $docker_list.each | $docker_name, $docker | {
+#   docker::image { $docker['image']:
+#   }
+#
+#    docker::run { $docker_name:
+#      image           => $docker['image'],
+#      service_prefix  => $docker['service_prefix'],
+#      expose          => $docker['expose'],
+#      ports           => $docker['ports'],
+#      volumes         => $docker['volumes'],
+#      env             => $docker['env'],
+#      links           => $docker['links'],
+#      restart_service => true,
+#      pull_on_start   => false,
+#      docker_service  => true,
+#    }
+#  }
 }
