@@ -42,13 +42,15 @@ class profile::os::docker (
   docker::run { 'unifi':
     image           => 'linuxserver/unifi',
     service_prefix  => 'docker',
-    expose          => ['8443'],
-    ports           => ['8443'],
+    expose          => ['3478','10001','8080','8081','8443','8843','8880','6789'],
+    ports           => ['3478','10001','8080','8081','8443','8843','8880','6789'],
     volumes         => ['/unifi', '/config'],
     restart_service => true,
     pull_on_start   => false,
     docker_service  => true,
   }
+
+
 
 # $docker_list.each | $docker_name, $docker | {
 #   docker::image { $docker['image']:
