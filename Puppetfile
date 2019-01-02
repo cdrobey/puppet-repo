@@ -64,5 +64,5 @@ mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
   :branch => 'master'
   mod 'puppet-unifi',
-  :git    => 'https://github.com/dgolja/puppet-unifi.git',
+  :git    => 'https://github.com/cdrobey/puppet-unifi.git',
   :branch => 'master'
