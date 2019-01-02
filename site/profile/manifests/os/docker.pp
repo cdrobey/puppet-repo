@@ -32,6 +32,8 @@ class profile::os::docker (
     driver      => 'bridge',
     ipam_driver => 'default',
     subnet      => '172.16.100.0/24',
+    gateway     => '172.16.100.1',
+    ip_range    => '172.16.1.0/24'
   }
 
   docker_volume { 'unifi-volume':
