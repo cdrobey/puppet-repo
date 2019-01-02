@@ -34,7 +34,7 @@ class profile::os::docker (
     subnet      => '172.16.100.0/24',
   }
 
-  docker_volume { 'unifi-local':
+  docker_volume { 'unifi-volume':
     ensure => present,
   }
 
@@ -46,7 +46,7 @@ class profile::os::docker (
   docker::run { 'unifi':
     image           => 'linuxserver/unifi:unstable',
     ports           => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
-    volumes         => ['unifi-local:/config'],
+    volumes         => ['unifi-volume:/config'],
     net             => 'unifi-network',
     restart_service => true,
     pull_on_start   => false,
