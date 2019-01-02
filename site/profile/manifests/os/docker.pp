@@ -18,7 +18,7 @@ class profile::os::docker (
     version   => 'latest',
   }
   docker::image { 'unifi':
-    image     => 'linuxserver/unifi:unstable',
+    image     => 'linuxserver/unifi',
     image_tag => 'unstable'
 
   }
