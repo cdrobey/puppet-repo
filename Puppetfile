@@ -14,7 +14,6 @@ mod 'deric-gpasswd', '0.3.2'
 mod 'puppetlabs/apt', '3.0.0'
 mod 'puppet-unattended_upgrades', '3.1.0'
 mod 'stahnma/epel', :latest
-mod 'jmkeyes-unifi', :latest
 mod 'puppetlabs-powershell', '2.1.2'
 mod 'puppetlabs-dsc', '1.4.1'
 mod 'puppet-dotnet', '1.1.0'
@@ -63,4 +62,7 @@ mod 'puppet-letsencrypt',
 
 mod 'influxdb',
   :git    => 'https://github.com/dgolja/golja-influxdb.git',
+  :branch => 'master'
+  mod 'puppet-unifi',
+  :git    => 'https://github.com/dgolja/puppet-unifi.git',
   :branch => 'master'
