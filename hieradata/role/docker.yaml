@@ -1,7 +1,7 @@
 ---
   
 profile::os::docker::docker_list:
-  image: linuxserver/unifi
+  image: 'linuxserver/unifi'
   service_prefix: 'docker-'
   expose: 
     - '8443'
@@ -12,7 +12,3 @@ profile::os::docker::docker_list:
     - '/config'
   env:
   links:
-
-
-
-      
