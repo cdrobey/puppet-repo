@@ -15,7 +15,7 @@ class profile::os::docker (
   Hash $docker_list = {},
 ){
   class { 'docker':
-    version   => 'latest',
+    version   => 'unstable',
   }
   docker::image { 'unifi':
     image => 'linuxserver/unifi',
