@@ -14,5 +14,5 @@ class role::docker {
   include profile::base
   include profile::os::monitor
   include profile::os::docker
-  include profile::apps::cd4pe
+  #include profile::apps::cd4pe
 }
