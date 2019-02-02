@@ -23,6 +23,21 @@ class profile::os::docker (
     }
   }
 
+  ['32400:32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
+    firewall { "400 plex ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+  ['32400:32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
+    firewall { "401 udp plex ${port}":
+      proto  => 'udp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
   class { 'docker':
     version   => 'latest',
   }
@@ -75,7 +90,7 @@ class profile::os::docker (
   }
   docker::run { 'plex':
     image           => 'plexinc/pms-docker:latest',
-    ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','8843:8843','32410:32410','32412:32412','32413:32413','32414:32414'],
+    ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','32410:32410','32412:32412','32413:32413','32414:32414'],
     volumes         => ['plex-volume:/config', 'plex-volume:/transcode', 'plex-volume:/data'],
     net             => 'plex-network',
     restart_service => true,
