@@ -3,9 +3,9 @@ profile::apps::nginx::proxylist:
   'monitor.familyroberson.com':
     proxy: 'http://co-c75-idbp01.local.familyroberson.com:3000/'
   'unifi.familyroberson.com': 
-    proxy: 'http://co-c75-docp01.local.familyroberson.com:8443/'
+    proxy: 'https://co-c75-docp01.local.familyroberson.com:8443/'
   'plex.familyroberson.com': 
-    proxy: 'http://co-c75-docp01.local.familyroberson.com:32400/'
+    proxy: 'http://co-c75-docp01.local.familyroberson.com:32400/web/'
   'puppet.familyroberson.com': 
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
   'omv.familyroberson.com': 
