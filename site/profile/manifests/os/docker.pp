@@ -15,8 +15,16 @@ class profile::os::docker (
   Hash $docker_list = {},
 ){
 
-  ['3478','10001','8080','8081','8443','8843','8880','6789'].each |$port| {
-    firewall { "300 unifi ${port}":
+  ['3478','10001'].each |$port| {
+    firewall { "300 unifi UDP ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
+  ['8080','8081','8443','8843','8880','6789'].each |$port| {
+    firewall { "300 unifi TCP ${port}":
       proto  => 'tcp',
       dport  => $port,
       action => 'accept',
