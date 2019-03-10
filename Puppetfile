@@ -20,7 +20,7 @@ mod 'puppet-dotnet', '1.1.0'
 mod 'liamjbennett-win_facts', '0.0.2'
 mod 'puppet-download_file', '2.1.0'
 mod 'puppetlabs-reboot', '1.2.1'
-mod 'puppetlabs-chocolatey', '3.0.0'
+mod 'puppetlabs-chocolatey', :latest
 mod 'ayohrling-local_security_policy', '0.6.1'
 mod 'tse-winntp', '1.0.1'
 mod 'puppetlabs-iis', '4.2.1'
