@@ -21,10 +21,10 @@ class profile::base::windows::app (
     ensure => installed,
     provider => chocolatey,
   }
-  #schedule { 'package_schedule':
-  #  range   => '02:00 - 04:00',
-  #  weekday => 'Monday',
-  #}
+  schedule { 'package_schedule':
+    range   => '02:00 - 04:00',
+    weekday => 'Monday',
+  }
   reboot { 'package_reboot':
     when     => 'pending',
     schedule => 'package_schedule'
