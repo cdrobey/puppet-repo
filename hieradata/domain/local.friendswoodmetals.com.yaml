@@ -1,0 +1,27 @@
+---
+profile::base::windows::app::packages:
+  - 7zip
+  - git
+  - putty.install
+  - winscp
+  - flashplayerplugin
+  - adobereader
+  - googlechrome
+  - vmwarevsphereclient
+  - firefox
+  - vim
+  - teamviewer
+  - microsoftsecurityessentials
+  - officeproplus2013
+  - dashlane
+  - openvpn
+
+profile::base::windows::time::timezone: 'Central Standard Time'
+profile::base::windows::time::ntp_servers:
+  - fw.local.friendswoodmetals.com
+  - time.google.com
+
+
+profile::os::dfaas::gsyncinstallurl: 'https://dl.google.com/drive/gsync_enterprise64.msi'
+profile::os::dfaas::jcinstallurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe'
+profile::os::dfaas::jcinstalluuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b'
