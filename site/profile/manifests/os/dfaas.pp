@@ -34,7 +34,7 @@ class profile::os::dfaas (
   }
 
   -> package { 'JumpCloud v1.0':
-    ensure          => '1.0',
+    ensure          => present,
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
     install_options => [ '-k', $jcinstalluuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
     notify          => Reboot['dfaas_reboot'],
