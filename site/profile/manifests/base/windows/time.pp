@@ -32,9 +32,9 @@ class profile::base::windows::time (
     }
   }
 
-  dsc_xtimezone { 'set timezone':
-    dsc_timezone         => $timezone,
-    dsc_issingleinstance => 'yes',
-    require              => Package['powershell'],
-  }
-}
+#  dsc_ComputerManagementDsc { 'set timezone':
+#    dsc_timezone         => $timezone,
+#    dsc_issingleinstance => 'yes',
+#    require              => Package['powershell'],
+#  }
+#}
