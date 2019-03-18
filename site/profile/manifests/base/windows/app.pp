@@ -42,5 +42,6 @@ class profile::base::windows::app (
   # Dynamic installed packages (Defined in Heira)
   each ($packages) | $package | {
     package { $package: }
+    notify => Reboot[$package]
   }
 }
