@@ -28,12 +28,13 @@ class profile::os::dfaas (
   }
 
   remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
-    ensure  => present,
-    source  => $jcinstallurl,
-    require => File['dfaas_install'],
+    ensure   => present,
+    source   => $jcinstallurl,
+    checksum => 'd41d8cd98f00b204e9800998ecf8427e',
+    require  => File['dfaas_install'],
   }
 
-  -> package { 'JumpCloud v0.10.50':
+  -> package { 'JumpCloud v0.10.53':
     ensure          => '0.10.50',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
     install_options => [ '-k', $jcinstalluuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
