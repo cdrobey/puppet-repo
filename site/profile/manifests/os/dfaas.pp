@@ -30,7 +30,7 @@ class profile::os::dfaas (
   remote_file { 'C:\\Install\\JumpCloudInstaller.exe':
     ensure   => present,
     source   => $jcinstallurl,
-    checksum => 'd41d8cd98f00b204e9800998ecf8427e',
+    checksum => '9508f9ee8c31181ace3a65980d839018',
     require  => File['dfaas_install'],
   }
 
