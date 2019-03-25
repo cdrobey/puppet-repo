@@ -37,7 +37,6 @@ node default {
       if defined($role) {
         include $role
       } else {
-        notify { "No matching role for ${role} found": }
         include role::base
       }
     }
