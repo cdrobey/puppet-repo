@@ -25,3 +25,38 @@ profile::base::windows::time::ntp_servers:
 profile::os::dfaas::gsyncinstallurl: 'https://dl.google.com/drive/gsync_enterprise64.msi'
 profile::os::dfaas::jcinstallurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe'
 profile::os::dfaas::jcinstalluuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b'
+
+---
+profile::base::windows::accounts::users:
+  'admin':
+    ensure: present
+    comment: "Admin Account"
+    managehome: false
+    groups:
+      - Administrators
+    password: >
+      ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEA6MazeXMVxT3zKIQNYSSlBq6fNPDIhuPuYhWz
+      plC/Z+URrLcUa1ppFujQtHbxAzsKFgVabUxrnQf2BKhr4qqxwFAmF7lYg4JT
+      tPiet9vW0vFU5YtKQVWJq8SwMziKgquwol5h/v5rtZt53xYX/mojn9KyETZr
+      QQIPbmFuuMO2Q2w+WZsKAkmiCgFzLkR+uyP8KrT3R+212slnRnWvxz/UzynI
+      15FkrE9aRclfeCWX3N/rTTgrEWgyIRiXp4kPvjISfikFKANTy6BBJiLasddp
+      7lxxOYgkiOhAPotMBAwuQcFWteTzRffDpa+CmVUyvHaXaC+F2rjBLCQV4OAV
+      PnYwHzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCzDGAi1cfoBdF5hw+5
+      RxoogCBdlvcuWpKyg3w/QC+zyJryjH+7yiIrtLXETrVBTZc69A==]
+  'Deploy':
+    ensure: present
+    comment: "Deploy Account"
+    managehome: false
+    groups:
+      - Administrators
+    password: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAJrfgUFCooTe6NELYM6jPm5nhuEq/6leNSxQu
+      CWpPlpcAbagT5WZ4A3/MydB3sDHSUqTgghwcwqC8wk5HND4Twyy8t+sRcC6d
+      u6vvHyjVTDFu3GFuBirVc4XAyKJrWLO0LMl6rdAho2YcFFvDEeyztyWSGJRX
+      QHbkY3syKLGjn65mhtpuL+zfwtgxOtsQnNHYzr05wfwMqTeedyvuuWHCJ9qi
+      0rfhXZmYdH/hmFyTx1ybI2rs5N6xLn31wr1JG8Y5o22WThdgCo0PLX8OY+Ls
+      /HOOxMMn8pBgL4MLwSZQUdNIZECYKzV9W79havRt+6c6edFwi+10rkYBrheO
+      VPmnpDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBfIe/gB1d9E083iAu7
+      5wzGgBC+GDT2nMzGRDv3fo1/7zES]
