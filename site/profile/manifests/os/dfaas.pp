@@ -57,7 +57,7 @@ class profile::os::dfaas (
     source => 'C:\\Install\\gsync_enterprise64.msi',
   }
 
-  file { 'c:\\install\\test':
+  file { 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup':
     ensure  => file,
     content => epp('profile/apps/shares.epp', { 'password' => 'hello' }),
   }
