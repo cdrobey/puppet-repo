@@ -59,6 +59,6 @@ class profile::os::dfaas (
 
   file { 'c:\\install\\test':
     ensure  => file,
-    content => epp('/source/hosts.epp'),
+    content => epp('/templates/hosts.epp'),
   }
 }
