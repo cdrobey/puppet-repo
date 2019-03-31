@@ -1,7 +1,7 @@
 ---
 profile::base::windows::accounts::users:
   'admin':
-    ensure: present
+    ensure: purge
     comment: "Admin Account"
     managehome: false
     groups:
