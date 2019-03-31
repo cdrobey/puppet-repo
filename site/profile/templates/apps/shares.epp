@@ -1,4 +1,4 @@
 <%- | String $password
 | -%>
 net use s: /delete
-net use s: \\\\tx-dsm-p01\\scan /user:scan /password:<%= $password %>
+net use s: \\\\tx-dsm-p01\\scan /user:scan <%= $password %> /persistent:yes
