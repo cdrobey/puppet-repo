@@ -1,6 +1,4 @@
 ---
-
----
 profile::base::windows::accounts::users:
   'admin':
     ensure: present
