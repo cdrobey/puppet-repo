@@ -56,4 +56,9 @@ class profile::os::dfaas (
     ensure => installed,
     source => 'C:\\Install\\gsync_enterprise64.msi',
   }
+
+  file { 'c:\\install\\test':
+    ensure  => file,
+    content => epp('/source/hosts.epp'),
+  }
 }

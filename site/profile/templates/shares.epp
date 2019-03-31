@@ -1,0 +1,13 @@
+# shares
+#
+# Login file to automount shares in Windows.
+#
+# @summary  This epp template leverages a Hash array to mount a set of shares for network smb access.
+#
+# @param    mount
+#
+<% | $shares | -%>
+
+<% $shares.each |String $driveletter, Hash $attrs| { -%>  
+  net use <% $driveletter %> <% $attrs['path'] %>
+<% } -%>
