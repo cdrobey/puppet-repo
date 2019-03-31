@@ -59,6 +59,6 @@ class profile::os::dfaas (
 
   file { 'c:\\install\\test':
     ensure  => file,
-    content => epp('profile/apps/shares.epp', { text => 'foo', array => ['one', 'two'], bool => false }),
+    content => epp('profile/apps/shares.epp', { shares => { drive => 'D:', path => '\\\\tx-dsm-p01\\scan'} }),
   }
 }
