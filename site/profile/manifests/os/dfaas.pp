@@ -59,6 +59,6 @@ class profile::os::dfaas (
 
   file { 'c:\\install\\test':
     ensure  => file,
-    content => epp('templates/shares.epp'),
+    content => epp('templates/shares.epp', { text => 'foo', array => ['one', 'two'], bool => false }),
   }
 }
