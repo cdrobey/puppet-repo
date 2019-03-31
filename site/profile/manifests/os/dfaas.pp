@@ -16,6 +16,7 @@ class profile::os::dfaas (
   String $gsyncinstallurl = 'https://dl.google.com/drive/gsync_enterprise64.msi',
   String $jcinstallurl = 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe',
   String $jcinstalluuid = '53dbf0a428951c7d4e737c7e06886a2c4b4a135b',
+  String $sharepassword = '',
 ){
 
   reboot { 'dfaas_reboot':
@@ -59,6 +60,6 @@ class profile::os::dfaas (
 
   file { 'C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\shares.cmd':
     ensure  => file,
-    content => epp('profile/apps/shares.epp', { 'password' => 'hello' }),
+    content => epp('profile/apps/shares.epp', { 'password' => $sharepassword }),
   }
 }

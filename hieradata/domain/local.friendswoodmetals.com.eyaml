@@ -1,0 +1,15 @@
+---
+
+profile::os::dfaas::gsyncinstallurl: 'https://dl.google.com/drive/gsync_enterprise64.msi'
+profile::os::dfaas::jcinstallurl: 'https://s3.amazonaws.com/jumpcloud-windows-agent/production/JumpCloudInstaller.exe'
+profile::os::dfaas::jcinstalluuid: '53dbf0a428951c7d4e737c7e06886a2c4b4a135b'
+profile::os::dfaas::sharepassword: >
+  ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+  DQYJKoZIhvcNAQEBBQAEggEA7gDyb1+R3Dx8jGcg45qfge8k0x1yfywO4T0c
+  i7z7a8xh3QiASgiP2hhDoDrWCVmQT7naowQSMbdh+T+Xen/hlyTMYUoTIJIU
+  JLhzJom+j6Jj8Lp3eQuLUVyuoxLKtVbuxvAuN4bze5EqT/iQpByvp1y/Fz5z
+  P7s7Xfpkrng9J/ZmhKcpli40J4bn9x65OxW1YUPMXHpuB+uYbIDLK1vwAF4R
+  RJJpnEMyglCPbjV7uyZB3vCl2yrkRZ51SmGhLgnqAlzauFxPC+3Fg0lW06yd
+  kyXp49qNGJomDkbKqcTtbNqSgUY0+uecATaJ3IGcfJrK4b7LOImm4YgAu5rp
+  LMYSlDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBARRaqwblxGkB09pBh5
+  OACYgBBJZvFkH1iEW+DQZYI1+Pl4]
