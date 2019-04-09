@@ -39,7 +39,6 @@ class profile::os::dfaas (
     ensure          => '1.0',
     source          => 'C:\\Install\\JumpCloudInstaller.exe',
     install_options => [ '-k', $jcinstalluuid, '/SUPPRESSMSGBOXES', '/VERYSILENT', '/NORESTART'],
-    notify          => Reboot['dfaas_reboot'],
   }
 
   -> service { 'jumpcloud-agent':
