@@ -127,7 +127,7 @@ class profile::os::docker (
   }
   docker::run { 'organizr':
     image           => 'lsiocommunity/organizr:latest',
-    ports           => ['8081:80' ],
+    ports           => ['12081:80' ],
     volumes         => ['media-volume:/organizr/config', 'media-volume:/shared'],
     net             => 'media-network',
     env             => ['TZ=America/Denver', 'PGUID=1000', 'PGGID=1000'],
