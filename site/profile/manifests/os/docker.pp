@@ -107,6 +107,14 @@ class profile::os::docker (
   }
 
 
+  ['12080','12081'].each |$port| {
+    firewall { "401 udp media ${port}":
+      proto  => 'udp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
   docker_network { 'media-network':
     ensure      => 'present',
     driver      => 'bridge',
