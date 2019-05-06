@@ -118,7 +118,7 @@ class profile::os::docker (
 
   docker_volume { 'media-volume':
     ensure  => present,
-  #  driver  => 'local',
+  #  driver  => 'local',\]
   ## options => ['type=nfs','o=addr=co-dsm62-p01,rw','device=:/volume1/media'],
   }
   docker::image { 'organizr':
