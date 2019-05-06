@@ -127,7 +127,7 @@ class profile::os::docker (
   docker_volume { 'media-volume':
     ensure  => present,
     driver  => 'local',
-    options => ['type=nfs', 'o=addr=co-dsm62-p01.local.familyroberson.com,rw', 'device=:/volume1/media'],
+    options => ['o=addr=co-dsm62-p01.local.familyroberson.com,rw', 'device=:/volume1/media'],
   }
   docker::image { 'organizr':
     image     => 'lsiocommunity/organizr',
