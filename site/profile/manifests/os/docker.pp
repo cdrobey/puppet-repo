@@ -105,4 +105,34 @@ class profile::os::docker (
     pull_on_start   => false,
     docker_service  => true,
   }
+
+
+  docker_network { 'media-network':
+    ensure      => 'present',
+    driver      => 'bridge',
+    ipam_driver => 'default',
+    subnet      => '172.16.102.0/24',
+    gateway     => '172.16.102.1',
+    ip_range    => '172.16.102.0/24'
+  }
+
+  docker_volume { 'media-volume':
+    ensure  => present,
+    driver  => 'local',
+    options => ['type=nfs','o=addr=co-dsm62-p01,rw','device=:/volume1/media'],
+  }
+  docker::image { 'organizr':
+    image     => 'lsiocommunity/organizr',
+    image_tag => 'latest'
+  }
+  docker::run { 'organizr':
+    image           => 'lsiocommunity/organizr:latest',
+    ports           => ['8081:80' ],
+    volumes         => ['media-volume:/organizr/config', 'media-volume:/shared'],
+    net             => 'media-network',
+    env             => ['TZ=America/Denver', 'PGUID=1000', 'PGGID=1000'],
+    restart_service => true,
+    pull_on_start   => false,
+    docker_service  => true,
+  }
 }
