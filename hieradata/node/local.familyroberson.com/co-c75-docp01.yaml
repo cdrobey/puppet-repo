@@ -1,4 +1,17 @@
 ---
+profile::base::linux::app::update_frequency: 'daily'
+profile::base::linux::app::upgrade_frequency: '1'
+profile::base::linux::app::packages:
+  - mlocate
+  - python
+  - curl
+  - vim
+  - git
+  - net-tools
+  - nfs-utils
+
+
+
 profile::os::docker::docker_list:
   image: 'linuxserver/unifi'
   service_prefix: 'docker-'
