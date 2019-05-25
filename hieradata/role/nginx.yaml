@@ -8,8 +8,6 @@ profile::apps::nginx::proxylist:
     proxy: 'http://co-c75-docp01.local.familyroberson.com:32400/web/'
   'puppet.familyroberson.com': 
     proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
-  'omv.familyroberson.com': 
-    proxy: 'http://co-omv4-ovp01.local.familyroberson.com/'
   'tenable.familyroberson.com': 
     proxy: 'https://co-c75-tenp01.local.familyroberson.com:8834/'
 profile::apps::nginx::proxysetheaders:
