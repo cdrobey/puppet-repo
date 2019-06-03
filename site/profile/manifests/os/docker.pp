@@ -17,7 +17,7 @@ class profile::os::docker (
 
   ['3478','10001'].each |$port| {
     firewall { "300 unifi UDP ${port}":
-      proto  => 'tcp',
+      proto  => 'udp',
       dport  => $port,
       action => 'accept',
     }
