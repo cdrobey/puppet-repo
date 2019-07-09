@@ -1,6 +1,0 @@
-<%- | Hash $shares
-| -%>
-
-<% $shares.each |String $driveletter, String $attrs| { -%>  
-net use <%= $driveletter %> <%= $attrs['path'] %>
-<% } -%>
