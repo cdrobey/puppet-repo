@@ -172,7 +172,7 @@ class profile::os::docker (
   docker::run { 'portainer':
     image           => 'portainer/portainer:latest',
     ports           => ['9000:9000'],
-    volumes         => ['portainer_data:/data'],
+    volumes         => ['portainer_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
     net             => 'portainer-network',
     restart_service => true,
     pull_on_start   => false,
