@@ -16,7 +16,7 @@ class profile::apps::nginx (
 ){
 
   firewall { '300 allow communication to https':
-    dport  => [ 443 ],
+    dport  => [ 80, 443 ],
     proto  => tcp,
     action =>  accept,
   }
