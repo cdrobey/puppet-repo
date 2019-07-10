@@ -24,6 +24,13 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
+  class { 'letsencrypt_nginx':
+    firstrun_webroot => '/usr/share/nginx/html',
+    servers          => {
+      '*.familyroberson.com' => {},
+    },
+  }
+
   $proxylist.each | $proxy_name, $proxy | {
     nginx::resource::server{ $proxy_name:
       server_name       => [ $proxy_name ],
