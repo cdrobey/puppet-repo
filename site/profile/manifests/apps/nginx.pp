@@ -20,8 +20,8 @@ class profile::apps::nginx (
     proto  => tcp,
     action =>  accept,
   }
-  nginx::resource::server { 'unifi.familyroberson.com':
-    server_name       => [ 'unifi.familyroberson.com' ],
+  nginx::resource::server { '*.familyroberson.com':
+    server_name       => [ '*.familyroberson.com' ],
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
@@ -42,7 +42,7 @@ class profile::apps::nginx (
   class { 'letsencrypt_nginx':
     firstrun_webroot => '/usr/share/nginx/html',
     servers          => {
-      'unifi.familyroberson.com' => {},
+      '*.familyroberson.com' => {},
     },
   }
 }
