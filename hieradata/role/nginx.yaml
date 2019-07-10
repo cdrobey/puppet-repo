@@ -1,22 +1,9 @@
 ---
 profile::apps::nginx::proxylist:
-  'monitor.familyroberson.com':
-    proxy: 'http://co-c75-idbp01.local.familyroberson.com:3000/'
   'unifi.familyroberson.com': 
-    proxy: 'https://co-c75-docp01.local.familyroberson.com:8443/'
-  'plex.familyroberson.com': 
-    proxy: 'http://co-c75-docp01.local.familyroberson.com:32400/web/'
+    proxy: 'https://docker-p01.local.familyroberson.com:8443/'
   'puppet.familyroberson.com': 
-    proxy: 'http://co-u1604-pmp01.local.familyroberson.com/'
-  'tenable.familyroberson.com': 
-    proxy: 'https://co-c75-tenp01.local.familyroberson.com:8834/'
-profile::apps::nginx::proxysetheaders:
-  - 'Host $host'
-  - 'X-Real-IP $remote_addr'
-  - 'X-Forwarded-For $proxy_add_x_forwarded_for'
-  - 'Proxy ""'
-  - 'Upgrade $http_upgrade'
-  - 'Connection "Upgrade"'
+    proxy: 'http://puppet-p01.local.familyroberson.com/'
 
 profile::os::monitor::influxdburi: "http://co-c75-idbp01.local.familyroberson.com:8086"
 profile::os::monitor::influxdbname: 'Monitor'

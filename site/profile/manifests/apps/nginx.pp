@@ -13,7 +13,6 @@
 # test comment
 class profile::apps::nginx (
   Hash $proxylist,
-  Array $proxysetheaders,
 ){
 
   firewall { '300 allow communication to https':
@@ -40,7 +39,6 @@ class profile::apps::nginx (
       ssl_cert          => '/etc/ssl/public/familyroberson.crt',
       ssl_key           => '/etc/ssl/public/familyroberson.key',
       proxy             => $proxy['proxy'],
-      proxy_set_header  => $proxysetheaders,
       server_cfg_append => {
         'ssl_verify_client' => 'off',
         'ssl_verify_depth'  => 1,
