@@ -15,6 +15,10 @@ class profile::os::docker (
   Hash $docker_list = {},
 ){
 
+  class { 'docker':
+    version   => 'latest',
+  }
+
   ['3478','10001'].each |$port| {
     firewall { "300 unifi UDP ${port}":
       proto  => 'udp',
@@ -29,25 +33,6 @@ class profile::os::docker (
       dport  => $port,
       action => 'accept',
     }
-  }
-
-  ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
-    firewall { "400 plex ${port}":
-      proto  => 'tcp',
-      dport  => $port,
-      action => 'accept',
-    }
-  }
-  ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
-    firewall { "401 udp plex ${port}":
-      proto  => 'udp',
-      dport  => $port,
-      action => 'accept',
-    }
-  }
-
-  class { 'docker':
-    version   => 'latest',
   }
 
   docker_network { 'unifi-network':
@@ -76,6 +61,21 @@ class profile::os::docker (
     restart_service => true,
     pull_on_start   => false,
     docker_service  => true,
+  }
+
+  ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
+    firewall { "400 plex ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+  ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
+    firewall { "401 udp plex ${port}":
+      proto  => 'udp',
+      dport  => $port,
+      action => 'accept',
+    }
   }
 
   docker_network { 'plex-network':
@@ -144,7 +144,13 @@ class profile::os::docker (
     docker_service  => true,
   }
 
-
+  ['9000'].each |$port| {
+    firewall { "501 udp portainer ${port}":
+      proto  => 'udp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
   docker_network { 'portainer-network':
     ensure      => 'present',
     driver      => 'bridge',
