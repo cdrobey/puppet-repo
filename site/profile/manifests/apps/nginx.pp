@@ -20,13 +20,22 @@ class profile::apps::nginx (
     proto  => tcp,
     action =>  accept,
   }
-
-  class { 'nginx': }
-
+  nginx::resource::server { 'unifi.familyroberson.com':
+    server_name       => [ 'unifi.familyroberson.com' ],
+    proxy             => 'https://docker-p01.local.familyroberson.com:8443',
+    ssl               => true,
+    ssl_redirect      => true,
+    ssl_key           => '/etc/letsencrypt/live/letsencrypt-test1.example.com/privkey.pem',
+    ssl_cert          => '/etc/letsencrypt/live/letsencrypt-test1.example.com/fullchain.pem',
+    server_cfg_append => {
+      'ssl_verify_client' => 'off',
+      'ssl_verify_depth'  => 1,
+    },
+  }
   class { 'letsencrypt':
     config => {
-      email  => 'foo@example.com',
-      server => 'https://acme-staging.api.letsencrypt.org/directory',
+      unsafe_registration => true,
+      server              => 'https://acme-staging.api.letsencrypt.org/directory',
     }
   }
 
@@ -36,6 +45,7 @@ class profile::apps::nginx (
       '*.familyroberson.com' => {},
     },
   }
+}
 
   #$proxylist.each | $proxy_name, $proxy | {
   #  nginx::resource::server{ $proxy_name:
@@ -52,4 +62,4 @@ class profile::apps::nginx (
   #    },
   #  }
   #}
-}
+
