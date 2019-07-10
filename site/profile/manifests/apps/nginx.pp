@@ -42,7 +42,7 @@ class profile::apps::nginx (
   class { 'letsencrypt_nginx':
     firstrun_webroot => '/usr/share/nginx/html',
     servers          => {
-      '*.familyroberson.com' => {},
+      'unifi.familyroberson.com' => {},
     },
   }
 }
