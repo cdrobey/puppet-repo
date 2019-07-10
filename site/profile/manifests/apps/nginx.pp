@@ -34,8 +34,8 @@ class profile::apps::nginx (
   }
   class { 'letsencrypt':
     config => {
-      unsafe_registration => true,
-      server              => 'https://acme-staging.api.letsencrypt.org/directory',
+      email  => 'cdroberson@gmail.com',
+      server => 'https://acme-staging.api.letsencrypt.org/directory',
     }
   }
 
