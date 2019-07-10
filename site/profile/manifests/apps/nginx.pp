@@ -12,7 +12,7 @@
 # == Class: profile::apps::nginx
 # test comment
 class profile::apps::nginx (
-  Hash $proxylist,
+  #Hash $proxylist,
 ){
 
   firewall { '300 allow communication to https':
