@@ -25,8 +25,8 @@ class profile::apps::nginx (
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
-    ssl_key           => '/etc/letsencrypt/live/letsencrypt-test1.example.com/privkey.pem',
-    ssl_cert          => '/etc/letsencrypt/live/letsencrypt-test1.example.com/fullchain.pem',
+    ssl_key           => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
+    ssl_cert          => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
     server_cfg_append => {
       'ssl_verify_client' => 'off',
       'ssl_verify_depth'  => 1,
