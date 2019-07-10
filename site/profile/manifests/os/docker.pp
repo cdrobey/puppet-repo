@@ -145,8 +145,8 @@ class profile::os::docker (
   }
 
   ['9000'].each |$port| {
-    firewall { "501 udp portainer ${port}":
-      proto  => 'udp',
+    firewall { "501 tcp portainer ${port}":
+      proto  => 'tcp',
       dport  => $port,
       action => 'accept',
     }
