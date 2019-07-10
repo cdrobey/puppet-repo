@@ -23,6 +23,16 @@ class profile::apps::nginx (
 
   class { 'nginx': }
 
+  class { 'letsencrypt':
+    email => 'foo@example.com',
+  }
+  class { 'letsencrypt':
+    config => {
+      email  => 'foo@example.com',
+      server => 'https://acme-staging.api.letsencrypt.org/directory',
+    }
+  }
+
   class { 'letsencrypt_nginx':
     firstrun_webroot => '/usr/share/nginx/html',
     servers          => {
