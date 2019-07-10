@@ -143,4 +143,33 @@ class profile::os::docker (
     pull_on_start   => false,
     docker_service  => true,
   }
+
+
+  docker_network { 'portainer-network':
+    ensure      => 'present',
+    driver      => 'bridge',
+    ipam_driver => 'default',
+    subnet      => '172.16.103.0/24',
+    gateway     => '172.16.103.1',
+    ip_range    => '172.16.103.0/24'
+  }
+
+  docker_volume { 'portainer-volume':
+    ensure => present,
+  }
+
+  docker::image { 'portainer':
+    image     => 'portainer/portainer',
+    image_tag => 'latest'
+
+  }
+  docker::run { 'portainer':
+    image           => 'portainer/portainer:latest',
+    ports           => ['9000:9000'],
+    volumes         => ['portainer_data:/data'],
+    net             => 'portainer-network',
+    restart_service => true,
+    pull_on_start   => false,
+    docker_service  => true,
+  }
 }
