@@ -10,7 +10,7 @@
 # @example
 #   include profile::apps::nginx or assign in PE classifier
 # == Class: profile::apps::nginx
-# test comment
+# test2 comment
 class profile::apps::nginx (
   #Hash $proxylist,
 ){
@@ -51,7 +51,21 @@ class profile::apps::nginx (
       'ssl_verify_depth'  => 1,
     },
   }
+
+  nginx::resource::server { 'test2.familyroberson.com':
+    server_name       => [ 'test2.familyroberson.com' ],
+    proxy             => 'https://puppet-p01.local.familyroberson.com',
+    ssl               => true,
+    ssl_redirect      => true,
+    ssl_key           => '/etc/ssl/certs/familyroberson.com.key',
+    ssl_cert          => '/etc/ssl/certs//familyroberson.com.crt',
+    server_cfg_append => {
+      'ssl_verify_client' => 'off',
+      'ssl_verify_depth'  => 1,
+    },
+  }
 }
+
   #$proxylist.each | $proxy_name, $proxy | {
   #  nginx::resource::server{ $proxy_name:
   #    server_name       => [ $proxy_name ],
