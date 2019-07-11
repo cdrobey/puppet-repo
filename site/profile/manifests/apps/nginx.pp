@@ -48,7 +48,7 @@ class profile::apps::nginx (
     ssl_cert          => '/etc/ssl/certs//familyroberson.com.crt',
     server_cfg_append => {
       'ssl_verify_client' => 'off',
-      'ssl_verify_depth'  => 1,
+      'ssl_verify_depth'  => 2,
     },
   }
 
@@ -61,7 +61,7 @@ class profile::apps::nginx (
     ssl_cert          => '/etc/ssl/certs//familyroberson.com.crt',
     server_cfg_append => {
       'ssl_verify_client' => 'off',
-      'ssl_verify_depth'  => 1,
+      'ssl_verify_depth'  => 2,
     },
   }
 }
