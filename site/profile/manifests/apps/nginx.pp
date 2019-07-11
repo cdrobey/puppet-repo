@@ -20,32 +20,52 @@ class profile::apps::nginx (
     proto  => tcp,
     action =>  accept,
   }
+
+  class { 'openssl':
+    package_ensure         => latest,
+    ca_certificates_ensure => latest,
+  }
+
+  openssl::certificate::x509 { 'familyroberson.com':
+    ensure       => present,
+    country      => 'US',
+    organization => 'familyroberson.com',
+    commonname   => $fqdn,
+    state        => 'CO',
+    locality     => 'Centennial',
+    unit         => 'FamilyRoberson',
+    email        => 'chris@familyroberson.com',
+    days         => 3456,
+  }
+
+
   nginx::resource::server { 'familyroberson.com':
     server_name       => [ 'familyroberson.com' ],
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
-    ssl_key           => '/etc/letsencrypt/live/familyroberson.com/privkey.pem',
-    ssl_cert          => '/etc/letsencrypt/live/familyroberson.com/fullchain.pem',
+    ssl_key           => '/etc/ssl/familyroberson.com/privkey.pem',
+    ssl_cert          => '/etc/ssl/familyroberson.com/fullchain.pem',
     server_cfg_append => {
       'ssl_verify_client' => 'off',
       'ssl_verify_depth'  => 1,
     },
   }
-  class { 'letsencrypt':
-    config => {
-      email  => 'cdroberson@gmail.com',
-      server => 'https://acme-staging.api.letsencrypt.org/directory',
-    }
-  }
-
-  class { 'letsencrypt_nginx':
-    firstrun_webroot => '/usr/share/nginx/html',
-    servers          => {
-      'familyroberson.com' => {},
-    },
-  }
 }
+  #class { 'letsencrypt':
+  #  config => {
+  #    email  => 'cdroberson@gmail.com',
+  #    server => 'https://acme-staging.api.letsencrypt.org/directory',
+  #  }
+  #}
+
+  #class { 'letsencrypt_nginx':
+  #  firstrun_webroot => '/usr/share/nginx/html',
+  # servers          => {
+  #    'familyroberson.com' => {},
+    #},
+  #}
+#}
 
   #$proxylist.each | $proxy_name, $proxy | {
   #  nginx::resource::server{ $proxy_name:
