@@ -39,18 +39,18 @@ class profile::apps::nginx (
   }
 
 
-  nginx::resource::server { 'familyroberson.com':
-    server_name       => [ 'familyroberson.com' ],
-    proxy             => 'https://docker-p01.local.familyroberson.com:8443',
-    ssl               => true,
-    ssl_redirect      => true,
-    ssl_key           => '/etc/ssl/familyroberson.com/privkey.pem',
-    ssl_cert          => '/etc/ssl/familyroberson.com/fullchain.pem',
-    server_cfg_append => {
-      'ssl_verify_client' => 'off',
-      'ssl_verify_depth'  => 1,
-    },
-  }
+  #nginx::resource::server { 'familyroberson.com':
+  #  server_name       => [ 'familyroberson.com' ],
+  #  proxy             => 'https://docker-p01.local.familyroberson.com:8443',
+  #  ssl               => true,
+  #  ssl_redirect      => true,
+  #  ssl_key           => '/etc/ssl/familyroberson.com/privkey.pem',
+  #  ssl_cert          => '/etc/ssl/familyroberson.com/fullchain.pem',
+  #  server_cfg_append => {
+  #     'ssl_verify_client' => 'off',
+  #    'ssl_verify_depth'  => 1,
+  #  },
+#  }
 }
   #class { 'letsencrypt':
   #  config => {
