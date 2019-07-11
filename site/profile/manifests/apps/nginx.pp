@@ -44,8 +44,8 @@ class profile::apps::nginx (
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
-    ssl_key           => '/etc/ssl/certs/familyroberson.com/privkey.pem',
-    ssl_cert          => '/etc/ssl/certs/familyroberson.com/fullchain.pem',
+    ssl_key           => '/etc/ssl/certs/familyroberson.com.key',
+    ssl_cert          => '/etc/ssl/certs//familyroberson.com.crt',
     server_cfg_append => {
       'ssl_verify_client' => 'off',
       'ssl_verify_depth'  => 1,
