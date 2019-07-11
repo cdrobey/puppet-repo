@@ -39,8 +39,8 @@ class profile::apps::nginx (
   }
   class {'nginx':}
 
-  nginx::resource::server { 'unifi.familyroberson.com':
-    server_name       => [ 'unifi.familyroberson.com' ],
+  nginx::resource::server { 'test.familyroberson.com':
+    server_name       => [ 'test.familyroberson.com' ],
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
