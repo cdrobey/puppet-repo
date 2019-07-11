@@ -37,7 +37,7 @@ class profile::apps::nginx (
     email        => 'chris@familyroberson.com',
     days         => 3456,
   }
-
+  class {'nginx':}
 
   nginx::resource::server { 'unifi.familyroberson.com':
     server_name       => [ 'unifi.familyroberson.com' ],
@@ -52,21 +52,6 @@ class profile::apps::nginx (
     },
   }
 }
-  #class { 'letsencrypt':
-  #  config => {
-  #    email  => 'cdroberson@gmail.com',
-  #    server => 'https://acme-staging.api.letsencrypt.org/directory',
-  #  }
-  #}
-
-  #class { 'letsencrypt_nginx':
-  #  firstrun_webroot => '/usr/share/nginx/html',
-  # servers          => {
-  #    'familyroberson.com' => {},
-    #},
-  #}
-#}
-
   #$proxylist.each | $proxy_name, $proxy | {
   #  nginx::resource::server{ $proxy_name:
   #    server_name       => [ $proxy_name ],
