@@ -30,7 +30,7 @@ class profile::apps::nginx (
     ensure       => present,
     country      => 'US',
     organization => 'familyroberson.com',
-    commonname   => $fqdn,
+    commonname   => 'local.familyroberson.com',
     state        => 'CO',
     locality     => 'Centennial',
     unit         => 'FamilyRoberson',
