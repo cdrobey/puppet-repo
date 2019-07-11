@@ -34,6 +34,7 @@ class profile::apps::nginx (
     state        => 'CO',
     locality     => 'Centennial',
     unit         => 'FamilyRoberson',
+    altnames     => ['test.familyroberson.com', 'test2.familyroberson.com', 'test1.familyroberson.com'],
     email        => 'chris@familyroberson.com',
     days         => 3456,
   }
