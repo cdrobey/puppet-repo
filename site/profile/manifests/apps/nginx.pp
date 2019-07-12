@@ -40,8 +40,8 @@ class profile::apps::nginx (
   }
   class {'nginx':}
 
-  nginx::resource::server { 'test.familyroberson.com':
-    server_name       => [ 'test.familyroberson.com' ],
+  nginx::resource::server { 'unifi.familyroberson.com':
+    server_name       => [ 'unifi.familyroberson.com' ],
     proxy             => 'https://docker-p01.local.familyroberson.com:8443',
     ssl               => true,
     ssl_redirect      => true,
@@ -53,8 +53,8 @@ class profile::apps::nginx (
     },
   }
 
-  nginx::resource::server { 'test2.familyroberson.com':
-    server_name       => [ 'test2.familyroberson.com' ],
+  nginx::resource::server { 'portainer.familyroberson.com':
+    server_name       => [ 'portainer.familyroberson.com' ],
     proxy             => 'https://puppet-p01.local.familyroberson.com',
     ssl               => true,
     ssl_redirect      => true,
