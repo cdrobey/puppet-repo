@@ -55,7 +55,7 @@ class profile::apps::nginx (
 
   nginx::resource::server { 'portainer.familyroberson.com':
     server_name       => [ 'portainer.familyroberson.com' ],
-    proxy             => 'https://docker-p01.local.familyroberson.com:9000',
+    proxy             => 'http://docker-p01.local.familyroberson.com:9000',
     ssl               => true,
     ssl_redirect      => true,
     ssl_key           => '/etc/ssl/certs/familyroberson.com.key',
