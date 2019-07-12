@@ -34,7 +34,7 @@ class profile::apps::nginx (
     state        => 'CO',
     locality     => 'Centennial',
     unit         => 'FamilyRoberson',
-    altnames     => ['test.familyroberson.com', 'test2.familyroberson.com', 'test1.familyroberson.com'],
+    altnames     => ['unifi.familyroberson.com', 'portainer.familyroberson.com', 'puppet.familyroberson.com'],
     email        => 'chris@familyroberson.com',
     days         => 3456,
   }
@@ -55,6 +55,19 @@ class profile::apps::nginx (
 
   nginx::resource::server { 'portainer.familyroberson.com':
     server_name       => [ 'portainer.familyroberson.com' ],
+    proxy             => 'https://docker-p01.local.familyroberson.com:9000',
+    ssl               => true,
+    ssl_redirect      => true,
+    ssl_key           => '/etc/ssl/certs/familyroberson.com.key',
+    ssl_cert          => '/etc/ssl/certs//familyroberson.com.crt',
+    server_cfg_append => {
+      'ssl_verify_client' => 'off',
+      'ssl_verify_depth'  => 2,
+    },
+  }
+
+  nginx::resource::server { 'puppet.familyroberson.com':
+    server_name       => [ 'puppet.familyroberson.com' ],
     proxy             => 'https://puppet-p01.local.familyroberson.com',
     ssl               => true,
     ssl_redirect      => true,
@@ -66,20 +79,4 @@ class profile::apps::nginx (
     },
   }
 }
-
-  #$proxylist.each | $proxy_name, $proxy | {
-  #  nginx::resource::server{ $proxy_name:
-  #    server_name       => [ $proxy_name ],
-  #    listen_port       => 443,
-  #    ssl_port          => 443,
-  #    ssl               => true,
-  #    ssl_cert          => '/etc/ssl/public/familyroberson.crt',
-  #     ssl_key           => '/etc/ssl/public/familyroberson.key',
-  #     proxy             => $proxy['proxy'],
-  #    server_cfg_append => {
-  #      'ssl_verify_client' => 'off',
-  #      'ssl_verify_depth'  => 1,
-  #    },
-  #  }
-  #}
 
