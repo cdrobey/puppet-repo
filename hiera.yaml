@@ -1,7 +1,7 @@
 ---
 version: 5
 defaults: 
-  datadir: hieradata
+  datadir: data
   data_hash: yaml_data
 hierarchy:
   - name: "Encrypted Hiera Paths for node, environment, apps, roles, and os."
