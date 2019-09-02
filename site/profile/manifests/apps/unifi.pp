@@ -1,33 +1,63 @@
 # unifi
 #
-# Install and configure unifi centralized management station profile.
+# Install and configure unifi docker container for network management.
 #
-# @summary  This profiles uses the unifi module to configure an installation of a unifi management
-#           station.  The module loads the application from the primary ubiquiti application reposibioties.
-#           Unifi requires a series of firewall port be opened for proper communication with network devices.
+# @summary  This profiles deployes the unifi docker
 #
-# @param    none
+# @param    none   - provides the location of the influxdb
 #
 # @example
-#   include profile::windows or assign in PE classifier
-# == Class: profile::apps::unifi
-class profile::apps::unifi (
-  $repo_release = 'stable',
-  $package_ensure = 'latest',
+#   include profile::app::unifi or assign in PE classifier
+# == Class: profile::app::unifi
+class profile::app::unifi (
+  Hash $docker_list = {},
 ){
-  firewall { '200 allow unifi tcp access':
-    dport  => [80, 443, 8080, 8443, 8843, 8880, 3478, 6789, 10001],
-    proto  => tcp,
-    action =>  accept,
-  }
-  firewall { '202 allow unifi udp access':
-    dport  => [ 3478 ],
-    proto  => udp,
-    action =>  accept,
+
+  class { 'docker':
+    version   => 'latest',
   }
 
-  class { 'unifi':
-    repo_release   => $repo_release,
-    package_ensure => $package_ensure,
+  ['3478','10001'].each |$port| {
+    firewall { "300 unifi UDP ${port}":
+      proto  => 'udp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
+  ['8080','8081','8443','8843','8880','6789'].each |$port| {
+    firewall { "300 unifi TCP ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+
+  docker_network { 'unifi-network':
+    ensure      => 'present',
+    driver      => 'bridge',
+    ipam_driver => 'default',
+    subnet      => '172.16.100.0/24',
+    gateway     => '172.16.100.1',
+    ip_range    => '172.16.100.0/24'
+  }
+
+  docker_volume { 'unifi-volume':
+    ensure => present,
+  }
+
+  docker::image { 'unifi':
+    image     => 'linuxserver/unifi',
+    image_tag => 'unstable'
+
+  }
+  docker::run { 'unifi':
+    image           => 'linuxserver/unifi:unstable',
+    ports           => ['3478:3478','10001:10001','8080:8080','8081:8081','8443:8443','8843:8843','8880:8880','6789:6789'],
+    volumes         => ['unifi-volume:/config'],
+    net             => 'unifi-network',
+    restart_service => true,
+    pull_on_start   => false,
+    docker_service  => true,
   }
 }
