@@ -9,9 +9,8 @@
 # @example
 #   include profile::app::plex or assign in PE classifier
 # == Class: profile::app::plex
-class profile::app::plex 
+class profile::apps::plex
 {
-
   class { 'docker':
     version   => 'latest',
   }
@@ -51,7 +50,7 @@ class profile::app::plex
   }
   docker::run { 'plex':
     image           => 'plexinc/pms-docker:latest',
-    ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','32410:32410','32412:32412','32413:32413','32414:32414'],
+    ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','32410:32410','32412:32412','32413:32413'],
     volumes         => ['plex-volume:/config', 'plex-volume:/transcode', 'plex-volume:/data'],
     net             => 'plex-network',
     restart_service => true,

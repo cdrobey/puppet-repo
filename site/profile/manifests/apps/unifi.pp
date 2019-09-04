@@ -9,10 +9,8 @@
 # @example
 #   include profile::app::unifi or assign in PE classifier
 # == Class: profile::app::unifi
-class profile::app::unifi (
-  Hash $docker_list = {},
-){
-
+class profile::apps::unifi
+{
   class { 'docker':
     version   => 'latest',
   }
