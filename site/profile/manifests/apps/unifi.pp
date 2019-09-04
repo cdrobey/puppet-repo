@@ -37,7 +37,7 @@ class profile::apps::unifi
   }
 
   docker_volume { 'unifi-volume':
-    ensure => 'latest',
+    ensure => 'present',
   }
 
   docker::image { 'unifi':
