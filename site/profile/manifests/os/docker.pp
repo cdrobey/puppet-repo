@@ -7,7 +7,7 @@
 # @example
 #   include profile::os::docker or assign in PE classifier
 # == Class: profile::os::docker
-class profile::os::docker 
+class profile::os::docker
 {
   class { 'docker':
     version   => 'latest',
