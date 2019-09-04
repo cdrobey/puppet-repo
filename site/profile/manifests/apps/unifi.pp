@@ -11,10 +11,6 @@
 # == Class: profile::app::unifi
 class profile::apps::unifi
 {
-  class { 'docker':
-    version   => 'latest',
-  }
-
   ['3478','10001'].each |$port| {
     firewall { "300 unifi UDP ${port}":
       proto  => 'udp',

@@ -11,9 +11,6 @@
 # == Class: profile::app::portainer
 class profile::apps::portainer
 {
-  class { 'docker':
-    version   => 'latest',
-  }
   ['9000'].each |$port| {
     firewall { "501 tcp portainer ${port}":
       proto  => 'tcp',

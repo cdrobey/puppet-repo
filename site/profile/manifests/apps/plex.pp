@@ -11,10 +11,6 @@
 # == Class: profile::app::plex
 class profile::apps::plex
 {
-  class { 'docker':
-    version   => 'latest',
-  }
-
   ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
     firewall { "400 plex ${port}":
       proto  => 'tcp',
