@@ -14,7 +14,7 @@ class role::docker {
   include profile::base
   include profile::os::monitor
   include profile::os::docker
-  include profile::app::unifi
-  include profile::app::portainer
-  include profile::app::plex
+  include profile::apps::unifi
+  include profile::apps::portainer
+  include profile::apps::plex
 }
