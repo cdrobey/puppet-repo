@@ -28,7 +28,7 @@ class profile::apps::unifi
   }
 
   docker_network { 'unifi-network':
-    ensure      => 'present',
+    ensure      => 'latest',
     driver      => 'bridge',
     ipam_driver => 'default',
     subnet      => '172.16.100.0/24',
