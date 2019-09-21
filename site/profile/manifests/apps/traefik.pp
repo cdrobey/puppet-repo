@@ -37,7 +37,7 @@ class profile::apps::traefik
 
   }
   docker::run { 'traefik':
-    image           => 'traefik/traefik:latest',
+    image           => 'traefik:latest',
     ports           => ['80:80','443:443','8080:8080'],
     volumes         => ['traefik_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
     net             => 'traefik-network',
