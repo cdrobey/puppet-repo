@@ -17,4 +17,6 @@ class role::docker {
   include profile::apps::unifi
   include profile::apps::portainer
   include profile::apps::plex
+  include profile::apps::traefik
+
 }

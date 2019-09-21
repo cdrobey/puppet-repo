@@ -1,0 +1,48 @@
+# traefik
+#
+# Install and configure a traefik reverse proxy docker container for https.
+#
+# @summary  This profiles deploys the traefik docker
+#
+# @param    none   - provides the location of the influxdb
+#
+# @example
+#   include profile::app::traefik or assign in PE classifier
+# == Class: profile::app::traefik
+class profile::apps::traefik
+{
+  ['80','443','8080'].each |$port| {
+    firewall { "502 tcp traefik ${port}":
+      proto  => 'tcp',
+      dport  => $port,
+      action => 'accept',
+    }
+  }
+  docker_network { 'traefik-network':
+    ensure      => 'present',
+    driver      => 'bridge',
+    ipam_driver => 'default',
+    subnet      => '172.16.104.0/24',
+    gateway     => '172.16.104.1',
+    ip_range    => '172.16.104.0/24'
+  }
+
+  docker_volume { 'traefik-volume':
+    ensure => present,
+  }
+
+  docker::image { 'traefik':
+    image     => 'traefik/traefik',
+    image_tag => 'latest'
+
+  }
+  docker::run { 'traefik':
+    image           => 'traefik/traefik:latest',
+    ports           => ['80:80','443:443','8080:8080'],
+    volumes         => ['traefik_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
+    net             => 'traefik-network',
+    restart_service => true,
+    pull_on_start   => false,
+    docker_service  => true,
+  }
+}
