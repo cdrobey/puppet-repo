@@ -6,5 +6,5 @@ defaultEntryPoints = ["http"]
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "docker.localhost"
-exposedByDefault = false
+domain = "local.familyroberson.com"
+exposedByDefault = true
