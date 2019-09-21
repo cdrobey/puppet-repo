@@ -1,6 +1,0 @@
-<%- | String $password
-| -%>
-if exist s:\ (
-  net use s: /delete
-)
-net use s: \\tx-dsm-p01\scan /user:scan <%= $password %> /persistent:yes

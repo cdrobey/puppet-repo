@@ -18,6 +18,14 @@ class profile::apps::traefik
       action => 'accept',
     }
   }
+
+  file { '/tmp/traefik.toml':
+    ensure => file,
+    mode   => '0777',
+    source => 'puppet:///modules/profile/apps/traefik.epp',
+  }
+
+
   docker_network { 'traefik-network':
     ensure      => 'present',
     driver      => 'bridge',
@@ -39,7 +47,7 @@ class profile::apps::traefik
   docker::run { 'traefik':
     image           => 'traefik:latest',
     ports           => ['80:80','443:443','8080:8080'],
-    volumes         => ['traefik_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
+    volumes         => ['/tmp/traefik.toml:/etc/traefik/traefik.toml', '/var/run/docker.sock:/var/run/docker.sock'],
     net             => 'traefik-network',
     restart_service => true,
     pull_on_start   => false,

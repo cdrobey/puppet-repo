@@ -1,10 +1,9 @@
-# unifi
+# ups
 #
 # Install and configure unifi centralized management station profile.
 #
-# @summary  This profiles uses the unifi module to configure an installation of a unifi management
-#           station.  The module loads the application from the primary ubiquiti application reposibioties.
-#           Unifi requires a series of firewall port be opened for proper communication with network devices.
+# @summary  This profiles configure apcups to read ups metrics from a connected system.  The package installation
+#           configures apcupsd and a shellscrpt is deployed that formats the data for telegraf.
 #
 # @param    none
 #
@@ -12,7 +11,7 @@
 #   include profile::windows or assign in PE classifier
 # == Class: profile::apps::unifi
 class profile::apps::ups (
-  String $package_ensure = 'installed',
+  String $package_resource = 'installed',
 ){
   package { 'apcupsd':
     ensure  => $package_resource,
@@ -21,8 +20,8 @@ class profile::apps::ups (
     ensure => $package_resource}
 
   file { '/etc/apcupsd/ups_metrics.sh':
-    ensure  => file,
-    mode    => "777",
-    source  => 'puppet:///modules/profile/apps/ups_metrics.epp',
+    ensure => file,
+    mode   => '0777',
+    source => 'puppet:///modules/profile/apps/ups_metrics.epp',
   }
 }
