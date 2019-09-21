@@ -3,6 +3,12 @@ defaultEntryPoints = ["http"]
 [entryPoints]
   [entryPoints.http]
   address = ":80"
+  [entryPoints.api]
+  address = ":10000"
+
+[api]
+entryPoint = "api"
+dashboard = true
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
