@@ -1,152 +1,44 @@
-################################################################
-#
-# Configuration sample for Traefik v2.
-#
-# For Traefik v1: https://github.com/containous/traefik/blob/v1.7/traefik.sample.toml
-#
-################################################################
+logLevel = "WARN" #DEBUG, INFO, WARN, ERROR, FATAL, PANIC
+defaultEntryPoints = ["http", "https"]
 
-################################################################
-# Global configuration
-################################################################
-[global]
-  checkNewVersion = true
-  sendAnonymousUsage = true
-
-################################################################
-# Entrypoints configuration
-################################################################
-
-# Entrypoints definition
-#
-# Optional
-# Default:
-[entryPoints]
-  [entryPoints.web]
-    address = ":80"
-
-  [entryPoints.websecure]
-    address = ":443"
-
-################################################################
-# Traefik logs configuration
-################################################################
-
-# Traefik logs
-# Enabled by default and log to stdout
-#
-# Optional
-#
-[log]
-
-  # Log level
-  #
-  # Optional
-  # Default: "ERROR"
-  #
-  # level = "DEBUG"
-
-  # Sets the filepath for the traefik log. If not specified, stdout will be used.
-  # Intermediate directories are created if necessary.
-  #
-  # Optional
-  # Default: os.Stdout
-  #
-  # filePath = "log/traefik.log"
-
-  # Format is either "json" or "common".
-  #
-  # Optional
-  # Default: "common"
-  #
-  # format = "json"
-
-################################################################
-# Access logs configuration
-################################################################
-
-# Enable access logs
-# By default it will write to stdout and produce logs in the textual
-# Common Log Format (CLF), extended with additional fields.
-#
-# Optional
-#
-# [accessLog]
-
-  # Sets the file path for the access log. If not specified, stdout will be used.
-  # Intermediate directories are created if necessary.
-  #
-  # Optional
-  # Default: os.Stdout
-  #
-  # filePath = "/path/to/log/log.txt"
-
-  # Format is either "json" or "common".
-  #
-  # Optional
-  # Default: "common"
-  #
-  # format = "json"
-
-################################################################
-# API and dashboard configuration
-################################################################
-
-# Enable API and dashboard
+# WEB interface of Traefik - it will show web page with overview of frontend and backend configurations
 [api]
-
-  # Name of the related entry point
-  #
-  # Optional
-  # Default: "traefik"
-  #
   entryPoint = "traefik"
+  dashboard = true
+  address = ":8080"
+  usersFile = "/shared/.htpasswd"
 
-  # Enabled Dashboard
-  #
-  # Optional
-  # Default: true
-  #
-   dashboard = true
+# Force HTTPS
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
 
-################################################################
-# Ping configuration
-################################################################
+#[file]
+#  watch = true
+#  filename = "/etc/traefik/rules.toml"
 
-# Enable ping
-[ping]
+# Let's encrypt configuration
+[acme]
+email = "cdr67@yahoo.com" #any email id will work
+storage="/etc/traefik/acme/acme.json"
+entryPoint = "https"
+acmeLogging=true
+onDemand = false #create certificate when container is created
+onHostRule = true
+  # Use a HTTP-01 acme challenge rather than TLS-SNI-01 challenge
+  [acme.httpChallenge]
+  entryPoint = "http"
 
-  # Name of the related entry point
-  #
-  # Optional
-  # Default: "traefik"
-  #
-  # entryPoint = "traefik"
-
-################################################################
-# Docker configuration backend
-################################################################
-
-# Enable Docker configuration backend
-[providers.docker]
-
-  # Docker server endpoint. Can be a tcp or a unix socket endpoint.
-  #
-  # Required
-  # Default: "unix:///var/run/docker.sock"
-  #
-  # endpoint = "tcp://10.10.10.10:2375"
-
-  # Default host rule.
-  #
-  # Optional
-  # Default: "Host(`{{ normalize .Name }}`)"
-  #
-  # defaultRule = "Host(`{{ normalize .Name }}.docker.localhost`)"
-
-  # Expose containers by default in traefik
-  #
-  # Optional
-  # Default: true
-  #
-  # exposedByDefault = false
+# Connection to docker host system (docker.sock)
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "local.familyroberson.com"
+watch = true
+# This will hide all docker containers that don't have explicitly
+# set label to "enable"
+exposedbydefault = false
