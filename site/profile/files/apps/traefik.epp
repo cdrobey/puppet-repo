@@ -100,7 +100,7 @@
   # Optional
   # Default: "traefik"
   #
-  # entryPoint = "traefik"
+  entryPoint = "traefik"
 
   # Enabled Dashboard
   #
@@ -109,7 +109,6 @@
   #
   insecure = true
   dashboard = true
-  port = "10000"
 
 ################################################################
 # Ping configuration
