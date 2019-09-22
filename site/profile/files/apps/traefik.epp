@@ -107,7 +107,9 @@
   # Optional
   # Default: true
   #
+  insecure = true
   dashboard = true
+  port = "10000"
 
 ################################################################
 # Ping configuration
