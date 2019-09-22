@@ -7,9 +7,12 @@
 # @param    none   - provides the location of the influxdb
 #
 # @example
-#   include profile::app::portainer or assign in PE classifier
-# == Class: profile::app::portainer
-class profile::apps::portainer
+#   include profile::app::docker::portainer or assign in PE classifier
+# == Class: profile::app::dockeer::portainer
+class profile::apps::docker::portainer(
+  String $private = 'private-network',
+  String $public = 'public-network',
+)
 {
   ['9000'].each |$port| {
     firewall { "501 tcp portainer ${port}":
@@ -42,7 +45,7 @@ class profile::apps::portainer
     volumes         => ['portainer_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
     labels          => ['"traefik.http.routers.portainer.rule=Host(\`portainer.local.familyroberson.com\`)"',
                         '"traefik.http.routers.portainer.entrypoints=web"'],
-    net             => 'portainer-network',
+    net             => [$public, $private],
     restart_service => true,
     pull_on_start   => false,
     docker_service  => true,

@@ -7,10 +7,13 @@
 # @param    none   - provides the location of the influxdb
 #
 # @example
-#   include profile::app::plex or assign in PE classifier
-# == Class: profile::app::plex
-class profile::apps::plex
-{
+#   include profile::apps::docker::plex or assign in PE classifier
+# == Class: profile::apps::docker::plex
+class profile::apps::docker::plex (
+  String $private = 'private-network',
+  String $public = 'public-network',
+
+) {
   ['32400','3005','8324','32469','1900','32410','32412','32413','32414'].each |$port| {
     firewall { "400 plex ${port}":
       proto  => 'tcp',
@@ -26,15 +29,6 @@ class profile::apps::plex
     }
   }
 
-  docker_network { 'plex-network':
-    ensure      => 'present',
-    driver      => 'bridge',
-    ipam_driver => 'default',
-    subnet      => '172.16.101.0/24',
-    gateway     => '172.16.101.1',
-    ip_range    => '172.16.101.0/24'
-  }
-
   docker_volume { 'plex-volume':
     ensure => present,
   }
@@ -48,7 +42,7 @@ class profile::apps::plex
     image           => 'plexinc/pms-docker:latest',
     ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','32410:32410','32412:32412','32413:32413'],
     volumes         => ['plex-volume:/config', 'plex-volume:/transcode', 'plex-volume:/data'],
-    net             => 'plex-network',
+    net             => [$public, $private],
     restart_service => true,
     pull_on_start   => false,
     docker_service  => true,
