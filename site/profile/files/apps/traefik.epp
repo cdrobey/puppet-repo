@@ -95,7 +95,6 @@
 # Enable API and dashboard
 [api]
   entryPoint = "traefik"
-  insecure = true
   dashboard = true
 
 ################################################################
