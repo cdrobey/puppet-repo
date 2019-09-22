@@ -31,4 +31,8 @@ class profile::apps::docker(
     gateway     => '172.16.200.1',
     ip_range    => '172.16.100.0/24'
   }
+  include profile::apps::unifi
+  include profile::apps::portainer
+  include profile::apps::plex
+  include profile::apps::traefik
 }
