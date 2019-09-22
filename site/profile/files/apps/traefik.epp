@@ -94,7 +94,6 @@
 
 # Enable API and dashboard
 [api]
-  entryPoint = "traefik"
   dashboard = true
 
 ################################################################
