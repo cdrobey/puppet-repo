@@ -21,15 +21,6 @@ class profile::apps::docker::portainer(
       action => 'accept',
     }
   }
-  docker_network { 'portainer-network':
-    ensure      => 'present',
-    driver      => 'bridge',
-    ipam_driver => 'default',
-    subnet      => '172.16.103.0/24',
-    gateway     => '172.16.103.1',
-    ip_range    => '172.16.103.0/24'
-  }
-
   docker_volume { 'portainer-volume':
     ensure => present,
   }
