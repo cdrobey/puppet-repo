@@ -46,7 +46,7 @@ class profile::apps::docker::portainer(
     labels          => ['"traefik.http.routers.portainer.rule=Host(\`portainer.local.familyroberson.com\`)"',
                         '"traefik.http.routers.portainer.entrypoints=web"'],
     net             => [$public, $private],
-    restart_service => true,
+    restart_service => false,
     pull_on_start   => false,
     docker_service  => true,
   }

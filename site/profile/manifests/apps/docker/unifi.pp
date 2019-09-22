@@ -45,7 +45,7 @@ class profile::apps::docker::unifi(
     volumes         => ['unifi-volume:/config'],
     labels          => ['"traefik.http.routers.unifi.rule=Host(\`unifi.local.familyroberson.com\`)"'],
     net             => [$public, $private],
-    restart_service => true,
+    restart_service => false,
     pull_on_start   => false,
     docker_service  => true,
   }
