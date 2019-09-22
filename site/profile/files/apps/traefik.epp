@@ -17,6 +17,7 @@
 # Entrypoints configuration
 ################################################################
 
+
 # Entrypoints definition
 #
 # Optional
@@ -46,7 +47,9 @@
 
 # Enable API and dashboard
 [api]
-  dashboard = false
+  insecure = true
+  dashboard = true
+  debug = true
 
 
 ################################################################
@@ -55,5 +58,6 @@
 
 # Enable Docker configuration backend
 [providers.docker]
-  exposedByDefault = true
   endpoint = "unix:///var/run/docker.sock"
+  exposedByDefault = true
+  network = "traefik-network"
