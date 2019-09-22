@@ -5,9 +5,9 @@
 # @summary  This profiles deployes the basic docker server setup.
 #
 # @example
-#   include profile::app::docker or assign in PE classifier
-# == Class: profile::app::docker
-class profile::app::docker(
+#   include profile::apps::docker or assign in PE classifier
+# == Class: profile::apps::docker
+class profile::apps::docker(
   String $private = 'private-network',
   String $public = 'public-network',
 ) {
