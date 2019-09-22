@@ -40,7 +40,7 @@ class profile::apps::docker::traefik(
     image           => 'traefik:latest',
     ports           => ['80:80','443:443','10000:8080'],
     volumes         => ['/tmp/traefik.toml:/etc/traefik/traefik.toml', '/var/run/docker.sock:/var/run/docker.sock'],
-    net             => [$public, $private],
+    net             => $public,
     restart_service => false,
     pull_on_start   => false,
     docker_service  => true,
