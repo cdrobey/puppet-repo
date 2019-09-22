@@ -40,6 +40,7 @@ class profile::apps::portainer
     image           => 'portainer/portainer:latest',
     ports           => ['9000:9000'],
     volumes         => ['portainer_data:/data', '/var/run/docker.sock:/var/run/docker.sock'],
+    labels          => ['"traefik.http.routers.portainer.rule=Host(\`portainer.local.familyroberson.com\`)"'],
     net             => 'portainer-network',
     restart_service => true,
     pull_on_start   => false,
