@@ -43,6 +43,7 @@ class profile::apps::docker::plex (
     ports           => ['32400:32400','3005:3005','8324:8324','32469:32469','1900:1900','32410:32410','32412:32412','32413:32413'],
     volumes         => ['plex-volume:/config', 'plex-volume:/transcode', 'plex-volume:/data'],
     net             => [$public, $private],
+    disable_network => true,
     restart_service => false,
     pull_on_start   => false,
     docker_service  => true,
