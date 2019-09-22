@@ -94,19 +94,7 @@
 
 # Enable API and dashboard
 [api]
-
-  # Name of the related entry point
-  #
-  # Optional
-  # Default: "traefik"
-  #
   entryPoint = "traefik"
-
-  # Enabled Dashboard
-  #
-  # Optional
-  # Default: true
-  #
   insecure = true
   dashboard = true
 
