@@ -27,9 +27,9 @@ class profile::apps::docker(
     ensure      => 'present',
     driver      => 'bridge',
     ipam_driver => 'default',
-    subnet      => '172.16.100.0/24',
+    subnet      => '172.16.200.0/24',
     gateway     => '172.16.200.1',
-    ip_range    => '172.16.100.0/24'
+    ip_range    => '172.16.200.0/24'
   }
   include profile::apps::docker::unifi
   include profile::apps::docker::portainer
