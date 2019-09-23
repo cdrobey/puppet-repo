@@ -56,6 +56,6 @@ class profile::apps::docker::traefik(
     restart_service => false,
     pull_on_start   => false,
     docker_service  => true,
-    require         => File['/tmp/traefik.toml']
+    require         => File['/etc/traefik/traefik.toml']
   }
 }
