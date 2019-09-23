@@ -55,7 +55,7 @@ class profile::apps::docker::traefik(
                           '/etc/traefik/acme.json:/etc/traefik/acme.json',
                           '/var/run/docker.sock:/var/run/docker.sock'],
     labels          => ['traefik.frontend.rule=Host:traefik.local.familyroberson.com',
-                        'traefik.port=10000'],
+                        'traefik.port=80'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,
