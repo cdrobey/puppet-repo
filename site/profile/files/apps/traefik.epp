@@ -7,16 +7,6 @@ defaultEntryPoints = ["http", "https"]
   address = ":443"
     [entryPoints.https.tls]
 
-[acme]
-entryPoint = "https"
-storage = "/etc/traefik/acme.json"
-#caServer = "https://acme-v02.api.letsencrypt.org/directory"
-caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
-  [acme.dnsChallenge]
-  provider = "cloudflare"
-  delayBeforeCheck = 0
-  [[acme.domains]]
-  main = "*.familyroberson.com"
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"

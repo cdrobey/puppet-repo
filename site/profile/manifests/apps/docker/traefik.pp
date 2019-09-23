@@ -28,6 +28,7 @@ class profile::apps::docker::traefik(
   file { '/etc/traefik/acme.json':
     ensure  => file,
     mode    => '0600',
+
     require => File['/etc/traefik']
   }
 
