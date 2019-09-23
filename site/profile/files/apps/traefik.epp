@@ -22,3 +22,7 @@ caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 endpoint = "unix:///var/run/docker.sock"
 domain = "familyroberson.com"
 exposedByDefault = false
+
+[api]
+  entryPoint = "traefik"
+  dashboard = true
