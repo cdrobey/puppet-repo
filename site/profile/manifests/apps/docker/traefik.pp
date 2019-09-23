@@ -49,8 +49,8 @@ class profile::apps::docker::traefik(
   docker::run { 'traefik':
     image           => 'traefik:v1.7.16-alpine',
     ports           => ['80:80','443:443','10000:8080'],
-    volumes         => [ '/traefik/traefik.toml:/etc/traefik/traefik.toml',
-                          '/traefik/acme.json:/etc/traefik/acme.json',
+    volumes         => [ '/etc/traefik/traefik.toml:/etc/traefik/traefik.toml',
+                          '/etc/traefik/acme.json:/etc/traefik/acme.json',
                           '/var/run/docker.sock:/var/run/docker.sock'],
     net             => $public,
     restart_service => false,
