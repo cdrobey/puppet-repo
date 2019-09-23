@@ -21,10 +21,20 @@ class profile::apps::docker::traefik(
     }
   }
 
+  file { '/etc/traefik':
+    ensure => directory,
+  }
+
+  file { '/etc/traefik/acme.json':
+    ensure  => file,
+    require => File['/etc/traefik']
+  }
+
   file { '/tmp/traefik.toml':
-    ensure => file,
-    mode   => '0777',
-    source => 'puppet:///modules/profile/apps/traefik.epp',
+    ensure  => file,
+    mode    => '0777',
+    source  => 'puppet:///modules/profile/apps/traefik.epp',
+    require => File['/etc/traefik']
   }
 
   docker_volume { 'traefik-volume':
@@ -39,7 +49,9 @@ class profile::apps::docker::traefik(
   docker::run { 'traefik':
     image           => 'traefik:v1.7.16-alpine',
     ports           => ['80:80','443:443','10000:8080'],
-    volumes         => ['/tmp/traefik.toml:/etc/traefik/traefik.toml', '/var/run/docker.sock:/var/run/docker.sock'],
+    volumes         => [ '/traefik/traefik.toml:/etc/traefik/traefik.toml',
+                          '/traefik/acme.json:/acme.json',
+                          '/var/run/docker.sock:/var/run/docker.sock'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,
