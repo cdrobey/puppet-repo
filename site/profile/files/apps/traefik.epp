@@ -2,14 +2,20 @@ defaultEntryPoints = ["http", "https"]
 loglevel = "DEBUG"
 
 [entryPoints]
+  [entryPoints.dashboard]
+    address = ":8080"
+
+[entryPoints]
   [entryPoints.http]
   address = ":80"
 
 [docker]
-endpoint = "unix:///var/run/docker.sock"
+#endpoint = "unix:///var/run/docker.sock"
 domain = "local.familyroberson.com"
-exposedByDefault = true
+#exposedByDefault = true
+watch = true
+network = "public-network"
 
 [api]
-entryPoint = "traefik"
+entryPoint = "dashboard"
 dashboard = true
