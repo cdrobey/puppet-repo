@@ -27,12 +27,13 @@ class profile::apps::docker::traefik(
 
   file { '/etc/traefik/acme.json':
     ensure  => file,
+    mode    => '0600',
     require => File['/etc/traefik']
   }
 
   file { '/etc/traefik/traefik.toml':
     ensure  => file,
-    mode    => '0777',
+    mode    => '0644',
     source  => 'puppet:///modules/profile/apps/traefik.epp',
     require => File['/etc/traefik']
   }
