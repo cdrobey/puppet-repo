@@ -37,7 +37,7 @@ class profile::apps::docker::portainer(
     labels          => ['traefik.backend=portainer',
                         'traefik.frontend.rule=Host:portainer.local.familyroberson.com',
                         'traefik.docker.network=public-network',
-                        'traefik.port=80'],
+                        'traefik.port=9000'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,

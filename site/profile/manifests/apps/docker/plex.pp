@@ -45,7 +45,7 @@ class profile::apps::docker::plex (
     labels          => ['traefik.backend=pms-docker',
                         'traefik.frontend.rule=Host:plex.local.familyroberson.com',
                         'traefik.docker.network=public-network',
-                        'traefik.port=80'],
+                        'traefik.port=32400'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,

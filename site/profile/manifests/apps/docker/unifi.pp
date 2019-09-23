@@ -46,7 +46,7 @@ class profile::apps::docker::unifi(
     labels          => ['traefik.backend=unifi',
                         'traefik.frontend.rule=Host:unifi.local.familyroberson.com',
                         'traefik.docker.network=public-network',
-                        'traefik.port=80'],
+                        'traefik.port=8443'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,
