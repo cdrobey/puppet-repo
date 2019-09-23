@@ -50,10 +50,12 @@ class profile::apps::docker::traefik(
   }
   docker::run { 'traefik':
     image           => 'traefik:v1.7.16-alpine',
-    ports           => ['80:80','443:443','10000:8080'],
+    ports           => ['80:80','443:443','10000:10000'],
     volumes         => [ '/etc/traefik/traefik.toml:/etc/traefik/traefik.toml',
                           '/etc/traefik/acme.json:/etc/traefik/acme.json',
                           '/var/run/docker.sock:/var/run/docker.sock'],
+    labels          => ['traefik.frontend.rule=Host:traefik.local.familyroberson.com',
+                        'traefik.port=10000'],
     net             => $public,
     restart_service => false,
     pull_on_start   => false,
