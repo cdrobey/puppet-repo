@@ -1,63 +1,24 @@
-################################################################
-#
-# Configuration sample for Traefik v2.
-#
-# For Traefik v1: https://github.com/containous/traefik/blob/v1.7/traefik.sample.toml
-#
-################################################################
+defaultEntryPoints = ["http", "https"]
 
-################################################################
-# Global configuration
-################################################################
-[global]
-  checkNewVersion = true
-  sendAnonymousUsage = true
-
-################################################################
-# Entrypoints configuration
-################################################################
-
-
-# Entrypoints definition
-#
-# Optional
-# Default:
 [entryPoints]
-  [entryPoints.web]
-    address = ":80"
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
 
-  [entryPoints.websecure]
-    address = ":443"
+[acme]
+entryPoint = "https"
+storage = "/etc/traefik/acme/acme.json"
+#caServer = "https://acme-v02.api.letsencrypt.org/directory"
+caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+  [acme.dnsChallenge]
+  provider = "cloudflare"
+  delayBeforeCheck = 0
+  [[acme.domains]]
+  main = "*.familyroberson.com"
 
-################################################################
-# Traefik logs configuration
-################################################################
-
-# Traefik logs
-# Enabled by default and log to stdout
-#
-# Optional
-#
-[log]
-  level = "DEBUG"
-
-################################################################
-# API and dashboard configuration
-################################################################
-
-# Enable API and dashboard
-[api]
-  insecure = true
-  dashboard = true
-  debug = true
-
-
-################################################################
-# Docker configuration backend
-################################################################
-
-# Enable Docker configuration backend
-[providers.docker]
-  endpoint = "unix:///var/run/docker.sock"
-  exposedByDefault = true
-  network = "public-network"
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "familyroberson.com"
+exposedByDefault = false
